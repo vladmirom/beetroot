@@ -21,3 +21,13 @@ section {
   width: 32px;
   margin-right: 5px;
 }
+
+.additional-tasks {
+  display: flex;
+  margin: 0 -15px;
+}
+
+.additional-tasks__item {
+  flex: calc(100%/2 - 30) 0 0;
+  padding: 0 15px;
+}

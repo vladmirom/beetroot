@@ -1,271 +1,363 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.png">
-    <link rel="stylesheet" type="text/css" href="assets/styles/main.css">
-    <!-- I add w3 schools css file to mimic the code blocks elements as it is there.-->
-    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3schools30.css"> 
-    
-    <title>Володимир Мельниченко | HTML5 Семантичні елементи</title>
-  </head>
+<html lang="uk">
 
-  <body>
-    <header class="header">
-      <div class="logo">
-        <a href="./">
-          <img src="../assets/images/favicon.png" alt="Website logo">
-        </a>
-      </div>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="../assets/images/favicon.png">
+  <link rel="stylesheet" type="text/css" href="assets/styles/main.css">
+  <!-- I add w3 schools css file to mimic the code blocks elements as it is there.-->
+  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3schools30.css">
 
-      <nav class="header__menu">
-        <ul>
-          <li class="header__menu-item">
-            <a href="#browsers">Браузери</a>
-          </li>
+  <title>Володимир Мельниченко | HTML5 Семантичні елементи</title>
+</head>
 
-          <li class="header__menu-item">
-            <a href="#new_semantics">Нові семантичні елементи в HTML5</a>
-          </li>
+<body>
+  <header class="header">
+    <div class="logo">
+      <a href="./">
+        <img src="../assets/images/favicon.png" alt="Website logo">
+      </a>
+    </div>
 
-          <li class="header__menu-item">
-            <a href="#section">Секцiя</a>
-          </li>
+    <nav class="header__menu">
+      <ul>
+        <li class="header__menu-item">
+          <a href="#browsers">Браузери</a>
+        </li>
 
-          <li class="header__menu-item">
-            <a href="#article">Стаття</a>
-          </li>
+        <li class="header__menu-item">
+          <a href="#new_semantics">Нові семантичні елементи в HTML5</a>
+        </li>
 
-          <li class="header__menu-item">
-            <a href="#header">Хедер</a>
-          </li>
+        <li class="header__menu-item">
+          <a href="#section">Секцiя</a>
+        </li>
 
-          <li class="header__menu-item">
-            <a href="#footer">Футер</a>
-          </li>
+        <li class="header__menu-item">
+          <a href="#article">Стаття</a>
+        </li>
+
+        <li class="header__menu-item">
+          <a href="#header">Хедер</a>
+        </li>
+
+        <li class="header__menu-item">
+          <a href="#my-footer">Футер</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main">
+    <article class="container">
+      <section id="intro" class="intro">
+        <p id="me">
+          Привiт, мене звуть Володимир. Я саме той українець, що живе у Фінляндії і вірить у можливості цифрових
+          інструментів і технік для покращення нашого
+          життя.
+        </p>
+        <p id="experience">
+          Працюю із веб-сайтами побудованими на WordPress. Розробляю проекти як «із нуля», так і продовжую проекти,
+          над якими хтось уже працював, або будую додаткові модулі для сайтів на продакшені. Перевіряю і підтверджую
+          код колег, роблю зміни у свому коді післ перевірки моїх колег, щоб зробити кого більш цілісним (однаковим)
+          на всьому сайті. Пишу базові автоматичні тести.
+        </p>
+        <p id="hobby">
+          Я люблю автоматизувати процеси, покращувати продуктивнicть за допомогою технiчних рiшень. Подобається рибалка,
+          волейбол, бiг.
+        </p>
+      </section>
+
+      <section id="semantics" class="semantics">
+        <h2>HTML5 Семантичні елементи</h2>
+        <p>Семантичний елемент чітко описує його значення як для браузера, так і для розробника.</p>
+        <p>Приклади не <strong>семантичних елементів</strong>: &lt;div&gt; і &lt;span&gt;- нічого не говорить про його
+          вміст.</p><!-- In this case I want to make the word bold and stress out it's importance to SEO. -->
+        <p>Приклади <b>семантичних елементів</b>: &lt;form&gt;, &lt;table&gt;і &lt;article&gt;- чітко визначає його
+          зміст.</p><!-- In this case I want to style the word as bold. -->
+      </section>
+
+      <section id="browsers" class="browsers">
+        <h2>Підтримка браузерів</h2>
+
+        <ul class="browsers__images">
+          <li class="browsers__image"><img src="../assets/images/browsers/chrome.svg" alt="Chrome icon"></li>
+          <li class="browsers__image"><img src="../assets/images/browsers/ie.svg" alt="IE icon"></li>
+          <li class="browsers__image"><img src="../assets/images/browsers/firefox.svg" alt="Firefox icon"></li>
+          <li class="browsers__image"><img src="../assets/images/browsers/safari.svg" alt="Safari icon"></li>
+          <li class="browsers__image"><img src="../assets/images/browsers/opera.svg" alt="Opera icon"></li>
         </ul>
-      </nav>
-    </header>
 
-    <main class="main">
-      <article class="container">
-        <section id="intro" class="intro">
-          <p id="me">
-            Привiт, мене звуть Володимир. Я саме той українець, що живе у Фінляндії і вірить у можливості цифрових інструментів і технік для покращення нашого
-            життя.
-          </p>
-          <p id="experience">
-            Працюю із веб-сайтами побудованими на WordPress. Розробляю проекти як «із нуля», так і продовжую проекти,
-            над якими хтось уже працював, або будую додаткові модулі для сайтів на продакшені. Перевіряю і підтверджую
-            код колег, роблю зміни у свому коді післ перевірки моїх колег, щоб зробити кого більш цілісним (однаковим)
-            на всьому сайті. Пишу базові автоматичні тести.
-          </p>
-          <p id="hobby">
-            Я люблю автоматизувати процеси, покращувати продуктивнicть за допомогою технiчних рiшень. Подобається рибалка, волейбол, бiг.
-          </p>
-        </section>
+        <p>Семантичні елементи HTML5 підтримуються у всіх сучасних браузерах.</p>
+        <p>Крім того, ви можете "навчити" старих браузерів, як обробляти "невідомі
+          елементи".</p>
+        <p>Прочитайте про це в <a href="https://www.blogger.com/blog/page/edit/2590532390801722394/850003172824707311#"
+            target="_blank" title="Стаття у Blogger">підтримці браузера HTML5</a>.</p>
+      </section>
 
-        <section id="semantics" class="semantics">
-          <h2>HTML5 Семантичні елементи</h2>
-          <p>Семантичний елемент чітко описує його значення як для браузера, так і для розробника.</p>
-          <p>Приклади не <strong>семантичних елементів</strong>: &lt;div&gt; і &lt;span&gt;- нічого не говорить про його вміст.</p><!-- In this case I want to make the word bold and stress out it's importance to SEO. -->
-          <p>Приклади <b>семантичних елементів</b>: &lt;form&gt;, &lt;table&gt;і &lt;article&gt;- чітко визначає його зміст.</p><!-- In this case I want to style the word as bold. -->
-        </section>
+      <section id="new_semantics" class="new-semantics">
+        <h2>Нові семантичні елементи в HTML5</h2>
 
-        <section id="browsers" class="browsers">
-          <h2>Підтримка браузерів</h2>
+        <p>HTML5 пропонує нові семантичні елементи для визначення різних частин
+          веб-сторінки:</p>
+        <ul class="new-semantics__list">
+          <li class="new-semantics__item"><a href="#section">&lt;section&gt;</a></li>
+          <li class="new-semantics__item"><a href="#article">&lt;article&gt;</a></li>
+          <li class="new-semantics__item"><a href="#header">&lt;header&gt;</a></li>
+          <li class="new-semantics__item"><a href="#footer">&lt;footer&gt;</a></li>
+        </ul>
+      </section>
 
-          <ul class="browsers__images">
-            <li class="browsers__image"><img src="../assets/images/browsers/chrome.svg" alt="Chrome icon"></li>
-            <li class="browsers__image"><img src="../assets/images/browsers/ie.svg" alt="IE icon"></li>
-            <li class="browsers__image"><img src="../assets/images/browsers/firefox.svg" alt="Firefox icon"></li>
-            <li class="browsers__image"><img src="../assets/images/browsers/safari.svg" alt="Safari icon"></li>
-            <li class="browsers__image"><img src="../assets/images/browsers/opera.svg" alt="Opera icon"></li>
-          </ul>
+      <section id="section" class="section">
+        <h2>HTML5 &lt;section&gt; елемент</h2>
+        <p>Елемент &lt;section&gt; визначає розділ в документі.</p>
+        <p>Згідно з документацією w3schools HTML5: "розділ представляє собою тематичну угруповання контенту, зазвичай з
+          заголовком".</p>
+        <p>Домашня сторінка зазвичай може бути розділена на розділи для ознайомлення, змісту і контактної інформації.
+        </p>
 
-          <p>Семантичні елементи HTML5 підтримуються у всіх сучасних браузерах.</p>
-          <p>Крім того, ви можете "навчити" старих браузерів, як обробляти "невідомі
-            елементи".</p>
-          <p>Прочитайте про це в <a href="https://www.blogger.com/blog/page/edit/2590532390801722394/850003172824707311#" target="_blank" title="Стаття у Blogger">підтримці браузера HTML5</a>.</p>
-        </section>
+        <h3>Приклад</h3>
+        <div class="w3-code notranslate htmlHigh">
+          <span class="tagnamecolor" style="color:brown">
+            <!-- <section> -->
+            <span class="tagcolor" style="color:mediumblue">&lt;</span>section<span class="tagcolor"
+              style="color:mediumblue">&gt;</span>
+          </span><br>
+          <!-- <h1>WWF</h1> -->
+          <span class="tagnamecolor w3-tab" style="color:brown"><span class="tagcolor"
+              style="color:mediumblue">&lt;</span>h1<span class="tagcolor"
+              style="color:mediumblue">&gt;</span></span>WWF<span class="tagnamecolor" style="color:brown"><span
+              class="tagcolor" style="color:mediumblue">&lt;</span>/h1<span class="tagcolor"
+              style="color:mediumblue">&gt;</span></span><br>
+          <!-- <p>The World Wide Fund for Nature (WWF) is.... </p> -->
+          <span class="tagnamecolor w3-tab" style="color:brown"><span class="tagcolor"
+              style="color:mediumblue">&lt;</span>p<span class="tagcolor" style="color:mediumblue">&gt;</span></span>The
+          World Wide Fund for Nature (WWF) is... <span class="tagnamecolor" style="color:brown"><span class="tagcolor"
+              style="color:mediumblue">&lt;</span>/p<span class="tagcolor"
+              style="color:mediumblue">&gt;</span></span><br>
+          <!-- </section> -->
+          <span class="tagnamecolor" style="color:brown"><span class="tagcolor"
+              style="color:mediumblue">&lt;</span>/section<span class="tagcolor"
+              style="color:mediumblue">&gt;</span></span>
+        </div>
+      </section>
 
-        <section id="new_semantics" class="new-semantics">
-          <h2>Нові семантичні елементи в HTML5</h2>
+      <section id="article" class="article">
+        <h2>HTML5 &lt;article&gt; елемент</h2>
+        <p>Елемент &lt;article&gt; визначає незалежний, автономний вміст.</p>
+        <p>Стаття повинна мати сенс самостійно, і вона повинна мати можливість читати його незалежно від іншої частини
+          веб-сайту.</p>
+        <p>Приклади того, де можна використовувати елемент &lt;article&gt;:</p>
+        <ul>
+          <li>Повідомлення на форумі</li>
+          <li>блозі</li>
+          <li>Газетна стаття</li>
+        </ul>
 
-          <p>HTML5 пропонує нові семантичні елементи для визначення різних частин
-            веб-сторінки:</p>
-          <ul class="new-semantics__list">
-            <li class="new-semantics__item"><a href="#section">&lt;section&gt;</a></li>
-            <li class="new-semantics__item"><a href="#article">&lt;article&gt;</a></li>
-            <li class="new-semantics__item"><a href="#header">&lt;header&gt;</a></li>
-            <li class="new-semantics__item"><a href="#footer">&lt;footer&gt;</a></li>
-          </ul>
-        </section>
+        <h3>Приклад</h3>
+        <div class="w3-code notranslate htmlHigh">
+          <span class="tagnamecolor" style="color:brown">
+            <!-- <article> -->
+            <span class="tagcolor" style="color:mediumblue">&lt;</span>article<span class="tagcolor"
+              style="color:mediumblue">&gt;</span>
+          </span><br>
+          <!-- <h1>What Does WWF Do?</h1> -->
+          <span class="tagnamecolor w3-tab" style="color:brown"><span class="tagcolor"
+              style="color:mediumblue">&lt;</span>h1<span class="tagcolor"
+              style="color:mediumblue">&gt;</span></span>What Does WWF Do?<span class="tagnamecolor"
+            style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/h1<span class="tagcolor"
+              style="color:mediumblue">&gt;</span></span><br>
+          <!-- <p>WWF's mission is to stop the degradation of our planet's natural environment, and build a future in which humans live in harmony with nature.</p> -->
+          <span class="tagnamecolor w3-tab" style="color:brown"><span class="tagcolor"
+              style="color:mediumblue">&lt;</span>p<span class="tagcolor"
+              style="color:mediumblue">&gt;</span></span>WWF's mission is to stop the degradation of our planet's
+          natural environment, and build a future in which humans live in harmony with nature.<span class="tagnamecolor"
+            style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/p<span class="tagcolor"
+              style="color:mediumblue">&gt;</span></span><br>
+          <!-- </article> -->
+          <span class="tagnamecolor" style="color:brown"><span class="tagcolor"
+              style="color:mediumblue">&lt;</span>/article<span class="tagcolor"
+              style="color:mediumblue">&gt;</span></span>
+        </div>
+      </section>
 
-        <section id="section" class="section" >
-          <h2>HTML5 &lt;section&gt; елемент</h2>
-          <p>Елемент &lt;section&gt; визначає розділ в документі.</p>
-          <p>Згідно з документацією w3schools HTML5: "розділ представляє собою тематичну угруповання контенту, зазвичай з заголовком".</p>
-          <p>Домашня сторінка зазвичай може бути розділена на розділи для ознайомлення, змісту і контактної інформації.</p>
+      <section id="header">
+        <h2>HTML5 &lt;header&gt; елемент</h2>
+        <p>Елемент &lt;header&gt; задає заголовок для документа або розділу.</p>
+        <p>Елемент &lt;header&gt; повинен використовуватися в якості контейнера для вступного змісту.</p>
+        <p>В одному документі може бути кілька елементів &lt;header&gt;.</p>
+        <p>У наступному прикладі визначається заголовок для статті:</p>
 
-          <h3>Приклад</h3>
-          <div class="w3-code notranslate htmlHigh">
-            <span class="tagnamecolor" style="color:brown">
-              <!-- <section> -->
-              <span class="tagcolor" style="color:mediumblue">&lt;</span>section<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>
-              <!-- <h1>WWF</h1> -->
-              <span class="tagnamecolor w3-tab" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>h1<span class="tagcolor" style="color:mediumblue">&gt;</span></span>WWF<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/h1<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>
-              <!-- <p>The World Wide Fund for Nature (WWF) is.... </p> -->
-              <span class="tagnamecolor w3-tab" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>p<span class="tagcolor" style="color:mediumblue">&gt;</span></span>The World Wide Fund for Nature (WWF) is... <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/p<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>
-              <!-- </section> -->
-              <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/section<span class="tagcolor" style="color:mediumblue">&gt;</span></span>
-          </div>
-        </section>
+        <h3>Приклад</h3>
+        <div class="w3-code notranslate htmlHigh">
+          <span class="tagnamecolor" style="color:brown">
+            <!-- <article> -->
+            <span class="tagcolor" style="color:mediumblue">&lt;</span>article<span class="tagcolor"
+              style="color:mediumblue">&gt;</span>
+          </span><br>
+          <!-- <header> -->
+          <span class="tagnamecolor" style="color:brown"><span class="tagcolor"
+              style="color:mediumblue">&lt;</span>header<span class="tagcolor"
+              style="color:mediumblue">&gt;</span></span><br>
+          <!-- <h1>What Does WWF Do?</h1> -->
+          <span class="tagnamecolor w3-two-tabs" style="color:brown"><span class="tagcolor"
+              style="color:mediumblue">&lt;</span>h1<span class="tagcolor"
+              style="color:mediumblue">&gt;</span></span>What Does WWF Do?<span class="tagnamecolor"
+            style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/h1<span class="tagcolor"
+              style="color:mediumblue">&gt;</span></span><br>
+          <!-- <p>WWF's mission: </p> -->
+          <span class="tagnamecolor w3-two-tabs" style="color:brown"><span class="tagcolor"
+              style="color:mediumblue">&lt;</span>p<span class="tagcolor"
+              style="color:mediumblue">&gt;</span></span>WWF's mission: <span class="tagnamecolor"
+            style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/p<span class="tagcolor"
+              style="color:mediumblue">&gt;</span></span><br>
+          <!-- </header> -->
+          <span class="tagnamecolor" style="color:brown"><span class="tagcolor"
+              style="color:mediumblue">&lt;</span>/header<span class="tagcolor"
+              style="color:mediumblue">&gt;</span></span><br>
+          <!-- <p>WWF's mission is to stop the degradation of our planet's natural environment, and build a future in which humans live in harmony with nature.</p> -->
+          <span class="tagnamecolor w3-tab" style="color:brown"><span class="tagcolor"
+              style="color:mediumblue">&lt;</span>p<span class="tagcolor"
+              style="color:mediumblue">&gt;</span></span>WWF's mission is to stop the degradation of our planet's
+          natural environment, and build a future in which humans live in harmony with nature.<span class="tagnamecolor"
+            style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/p<span class="tagcolor"
+              style="color:mediumblue">&gt;</span></span><br>
+          <!-- </article> -->
+          <span class="tagnamecolor" style="color:brown"><span class="tagcolor"
+              style="color:mediumblue">&lt;</span>/article<span class="tagcolor"
+              style="color:mediumblue">&gt;</span></span>
+        </div>
+      </section>
 
-        <section>
-          <h2>HTML5 &lt;article&gt; елемент</h2>
-          <p>Елемент &lt;article&gt; визначає незалежний, автономний вміст.</p>
-          <p>Стаття повинна мати сенс самостійно, і вона повинна мати можливість читати його незалежно від іншої частини веб-сайту.</p>
-          <p>Приклади того, де можна використовувати елемент &lt;article&gt;:</p>
-          <ul>
-            <li>Повідомлення на форумі</li>
-            <li>блозі</li>
-            <li>Газетна стаття</li>
-          </ul>
+      <section id="my-footer">
+        <h2>HTML5 &lt;footer&gt; елемент</h2>
+        <p>Елемент &lt;footer&gt; вказує нижній колонтитул для документа або розділу.</p>
+        <p>Нижній колонтитул зазвичай містить автора документа, інформацію про авторське право, посилання на умови
+          використання, контактні дані і т.д.</p>
+        <p>В одному документі може бути кілька елементів &lt;footer&gt;.</p>
 
-          <h3>Приклад</h3>
-          <div class="w3-code notranslate htmlHigh">
-            <span class="tagnamecolor" style="color:brown">
-              <!-- <article> -->
-              <span class="tagcolor" style="color:mediumblue">&lt;</span>article<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>
-              <!-- <h1>What Does WWF Do?</h1> -->
-              <span class="tagnamecolor w3-tab" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>h1<span class="tagcolor" style="color:mediumblue">&gt;</span></span>What Does WWF Do?<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/h1<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>
-              <!-- <p>WWF's mission is to stop the degradation of our planet's natural environment, and build a future in which humans live in harmony with nature.</p> -->
-              <span class="tagnamecolor w3-tab" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>p<span class="tagcolor" style="color:mediumblue">&gt;</span></span>WWF's mission is to stop the degradation of our planet's natural environment, and build a future in which humans live in harmony with nature.<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/p<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>
-              <!-- </article> -->
-              <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/article<span class="tagcolor" style="color:mediumblue">&gt;</span></span>
-          </div>
-        </section>
+        <h3>Приклад</h3>
+        <div class="w3-code notranslate htmlHigh">
+          <span class="tagnamecolor" style="color:brown">
+            <!-- <footer> -->
+            <span class="tagnamecolor" style="color:brown"><span class="tagcolor"
+                style="color:mediumblue">&lt;</span>footer<span class="tagcolor"
+                style="color:mediumblue">&gt;</span></span><br>
+            <!-- <p>Author: Hege Refsnes</p> -->
+            <span class="tagnamecolor w3-tab" style="color:brown"><span class="tagcolor"
+                style="color:mediumblue">&lt;</span>p<span class="tagcolor"
+                style="color:mediumblue">&gt;</span></span>Author: Hege Refsnes<span class="tagnamecolor"
+              style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/p<span class="tagcolor"
+                style="color:mediumblue">&gt;</span></span><br>
+            <!-- <p><a href="mailto:hege@example.com">hege@example.com</a></p> -->
+            <span class="tagnamecolor w3-tab" style="color:brown"><span class="tagcolor"
+                style="color:mediumblue">&lt;</span>p<span class="tagcolor"
+                style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span
+                class="tagcolor" style="color:mediumblue">&lt;</span>a<span class="attributecolor" style="color:red">
+                href<span class="attributevaluecolor"
+                  style="color:mediumblue">="mailto:hege@example.com"</span></span><span class="tagcolor"
+                style="color:mediumblue">&gt;</span></span>hege@example.com<span class="tagnamecolor"
+              style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/a<span class="tagcolor"
+                style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span
+                class="tagcolor" style="color:mediumblue">&lt;</span>/p<span class="tagcolor"
+                style="color:mediumblue">&gt;</span></span></br>
+            <!-- </footer> -->
+            <span class="tagnamecolor" style="color:brown"><span class="tagcolor"
+                style="color:mediumblue">&lt;</span>/footer<span class="tagcolor"
+                style="color:mediumblue">&gt;</span></span>
+          </span>
+        </div>
+      </section>
+    </article>
 
-        <section>
-          <h2>HTML5 &lt;header&gt; елемент</h2>
-          <p>Елемент &lt;header&gt; задає заголовок для документа або розділу.</p>
-          <p>Елемент &lt;header&gt; повинен використовуватися в якості контейнера для вступного змісту.</p>
-          <p>В одному документі може бути кілька елементів &lt;header&gt;.</p>
-          <p>У наступному прикладі визначається заголовок для статті:</p>
-        
-          <h3>Приклад</h3>
-          <div class="w3-code notranslate htmlHigh">
-            <span class="tagnamecolor" style="color:brown">
-              <!-- <article> -->
-              <span class="tagcolor" style="color:mediumblue">&lt;</span>article<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>
-              <!-- <header> -->
-                <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>header<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>
-              <!-- <h1>What Does WWF Do?</h1> -->
-              <span class="tagnamecolor w3-two-tabs" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>h1<span class="tagcolor" style="color:mediumblue">&gt;</span></span>What Does WWF Do?<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/h1<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>
-              <!-- <p>WWF's mission: </p> -->
-              <span class="tagnamecolor w3-two-tabs" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>p<span class="tagcolor" style="color:mediumblue">&gt;</span></span>WWF's mission: <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/p<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>
-              <!-- </header> -->
-              <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/header<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>
-              <!-- <p>WWF's mission is to stop the degradation of our planet's natural environment, and build a future in which humans live in harmony with nature.</p> -->
-              <span class="tagnamecolor w3-tab" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>p<span class="tagcolor" style="color:mediumblue">&gt;</span></span>WWF's mission is to stop the degradation of our planet's natural environment, and build a future in which humans live in harmony with nature.<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/p<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>
-              <!-- </article> -->
-              <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/article<span class="tagcolor" style="color:mediumblue">&gt;</span></span>
-          </div>
-        </section>
+    <article class="container">
+      <!-- Just wanted to emphasize that this is totally separate comntent -->
+      <h2>Завдання iз зiрочкою:</h2>
+      <section class="additional-tasks">
+        <!--  NOTE: I wanted to place 2 iframes nicely one next to another in one row. Otherwise, the first iframe would have other dimentions to avoid scrolling. -->
+        <iframe class="additional-tasks__item" width="100%" height="315px" src="../01/" title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+        <iframe class="additional-tasks__item" width="100%" height="315px"
+          src="https://www.youtube.com/embed/dEBVe8Ij7JU?controls=0" title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </section>
+    </article>
+  </main>
 
-        <section>
-          <h2>HTML5 &lt;footer&gt; елемент</h2>
-          <p>Елемент &lt;footer&gt; вказує нижній колонтитул для документа або розділу.</p>
-          <p>Нижній колонтитул зазвичай містить автора документа, інформацію про авторське право, посилання на умови використання, контактні дані і т.д.</p>
-          <p>В одному документі може бути кілька елементів &lt;footer&gt;.</p>
-        
-          <h3>Приклад</h3>
-          <div class="w3-code notranslate htmlHigh">
-            <span class="tagnamecolor" style="color:brown">
-              <!-- <footer> -->
-              <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>footer<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>
-              <!-- <p>Author: Hege Refsnes</p> -->
-              <span class="tagnamecolor w3-tab" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>p<span class="tagcolor" style="color:mediumblue">&gt;</span></span>Author: Hege Refsnes<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/p<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>
-              <!-- <p><a href="mailto:hege@example.com">hege@example.com</a></p> -->
-              <span class="tagnamecolor w3-tab" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>p<span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>a<span class="attributecolor" style="color:red"> href<span class="attributevaluecolor" style="color:mediumblue">="mailto:hege@example.com"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span>hege@example.com<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/a<span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/p<span class="tagcolor" style="color:mediumblue">&gt;</span></span></br>
-              <!-- </footer> -->
-              <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/footer<span class="tagcolor" style="color:mediumblue">&gt;</span></span>
-          </div>
-        </section>
-      </article>
-    </main>
+  <footer class="footer">
+    <div class="footer__contact">
+      <h3>Контактна інформація</h3>
+      <p>Напишіть мені, сходимо на каву.</p>
 
-    <footer class="footer">
-      <div class="footer__contact">
-        <h3>Контактна інформація</h3>
-            <p>Напишіть мені, сходимо на каву.</p>
+      <h4>Адреса:</h4>
+      <address>
+        Siltasaarenkatu 8-10 4й поверх,<br>
+        00530, Helsinki
+      </address>
 
-            <h4>Адреса:</h4>
-            <address>
-              Siltasaarenkatu 8-10 4й поверх,<br>
-              00530, Helsinki
-            </address>
+      <h4>Знайдіть мене у соціальних медіа:</h4>
+      <a href="https://www.linkedin.com/in/melnychenko/" target="_blank"
+        style="margin-right: 5px; text-decoration: none;">
+        <img src="../assets/images/social-media/linkedin.svg" width="24px" alt="Linkedin iконка">
+      </a>
+      <a href="https://www.facebook.com/volodymyr.melnychenko.5" target="_blank"
+        style="margin-right: 5px; text-decoration: none;">
+        <img src="../assets/images/social-media/facebook.svg" width="24px" alt="Facebook iконка">
+      </a>
+      <a href="https://www.instagram.com/vladimir_melnychenko/" target="_blank" style="text-decoration: none;">
+        <img src="../assets/images/social-media/instagram.svg" width="24px" alt="Instagram iконка">
+      </a>
+    </div>
 
-            <h4>Знайдіть мене у соціальних медіа:</h4>
-            <a href="https://www.linkedin.com/in/melnychenko/" target="_blank"
-              style="margin-right: 5px; text-decoration: none;">
-              <img src="../assets/images/social-media/linkedin.svg" width="24px" alt="Linkedin iконка">
-            </a>
-            <a href="https://www.facebook.com/volodymyr.melnychenko.5" target="_blank"
-              style="margin-right: 5px; text-decoration: none;">
-              <img src="../assets/images/social-media/facebook.svg" width="24px" alt="Facebook iконка">
-            </a>
-            <a href="https://www.instagram.com/vladimir_melnychenko/" target="_blank" style="text-decoration: none;">
-              <img src="../assets/images/social-media/instagram.svg" width="24px" alt="Instagram iконка">
-            </a>
-      </div>
-
-      <div class="footer__menu">
-        <ul class="footer__menu-column">
-          <li class="footer__menu-item">
-            <a href="#me">Про мене</a>
-          </li>
-
-          <li class="footer__menu-item">
-            <a href="#experience">Досвiд</a>
-          </li>
+    <div class="footer__menu">
+      <ul class="footer__menu-column">
+        <li class="footer__menu-item">
+          <a href="#me">Про мене</a>
+        </li>
 
         <li class="footer__menu-item">
-            <a href="#hobby">Хоббi</a>
-          </li>
-        </ul>
+          <a href="#experience">Досвiд</a>
+        </li>
 
-        <ul class="footer__menu-column">
-          <li class="footer__menu-item">
-            <a href="#browsers">Браузери</a>
-          </li>
+        <li class="footer__menu-item">
+          <a href="#hobby">Хоббi</a>
+        </li>
+      </ul>
 
-          <li class="footer__menu-item">
-            <a href="#new_semantics">Нові семантичні елементи в HTML5</a>
-          </li>
+      <ul class="footer__menu-column">
+        <li class="footer__menu-item">
+          <a href="#browsers">Браузери</a>
+        </li>
 
-          <li class="footer__menu-item">
-            <a href="#section">Секцiя</a>
-          </li>
-        </ul>
-        
-        <ul class="footer__menu-column">
-          <li class="footer__menu-item">
-            <a href="#article">Стаття</a>
-          </li>
+        <li class="footer__menu-item">
+          <a href="#new_semantics">Нові семантичні елементи в HTML5</a>
+        </li>
 
-          <li class="footer__menu-item">
-            <a href="#header">Хедер</a>
-          </li>
+        <li class="footer__menu-item">
+          <a href="#section">Секцiя</a>
+        </li>
+      </ul>
 
-          <li class="footer__menu-item">
-            <a href="#footer">Футер</a>
-          </li>
-        </ul>
-      </div>
-    </footer>
-  </body>
+      <ul class="footer__menu-column">
+        <li class="footer__menu-item">
+          <a href="#article">Стаття</a>
+        </li>
+
+        <li class="footer__menu-item">
+          <a href="#header">Хедер</a>
+        </li>
+
+        <li class="footer__menu-item">
+          <a href="#my-footer">Футер</a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+</body>
+
 </html>
