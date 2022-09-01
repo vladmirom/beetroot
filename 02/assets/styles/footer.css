@@ -1,0 +1,35 @@
+.footer {
+  display: flex;
+  background-color: #1F1F1F; 
+  color: #F2F2F2;
+  padding: 40px 30px 30px;
+}
+
+.footer__contact {
+  flex: 40% 0 0;
+}
+
+.footer__menu {
+  display: flex;
+  justify-content: space-between;
+  flex: 40% 0 0;
+}
+
+.footer__menu-column {
+  list-style: none;
+	margin-left: 0;
+	padding-left: 0;
+}
+
+.footer__menu-column li{
+  margin-bottom: 10px;
+}
+
+.footer__menu-item a:link {
+  color: #F2F2F2;
+  text-decoration: none;
+}
+
+.footer__menu-item a:hover {
+  color: #99CEC8;
+}
