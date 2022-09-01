@@ -7,3 +7,12 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+/* Styling spacing in w3 schools code blocks */
+.w3-tab {
+  margin-left: 15px;
+}
+
+.w3-two-tabs {
+  margin-left: 30px;
+}

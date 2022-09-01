@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="../assets/images/favicon.png">
     <link rel="stylesheet" type="text/css" href="assets/styles/main.css">
+    <!-- I add w3 schools css file to mimic the code blocks elements as it is there.-->
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3schools30.css"> 
     
     <title>Володимир Мельниченко | HTML5 Семантичні елементи</title>
   </head>
@@ -102,7 +104,97 @@
           </ul>
         </section>
 
-        <section></section>
+        <section id="section" class="section" >
+          <h2>HTML5 &lt;section&gt; елемент</h2>
+          <p>Елемент &lt;section&gt; визначає розділ в документі.</p>
+          <p>Згідно з документацією w3schools HTML5: "розділ представляє собою тематичну угруповання контенту, зазвичай з заголовком".</p>
+          <p>Домашня сторінка зазвичай може бути розділена на розділи для ознайомлення, змісту і контактної інформації.</p>
+
+          <h3>Приклад</h3>
+          <div class="w3-code notranslate htmlHigh">
+            <span class="tagnamecolor" style="color:brown">
+              <!-- <section> -->
+              <span class="tagcolor" style="color:mediumblue">&lt;</span>section<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>
+              <!-- <h1>WWF</h1> -->
+              <span class="tagnamecolor w3-tab" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>h1<span class="tagcolor" style="color:mediumblue">&gt;</span></span>WWF<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/h1<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>
+              <!-- <p>The World Wide Fund for Nature (WWF) is.... </p> -->
+              <span class="tagnamecolor w3-tab" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>p<span class="tagcolor" style="color:mediumblue">&gt;</span></span>The World Wide Fund for Nature (WWF) is... <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/p<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>
+              <!-- </section> -->
+              <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/section<span class="tagcolor" style="color:mediumblue">&gt;</span></span>
+          </div>
+        </section>
+
+        <section>
+          <h2>HTML5 &lt;article&gt; елемент</h2>
+          <p>Елемент &lt;article&gt; визначає незалежний, автономний вміст.</p>
+          <p>Стаття повинна мати сенс самостійно, і вона повинна мати можливість читати його незалежно від іншої частини веб-сайту.</p>
+          <p>Приклади того, де можна використовувати елемент &lt;article&gt;:</p>
+          <ul>
+            <li>Повідомлення на форумі</li>
+            <li>блозі</li>
+            <li>Газетна стаття</li>
+          </ul>
+
+          <h3>Приклад</h3>
+          <div class="w3-code notranslate htmlHigh">
+            <span class="tagnamecolor" style="color:brown">
+              <!-- <article> -->
+              <span class="tagcolor" style="color:mediumblue">&lt;</span>article<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>
+              <!-- <h1>What Does WWF Do?</h1> -->
+              <span class="tagnamecolor w3-tab" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>h1<span class="tagcolor" style="color:mediumblue">&gt;</span></span>What Does WWF Do?<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/h1<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>
+              <!-- <p>WWF's mission is to stop the degradation of our planet's natural environment, and build a future in which humans live in harmony with nature.</p> -->
+              <span class="tagnamecolor w3-tab" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>p<span class="tagcolor" style="color:mediumblue">&gt;</span></span>WWF's mission is to stop the degradation of our planet's natural environment, and build a future in which humans live in harmony with nature.<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/p<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>
+              <!-- </article> -->
+              <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/article<span class="tagcolor" style="color:mediumblue">&gt;</span></span>
+          </div>
+        </section>
+
+        <section>
+          <h2>HTML5 &lt;header&gt; елемент</h2>
+          <p>Елемент &lt;header&gt; задає заголовок для документа або розділу.</p>
+          <p>Елемент &lt;header&gt; повинен використовуватися в якості контейнера для вступного змісту.</p>
+          <p>В одному документі може бути кілька елементів &lt;header&gt;.</p>
+          <p>У наступному прикладі визначається заголовок для статті:</p>
+        
+          <h3>Приклад</h3>
+          <div class="w3-code notranslate htmlHigh">
+            <span class="tagnamecolor" style="color:brown">
+              <!-- <article> -->
+              <span class="tagcolor" style="color:mediumblue">&lt;</span>article<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>
+              <!-- <header> -->
+                <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>header<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>
+              <!-- <h1>What Does WWF Do?</h1> -->
+              <span class="tagnamecolor w3-two-tabs" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>h1<span class="tagcolor" style="color:mediumblue">&gt;</span></span>What Does WWF Do?<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/h1<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>
+              <!-- <p>WWF's mission: </p> -->
+              <span class="tagnamecolor w3-two-tabs" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>p<span class="tagcolor" style="color:mediumblue">&gt;</span></span>WWF's mission: <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/p<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>
+              <!-- </header> -->
+              <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/header<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>
+              <!-- <p>WWF's mission is to stop the degradation of our planet's natural environment, and build a future in which humans live in harmony with nature.</p> -->
+              <span class="tagnamecolor w3-tab" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>p<span class="tagcolor" style="color:mediumblue">&gt;</span></span>WWF's mission is to stop the degradation of our planet's natural environment, and build a future in which humans live in harmony with nature.<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/p<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>
+              <!-- </article> -->
+              <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/article<span class="tagcolor" style="color:mediumblue">&gt;</span></span>
+          </div>
+        </section>
+
+        <section>
+          <h2>HTML5 &lt;footer&gt; елемент</h2>
+          <p>Елемент &lt;footer&gt; вказує нижній колонтитул для документа або розділу.</p>
+          <p>Нижній колонтитул зазвичай містить автора документа, інформацію про авторське право, посилання на умови використання, контактні дані і т.д.</p>
+          <p>В одному документі може бути кілька елементів &lt;footer&gt;.</p>
+        
+          <h3>Приклад</h3>
+          <div class="w3-code notranslate htmlHigh">
+            <span class="tagnamecolor" style="color:brown">
+              <!-- <footer> -->
+              <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>footer<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>
+              <!-- <p>Author: Hege Refsnes</p> -->
+              <span class="tagnamecolor w3-tab" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>p<span class="tagcolor" style="color:mediumblue">&gt;</span></span>Author: Hege Refsnes<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/p<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>
+              <!-- <p><a href="mailto:hege@example.com">hege@example.com</a></p> -->
+              <span class="tagnamecolor w3-tab" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>p<span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>a<span class="attributecolor" style="color:red"> href<span class="attributevaluecolor" style="color:mediumblue">="mailto:hege@example.com"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span>hege@example.com<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/a<span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/p<span class="tagcolor" style="color:mediumblue">&gt;</span></span></br>
+              <!-- </footer> -->
+              <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/footer<span class="tagcolor" style="color:mediumblue">&gt;</span></span>
+          </div>
+        </section>
       </article>
     </main>
 
