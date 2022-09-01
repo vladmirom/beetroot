@@ -1,0 +1,9 @@
+/* Removing default body margin */
+body {
+  margin: 0;
+}
+
+/* Making all anchors scrolling smooth */
+html {
+  scroll-behavior: smooth;
+}
