@@ -1,0 +1,33 @@
+.main {
+  padding: 50px 30px;
+}
+
+.container { 
+  padding: 0 70px;
+}
+
+section {
+  margin-bottom: 50px;
+}
+
+.browsers__images {
+  display: flex;
+  list-style: none;
+	margin-left: 0;
+	padding-left: 0;
+}
+
+.browsers__image {
+  width: 32px;
+  margin-right: 5px;
+}
+
+.additional-tasks {
+  display: flex;
+  margin: 0 -15px;
+}
+
+.additional-tasks__item {
+  flex: calc(100%/2 - 30) 0 0;
+  padding: 0 15px;
+}
