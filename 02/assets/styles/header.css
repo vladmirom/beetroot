@@ -23,7 +23,7 @@
   font-size: 18px;
 }
 
-.header__menu-item a:link {
+.header__menu-item a:link, a:visited {
   color: #F2F2F2;
   text-decoration: none;
 }

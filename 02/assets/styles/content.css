@@ -1,0 +1,28 @@
+/* Removing default body margin */
+body {
+  margin: 0;
+}
+
+.main {
+  padding: 50px 30px;
+}
+
+.container { 
+  padding: 0 70px;
+}
+
+section {
+  margin-bottom: 50px;
+}
+
+.browsers__images {
+  display: flex;
+  list-style: none;
+	margin-left: 0;
+	padding-left: 0;
+}
+
+.browsers__image {
+  width: 32px;
+  margin-right: 5px;
+}
