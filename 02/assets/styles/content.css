@@ -28,6 +28,6 @@ section {
 }
 
 .additional-tasks__item {
-  flex: calc(100%/2 - 30) 0 0;
+  flex: calc(100%/2 - 30px) 0 0;
   padding: 0 15px;
 }
