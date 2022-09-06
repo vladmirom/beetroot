@@ -1,0 +1,33 @@
+@import "header.css";
+@import "hero.css";
+
+body {
+  font-family: open-sans, sans-serif;
+  font-weight: 400;
+  margin: 0;
+}
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+  font-weight: 700; 
+} 
+
+h1, .h1 {
+  font-size: 48px;
+  line-height: 65px;
+  margin-bottom: 50px;
+}
+
+h2, .h2 {
+  font-size: 34px;
+  line-height: 46px;
+  margin-bottom: 20px;
+}
+
+main {
+  background-color: #FFFFFF;
+}
+
+.container {
+  padding-right: 235px;
+  padding-left: 235px;
+}

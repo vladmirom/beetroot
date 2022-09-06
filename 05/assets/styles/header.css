@@ -1,0 +1,42 @@
+.header {
+  color: #828282;
+}
+
+.header__menu {
+  padding: 28px 0;
+  border-bottom: 1px solid #828282;
+}
+
+.header__menu ul {
+  list-style: none;
+	margin: 0;
+	padding-left: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.header__menu-item a {
+  padding: 0 20px;
+  font-size: 18px;
+}
+
+.header__menu-item:first-of-type a {
+  padding-left: 0;
+}
+
+.header__menu-item:last-of-type a {
+  padding-right: 0;
+}
+
+.header__menu-item a:link, a:visited {
+  color: #828282;
+  text-decoration: none;
+}
+
+.header__menu-item--active a:link, a:visited {
+  color: #070707;
+}
+
+.header__menu-item a:hover {
+  color: #070707;
+}

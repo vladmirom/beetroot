@@ -1,0 +1,103 @@
+/**
+ * Header styles
+ */
+
+ .header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #1F1F1F; 
+  color: #F2F2F2;
+  padding: 40px 30px;
+}
+
+.logo img {
+  width: 48px;
+  height: auto;
+}
+
+.header__menu ul {
+  list-style: none;
+	margin-left: 0;
+	padding-left: 0;
+  display: flex;
+}
+
+.header__menu-item a {
+  padding: 0 10px;
+  font-size: 18px;
+}
+
+.header__menu-item a:link, a:visited {
+  color: #F2F2F2;
+  text-decoration: none;
+}
+
+.header__menu-item a:hover {
+  color: #99CEC8;
+}
+
+/**
+ * Main content areea styles
+ */
+
+/* Removing default body margin */
+body {
+  margin: 0;
+}
+
+/* Making all anchors scrolling smooth */
+html {
+  scroll-behavior: smooth;
+}
+
+.main {
+  padding: 50px 30px;
+}
+
+.container { 
+  padding: 0 70px;
+}
+
+section {
+  margin-bottom: 50px;
+}
+
+ /**
+ * Footeer styles
+ */
+
+ .footer {
+  display: flex;
+  background-color: #1F1F1F; 
+  color: #F2F2F2;
+  padding: 40px 30px 30px;
+}
+
+.footer__contact {
+  flex: 40% 0 0;
+}
+
+.footer__menu {
+  display: flex;
+  justify-content: space-between;
+  flex: 40% 0 0;
+}
+
+.footer__menu-column {
+  list-style: none;
+	margin-left: 0;
+	padding-left: 0;
+}
+
+.footer__menu-column li{
+  margin-bottom: 10px;
+}
+
+.footer__menu-item a:link, a:visited {
+  color: #F2F2F2;
+  text-decoration: none;
+}
+
+.footer__menu-item a:hover {
+  color: #99CEC8;
+}
