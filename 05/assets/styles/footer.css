@@ -65,7 +65,8 @@
   text-align: center;
 }
 
-.contact__follow--links a:link, a:visited {
+.contact__follow--links a:link, 
+.contact__follow--links a:visited {
   text-decoration: none;
   font-size: 14px;
   color: #828282;

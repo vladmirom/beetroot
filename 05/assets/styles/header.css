@@ -32,12 +32,14 @@
   padding-right: 0;
 }
 
-.header__menu-item a:link, a:visited {
+.header__menu-item a:link, 
+.header__menu-item a:visited {
   color: #828282;
   text-decoration: none;
 }
 
-.header__menu-item--active a:link, a:visited {
+.header__menu-item--active a:link, 
+.header__menu-item--active a:visited {
   color: #070707;
 }
 

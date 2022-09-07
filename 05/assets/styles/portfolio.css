@@ -46,7 +46,8 @@
   text-align: center;
 }
 
-.portfolio__content-link a:link, a:visited {
+.portfolio__content-link a:link, 
+.portfolio__content-link a:visited {
   font-size: 14px;
   color: #070707;
 }
