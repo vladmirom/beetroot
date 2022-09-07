@@ -1,7 +1,19 @@
 @import "header.css";
 @import "hero.css";
+@import "about.css";
 @import "footer.css";
 
+/* Removing default body margin */
+body {
+  margin: 0;
+}
+
+/* Making all anchors scrolling smooth */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Setting up font */
 body {
   font-family: open-sans, sans-serif;
   font-weight: 400;
@@ -9,6 +21,7 @@ body {
   font-size: 18px;
 }
 
+/* Defining font weight for headings */
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   font-weight: 700; 
 } 
@@ -29,10 +42,12 @@ small {
   font-size: 14px;
 }
 
+/* Defining website bg color */
 main {
   background-color: #FFFFFF;
 }
 
+/* Defining containers */
 .container {
   padding-right: 235px;
   padding-left: 235px;

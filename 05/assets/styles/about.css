@@ -1,0 +1,30 @@
+/**
+ * About section styles
+ */
+ 
+.about {
+  background-color: #F6F6F6;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.about__title {
+  margin-top: 0;
+  margin-bottom: 50px;
+}
+
+.about__content {
+  text-align: center;
+}
+
+.about__content p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.about__content :nth-child(even):not(:last-child) { /* pretty intensive :) */
+  margin-bottom: 30px;
+}
