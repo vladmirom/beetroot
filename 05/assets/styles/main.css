@@ -1,10 +1,12 @@
 @import "header.css";
 @import "hero.css";
+@import "footer.css";
 
 body {
   font-family: open-sans, sans-serif;
   font-weight: 400;
   margin: 0;
+  font-size: 18px;
 }
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
@@ -21,6 +23,10 @@ h2, .h2 {
   font-size: 34px;
   line-height: 46px;
   margin-bottom: 20px;
+}
+
+small {
+  font-size: 14px;
 }
 
 main {

@@ -1,0 +1,76 @@
+/**
+ * Footer styles
+ */
+
+.footer {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.contact__subheading {
+  width: 280px;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.contact__cta {
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 25px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  color: #fff;
+  background-color: #000;
+  padding: 10px 16px;
+  border: 1px solid #000;
+  border-radius: 22px;
+  transition: all .2s ease-out;
+  margin-bottom: 30px;
+}
+
+.contact__cta:hover {
+  text-decoration: none;
+  color: #000;
+  background-color: #fff;
+}
+
+.contact__some {
+  display: flex;
+  margin-bottom: 60px;
+}
+
+.contact__some--item {
+  transition: all .2s ease-out;
+}
+
+.contact__some--item:not(:last-of-type) {
+  margin-right: 50px;
+}
+
+.contact__some--item:hover {
+  transform: scale(1.1);
+}
+
+.contact__follow {
+  width: 200px;
+  color: #828282;
+  text-align: center;
+}
+
+.contact__follow--links a:link, a:visited {
+  text-decoration: none;
+  font-size: 14px;
+  color: #828282;
+}
+
+.contact__follow--links a:hover {
+  color: #000;
+}
