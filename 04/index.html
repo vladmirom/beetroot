@@ -37,14 +37,13 @@
   <main class="main">
     <article class="container">
       <h1>Hometask for the lesson 4. Forms.</h1>
-      <h2 style="color: red">Still in process.</h2>
       <section id="forms" class="forms">
 
         <div class="form-wrap">
           <div class="form">
             <h2>Create an Account</h2>
             <form id="registration" action="formHandler/get.php" method="GET" autocomplete="on">
-              <div class="form__name">
+              <div class="form__registration-name">
                 <div>
                   <label for="firstName">First Name</label>
                   <input type="text" name="firstName" id="firstName">
@@ -56,10 +55,44 @@
                 </div>
               </div>
 
-              <div class="form__email">
-
+              <div class="form__registration-email">
+                <label for="email">E-mail</label>
+                <input type="email" name="email" id="email">
+                <p>We'll never share your email with anyone else.</p>
               </div>
+
+              <div class="form__registration-gender">
+                <label for="genderMale">Male</label> 
+                <input id="genderMale" type="radio" value="male">
+
+                <label for="genderFemale">Female</label> 
+                <input id="genderFemale" type="radio" value="female">
+              </div>
+
+              <div class="form__registration-country">
+                <div>
+                  <label for="country">Country</label> 
+                  <select name="country" id="country">
+                    <option value="ukraine">Ukraine</option>
+                    <option value="finland" selected="selected">Suomi</option>
+                    <option value="usa">United States</option>
+                  </select>                
+                </div>
+
+                <div>
+                  <label for="city">City</label>
+                  <input type="text" name="city" id="city">
+                </div>
+              </div>
+
+              <button type="submit" class="form__registration-submit">Sign up</button>
             </form>
+
+            <p>By clicking the 'Sign Up' button, you confirm that you accept our <a href="#">Terms of Use</a>
+              and <a href="#">Privacy Policy</a>.</p>
+
+              <hr>
+              Do you have an account? <a href="#">Log In</a>
           </div>
         </div>
 
