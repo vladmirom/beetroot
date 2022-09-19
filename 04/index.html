@@ -25,9 +25,14 @@
     <nav class="header__menu">
       <ul>
         <li class="header__menu-item">
-          <a href="#browsers">
+          <a href="../">
             <img class="header__menu-item--back" src="../assets/images/arrow_left.svg" alt="Reeturn to main view icon">
             Назад до головної сторінки
+          </a>
+        </li>
+        <li class="header__menu-item">
+          <a href="#browsers">
+            Нотатки з уроку
           </a>
         </li>
       </ul>
@@ -43,43 +48,48 @@
           <div class="form">
             <h2>Create an Account</h2>
             <form id="registration" action="formHandler/get.php" method="GET" autocomplete="on">
-              <div class="form__registration-name">
-                <div>
+              <div class="form__row">
+                <div class="form__column">
                   <label for="firstName">First Name</label>
                   <input type="text" name="firstName" id="firstName">
                 </div>
 
-                <div>
+                <div class="form__column">
                   <label for="lastName">Last Name</label>
                   <input type="text" name="lastName" id="lastName">
                 </div>
               </div>
 
-              <div class="form__registration-email">
+              <div class="form__column--fullwidth">
                 <label for="email">E-mail</label>
                 <input type="email" name="email" id="email">
-                <p>We'll never share your email with anyone else.</p>
+                <p class="form__email-disclaimer">We'll never share your email with anyone else.</p>
               </div>
 
-              <div class="form__registration-gender">
-                <label for="genderMale">Male</label> 
-                <input id="genderMale" type="radio" value="male">
+              <div class="form__radio">
+                <label for="genderMale" class="form__radio-label">
+                  <input id="genderMale" type="radio" value="male" name="gender" tabindex="1" checked>
+                  <span>Male</span>
+                </label>
 
-                <label for="genderFemale">Female</label> 
-                <input id="genderFemale" type="radio" value="female">
+                <label for="genderFemale" class="form__radio-label">
+                  <input id="genderFemale" type="radio" value="female" name="gender" tabindex="2">
+                  <span>Female</span>
+                </label>
               </div>
 
-              <div class="form__registration-country">
-                <div>
+              <div class="form__row">
+                <div class="form__column">
                   <label for="country">Country</label> 
                   <select name="country" id="country">
+                    <option value="" disabled selected>Select</option>
                     <option value="ukraine">Ukraine</option>
                     <option value="finland" selected="selected">Suomi</option>
                     <option value="usa">United States</option>
                   </select>                
                 </div>
 
-                <div>
+                <div class="form__column"> 
                   <label for="city">City</label>
                   <input type="text" name="city" id="city">
                 </div>
@@ -99,6 +109,63 @@
         <div class="form-wrap">
           <div class="form">
             <h2>Profile</h2>
+            <form id="profile" action="formHandler/put.php" method="PUT" enctype="multipart/form-data" novalidate>
+              <div class="form__profile-avatar">
+                <img class="form__profile-avatar--image" src="../04/assets/images/user.svg" alt="Profile image">
+  
+                <span>
+                  <input type="file" name="avatar" id="avatar" accept="image/*" max-file-size="1000">
+                  <p>Up to 1 MB (300x300 px)</p>
+                </span>
+                <button type="reset">Reset</button>
+              </div>
+
+            </form>
+
+            <form id="registration" action="formHandler/put.php" method="PUT" enctype="multipart/form-data" autocomplete="on">
+              <div class="form__row">
+                <div>
+                  <label for="updateName">Name</label>
+                  <input type="text" name="updateName" id="updateName">
+                </div>
+
+                <div>
+                  <label for="updateEmail">E-mail</label>
+                  <input type="email" name="updateEmail" id="updateEmail">
+                </div>
+              </div>
+
+              <div class="form__row">
+                <div>
+                  <label for="updateCountry">Country</label> 
+                  <select name="updateCountry" id="updateCountry">
+                    <option value="" disabled selected>Select</option>
+                    <option value="ukraine">Ukraine</option>
+                    <option value="finland">Suomi</option>
+                    <option value="usa">United States</option>
+                  </select>                
+                </div>
+
+                <div>
+                  <label for="updateCity">City</label>
+                  <input type="text" name="updateCity" id="updateCity">
+                </div>
+              </div>
+
+              <div class="form__row">
+                <div>
+                  <label for="updateZip">Zip Code</label>
+                  <input type="text" name="updateZip" id="updateZip">
+                </div>
+
+                <div>
+                  <label for="updatePhone">Phone Number</label>
+                  <input type="email" name="updatePhone" id="updatePhone">
+                </div>
+              </div>
+
+              <button type="submit">Update</button>
+            </form>
           </div>
         </div>
 
