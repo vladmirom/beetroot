@@ -116,29 +116,37 @@
                 <img class="form__profile-avatar--image" src="../04/assets/images/user.svg" alt="Profile image">
   
                 <span>
+                  <label for="avatar" class="form__profile-avatar--upload">
+                    <img src="../04/assets/images/upload.svg" alt="Upload icon">
+                  </label>
+
                   <input type="file" name="avatar" id="avatar" accept="image/*" max-file-size="1000">
+                  
                   <p>Up to 1 MB (300x300 px)</p>
                 </span>
-                <button type="reset">Reset</button>
+
+                <button class="form__profile-avatar--reset" type="reset">
+                  <img src="../04/assets/images/trash.svg" alt="Reset icon button">
+                </button>
               </div>
 
             </form>
 
-            <form id="registration" action="formHandler/put.php" method="PUT" enctype="multipart/form-data" autocomplete="on">
+            <form id="update" action="formHandler/put.php" method="PUT" enctype="multipart/form-data" autocomplete="on">
               <div class="form__row">
-                <div>
+                <div class="form__column">
                   <label for="updateName">Name</label>
                   <input type="text" name="updateName" id="updateName">
                 </div>
 
-                <div>
+                <div class="form__column">
                   <label for="updateEmail">E-mail</label>
                   <input type="email" name="updateEmail" id="updateEmail">
                 </div>
               </div>
 
               <div class="form__row">
-                <div>
+                <div class="form__column">
                   <label for="updateCountry">Country</label> 
                   <select name="updateCountry" id="updateCountry">
                     <option value="" disabled selected>Select</option>
@@ -148,25 +156,25 @@
                   </select>                
                 </div>
 
-                <div>
+                <div class="form__column">
                   <label for="updateCity">City</label>
                   <input type="text" name="updateCity" id="updateCity">
                 </div>
               </div>
 
               <div class="form__row">
-                <div>
+                <div class="form__column">
                   <label for="updateZip">Zip Code</label>
                   <input type="text" name="updateZip" id="updateZip">
                 </div>
 
-                <div>
+                <div class="form__column">
                   <label for="updatePhone">Phone Number</label>
                   <input type="email" name="updatePhone" id="updatePhone">
                 </div>
               </div>
 
-              <button type="submit">Update</button>
+              <button class="form__update-submit" type="submit">Update</button>
             </form>
           </div>
         </div>

@@ -39,12 +39,14 @@ main {
 .form-wrap {
   flex: calc(50% - 30px) 0 0;
   padding: 0 15px 55px 15px;
+  flex-grow: 1;
 }
 
 .form {
   background-color: #fff;
   border-radius: 6px;
   padding: 35px 35px 16px 35px;
+  height: 100%;
 }
 
 .form__row {
@@ -143,12 +145,51 @@ main {
 
 .form__profile-avatar {
   display: flex;
+  margin-bottom: 20px;
 }
 
 .form__profile-avatar--image {
   width: 80px;
   height: auto;
   border-radius: 50%;
+  margin-right: 20px;
+}
+
+.form__profile-avatar input[type="file"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+.form__profile-avatar--upload {
+  display: flex;
+  justify-content: end;
+  min-width: 140px;
+  padding: 6px;
+  background-color: #fff;
+  border: 1px solid #E4E4E4;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.form__profile-avatar--reset {
+  height: 30px;
+  width: 30px;
+  padding: 6px;
+  background-color: #fff;
+  border: 1px solid #E4E4E4;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.form__profile-avatar p {
+  margin-top: 9px;
 }
 
 /* Styling radio buttons */
@@ -243,4 +284,20 @@ main {
   text-decoration: none;
   padding: 8px 10px;
   cursor: pointer;
+}
+
+.form__update-submit {
+  min-width: 130px;
+  background-color: #007BFF;
+  border: 1px solid #007BFF;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: -0.1px;
+  text-decoration: none;
+  padding: 8px 10px;
+  cursor: pointer;
+  transition: all .2s ease-out;
 }
