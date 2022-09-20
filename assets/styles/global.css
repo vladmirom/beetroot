@@ -24,6 +24,8 @@
 
 .header__menu-item,
 .header__menu-item a {
+  display: flex;
+  align-items: center;
   padding: 0 10px;
   font-size: 18px;
 }
