@@ -37,6 +37,17 @@
   color: #99CEC8;
 }
 
+.header__menu-item--back {
+  width: 24px;
+  rotate: 90deg;
+  margin-right: 10px;
+  transition: all .2s ease-out;
+}
+
+.header__menu-item a:hover .header__menu-item--back {
+  transform: translatey(5px);
+}
+
 /**
  * Main content areea styles
  */
