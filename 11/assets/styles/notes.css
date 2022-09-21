@@ -4,99 +4,50 @@
   box-sizing: border-box;
 }
 
-.block {
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+.title {
+  font-weight: 400px;
+  font-size: 36px;
+  line-height: 45px;
+  letter-spacing: 0.05em;
+  color: #000000;
+}
+
+.block-grid {
   display: grid;
-  /* grid-template-columns: repeat(6, 200px); */
-  /* ^ doesn't work work with adaprive coding, 200px for column always in any column */
-  /* grid-template-columns: repeat(4, 25%); */
-  /* ^ works with adaprive coding. */
-  /* grid-template-columns: 50% repeat(2, 10%) repeat(6, 5%);  */
-  /* ^ Shows 9 columns: first - 50%, second and third - 10% each, and six - 5% each*/
-  /* grid-template-columns: repeat(2, 20%) repeat(2, auto);  */
-  /* ^ Shows: 2 columns for 20% each, next 2 take the full width automatically, but it also depends on the size of the content inside those blocks */
-  /* grid-template-columns: repeat(2, 20%) minmax(100px, 250px) auto;  */
-  /* ^ Shows: 2 columns for 20% each, next will have minimum width 100px and maximum width 250px, the last one is auto */
-  grid-template-columns: repeat(4, 1fr);
-  /* ^ fr is used for adaptive width. Works as proportions. */
-  
-  /* grid-column-gap: 20px; */ /* Old way */
-  column-gap: 20px; /* New way */
-
-  /* grid-row-gap: 20px; */ /* Old way */
-  row-gap: 20px; /* New way */
-
-  /* grid-gap: 20px; */ /* Old way */
-  gap: 20px; /* New way */
-
-  grid-template-rows: repeat(4, 1fr);
-  /* ^ Does the same as grid-template-columns, but for columns. */
-
-  grid-auto-rows: 1fr;
-
-  /* Aligning */
-  justify-items: center;
-  align-items: center;
-
-  place-items: start center; 
-  /* ^ The same thing as align-items and justify-items. */
-
-  align-content: start;
-  justify-content: end;
-  /* ^ Moves the grid itself, so it should not be full width (there should be some space to move the grid to) */
-
-  place-content: start end; 
-  /* ^ The same thing as align-content and justify-content. */
 }
 
-.item {
-  /* Aligning */
-  align-self: start;
-  justify-self: center;
+.block-grid--gap {
+  gap: 30px;
+}
 
-  place-self: start center; 
-  /* ^ The same thing as align-self and justify-self. */
+.block-grid--template-column-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
 
-  /* Working with content in Grid */
-  /* Remember that caclulation based on the lines in the grid. */
+.block-grid--template-row-3 {
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.architectural-photography {
+  margin: 120px 0;
+}
+
+.architectural-photography__title {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.img-cart {
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.architectural-photography__column--col-2-3 {
   grid-column-start: 2;
-  /* ^ Says to start grid with the second column. */
-  grid-column-end: 5;
-  /* ^ Says to start grid with the fifth column from the end. */
-  grid-column: 2 / 5;
-  /* ^ The same thing as grid-column-start and grid-column-end. */
-
-  grid-row-start: 2;
-  /* ^ Says to start grid with the second row. */
-  grid-row-end: 5;
-  /* ^ Says to start grid with the fifth row from the end. */
-  grid-row: 2 / 5;
-  /* ^ The same thing as grid-row-start and grid-row-end. */
-
-  grid-area: 2 / 2 / 5 / 5; 
-  /* ^ The same thing as grid-row and grid-column. */
-  /* ^^ Syntax: grid-area: grid-column-start / grid-row-start / grid-column-end / grid-row-end;   */
-}
-
-.block-2 {
- display: grid;
- margin: 100px;
- border: 2px solid #000;
- width: 500px;
- background-color: aliceblue;
- grid-template-columns: repeat(5, 1fr);
- grid-template-rows: repeat(3, 100px);
-
- grid-template-areas: 
- "item-2 item-2 item-2 item-2 item-2"
- "item-3 item-3 ... item-3"
-}
-
-.item-2 {
- background-color: red;
- grid-area: item-2;
-}
-
-.item-3 {
- background-color: green;
- grid-area: item-3;
+  grid-column-end: 4;
 }

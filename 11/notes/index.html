@@ -4,44 +4,62 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lesson 10</title>
-  <link rel="stylesheet" type="text/css" href="assets/styles/notes.css">
+  <title>Volodymyr Melnychenko | BEM notes</title>
+  <link rel="stylesheet" type="text/css" href="../assets/styles/notes.css">
 </head>
 <body>
-  <main>
-    <div class="block">
-      <div class="item">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, eveniet.
-      </div>
-      <div class="item">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis cumque temporibus ea nam laboriosam expedita harum dolorum sit modi labore?
-      </div>
-      <div class="item">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis voluptatibus odit mollitia hic sunt illum, a inventore fugit impedit provident ut accusamus sed nobis corrupti tempora eveniet quasi commodi. Obcaecati!
-      </div>
-      <div class="item">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore soluta porro libero rem beatae, voluptas illo sit possimus sunt optio, similique natus eaque odit nihil nisi animi, laudantium error! Cupiditate quibusdam obcaecati dignissimos ullam similique sunt accusamus itaque illo voluptates!
-      </div>
-      <div class="item">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, eveniet.
-      </div>
-      <div class="item">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis cumque temporibus ea nam laboriosam expedita harum dolorum sit modi labore?
-      </div>
-      <div class="item">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis voluptatibus odit mollitia hic sunt illum, a inventore fugit impedit provident ut accusamus sed nobis corrupti tempora eveniet quasi commodi. Obcaecati!
-      </div>
-      <div class="item">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore soluta porro libero rem beatae, voluptas illo sit possimus sunt optio, similique natus eaque odit nihil nisi animi, laudantium error! Cupiditate quibusdam obcaecati dignissimos ullam similique sunt accusamus itaque illo voluptates!
-      </div>
-    </div>
 
-    <div class="block-2">
-      <div class="item-1">1</div>
-      <div class="item-2">2</div>
-      <div class="item-3">3</div>
-      <div class="item-4">4</div>
+  <heder class="header">
+    <nav class="nav header__nav">
+      <ul class="menu">
+        <li class="menu__item">
+          <a class="menu__link" href="#">lorem 1</a>
+        </li>
+        <li>
+          <a class="menu__link" href="#">lorem 2</a>
+        </li>
+        <li>
+          <a class="menu__link" href="#">lorem 3</a>
+        </li>
+      </ul>
+    </nav>
+  </heder>
+
+  <main>
+    <div class="container">
+      <h1>BEM notes</h1>
+      <p>BEM - Block Element Modifier.</p>
+      <p>Block is an independent element that can be used anywhere. We can place it anywhere on the website. Block can have othe blocks inside.</p>
+      <p>Element is <strong>not</strong> an independent element, it can not exist without the block.</p>
+      <p>Modifier is a state of the element or block.</p>
+      <hr>
+      <p>We don't style tags in BEM. We style only classes.</p>
+      <p>We can not add modificator only: <pre>&lt;div class="img-cart architectural-photography__grid--col-2-3"&gt;</pre> it should always have the block and element class first: 
+      <pre>&lt;div class="img-cart architectural-photography__grid architectural-photography__grid--col-2-3"&gt;</pre></p>
+      
+      <section class="architectural-photography">
+          <h2 class="title architectural-photography__title">
+            Architectural Photography
+          </h2>
+
+          <div class="block-grid 
+                      block-grid--gap 
+                      block-grid--template-column-3 
+                      block-grid--template-row-3">
+            <div class="img-cart 
+                        architectural-photography__column">
+              <img src="../assets/images/paris.jpg" alt="Paris image">
+            </div>
+
+            <div class="img-cart 
+                        architectural-photography__column 
+                        architectural-photography__column--col-2-3">
+              <img src="../assets/images/ny.jpg" alt="New York image">
+            </div>
+          </div>
+      </section>
     </div>
+    
   </main>
 </body>
 </html>
