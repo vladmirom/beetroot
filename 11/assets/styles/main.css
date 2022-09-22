@@ -4,11 +4,99 @@
   box-sizing: border-box;
 }
 
-main {
-  font-family: 'Delius Unicase', cursive;
+body {
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
+  margin: 0; /* Fixing margin issue in Chrome */
 }
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   font-weight: 500; 
 } 
+
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+.header {
+  background-color: #FFF; 
+  color: #000;
+  border-bottom: 1px solid #BDBDBD;
+  padding: 10px 0;
+}
+
+.header__grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo {
+  width: 170px;
+  height: auto;
+}
+
+.header__logo--img {
+  width: 100%;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+	margin-left: 0;
+	padding-left: 0;
+}
+
+.menu__item:not(:last-of-type) {
+  padding-right: 15px;
+}
+
+.menu__item:not(:first-of-type) {
+  padding-left: 15px;
+}
+
+.menu__link {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 600;
+  color: #3C3C3C;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all .2s ease-out;
+}
+
+.menu__link:hover,
+.menu__item--active .menu__link {
+  color: #18B5DC;
+}
+
+/* The size in design is 130px, but the font weight there is 600 which is not available in Google fonts, 
+* therefore, it uses 700 and the button is not centered */
+.header__cta {
+  width: 135px;
+}
+
+/* I consider using the class globally over the site so using global class. 
+ * The button should streatch to the whole width of the page, but should be 
+ * limited by the parent container: .header__cta in our case. */
+
+ .button__primary {
+  display: block;
+  padding: 10px 20px;
+  border: 1px solid #3C3C3C;
+  background-color: #fff;
+  color: #3C3C3C;
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all .2s ease-out;
+ }
+
+ .button__primary:hover {
+  border: 1px solid #18B5DC;
+  background-color: #18B5DC;
+  color: #fff;
+ }
