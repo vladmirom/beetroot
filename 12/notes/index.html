@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="../../assets/images/favicon.png">
+  <link rel="stylesheet" type="text/css" href="../assets/styles/notes.css">
+  <title>Volodymyr Melnychenko | Fonts</title>
+</head>
+<body>
+
+  <main>
+    <div class="container">
+      <h1>Notes</h1>
+      <h2>Units</h2>
+      <ul>
+        <li><strong>px</strong> - Basic calculation.</li>
+        <li><strong>rem</strong> - rem stands for "root em". Takes the html font size as a basis for calculation.</li>
+        <li><strong>em</strong> - em stands for "em font size". Takes the parent's font size as a basis for calculation.</li>
+        <li><strong>%</strong> - We can calculate on the basis of percentage.</li>
+        <li><strong>vw and vh</strong> - view width and view height. The basis is the size of the screen.</li>
+      </ul>
+
+      <h2>Variables in css</h2>
+      <p>We add variables in css via pseudoselector <pre>:root</pre>. See css how it is defined.</p>
+      <p>These variables have the hightst specificity, you can not overwrite them.</p>
+      <p>we define css variable with two dasges: <pre>--green</pre>, and we use it as <pre>var(--green)</pre>.</p>
+   
+      <h2>Including fonts</h2>
+      <p>We can add Google fonts, they aree free.</p>
+      <p>Paid fonts is a bit different story.</p>
+      <ol>
+        <li>Create folder "fonts" in assets.</li>
+        <li>Upload all the font files there.</li>
+        <li>Add them as a font face. Probably in a separate css file (see css file).</li>
+        <li>Remember to add font-family to each font file.</li>
+      </ol>
+
+      <h2>Font awesome</h2>
+      <ol>
+        <li>Register on the website: <a href="https://fontawesome.com/start">https://fontawesome.com/start</a>.</li>
+        <li>Copy the link from theere and add it to the bottom of the code (footer if exists) or botom.</li>
+        <li>Select the icon that you like and add the HTML from there.</li>
+      </ol>
+    </div>
+    
+  </main>
+</body>
+</html>

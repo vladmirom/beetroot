@@ -1,0 +1,305 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  margin: 0; /* Fixing margin issue in Chrome */
+}
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+  font-weight: 500; 
+} 
+
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+/* Header styles */
+.header {
+  background-color: #FFF; 
+  color: #000;
+  border-bottom: 1px solid #BDBDBD;
+  padding: 10px 0;
+}
+
+.header__grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 170px;
+  height: auto;
+}
+
+.logo__img {
+  width: 100%;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+	margin-left: 0;
+	padding-left: 0;
+}
+
+.menu__item:not(:last-of-type) {
+  padding-right: 15px;
+}
+
+.menu__item:not(:first-of-type) {
+  padding-left: 15px;
+}
+
+.menu__link {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 600;
+  color: #3C3C3C;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all .2s ease-out;
+}
+
+.menu__link:hover,
+.menu__item--active .menu__link {
+  color: #18B5DC;
+}
+
+/* The size in design is 130px, but the font weight there is 600 which is not available in Google fonts, 
+* therefore, it uses 700 and the button is not centered */
+.header__cta {
+  width: 135px;
+}
+
+/* I consider using the class globally over the site so using global class. 
+ * The button should streatch to the whole width of the page, but should be 
+ * limited by the parent container: .header__cta in our case. */
+
+ .button__primary {
+  display: block;
+  padding: 10px 20px;
+  border: 1px solid #3C3C3C;
+  background-color: #fff;
+  color: #3C3C3C;
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all .2s ease-out;
+ }
+
+ .button__primary:hover {
+  border: 1px solid #18B5DC;
+  background-color: #18B5DC;
+  color: #fff;
+ }
+
+ /* Content area styles */
+.main {
+  background-color: #F6F6F6;
+}
+
+.who-we-are {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 150px;
+  padding-bottom: 150px;
+}
+
+.who-we-are__title {
+  font-size: 34px;
+  line-height: 41px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.who-we-are__title:after {
+  content: '';
+  display: block;
+  margin: 0 auto;
+  width: 45px;
+  padding-top: 20px;
+  border-bottom: 4px solid #DDDBDB;
+}
+
+.who-we-are__subtitle {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 300;
+  text-align: center;
+  color: #3C3C3C;
+}
+
+.who-we-are__subtitle-wrap {
+  max-width: 570px;
+  margin-bottom: 60px;
+}
+
+.who-we-are__person {
+  cursor: pointer;
+}
+
+.who-we-are__person--image {
+  position: relative;
+  z-index: 1;
+  width: 270px;
+  height: 270px;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.who-we-are__person--overlay {
+  display: none;
+  position: absolute;
+  z-index: 2;
+  width: 270px;
+  height: 270px;
+  background-color: #18B5DC;
+}
+
+.who-we-are__person:hover .who-we-are__person--overlay {
+  display: flex;
+}
+
+.who-we-are__some {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.who-we-are__person--name {
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 700;
+  color: #282528;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.who-we-are__person--name {
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 700;
+  color: #282528;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.who-we-are__person--position {
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 300;
+  color: #646464;
+  margin-top: 0;
+}
+
+.block-grid {
+  display: grid;
+}
+
+.block-grid--gap {
+  gap: 30px;
+}
+
+.block-grid--template-column-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+ /* Footer styles */
+ .footer {
+  background-color: #FFF; 
+  color: #000;
+  padding: 40px 0;
+}
+
+.footer__grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer__logo,
+.footer__nav {
+  margin-bottom: 28px;
+}
+
+.socail-media__list {
+  display: flex;
+  list-style: none;
+	margin: 0;
+	padding-left: 0;
+}
+
+.social-media__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid #18B5DC;
+  background-color: #fff;
+  cursor: pointer;
+  transition: all .2s ease-out;
+}
+
+.social-media__item--on-card {
+  border: 1px solid #5DCBE6;
+  background-color: #5DCBE6;
+  cursor: pointer;
+  transition: all .2s ease-out;
+}
+
+
+
+.social-media__item:not(:last-of-type) {
+  margin-right: 5px;
+}
+
+.social-media__item:not(:first-of-type) {
+  margin-left: 5px;
+}
+
+.social-media__link {
+  /* I have some weird 3.5px on the <a> element that comes from nowhere, 
+   * this way I allign the icon in the middle */
+  margin-bottom: -3.5px;
+}
+
+.social-media__link svg {
+  height: 20px;
+  width: auto;
+  max-width: 20px;
+  fill: #18B5DC;
+}
+
+.social-media__link--on-card svg {
+  fill: #fff;
+}
+
+.social-media__item:hover {
+  background-color: #18B5DC;
+}
+
+.social-media__item:hover .social-media__link svg {
+  fill: #fff;
+}
+
+.social-media__item--on-card:hover {
+  border: 1px solid #18B5DC;
+  background-color: #fff;
+}
+
+.social-media__item:hover .social-media__link--on-card svg {
+  fill: #18B5DC;
+}

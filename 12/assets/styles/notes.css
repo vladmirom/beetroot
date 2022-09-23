@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+:root {
+  --green: green;
+  --text: red;
+  --grid-gap: 30px;
+}
+
+html {
+  background-color: var(--green);
+  color: var(--text);
+}
+
+.grid-block {
+  display: grid;
+  grid-gap: var(--grid-gap);
+}
+
+@font-face {
+  font-family: Lato;
+  src: url("../fonts/spomefont.ttf");
+  /* If needed, we add more fonts with different extentions */
+  font-weight: 400;
+  font-style: italics;
+}
