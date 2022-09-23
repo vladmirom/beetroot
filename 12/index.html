@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,12 +8,19 @@
   <link rel="icon" type="image/x-icon" href="/assets/images/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Delius+Unicase:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Tourney:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Francois+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Farro:wght@300&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" type="text/css" href="assets/styles/main.css">
   <link rel="stylesheet" type="text/css" href="/assets/styles/global.css">
-  
+
   <title>Volodymyr Melnychenko | Grid</title>
 </head>
+
 <body>
 
   <header class="header">
@@ -41,8 +49,100 @@
 
   <main class="main">
     <div class="container">
-      <h1>Hometask for the lesson 4. Forms.</h1>
+      <p>
+        <mark>NOTE:</mark>
+        Let's imaging that the website we are working on, describes different companies that have their own logo. This
+        page represents one of such companies.
+      </p>
 
+      <!-- This would be <header> if I wouldn't have my own header already -->
+      <div class="company-header">
+        <div class="company-header__language">Eng</div>
+        <div class="company-header__breadcrumbs">
+          Documentation
+          <span class="company-header__breadcrumbs--spacer">/</span>
+          Who's using
+        </div>
+        <div class="company-header__logo">
+          <img src="../12/assets/images/logo.svg" alt="Company logo">
+        </div>
+      </div>
+
+      <article class="company-content">
+        <div class="company-content__header">
+          <h2 class="company-content__header--title">Introduction</h2>
+          <span class="company-content__header--subtitle">Chapter 1</span>
+        </div>
+
+        <p>Welcome to the very start of your React Native journey! If you're looking for environment setup instructions,
+          they've moved to <u>their own section</u>. Continue reading for an introduction to the documentation, Native
+          Components, React, and more!</p>
+      </article>
+
+      <article class="company-content">
+        <div class="company-content__header">
+          <h2 class="company-content__header--title">Core components</h2>
+          <span class="company-content__header--subtitle">Chapter 2</span>
+        </div>
+
+        <p>React Native is an open source framework for building Android and iOS applications using React and the app
+          platform’s native capabiles. With React Native, you use JavaScript to access your platform’s APIs as well as
+          to describe the appearance and behavior of your UI using React components: <em>bundles of reusable, nestable
+            code</em>.
+          You can learn more about React in the next section. But first, let’s cover how components work in React
+          Native.</p>
+      </article>
+
+      <article class="company-content">
+        <div class="company-content__header">
+          <h2 class="company-content__header--title">React fundamentals</h2>
+          <span class="company-content__header--subtitle">Chapter 3</span>
+        </div>
+
+
+        <p>React Native runs on <u>React</u>, a popular open source library for building user interfaces with
+          JavaScript. To
+          make the most of React Native, it helps to understand React itself. This section can get you started or can
+          serve as a refresher course.</p>
+
+        <p>We’re going to cover the core concepts behind React:</p>
+
+        <ul class="company-content__list">
+          <li class="company-content__list-item"><strong>components.</strong> The rest of this introduction to React
+            uses cats in its examples: friendly,
+            approachable creatures that need names and a cafe to work in.</li>
+          <li class="company-content__list-item"><strong>JSX.</strong> React and React Native use JSX, a syntax that
+            lets you write elements inside
+            JavaScript like so: <mark class="mark">&lt;Text&gt;Hello, I am your cat!&lt;/Text&gt;</mark>.
+            <p>The React docs have a <u>comprehensive guide to JSX</u> you can refer to learn even more. Because JSX is
+              JavaScript, you can use variables inside it. Here you are declaring a <mark class="mark">name</mark> for
+              the cat, name, and
+              embedding it with curly braces inside <mark class="mark">&lt;Text&gt;</mark></p>
+          </li>
+          <li class="company-content__list-item"><strong>props.</strong> Props is short for “properties”. </li>
+          <li class="company-content__list-item"><strong>state.</strong> While you can think of props as arguments you
+            use to configure how components
+            render, state is like a component’s personal data storage. State is useful for handling data that changes
+            over time or that comes from user interaction. State gives your components memory!</li>
+        </ul>
+      </article>
+
+      <article class="company-content">
+        <div class="company-content__header">
+          <h2 class="company-content__header--title">Handling text input</h2>
+          <span class="company-content__header--subtitle">Chapter 4</span>
+        </div>
+
+        <p>TextInput is a Core Component that allows the user to enter text. It has an <em>onChangeText</em> prop that
+          takes a
+          function to be called every time the text changed, and an onSubmitEditing prop that takes a function to be
+          called when the text is submitted.</p>
+          
+        <!-- I guess, the pizza icon was supposed to show how we can use font awesome, so I add one icon in here that way -->  
+        <p>For example, let's say that as the user types, you're translating their words into a different language. In
+          this new language, every single word is written the same way: 🍕. So the sentence "Hello there Bob" would be
+          translated as "🍕 <span class="fa-solid fa-pizza-slice"></span>".</p>
+      </article>
     </div>
   </main>
 
@@ -70,51 +170,9 @@
         <img src="../assets/images/social-media/instagram.svg" width="24" alt="Instagram iконка">
       </a>
     </div>
-
-    <div class="footer__menu">
-      <ul class="footer__menu-column">
-        <li class="footer__menu-item">
-          <a href="#me">Про мене</a>
-        </li>
-
-        <li class="footer__menu-item">
-          <a href="#experience">Досвiд</a>
-        </li>
-
-        <li class="footer__menu-item">
-          <a href="#hobby">Хоббi</a>
-        </li>
-      </ul>
-
-      <ul class="footer__menu-column">
-        <li class="footer__menu-item">
-          <a href="#browsers">Браузери</a>
-        </li>
-
-        <li class="footer__menu-item">
-          <a href="#new_semantics">Нові семантичні елементи в HTML5</a>
-        </li>
-
-        <li class="footer__menu-item">
-          <a href="#section">Секцiя</a>
-        </li>
-      </ul>
-
-      <ul class="footer__menu-column">
-        <li class="footer__menu-item">
-          <a href="#article">Стаття</a>
-        </li>
-
-        <li class="footer__menu-item">
-          <a href="#header">Хедер</a>
-        </li>
-
-        <li class="footer__menu-item">
-          <a href="#my-footer">Футер</a>
-        </li>
-      </ul>
-    </div>
+  <script src="https://kit.fontawesome.com/ee265f2ebf.js" crossorigin="anonymous"></script>
   </footer>
 
 </body>
-</html> 
+
+</html>
