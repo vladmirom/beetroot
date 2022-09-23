@@ -8,6 +8,8 @@
   background-color: #1F1F1F; 
   color: #F2F2F2;
   padding: 40px 30px;
+  font-size: 18px;
+  line-height: 1;
 }
 
 .logo img {
@@ -85,6 +87,8 @@ section {
   background-color: #1F1F1F; 
   color: #F2F2F2;
   padding: 40px 30px 30px;
+  font-size: 18px;
+  line-height: 1;
 }
 
 .footer__contact {
