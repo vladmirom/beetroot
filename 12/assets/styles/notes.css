@@ -10,8 +10,8 @@
 }
 
 :root {
-  --green: green;
-  --text: red;
+  --green: beige;
+  --text: gray;
   --grid-gap: 30px;
 }
 
@@ -27,7 +27,7 @@ html {
 
 @font-face {
   font-family: Lato;
-  src: url("../fonts/spomefont.ttf");
+  src: url("../fonts/somefont.ttf");
   /* If needed, we add more fonts with different extentions */
   font-weight: 400;
   font-style: italics;
