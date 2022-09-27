@@ -7,10 +7,11 @@
 :root {
   --base-font: 16px;
   --base-color: #16133D;
+  --green-color: #3DB370;
 }
 
 html {
-  font-family: 'PT Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: var(--base-font);
   line-height: 1.75rem; /* 28px */
   font-weight: 400;
@@ -37,6 +38,15 @@ body {
   margin: 0 auto;
 }
 
+.block-grid {
+  display: grid;
+}
+
+.block-grid__teemplate-3col {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.875rem; /* 30px */
+}
+
 /* Header styles */
 .header {
   background-color: #fff;
@@ -49,6 +59,40 @@ body {
   height: 2.1875rem; /* 35px */
 }
 
+/* Main content styles */
+.content {
+  margin: 6.25rem 0; /* 100px */
+}
+.content__subtitle {
+  line-height: 1.3125rem; /* 21px */
+  color: #7690A8;
+  text-transform: uppercase;
+}
+
+.content__title {
+  margin-top: 0.9375rem; /* 15px */
+  margin-bottom: 2.5rem; /* 40px */
+}
+
+.content__card {
+  padding: 2.5rem; /* 40px */
+  border: 1px solid #E5EAF4;
+  border-radius: 8px;
+  transition: all .2s ease-out; 
+}
+
+.content__card:hover {
+  border-color: var(--green-color);
+}
+
+.content__card-icon {
+  width: 4rem; /* 64px */
+  height: auto;
+}
+
+.content__card:hover .content__card-icon svg path {
+  stroke: var(--green-color);
+}
 
 /* Footer styles */
 .footer {
@@ -78,5 +122,5 @@ body {
 }
 
 .footer__social-media-link:hover svg {
-  fill: #3DB370;
+  fill: var(--green-color);
 }
