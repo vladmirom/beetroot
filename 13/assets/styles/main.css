@@ -42,6 +42,7 @@ body {
 }
 
 /* Header styles */
+/* Need to add more styling adn fixed position */
 .company-header {
   display: grid;
   grid-template-columns: 1fr 12fr 2fr;
