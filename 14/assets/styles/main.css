@@ -7,7 +7,15 @@
 :root {
   --base-font: 16px;
   --base-color: #16133D;
-  --green-color: #3DB370;
+  --brand-green-color: #3DB370;
+  --light-green-color: #E1F4F5;
+  --turquoise-color: #CAEFF2;
+  --dark-green-color: #52C29D;
+  --blue-color: #B9DCFF;
+  --light-blue-color: #D1E7FF;
+  --dark-blue-color: #007FFC;
+  --gray-color: #E8F3FF;
+  --light-gray-color: #F4FEFF;
 }
 
 html {
@@ -63,6 +71,7 @@ body {
 .content {
   margin: 6.25rem 0; /* 100px */
 }
+
 .content__subtitle {
   line-height: 1.3125rem; /* 21px */
   color: #7690A8;
@@ -82,16 +91,86 @@ body {
 }
 
 .content__card:hover {
-  border-color: var(--green-color);
+  border-color: var(--brand-green-color);
 }
 
 .content__card-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 4rem; /* 64px */
-  height: auto;
+  height: 4rem; /* 64px */
+  border: 1px solid rgba(21, 101, 216, 0.1);
+  border-radius: 1rem; /* 16px */
+  margin-bottom: 1.875rem; /* 30px */
 }
 
-.content__card:hover .content__card-icon svg path {
-  stroke: var(--green-color);
+.content__card:hover .content__card-icon {
+  border-color: rgba(61, 179, 112, 0.1);
+}
+
+.card-icon__svg-fill,
+.card-icon__svg-stroke {
+  transition: all .2s ease-out; 
+}
+
+.card-icon__svg-fill--blue {
+  fill: var(--blue-color);
+}
+
+.card-icon__svg-fill--light-blue {
+  fill: var(--light-blue-color);
+}
+
+.card-icon__svg-fill--dark-blue {
+  fill: var(--dark-blue-color);
+}
+
+.card-icon__svg-fill--gray {
+  fill: var(--gray-color);
+}
+
+.card-icon__svg-stroke--dark-blue {
+  stroke: var(--dark-blue-color);
+}
+
+.content__card:hover .card-icon__svg-fill--blue {
+  fill: var(--turquoise-color);
+}
+
+.content__card:hover .card-icon__svg-fill--light-blue {
+  fill: var(--light-green-color);
+}
+
+.content__card:hover .card-icon__svg-fill--dark-blue {
+  fill: var(--dark-green-color);
+}
+
+.content__card:hover .card-icon__svg-fill--gray {
+  fill: var(--light-gray-color);
+}
+
+.content__card:hover .card-icon__svg-fill--gray {
+  fill: var(--light-gray-color);
+}
+
+.content__card-title {
+  font-weight: 400;
+  font-size: 1.5rem; /* 24px */
+  line-height: 1.3125rem; /* 24px */
+  letter-spacing: 2%;
+  margin-bottom: 0.9375rem; /* 15px */
+}
+
+.content__card-text {
+  margin-bottom: 1.875rem; /* 30px */
+}
+
+.content__card-link {
+  color: var(--brand-green-color);
+  font-weight: 600;
+  line-height: 1.1875rem; /* 19px */
+  text-decoration: none;
 }
 
 /* Footer styles */
@@ -122,5 +201,5 @@ body {
 }
 
 .footer__social-media-link:hover svg {
-  fill: var(--green-color);
+  fill: var(--brand-green-color);
 }
