@@ -67,6 +67,19 @@ body {
   height: 2.1875rem; /* 35px */
 }
 
+.header__logo .logo__text {
+  fill: #16133D;
+}
+
+.logo__flower {
+  fill: none;
+  stroke: var(--brand-green-color);
+}
+
+.logo__flower--fill {
+  fill: var(--brand-green-color);
+}
+
 /* Main content styles */
 .content {
   margin: 6.25rem 0; /* 100px */
