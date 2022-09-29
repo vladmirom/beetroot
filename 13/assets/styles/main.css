@@ -126,6 +126,12 @@ body {
   margin-right: 0.3571rem;
 }
 
+.company-content__header--title::before {
+  display: block;
+  width: 3.5714rem; /* 100px */
+  border-bottom: 0.2857rem; /* 8px */
+}
+
 .company-content__header--subtitle {
   font-family: 'Farro', sans-serif;
   font-weight: 300;
