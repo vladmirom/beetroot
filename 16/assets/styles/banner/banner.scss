@@ -1,0 +1,23 @@
+.banner {
+  background-color: $grey;
+  padding: 100px 50px;
+
+  &__title {
+    margin-bottom: 40px;
+    color: $red;
+    @include title;
+  }
+
+  &, // adds property to both parent .banner and child .banner__title
+  &__title { 
+    text-align: center;
+  }
+
+  &__text {
+    color: white;
+    
+    &--bold {
+      font-weight: bold;
+    }
+  }
+}
