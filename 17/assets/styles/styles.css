@@ -1,10 +1,37 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+.body {
+  margin: 0;
+}
+
 .test-class {
   background-color: green;
   height: 100px;
   width: 100%;
 }
 .test-class__container {
-  max-width: 1170;
-  width: 81.25%;
   margin: 0 auto;
+  max-width: 1280px;
+}
+@media screen and (max-width: 1440px) {
+  .test-class__container {
+    max-width: 1170px;
+    width: 81.25%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .test-class__container {
+    max-width: 700px;
+    width: 91.1458333333%;
+  }
+}
+@media screen and (max-width: 320px) {
+  .test-class__container {
+    max-width: 300px;
+    width: 93.75%;
+  }
 }/*# sourceMappingURL=styles.css.map */
