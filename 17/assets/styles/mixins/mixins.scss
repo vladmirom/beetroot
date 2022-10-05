@@ -1,0 +1,26 @@
+@mixin container {
+  margin: 0 10px;
+  width: 100%;
+
+  // XL screens size 1440px +
+  max-width: 1170px;
+  
+  // Desktop size 769-1440px
+  @media screen and ( max-width: 1440px ) {
+    max-width: 1170px;
+    width: calc(1170px / (1440px / 100% ));
+  }
+
+   // Tablet size 320-768px
+  @media screen and ( max-width: 768px ) {
+    max-width: 700px;
+    width: calc(700px / ( 768px / 100% ));
+  }
+
+  // Mobile size 0-320px 
+  @media screen and ( max-width: 320px ) {
+    max-width: 300px;
+    width: calc(300px / (320px / 100% ));
+  }
+  
+}

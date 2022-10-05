@@ -1,0 +1,15 @@
+// General syles
+@import 'variables/variables';
+@import 'mixins/mixins';
+@import 'globals/globals';
+
+// Header and Footer
+@import 'header/header';
+@import 'footer/footer';
+
+// Sections
+@import 'sections/blog/blog';
+@import 'sections/hero/hero';
+@import 'sections/latest/latest';
+@import 'sections/popular/popular';
+@import 'sections/positions/positions';

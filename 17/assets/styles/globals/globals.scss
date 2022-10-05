@@ -1,0 +1,9 @@
+.test-class {
+  background-color: $green;
+  height: 100px;
+  width: 100%;
+
+  &__container {
+    @include container;
+  }
+}

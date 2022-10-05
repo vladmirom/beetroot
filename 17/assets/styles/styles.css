@@ -1,0 +1,10 @@
+.test-class {
+  background-color: green;
+  height: 100px;
+  width: 100%;
+}
+.test-class__container {
+  max-width: 1170;
+  width: 81.25%;
+  margin: 0 auto;
+}/*# sourceMappingURL=styles.css.map */
