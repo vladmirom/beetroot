@@ -1,7 +1,9 @@
 // General syles
+@import 'rem/rem';
 @import 'variables/variables';
 @import 'mixins/mixins';
 @import 'globals/globals';
+@import 'typography/typography';
 
 // Header and Footer
 @import 'header/header';

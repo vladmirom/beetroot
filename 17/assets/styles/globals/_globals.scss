@@ -1,0 +1,11 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+// Making all anchors scrolling smooth
+html {
+  scroll-behavior: smooth;
+}
+

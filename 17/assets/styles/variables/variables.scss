@@ -4,4 +4,25 @@ $tablet: 768px;
 $desktop: 1440px;
 
 // Colors
-$green: green;
+$gray: #323232;
+
+// Fonts
+$font-family-headings: 'Red Hat Display', sans-serif;
+$font-family-body: 'Lato', sans-serif;
+
+$font-body: 16px;
+$h1-font-size: rem(48px);
+$h2-font-size: rem(33px);
+$h3-font-size: rem(23px);
+$h4-font-size: rem(19px);
+$h5-font-size: rem(16px);
+$h8-font-size: rem(13px);
+$h9-font-size: rem(12px);
+
+$h1-line-height: rem(64px);
+$h2-line-height: rem(50px);
+$h3-line-height: rem(38px);
+$h4-line-height: rem(32px);
+$h5-line-height: rem(27px);
+$h8-line-height: rem(15.6px);
+$h9-line-height: rem(19.92px);
