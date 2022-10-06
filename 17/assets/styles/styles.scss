@@ -1,17 +1,17 @@
 // General syles
-@import 'rem/rem';
-@import 'variables/variables';
-@import 'mixins/mixins';
-@import 'globals/globals';
-@import 'typography/typography';
+@import 'common/rem';
+@import 'common/variables';
+@import 'common/mixins';
+@import 'common/globals';
+@import 'common/typography';
 
 // Header and Footer
 @import 'header/header';
 @import 'footer/footer';
 
 // Sections
-@import 'sections/blog/blog';
-@import 'sections/hero/hero';
-@import 'sections/latest/latest';
-@import 'sections/popular/popular';
-@import 'sections/positions/positions';
+@import 'sections/blog';
+@import 'sections/hero';
+@import 'sections/latest';
+@import 'sections/popular';
+@import 'sections/positions';
