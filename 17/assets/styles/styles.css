@@ -21,7 +21,8 @@ html {
 }
 
 h1,
-.h1 {
+.h1,
+.footer__contact .cta__title {
   font-family: "Red Hat Display", sans-serif;
   font-size: 3rem;
   font-weight: 400;
@@ -115,4 +116,81 @@ a {
 p {
   line-height: 2rem;
   margin-bottom: 2rem;
+}
+
+.footer {
+  background-color: #F4F4F4;
+  padding: 4.375rem 0 1.875rem;
+}
+.footer__container {
+  margin: 0 auto;
+  max-width: 1280px;
+}
+@media screen and (max-width: 1440px) {
+  .footer__container {
+    max-width: 1170px;
+    width: 81.25%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .footer__container {
+    max-width: 700px;
+    width: 91.1458333333%;
+  }
+}
+@media screen and (max-width: 320px) {
+  .footer__container {
+    max-width: 300px;
+    width: 93.75%;
+  }
+}
+.footer__contact {
+  display: grid;
+  grid-template-columns: 3fr 4fr 3fr;
+  align-items: center;
+}
+.footer__contact .cta__title {
+  margin-top: 0;
+}
+.footer__contact .cta__link {
+  display: block;
+  margin-bottom: 0.919375rem;
+}
+.footer__contact .cta__link:link, .footer__contact .cta__link:visited {
+  color: #7B7B7B;
+  text-decoration: none;
+}
+.footer__contact .cta__link:hover {
+  color: #000000;
+  text-decoration: none;
+}
+.footer__contact .cta__link:active {
+  color: #000000;
+  text-decoration: underline;
+}
+.footer__contact-some {
+  grid-column-start: 3;
+}
+.footer__contact-some .social-media__list {
+  display: flex;
+  gap: 1.4375rem;
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+.footer__contact-some .social-media__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3.125rem;
+  height: 3.125rem;
+  background-color: #F4F4F4;
+  border: 0.0625rem solid #565656;
+}
+.footer__contact-some .social-media__link {
+  margin-bottom: -0.21875rem;
+}
+.footer__contact-some .social-media__link-icon {
+  height: 1.5rem;
+  width: auto;
 }/*# sourceMappingURL=styles.css.map */
