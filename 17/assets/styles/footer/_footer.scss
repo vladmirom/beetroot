@@ -12,6 +12,13 @@
     align-items: center;
     margin-bottom: rem(10.92px);
 
+    // Tablet size 320-768px
+    @media screen and ( max-width: $tablet ) {
+      grid-template-columns: none;
+      grid-template-rows: repeat(2, 1fr);
+      justify-content: center;
+    }
+
     & .cta {
       &__title {
         @extend .h1;
@@ -41,7 +48,10 @@
     }
 
     &-some {
-      grid-column-start: 3;
+      // Tablet size 320-768px
+      @media screen and ( max-width: $tablet ) {
+        grid-column-start: none;
+      }
 
       & .social-media {
         &__list {

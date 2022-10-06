@@ -150,6 +150,13 @@ p {
   align-items: center;
   margin-bottom: 0.6825rem;
 }
+@media screen and (max-width: 768px) {
+  .footer__contact {
+    grid-template-columns: none;
+    grid-template-rows: repeat(2, 1fr);
+    justify-content: center;
+  }
+}
 .footer__contact .cta__title {
   margin-top: 0;
 }
@@ -169,8 +176,10 @@ p {
   color: #000000;
   text-decoration: underline;
 }
-.footer__contact-some {
-  grid-column-start: 3;
+@media screen and (max-width: 768px) {
+  .footer__contact-some {
+    grid-column-start: none;
+  }
 }
 .footer__contact-some .social-media__list {
   display: flex;

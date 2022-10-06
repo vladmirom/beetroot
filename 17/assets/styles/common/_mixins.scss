@@ -10,7 +10,7 @@
     width: calc( 1170px / ( $desktop / 100% ) );
   }
 
-   // Tablet size 320-768px
+  // Tablet size 320-768px
   @media screen and ( max-width: $tablet ) {
     max-width: 700px;
     width: calc( 700px / ( $tablet / 100% ) );
