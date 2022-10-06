@@ -10,6 +10,7 @@
     display: grid;
     grid-template-columns: 3fr 4fr 3fr;
     align-items: center;
+    margin-bottom: rem(10.92px);
 
     & .cta {
       &__title {
@@ -51,7 +52,7 @@
           margin: 0;
         }
 
-        &__item {
+        &__link {
           display: flex;
           justify-content: center;
           align-items: center;
@@ -60,17 +61,28 @@
           height: rem(50px);
           background-color: $cultured;
           border: rem(1px) solid $davys_gray;
-        }
 
-        &__link {
           margin-bottom: rem(-3.5px);
 
           &-icon {
             height: rem(24px);
             width: auto;
+            fill: $davys_gray;
+          }
+
+          &:hover {
+            background-color: $davys_gray;
+
+            .social-media__link-icon {
+              fill: $white;
+            }
           }
         }
       }
     }
+  }
+
+  &__copyright {
+    text-align: center;
   }
 }

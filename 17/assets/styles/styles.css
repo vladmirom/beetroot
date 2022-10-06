@@ -148,6 +148,7 @@ p {
   display: grid;
   grid-template-columns: 3fr 4fr 3fr;
   align-items: center;
+  margin-bottom: 0.6825rem;
 }
 .footer__contact .cta__title {
   margin-top: 0;
@@ -178,7 +179,7 @@ p {
   padding-left: 0;
   margin: 0;
 }
-.footer__contact-some .social-media__item {
+.footer__contact-some .social-media__link {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -186,11 +187,19 @@ p {
   height: 3.125rem;
   background-color: #F4F4F4;
   border: 0.0625rem solid #565656;
-}
-.footer__contact-some .social-media__link {
   margin-bottom: -0.21875rem;
 }
 .footer__contact-some .social-media__link-icon {
   height: 1.5rem;
   width: auto;
+  fill: #565656;
+}
+.footer__contact-some .social-media__link:hover {
+  background-color: #565656;
+}
+.footer__contact-some .social-media__link:hover .social-media__link-icon {
+  fill: #ffffff;
+}
+.footer__copyright {
+  text-align: center;
 }/*# sourceMappingURL=styles.css.map */
