@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <main>
+    <h1>Webp format</h1>
+    <ul>
+      <li>It is nice and light form of web image.</li>
+      <li>Supports animation as .gif (can't convert one into other though, saving the animation)</li>
+      <li>Supports transparency and .png.</li>
+      <li>We can conveert images in <a href="https://squoosh.app/">squoosh.app</a>.</li>
+    </ul>
+
+    <p>We add it this way:</p>
+    <h3>First approach</h3>
+    <picture>
+      <source media="(max-width: 320px)" type="image/webp" srcset="assets/images/person-576.webp">
+      <source media="(max-width: 768px)" type="image/webp" srcset="assets/images/person-1024.webp">
+      <source media="(min-width: 769px)" type="image/webp" srcset="assets/images/person.webp">
+      <img src="assets/images/person.jpeg" alt="person">
+    </picture>
+
+    <h3>Second approach</h3>
+    <!-- NOTE: assets/images/person-576.jpeg 500w, 
+               assets/images/person-576.jpeg - is our image of 576px width
+               500w - is 500px width of the placeholder for this image during rendering
+    -->
+    <img srcset="
+          assets/images/person-576.jpeg 300w,
+          assets/images/person-1024.jpeg 340w,
+          assets/images/person.jpeg 570w"
+         src="assets/images/person.jpeg" 
+         sizes="
+          (max-width: 320px) 300px,
+          (max-width: 768px) 340px,
+          570px"
+         alt="Person image">
+
+    <h3>Third approach</h3>
+    <p>Depending on density of pixels, browser selects images itself.</p>
+    <img srcset="
+          assets/images/person-576.jpeg 0.5x,
+          assets/images/person-1024.jpeg 0.75x,
+          assets/images/person.jpeg 1x,
+          assets/images/person-1920.jpeg 1.5x,
+          assets/images/person-2080.jpeg 2x"
+         src="assets/images/person.jpeg" 
+         alt="Person image">
+
+    <h2>Crossbrowser</h2>
+    <p>Use reset.css and normalize.css!</p>
+
+  </main>
+
+</body>
+</html>
