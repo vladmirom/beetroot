@@ -153,9 +153,12 @@ p {
 @media screen and (max-width: 768px) {
   .footer__contact {
     grid-template-columns: none;
-    grid-template-rows: repeat(2, 1fr);
     justify-content: center;
+    text-align: center;
   }
+}
+.footer__contact-cta {
+  margin-bottom: 3.20625rem;
 }
 .footer__contact .cta__title {
   margin-top: 0;
@@ -176,9 +179,13 @@ p {
   color: #000000;
   text-decoration: underline;
 }
+.footer__contact-some {
+  grid-column-start: 3;
+}
 @media screen and (max-width: 768px) {
   .footer__contact-some {
-    grid-column-start: none;
+    margin-bottom: 2.5rem;
+    grid-column-start: 1;
   }
 }
 .footer__contact-some .social-media__list {
@@ -187,6 +194,11 @@ p {
   list-style: none;
   padding-left: 0;
   margin: 0;
+}
+@media screen and (max-width: 768px) {
+  .footer__contact-some .social-media__list {
+    justify-content: center;
+  }
 }
 .footer__contact-some .social-media__link {
   display: flex;

@@ -15,8 +15,12 @@
     // Tablet size 320-768px
     @media screen and ( max-width: $tablet ) {
       grid-template-columns: none;
-      grid-template-rows: repeat(2, 1fr);
       justify-content: center;
+      text-align: center;
+    }
+
+    &-cta {
+      margin-bottom: rem(51.30px);
     }
 
     & .cta {
@@ -48,9 +52,12 @@
     }
 
     &-some {
+      grid-column-start: 3;
+      
       // Tablet size 320-768px
       @media screen and ( max-width: $tablet ) {
-        grid-column-start: none;
+        margin-bottom: rem(40px);
+        grid-column-start: 1;
       }
 
       & .social-media {
@@ -60,6 +67,11 @@
           list-style: none;
           padding-left: 0;
           margin: 0;
+
+          // Tablet size 320-768px
+          @media screen and ( max-width: $tablet ) {
+            justify-content: center;
+          }
         }
 
         &__link {
