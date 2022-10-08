@@ -1,1 +1,109 @@
-/*# sourceMappingURL=styles.css.map */
+body {
+  margin: 50px;
+}
+
+.input-field__label {
+  display: block;
+  margin-bottom: 5px;
+}
+.input-field__wrapper {
+  position: relative;
+}
+.input-field__input {
+  outline: none;
+  padding: 15px 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+  min-width: 200px;
+  margin-bottom: 20px;
+  -moz-appearance: text;
+}
+.input-field__input--number:in-range {
+  border-color: green;
+}
+.input-field__input--number:out-of-range {
+  border-color: red;
+}
+.input-field__input--number::-webkit-inner-spin-button, .input-field__input--number::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+          appearance: none;
+  margin: 0;
+}
+.input-field__input-button {
+  position: absolute;
+  right: 5px;
+  display: flex;
+  justify-content: flex-end;
+}
+.input-field__input--email:valid {
+  border-color: green;
+}
+.input-field__input--email:invalid {
+  border-color: red;
+}
+.input-field__input--read-only:-moz-read-only {
+  border-color: rgba(128, 128, 128, 0.368627451);
+  background-color: rgba(128, 128, 128, 0.368627451);
+}
+.input-field__input--read-only:read-only {
+  border-color: rgba(128, 128, 128, 0.368627451);
+  background-color: rgba(128, 128, 128, 0.368627451);
+}
+.input-field__input--requireed:required {
+  padding-right: 50px;
+}
+.input-field__input--requireed:required + .input-field__icon {
+  opacity: 1;
+}
+.input-field__textarea, .input-field__select {
+  width: 100%;
+  border: 1px solid gray;
+  border-radius: 4px;
+  padding: 15px 10px;
+  font-weight: 400;
+  font-style: 16px;
+  line-height: 20px;
+  color: #000;
+}
+.input-field__textarea {
+  resize: vertical;
+}
+
+.checkbox {
+  width: 100%;
+}
+.checkbox__input {
+  display: none;
+}
+.checkbox__input:checked + .checkbox__label .checkbox__svg {
+  transform: scale(0.8);
+}
+.checkbox__input:checked + .checkbox__label .checkbox__text {
+  text-decoration: line-through;
+}
+.checkbox__label {
+  display: flex;
+  align-items: center;
+  padding: 11px 12px 13px;
+  background-color: #88839E;
+  color: #ffffff;
+  font-weight: 400px;
+  font-size: 18px;
+  line-height: 21px;
+}
+.checkbox__check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-right: 16px;
+  min-width: 19px;
+  width: 19px;
+  height: 19px;
+  background: #ffffff;
+}
+.checkbox__svg {
+  position: absolute;
+  transform: scale(0);
+  transition: transform 0.3s ease;
+}/*# sourceMappingURL=styles.css.map */
