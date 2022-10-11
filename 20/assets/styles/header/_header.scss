@@ -1,0 +1,116 @@
+.body {
+  background-color: red;
+}
+
+.header {
+  position: relative;
+  background: $white;
+  padding: 10px 0;
+
+  @media screen and (min-width: $tablet) {
+    padding: 40px 0;
+  }
+  
+  &__container {
+    @include container;
+  }
+
+  &__wrapper {
+    @include flex-vertical-center;
+    justify-content: between;
+  }
+
+  &__menu {
+    @media screen and (min-width: $tablet) {
+      margin-right: 84px;
+    }
+
+    @media screen and (max-width: $tabletMin) {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background-color: $white;
+      transform: translateX(-100%);
+      transition: all .3 linear;
+    }
+  }
+
+  &__burger {
+    @include flex-vertical-center;
+
+    position: relative;
+    width: 34px;
+    height: 20px;
+
+    background-color: transparent;  
+    border-top: 2px solid $black;
+    border-bottom: 2px solid $black;
+
+    @media screen and (min-width: $tablet) {
+      display: none;
+    }
+
+    &:before,
+    &:after {
+      content: '';
+      display: block;
+
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: $black;
+      transition: all .3 linear;
+    }
+
+    &__burger-input {
+      display: none;
+
+      &:checked {
+        & ~ .header__burger-label {
+          .header__burger {
+            border-color: transparent;
+  
+            &:before {
+              transform: rotate(45deg);
+            }
+  
+            &:after {
+              transform: rotate(-45deg);
+            }
+          }
+        }
+
+        & + .header__menu {
+          transform: translateX(0);
+        }
+      }
+    }
+
+    &__burger-label {
+      padding: 20px;
+      margin-left: 20px 0 20px 20px;
+    }
+
+    .menu {
+      &__list {
+        @media screen and (max-width: $tabletMin) {
+          @include container;
+        }
+      }
+
+      &__item {
+        @media screen and (max-width: $tabletMin) {
+          display: block;
+        }
+
+        & + .menu__item {
+          @media screen and (max-width: $tabletMin) {
+            margin: 10px 0 0;
+          }
+        }
+      }
+    }
+  }
+}

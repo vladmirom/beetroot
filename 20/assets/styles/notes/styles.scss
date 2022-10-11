@@ -1,0 +1,9 @@
+@import '../common/variables';
+@import '../common/mixins';
+
+@import '../header/header';
+@import '../header/menu';
+
+.body { 
+  background: red;
+}
