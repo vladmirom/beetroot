@@ -1,5 +1,5 @@
 body {
-  font-family: 'Roboto Flex', sans-serif;
+  font-family: $font-family-body;
   font-weight: 400;
 }
 
@@ -8,13 +8,13 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 } 
 
 h1, .h1 {
-  font-size: 32px;
-  line-height: 48px;
-  margin-bottom: 25px;
+  $h1-font-size: $h1-font-size;
+  line-height: $h1-line-height;
+  margin-bottom: $h1-margin-bottom;
 }
 
 h2, .h2 {
-  font-size: 24px;
-  line-height: 32px;
-  margin-bottom: 20px;
+  font-size: $h2-font-size;
+  line-height: $h2-line-height;
+  margin-bottom: $h2-margin-bottom;
 }

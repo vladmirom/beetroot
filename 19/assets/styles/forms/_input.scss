@@ -1,0 +1,88 @@
+
+.input-field {
+  &__label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  &__wrapper {
+    position: relative;
+  }
+
+  &__input {
+    outline: none;
+    padding: 15px 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    min-width: 200px;
+    margin-bottom: 20px;
+
+    -moz-appearance: text;
+
+    &--number {
+      &:in-range {
+        border-color: green;
+      }
+  
+      &:out-of-range {
+        border-color: red;
+      }
+
+      &::-webkit-inner-spin-button,
+      &::-webkit-outer-spin-button {
+        appearance: none;
+        margin: 0;
+      }
+    }
+
+    &-button {
+      position: absolute;
+      right: 5px;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    &--email {
+      &:valid {
+        border-color: green;
+      }
+  
+      &:invalid {
+        border-color: red;
+      }
+    }
+
+    &--read-only {
+      &:read-only {
+        border-color: #8080805e;
+        background-color: #8080805e;
+      }
+    }
+
+    &--requireed {
+      &:required {
+        padding-right: 50px;
+
+        & + .input-field__icon {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &__textarea, 
+  &__select {
+    width: 100%;
+    border: 1px solid gray;
+    border-radius: 4px;
+    padding: 15px 10px;
+    font-weight: 400;
+    font-style: 16px;
+    line-height: 20px;
+    color: #000;
+  }
+
+  &__textarea {
+    resize: vertical; // Client can reesize only vertically
+  }
+}
