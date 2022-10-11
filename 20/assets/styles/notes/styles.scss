@@ -1,9 +1,6 @@
 @import '../common/variables';
+@import '../common/globals';
 @import '../common/mixins';
 
-@import '../header/header';
-@import '../header/menu';
-
-.body { 
-  background: red;
-}
+@import '../notes/header';
+@import '../notes/menu';
