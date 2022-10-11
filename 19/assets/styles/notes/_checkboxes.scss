@@ -1,0 +1,52 @@
+.checkbox {
+  width: 100%;
+
+  &__input {
+    display: none;
+
+    &:checked + .checkbox__label {
+      .checkbox {
+        &__svg {
+          transform: scale(.8);
+        }
+  
+        &__text {
+          text-decoration: line-through;
+        }
+      }
+    }
+  }
+
+  &__label {
+    display: flex;
+    align-items: center;
+    padding: 11px 12px 13px;
+
+    background-color: #88839E;
+    color: #ffffff;
+    font-weight: 400px;
+    font-size: 18px;
+    line-height: 21px;
+  }
+
+  &__check {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-right: 16px;
+
+    min-width: 19px; // Important for the case when we have too much text
+    width: 19px;
+    height: 19px;
+
+    background: #ffffff;
+  }
+
+  &__svg {
+    position: absolute;
+    transform: scale(0);
+
+    transition: transform .3s ease;
+  }
+}

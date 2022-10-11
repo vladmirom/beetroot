@@ -1,144 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="assets/styles/styles.css">
-  <title>Volodymyr Melnychenko | Styling the forms</title>
+  <link rel="icon" type="image/x-icon" href="../assets/images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,400;8..144,500&display=swap" rel="stylesheet">  
+  <link rel="stylesheet" type="text/css" href="assets/styles/normalize.css">
+  <link rel="stylesheet" type="text/css" href="assets/styles/main.css">
+  <link rel="stylesheet" type="text/css" href="../assets/styles/global.css">
+  
+  <title>Volodymyr Melnychenko | Forms styling</title>
 </head>
-
 <body>
-  <main>
-    <form method="" action="" autocomplete="off" accept="multipart/formdata">
-      <!-- 
-          method - get, post, put, delete
-          action - link where form data goes
-          autocomplete - if we want to pre-fill the form or not
-          accept - if we send input type="file", it selects the coding of the file.
-          -->
 
-      <input name="uniqueNameForField" type="text" vlaue="Test">
-      <select name="uniqueSelect" id="uniqueId">
-        <option value="value1">Value 1</option>
-        <option value="value2">Value 2</option>
-      </select>
+  <header class="header">
+    <div class="logo">
+      <a href="./">
+        <img src="../assets/images/favicon.png" alt="Website logo">
+      </a>
+    </div>
 
-      <div class="input-field">
-        <label class="input-field__label" for="firstName">
-          Name
-        </label>
-        <input class="input-field__input" name="firstName" type="text" placeholder="Enter your name">
-      </div>
+    <nav class="header__menu">
+      <ul>
+        <li class="header__menu-item">
+          <a href="../">
+            <img class="header__menu-item--back" src="../assets/images/arrow_left.svg" alt="Reeturn to main view icon">
+            Назад до головної сторінки
+          </a>
+        </li>
+        <li class="header__menu-item">
+          <a href="../19/notes">
+            Нотатки з уроку
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
 
-      <div class="input-field">
-        <label class="input-field__label" for="muNumber">
-          Number
-        </label>
+  <main class="main">
+    <article class="container">
+      <h1>Hometask for the lesson 19. Styling forms.</h1>
+      
+      <section id="forms" class="forms">
+        <div class="form-wrap">
+          <div class="form">
+            <h2>Create an Account</h2>
+            <form id="registration" action="formHandler/get.php" method="GET" autocomplete="on">
+              <div class="form__name">
+                <div>
+                  <label for="firstName">First Name</label>
+                  <input type="text" name="firstName" id="firstName">
+                </div>
 
-        <div class="input-field__wrapper">
-          <input class="input-field__input input-field__input--number" 
-                 name="muNumber" 
-                 type="number" 
-                 min="1" 
-                 max="8">
+                <div>
+                  <label for="lastName">Last Name</label>
+                  <input type="text" name="lastName" id="lastName">
+                </div>
+              </div>
 
-          <span class="input-field__input-button input-field__input-button--top">
-            up
-          </span>
-          
-          <span class="input-field__input-button input-field__input-button--bottom">
-            down
-          </span>
-        </div>
-      </div>
+              <div class="form__email">
 
-
-      <div class="input-field">
-        <label class="input-field__label" for="myEmail">
-          Email
-        </label>
-
-        <div class="input-field__wrapper">
-          <input class="input-field__input input-field__input--email" name="myEmail" type="email">
-        </div>
-      </div>
-
-      <div class="input-field">
-        <label class="input-field__label" for="myPassword">
-          Password
-        </label>
-
-        <div class="input-field__wrapper">
-          <input class="input-field__input input-field__input--read-only" name="myPassword" type="password"
-            value="12345678" readonly>
-        </div>
-      </div>
-
-      <div class="input-field">
-        <label class="input-field__label" for="lasttName">
-          Last name
-        </label>
-
-        <div class="input-field__wrapper">
-          <input class="input-field__input input-field__input--required" name="lasttName" type="password"
-            value="12345678" required>
-
-          <span class="input-field__icon">
-            <!--<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-              <path
-                d="M64 416L168.6 180.7c15.3-34.4 40.3-63.5 72-83.7l146.9-94c3-1.9 6.5-2.9 10-2.9C407.7 0 416 8.3 416 18.6v1.6c0 2.6-.5 5.1-1.4 7.5L354.8 176.9c-1.9 4.7-2.8 9.7-2.8 14.7c0 5.5 1.2 11 3.4 16.1L448 416H240.9l11.8-35.4 40.4-13.5c6.5-2.2 10.9-8.3 10.9-15.2s-4.4-13-10.9-15.2l-40.4-13.5-13.5-40.4C237 276.4 230.9 272 224 272s-13 4.4-15.2 10.9l-13.5 40.4-40.4 13.5C148.4 339 144 345.1 144 352s4.4 13 10.9 15.2l40.4 13.5L207.1 416H64zM279.6 141.5c-1.1-3.3-4.1-5.5-7.6-5.5s-6.5 2.2-7.6 5.5l-6.7 20.2-20.2 6.7c-3.3 1.1-5.5 4.1-5.5 7.6s2.2 6.5 5.5 7.6l20.2 6.7 6.7 20.2c1.1 3.3 4.1 5.5 7.6 5.5s6.5-2.2 7.6-5.5l6.7-20.2 20.2-6.7c3.3-1.1 5.5-4.1 5.5-7.6s-2.2-6.5-5.5-7.6l-20.2-6.7-6.7-20.2zM32 448H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32z" />
-            </svg> -->
-          </span>
+              </div>
+            </form>
+          </div>
         </div>
 
-        <div class="input-field">
-          <label class="input-field__label" for="myTextarea">
-            Text area
-          </label>
-
-          <textarea class="input-field__textarea" name="myTextarea" id="myUniqueTextarea" cols="30" rows="10"></textarea>
+        <div class="form-wrap">
+          <div class="form">
+            <h2>Profile</h2>
+          </div>
         </div>
 
-        <div class="input-field">
-          <label class="input-field__label" for="myTextarea">
-            Text area
-          </label>
-
-          <select class="input-field__select" name="mySelect" id="myuniqueId">
-            <option value="value1">Value 1</option>
-            <option value="value2">Value 2</option>
-          </select>
-        </div>
-
-        <div class="input-field">
-          <label class="input-field__label" for="myTextarea">
-            Text area
-          </label>
-
-          <select class="input-field__select" name="mySelect" id="myuniqueId">
-            <option value="value1">Value 1</option>
-            <option value="value2">Value 2</option>
-          </select>
-        </div>
-
-        <div class="checkbox">
-          <input class="checkbox__input" id="pickles" type="checkbox">
-          <label class="checkbox__label" for="pickles">
-            <span class="checkbox__check">
-              <svg class="checkbox__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                <path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/>
-              </svg>
-            </span>
-            <span class="checkbox__text">
-              A lot of pickles
-            </span>
-          </label>
-        </div>
-      </div>
-    </form>
+      </section>
+    </article>
   </main>
+  
 </body>
-
-</html>
+</html> 
