@@ -23,6 +23,13 @@ h2, .h2 {
   margin-bottom: 20px;
 }
 
+.section-forms {
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 35px 35px 16px 35px;
+  height: 100%;
+}
+
 .input-field__label {
   display: block;
   margin-bottom: 5px;
