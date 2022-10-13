@@ -1,0 +1,14 @@
+.block {
+  @include generalBlock;
+  background-color: green;
+}
+
+.section {
+  @include generalBlock;
+  background-color: purple;
+}
+
+.about-me {
+  @include generalBlock;
+  background-color: peru;
+}

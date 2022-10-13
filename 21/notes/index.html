@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../assets/styles/notes/styles.css">
+
+  <title>Volodymyr Melnychenko | Advanced SCSS</title>
+</head>
+<body>
+    <main class="main">
+        <h1>Advanced SCSS</h1>
+        <ul>
+            <li>It's better not to use the calc() css function. </li>
+            <li>In native calculation (+/-) in scss we can calculate only the same data types. (px - px, % - %, rem - rem)</li>
+            <li>We can multiply any data types except pixels. In this case we can use just number: 10px * 10.</li>
+            <li>Division: just / sign is deprecated. The division should be used in (). (100px / 2);. Also, if we divide the same data types, they will give the number without the datatype. In this case we just add the datatype additionally: (100px / 2px) + px;. Different data types don't work.</li>
+        </ul>
+
+        <div class="calculations">Calculations</div>
+        <div class="block">Block</div>
+        <div class="section">Section</div>
+        <div class="about-me">About me</div>
+    </main>
+</body>
+</html>
