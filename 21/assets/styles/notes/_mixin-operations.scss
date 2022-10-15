@@ -18,5 +18,28 @@
   @include media($mobile) {
     display: none;
   }
+}
 
+.width {
+  height: 100px;
+  margin-bottom: 20px;
+  background-color: aquamarine;
+
+  @for $i from 1 through 8 {
+    &--#{$i} { // .width--1, .width--2, ... .width--8
+      width: 10px * $i;
+    }
+  }
+
+  @each $animal in cat, dog, lion, sheep {
+    &--#{$animal} { // .width--1, .width--2, ... .width--8
+      background-image: url("../../images/#{$animal}.jpg");
+    }
+  }
+
+  @each $key, $val in $colors {
+    &--#{$key} { // .width--color1, .width--color2, ... .width--color4
+      background-color: $val;
+    }
+  }
 }

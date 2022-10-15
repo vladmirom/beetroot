@@ -92,4 +92,58 @@ html {
   .about-me {
     display: none;
   }
+}
+
+.width {
+  height: 100px;
+  margin-bottom: 20px;
+  background-color: aquamarine;
+}
+.width--1 {
+  width: 10px;
+}
+.width--2 {
+  width: 20px;
+}
+.width--3 {
+  width: 30px;
+}
+.width--4 {
+  width: 40px;
+}
+.width--5 {
+  width: 50px;
+}
+.width--6 {
+  width: 60px;
+}
+.width--7 {
+  width: 70px;
+}
+.width--8 {
+  width: 80px;
+}
+.width--cat {
+  background-image: url("../../images/cat.jpg");
+}
+.width--dog {
+  background-image: url("../../images/dog.jpg");
+}
+.width--lion {
+  background-image: url("../../images/lion.jpg");
+}
+.width--sheep {
+  background-image: url("../../images/sheep.jpg");
+}
+.width--color1 {
+  background-color: red;
+}
+.width--color2 {
+  background-color: blue;
+}
+.width--color3 {
+  background-color: green;
+}
+.width--color4 {
+  background-color: yellow;
 }/*# sourceMappingURL=styles.css.map */
