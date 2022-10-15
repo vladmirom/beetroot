@@ -1,14 +1,22 @@
 .block {
-  @include generalBlock;
-  background-color: green;
+  @include generalBlock(green, 100px);
+  @include text(peru, 0);
 }
 
 .section {
-  @include generalBlock;
-  background-color: purple;
+  @include generalBlock(purple, 10px 10px 0 0);
+  @include text(peru, 0);
 }
 
 .about-me {
-  @include generalBlock;
-  background-color: peru;
+  @include generalBlock(peru, 0);
+
+  @include media($tablet) {
+    display: block;
+  }
+
+  @include media($mobile) {
+    display: none;
+  }
+
 }

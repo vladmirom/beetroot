@@ -18,6 +18,14 @@
             <li>Division: just / sign is deprecated. The division should be used in (). (100px / 2);. Also, if we divide the same data types, they will give the number without the datatype. In this case we just add the datatype additionally: (100px / 2px) + px;. Different data types don't work.</li>
         </ul>
 
+        <ul>
+            <li>We can create mixins with local variables and add the default values to them. It is useful, because if we forget the value hwen we cal the mixin, the error occurs.</li>
+            <li>We can have mixin in mixin, or a group of mixins in one mixin.</li>
+            <li>When we call a mixin, we can overwrite the variable. It is useful, when we have a mixin wiht 5 different variables, but when we call the mixin, we want to pass only 1 value.</li>
+            <li>It is better to write variables without default value first and then with default values in the end.</li>
+            <li>We can have the mixin that shows different content. Instead of calling with just () we call mixin with () and {}. Inside of {} we put css rules that we want to pass. In the mixin declaration we need to use @content in the place where we want to paste the content.</li>
+        </ul>
+
         <div class="calculations">Calculations</div>
         <div class="block">Block</div>
         <div class="section">Section</div>
