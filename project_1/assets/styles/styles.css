@@ -11,13 +11,6 @@
 }
 
 .body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-}
-
-.body {
   font-family: "Lato", sans-serif;
   font-size: 18px;
   font-weight: 300;
@@ -99,11 +92,33 @@ p {
   * A set of classes to switch styles of the whole theme when using the theme switcher checkbox.
   */
 .body:has(.theme-switcher) {
-  background-color: #ffffff;
+  background-color: #85BBB1;
+  transition: all 0.5s ease;
+}
+.body:has(.theme-switcher) .header__wrapper {
+  background: linear-gradient(270deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.244636) 24.1%, rgba(255, 255, 255, 0) 47.19%), rgba(255, 255, 255, 0.02);
+}
+.body:has(.theme-switcher) .header .nav__link:link, .body:has(.theme-switcher) .header .nav__link:visited, .body:has(.theme-switcher) .header .nav__link:active {
+  color: #262A3F;
+}
+.body:has(.theme-switcher) .header .nav__link:hover:after {
+  background: #F1897B;
+  opacity: 1;
 }
 
 .body:has(.theme-switcher:checked) {
   background-color: #161925;
+  transition: all 0.5s ease;
+}
+.body:has(.theme-switcher:checked) .header__wrapper {
+  background: linear-gradient(270deg, rgba(22, 25, 38, 0.5) 0%, rgba(22, 25, 38, 0) 24.1%, rgba(22, 25, 38, 0) 47.19%), rgba(22, 25, 38, 0.02);
+}
+.body:has(.theme-switcher:checked) .header .nav__link:link, .body:has(.theme-switcher:checked) .header .nav__link:visited, .body:has(.theme-switcher:checked) .header .nav__link:active {
+  color: #ffffff;
+}
+.body:has(.theme-switcher:checked) .header .nav__link:hover:after {
+  background: linear-gradient(96.73deg, #53F3CD 6.73%, rgba(83, 243, 205, 0) 116.9%);
+  opacity: 0.3;
 }
 
 /**
@@ -115,7 +130,6 @@ p {
 }
 .theme-switcher:checked ~ .check {
   background-color: #ffffff;
-  box-shadow: 0 0 0 93.75rem;
 }
 .theme-switcher:checked ~ .check:before {
   transform: translateX(-6.25rem);
@@ -130,8 +144,8 @@ p {
 .check {
   position: relative;
   display: block;
-  width: 6.25rem;
-  height: 2.5rem;
+  width: 3.125rem;
+  height: 1.25rem;
   background-color: #161925;
   border-radius: 1.25rem;
   cursor: pointer;
@@ -141,11 +155,11 @@ p {
 .check:before {
   content: "";
   position: absolute;
-  top: 0.3125rem;
-  left: 0.3125rem;
+  top: 0.15625rem;
+  left: 0.15625rem;
   background-color: #ffffff;
-  width: 1.875rem;
-  height: 1.875rem;
+  width: 0.9375rem;
+  height: 0.9375rem;
   border-radius: 50%;
   transition: all 0.5s ease;
   z-index: 1;
@@ -153,30 +167,85 @@ p {
 .check:after {
   content: "";
   position: absolute;
-  top: 0.3125rem;
-  right: 0.3125rem;
+  top: 0.15625rem;
+  right: 0.15625rem;
   background-color: #262A3F;
-  width: 1.875rem;
-  height: 1.875rem;
+  width: 0.9375rem;
+  height: 0.9375rem;
   border-radius: 50%;
   transition: all 0.5s ease;
   transform: translateX(3.125rem);
 }
 .check__m:before {
   content: "Dark";
-  font-size: 1rem;
+  font-size: 0.625rem;
   font-weight: 400;
   position: absolute;
-  top: 0.4375rem;
+  top: -0.1875rem;
+  right: 2.1875rem;
   color: #161925;
   transform: translateX(0.9375rem);
 }
 .check__m:after {
   content: "Light";
-  font-size: 1rem;
+  font-size: 0.625rem;
   font-weight: 400;
   position: absolute;
-  top: 0.4375rem;
+  top: -0.1875rem;
+  right: 3.4375rem;
   color: #ffffff;
   transform: translateX(3.125rem);
+}
+
+/**
+  * Header styling.
+  * NOTE: theme switcher is styled in inputs/theme-switcher.scss
+  */
+.header__wrapper {
+  padding: 1.5rem 0;
+  -webkit-backdrop-filter: blur(4.5px);
+          backdrop-filter: blur(4.5px);
+  margin-top: 1.875rem;
+}
+.header__container {
+  width: 81.25%;
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.header__block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header__menu {
+  display: flex;
+  align-items: center;
+}
+.header__nav {
+  display: flex;
+  align-items: center;
+  margin-right: 3.125rem;
+}
+.header .nav__list {
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+  gap: 1.875rem;
+}
+.header .nav__item {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+  letter-spacing: 0.08em;
+}
+.header .nav__link:link, .header .nav__link:visited, .header .nav__link:active {
+  text-decoration: none;
+}
+.header .nav__link:after {
+  content: "";
+  display: block;
+  height: 0.1875rem;
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }/*# sourceMappingURL=styles.css.map */

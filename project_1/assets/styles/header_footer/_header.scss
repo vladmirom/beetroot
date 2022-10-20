@@ -1,0 +1,63 @@
+/**
+  * Header styling.
+  * NOTE: theme switcher is styled in inputs/theme-switcher.scss
+  */
+
+  .header {
+    &__wrapper {
+      padding: rem(24px) 0;
+      backdrop-filter: blur(4.5px);
+
+      margin-top: rem(30px);
+    }
+
+    &__container {
+      @include container;
+    }
+
+    &__block {
+      @include flex-vertical-center;
+      justify-content: space-between; 
+    }
+
+    &__menu {
+      @include flex-vertical-center;
+    }
+
+    &__nav {
+      @include flex-vertical-center;
+      margin-right: rem(50px);
+    }
+
+    & .nav {
+      &__list {
+        display: flex;
+        list-style: none;
+        padding-left: 0;
+        gap: rem(30px);
+      }
+
+      &__item {
+        font-size: $h7-font-size;
+        font-weight: 400;
+        line-height: rem(24px);
+        letter-spacing: 0.08em;
+      }
+
+      &__link {
+        &:link,
+        &:visited,
+        &:active {
+          text-decoration: none;
+        }
+
+        &:after {
+          content: '';
+          display: block;
+          height: rem(3px);
+          opacity: 0;
+          transition: opacity .5s ease;
+        }
+      }
+    }
+  }

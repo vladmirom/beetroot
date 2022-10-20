@@ -3,9 +3,63 @@
   */
 
 .body:has(.theme-switcher) {
-  background-color: $white;
+  background-color: $pewter_blue;
+  transition: all 0.5s ease;
+
+  & .header {
+    &__wrapper {
+      background: linear-gradient(270deg, rgba(255, 255, 255, 0.5) 0%, 
+                                          rgba(255, 255, 255, 0.244636) 24.1%, 
+                                          rgba(255, 255, 255, 0) 47.19%), 
+                                          rgba(255, 255, 255, 0.02);
+    }
+
+    & .nav {
+      &__link {
+        &:link,
+        &:visited,
+        &:active {
+          color: $yankees_blue;
+        }
+
+        &:hover {
+          &:after {
+            background: $congo_pink;
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
 }
 
 .body:has(.theme-switcher:checked) {
   background-color: $mirage;
+  transition: all 0.5s ease;
+
+  &  .header {
+    &__wrapper {
+      background: linear-gradient(270deg, rgba(22, 25, 38, 0.5) 0%, 
+                                          rgba(22, 25, 38, 0) 24.1%, 
+                                          rgba(22, 25, 38, 0) 47.19%), 
+                                          rgba(22, 25, 38, 0.02);
+    }
+
+    & .nav {
+      &__link {
+        &:link,
+        &:visited,
+        &:active {
+          color: $white;
+        }
+
+        &:hover {
+          &:after {
+            background: linear-gradient(96.73deg, #53F3CD 6.73%, rgba(83, 243, 205, 0) 116.9%);
+            opacity: 0.3;
+          }
+        }
+      }
+    }
+  }
 }
