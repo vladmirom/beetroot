@@ -1,4 +1,4 @@
-.my__checkbox:checked ~ .my__block {
+.header:has(.my__checkbox:checked) ~ .main .my__block {
   background-color: blue;
 }
 
