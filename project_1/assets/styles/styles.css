@@ -1,3 +1,6 @@
+/*--------------------------------------------------------------
+  # Utils: REM helper
+--------------------------------------------------------------*/
 *,
 ::after,
 ::before {
@@ -5,6 +8,74 @@
   margin: 0;
   padding: 0;
   outline: none;
+}
+
+.body {
+  font-family: "Lato", sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.625rem;
+  margin: 0;
+}
+
+h1,
+.h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.75rem;
+  font-weight: 400;
+  line-height: 3.25rem;
+  margin-bottom: 1.25rem;
+}
+
+h2,
+.h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  line-height: 2.4375rem;
+  margin-bottom: 1.875rem;
+}
+
+h3,
+.h3 {
+  font-family: "Lato", sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 2.875rem;
+  margin-bottom: 2.5rem;
+  letter-spacing: 0.04em;
+}
+
+h4,
+.h4 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 3rem;
+  margin-bottom: 0.9375rem;
+  letter-spacing: 0.05em;
+}
+
+h5,
+.h5 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.25rem;
+  letter-spacing: 0.08em;
+}
+
+h6,
+.h6 {
+  font-family: "Lato", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 300;
+  line-height: 1.625rem;
+  margin-bottom: 1rem;
+}
+
+a {
+  transition: all 0.2s ease;
 }
 
 .header:has(.my__checkbox:checked) ~ .main .my__block {
