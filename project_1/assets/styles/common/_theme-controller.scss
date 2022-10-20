@@ -1,0 +1,11 @@
+/**
+  * A set of classes to switch styles of the whole theme when using the theme switcher checkbox.
+  */
+
+.body:has(.theme-switcher) {
+  background-color: $white;
+}
+
+.body:has(.theme-switcher:checked) {
+  background-color: $mirage;
+}

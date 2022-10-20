@@ -11,6 +11,13 @@
 }
 
 .body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.body {
   font-family: "Lato", sans-serif;
   font-size: 18px;
   font-weight: 300;
@@ -68,22 +75,108 @@ h5,
 h6,
 .h6 {
   font-family: "Lato", sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.625rem;
+}
+
+.h7 {
+  font-family: "Lato", sans-serif;
   font-size: 0.875rem;
   font-weight: 300;
   line-height: 1.625rem;
-  margin-bottom: 1rem;
 }
 
 a {
   transition: all 0.2s ease;
 }
 
-.header:has(.my__checkbox:checked) ~ .main .my__block {
-  background-color: blue;
+p {
+  opacity: 0.8;
 }
 
-.my__block {
-  width: 100%;
-  height: 100px;
-  background-color: red;
+/**
+  * A set of classes to switch styles of the whole theme when using the theme switcher checkbox.
+  */
+.body:has(.theme-switcher) {
+  background-color: #ffffff;
+}
+
+.body:has(.theme-switcher:checked) {
+  background-color: #161925;
+}
+
+/**
+  * A set of classes to style the theme switcher checkbox.
+  */
+.theme-switcher {
+  visibility: none;
+  display: none;
+}
+.theme-switcher:checked ~ .check {
+  background-color: #ffffff;
+  box-shadow: 0 0 0 93.75rem;
+}
+.theme-switcher:checked ~ .check:before {
+  transform: translateX(-6.25rem);
+}
+.theme-switcher:checked ~ .check:after {
+  transform: translateX(0rem);
+}
+.theme-switcher:checked ~ .check .check__m:after {
+  display: none;
+}
+
+.check {
+  position: relative;
+  display: block;
+  width: 6.25rem;
+  height: 2.5rem;
+  background-color: #161925;
+  border-radius: 1.25rem;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  overflow: hidden;
+}
+.check:before {
+  content: "";
+  position: absolute;
+  top: 0.3125rem;
+  left: 0.3125rem;
+  background-color: #ffffff;
+  width: 1.875rem;
+  height: 1.875rem;
+  border-radius: 50%;
+  transition: all 0.5s ease;
+  z-index: 1;
+}
+.check:after {
+  content: "";
+  position: absolute;
+  top: 0.3125rem;
+  right: 0.3125rem;
+  background-color: #262A3F;
+  width: 1.875rem;
+  height: 1.875rem;
+  border-radius: 50%;
+  transition: all 0.5s ease;
+  transform: translateX(3.125rem);
+}
+.check__m:before {
+  content: "Dark";
+  font-size: 1rem;
+  font-weight: 400;
+  position: absolute;
+  top: 0.4375rem;
+  color: #161925;
+  transform: translateX(0.9375rem);
+}
+.check__m:after {
+  content: "Light";
+  font-size: 1rem;
+  font-weight: 400;
+  position: absolute;
+  top: 0.4375rem;
+  color: #ffffff;
+  transform: translateX(3.125rem);
 }/*# sourceMappingURL=styles.css.map */

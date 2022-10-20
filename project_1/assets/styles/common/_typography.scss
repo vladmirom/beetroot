@@ -59,10 +59,20 @@ h6,
   font-size: $h6-font-size;
   font-weight: 300;
   line-height: $h6-line-height;
-  margin-bottom: rem(16px);
+}
+
+.h7 {
+  font-family: $font-family-body;
+  font-size: $h7-font-size;
+  font-weight: 300;
+  line-height: $h7-line-height;
 }
 
 // TODO: move to more specific class
 a {
   transition: all 0.2s ease;
+}
+
+p {
+  opacity: 0.8;
 }
