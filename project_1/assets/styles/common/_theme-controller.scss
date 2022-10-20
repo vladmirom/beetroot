@@ -3,7 +3,7 @@
   */
 
 .body:has(.theme-switcher) {
-  background-color: $pewter_blue;
+  background-color: $white;
   transition: all 0.5s ease;
 
   & .header {
@@ -28,6 +28,19 @@
             opacity: 1;
           }
         }
+      }
+    }
+  }
+
+  & .footer {
+    border-color: $gray;
+    color: $yankees_blue;
+
+    &__link {
+      &:link,
+      &:visited,
+      &:active {
+        color: $yankees_blue;
       }
     }
   }
@@ -59,6 +72,19 @@
             opacity: 0.3;
           }
         }
+      }
+    }
+  }
+
+  & .footer {
+    color: $white;
+    border-color: $independence;
+
+    &__link {
+      &:link,
+      &:visited,
+      &:active {
+        color: $white;
       }
     }
   }

@@ -73,7 +73,7 @@ h6,
   line-height: 1.625rem;
 }
 
-.h7 {
+.h7, .footer {
   font-family: "Lato", sans-serif;
   font-size: 0.875rem;
   font-weight: 300;
@@ -92,7 +92,7 @@ p {
   * A set of classes to switch styles of the whole theme when using the theme switcher checkbox.
   */
 .body:has(.theme-switcher) {
-  background-color: #85BBB1;
+  background-color: #ffffff;
   transition: all 0.5s ease;
 }
 .body:has(.theme-switcher) .header__wrapper {
@@ -104,6 +104,13 @@ p {
 .body:has(.theme-switcher) .header .nav__link:hover:after {
   background: #F1897B;
   opacity: 1;
+}
+.body:has(.theme-switcher) .footer {
+  border-color: #E4E4E4;
+  color: #262A3F;
+}
+.body:has(.theme-switcher) .footer__link:link, .body:has(.theme-switcher) .footer__link:visited, .body:has(.theme-switcher) .footer__link:active {
+  color: #262A3F;
 }
 
 .body:has(.theme-switcher:checked) {
@@ -119,6 +126,13 @@ p {
 .body:has(.theme-switcher:checked) .header .nav__link:hover:after {
   background: linear-gradient(96.73deg, #53F3CD 6.73%, rgba(83, 243, 205, 0) 116.9%);
   opacity: 0.3;
+}
+.body:has(.theme-switcher:checked) .footer {
+  color: #ffffff;
+  border-color: #515773;
+}
+.body:has(.theme-switcher:checked) .footer__link:link, .body:has(.theme-switcher:checked) .footer__link:visited, .body:has(.theme-switcher:checked) .footer__link:active {
+  color: #ffffff;
 }
 
 /**
@@ -248,4 +262,40 @@ p {
   height: 0.1875rem;
   opacity: 0;
   transition: opacity 0.5s ease;
+}
+
+/**
+  * Footer styling.
+  */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.875rem 0;
+  border-top: 1px solid;
+}
+.footer__container {
+  width: 81.25%;
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.footer__copyright {
+  opacity: 0.6;
+}
+.footer__credits--made-by {
+  margin-right: 0.75rem;
+  opacity: 0.6;
+}
+.footer__link + .footer__link {
+  margin-left: 2rem;
+}
+.footer__link:link, .footer__link:visited, .footer__link:active {
+  opacity: 1;
+  letter-spacing: 0.08em;
+  font-weight: 400;
+  text-decoration: none;
+}
+.footer__link:hover {
+  text-decoration: underline;
 }/*# sourceMappingURL=styles.css.map */
