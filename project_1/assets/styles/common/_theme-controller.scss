@@ -2,6 +2,7 @@
   * A set of classes to switch styles of the whole theme when using the theme switcher checkbox.
   */
 
+// Light theme
 .body:has(.theme-switcher) {
   background-color: $white;
   transition: all 0.5s ease;
@@ -32,6 +33,22 @@
     }
   }
 
+  & .section-hero {
+    background-image: url('../images/hero-light.jpg');
+
+    &__title {
+      color: $yankees_blue;
+
+      &--highlighted {
+        color: $pewter_blue;
+      }
+    }
+
+    &__link {
+      @include link( $theme-light: true );
+    }
+  }
+
   & .footer {
     border-color: $gray;
     color: $yankees_blue;
@@ -46,6 +63,7 @@
   }
 }
 
+// Dark theme
 .body:has(.theme-switcher:checked) {
   background-color: $mirage;
   transition: all 0.5s ease;
@@ -73,6 +91,26 @@
           }
         }
       }
+    }
+  }
+
+  & .section-hero {
+    background-image: url('../images/hero-dark.jpg');
+
+    &__title {
+      color: $white;
+
+      &--highlighted {
+        color: $cornflower_blue;
+      }
+    }
+
+    &__subtitle {
+      color: $white;
+    }
+
+    &__link {
+      @include link( $theme-dark: true );
     }
   }
 

@@ -1,0 +1,34 @@
+/**
+  * A hero  section styles.
+  */
+
+.section {
+  &-hero {
+    width: 100%;
+    min-height: rem(1000px);
+    background-size: cover;
+    background-position: center center;
+
+    &__container {
+      @include container;
+    }
+
+    &__title {
+      max-width: 50%;
+      padding-top: rem(260px);
+
+      &--highlighted {
+        font-style: italic;
+      }
+    } 
+
+    &__subtitle {
+      max-width: 40%;
+      margin-bottom: rem(50px);
+    }
+
+    &__link {
+      @include link($theme-dark: true);
+    }
+  }
+}

@@ -9,3 +9,74 @@
   display: flex;
   align-items: center;
 }
+
+@mixin link ($theme-light: false, $theme-dark: false ) {
+  // Basic styling
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+
+  font-size: $h5-font-size;
+  line-height: $h5-line-height;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.5s ease;
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: rem(10px);
+    left: rem(10px);
+    z-index: -1;
+
+    width: 100%;
+    height: rem(13px);
+  }
+
+  // Color switch
+  @if $theme-light {
+    &:link,
+    &:visited,
+    &:active {
+      color: $congo_pink;
+
+      &:after {
+        background-color: $congo_pink;
+        opacity: 0.3;
+      }
+    }
+
+    &:hover {
+      color: $carmine_pink;
+
+      &:after {
+        background-color: $carmine_pink;
+        opacity: 0.3;
+      }
+    }
+
+  } @else if $theme-dark {
+    &:link,
+    &:visited,
+    &:active {
+      color: $turquoise;
+
+      &:after {
+        background-color: $turquoise;
+        opacity: 0.3;
+      }
+    }
+
+    &:hover {
+      color: $caribbean_green;
+
+      &:after {
+        background-color: $caribbean_green;
+        opacity: 0.3;
+      }
+    }
+  }
+}

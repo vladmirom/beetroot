@@ -4,6 +4,9 @@
   */
 
   .header {
+    position: absolute;
+    width: 100%;
+    
     &__wrapper {
       padding: rem(24px) 0;
       backdrop-filter: blur(4.5px);
