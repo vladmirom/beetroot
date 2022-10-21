@@ -49,6 +49,16 @@
     }
   }
 
+  & .section-statistics {
+    &__image {
+      background-image: url('../images/statistics-light.jpg');
+    }
+
+    &__content-description {
+      background-color: $white;
+    }
+  }
+
   & .footer {
     border-color: $gray;
     color: $yankees_blue;
@@ -111,6 +121,16 @@
 
     &__link {
       @include link( $theme-dark: true );
+    }
+  }
+
+  & .section-statistics {
+    &__image {
+      background-image: url('../images/statistics-dark.jpg');
+    }
+
+    &__content-description {
+      background-color: $mirage;
     }
   }
 

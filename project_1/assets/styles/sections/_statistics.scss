@@ -1,0 +1,41 @@
+/**
+  * A hero  section styles.
+  */
+
+.section {
+  &-statistics {
+    margin-top: rem(-280px);
+
+    &__container {
+      @include container;
+    }
+    
+    &__image {
+      width: rem(670px);
+      height: rem(560px);
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    &__content-description {
+      padding: rem(45px) 0 rem(45px) rem(56px);
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      opacity: 0.9;
+    }
+
+    &__title {
+      max-width: 50%;
+      padding-top: rem(260px);
+
+      &--highlighted {
+        font-style: italic;
+      }
+    } 
+
+    &__subtitle {
+      max-width: 40%;
+      margin-bottom: rem(50px);
+    }
+  }
+}

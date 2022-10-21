@@ -26,9 +26,5 @@
       max-width: 40%;
       margin-bottom: rem(50px);
     }
-
-    &__link {
-      @include link($theme-dark: true);
-    }
   }
 }

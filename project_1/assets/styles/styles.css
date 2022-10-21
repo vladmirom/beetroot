@@ -146,6 +146,12 @@ p {
   background-color: #E54F3A;
   opacity: 0.3;
 }
+.body:has(.theme-switcher) .section-statistics__image {
+  background-image: url("../images/statistics-light.jpg");
+}
+.body:has(.theme-switcher) .section-statistics__content-description {
+  background-color: #ffffff;
+}
 .body:has(.theme-switcher) .footer {
   border-color: #E4E4E4;
   color: #262A3F;
@@ -215,6 +221,12 @@ p {
 .body:has(.theme-switcher:checked) .section-hero__link:hover:after {
   background-color: #02E0AB;
   opacity: 0.3;
+}
+.body:has(.theme-switcher:checked) .section-statistics__image {
+  background-image: url("../images/statistics-dark.jpg");
+}
+.body:has(.theme-switcher:checked) .section-statistics__content-description {
+  background-color: #161925;
 }
 .body:has(.theme-switcher:checked) .footer {
   color: #ffffff;
@@ -419,39 +431,39 @@ p {
   max-width: 40%;
   margin-bottom: 3.125rem;
 }
-.section-hero__link {
-  display: inline-block;
-  position: relative;
-  z-index: 1;
-  font-size: 1.25rem;
-  line-height: 1.25rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  text-decoration: none;
-  transition: all 0.5s ease;
+
+/**
+  * A hero  section styles.
+  */
+.section-statistics {
+  margin-top: -17.5rem;
 }
-.section-hero__link:after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0.625rem;
-  left: 0.625rem;
-  z-index: -1;
-  width: 100%;
-  height: 0.8125rem;
+.section-statistics__container {
+  width: 81.25%;
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
 }
-.section-hero__link:link, .section-hero__link:visited, .section-hero__link:active {
-  color: #53F3CD;
+.section-statistics__image {
+  width: 41.875rem;
+  height: 35rem;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
-.section-hero__link:link:after, .section-hero__link:visited:after, .section-hero__link:active:after {
-  background-color: #53F3CD;
-  opacity: 0.3;
+.section-statistics__content-description {
+  padding: 2.8125rem 0 2.8125rem 3.5rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  opacity: 0.9;
 }
-.section-hero__link:hover {
-  color: #02E0AB;
+.section-statistics__title {
+  max-width: 50%;
+  padding-top: 16.25rem;
 }
-.section-hero__link:hover:after {
-  background-color: #02E0AB;
-  opacity: 0.3;
+.section-statistics__title--highlighted {
+  font-style: italic;
+}
+.section-statistics__subtitle {
+  max-width: 40%;
+  margin-bottom: 3.125rem;
 }/*# sourceMappingURL=styles.css.map */
