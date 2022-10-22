@@ -82,33 +82,80 @@
 }
 
 @mixin button ($theme-light: false, $theme-dark: false ) {
-    // Basic styling
+  // Basic styling
+  display: block;
+  position: relative;
+  z-index: 1;
+
+  min-width: rem(300px);
+  height: rem(90px);
+  padding: rem(33px) rem(89px);
+
+  font-size: $h5-font-size;
+  line-height: $h5-line-height;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.5s ease;
+
+  &:after {
+    content: '';
     display: block;
-    min-width: rem(300px);
-    height: rem(90px);
-    padding: rem(33px) rem(89px);
+    position: absolute;
+    top: rem(43px);
+    left: rem(100px);
+    z-index: -1;
 
-    &:after {
-      top: rem(55px);
-      left: rem(10px);
-      width: 100%;
-    }
+    width: 37%;
+    height: rem(13px);
+  }
 
-    // Color switch
-    @if $theme-light {
-      @include link ($theme-light: true);
+  // Color switch
+  @if $theme-light {
+    &:link,
+    &:visited,
+    &:active {
+      color: $congo_pink;
       border: 1px solid $gray;
 
-      &:hover {
-        border-color: $carmine_pink;
-      }
-  
-    } @else if $theme-dark {
-      @include link ($theme-dark: true);
-      border: 1px solid $independence;
-  
-      &:hover {
-        border-color: $caribbean_green;
+      &:after {
+        background-color: $congo_pink;
+        opacity: 0.3;
       }
     }
+
+    &:hover {
+      color: $carmine_pink;
+      border-color: $carmine_pink;
+
+      &:after {
+        background-color: $carmine_pink;
+        opacity: 0.3;
+      }
+    }
+
+  } @else if $theme-dark {
+    &:link,
+    &:visited,
+    &:active {
+      color: $turquoise;
+      border: 1px solid $independence;
+
+      &:after {
+        background-color: $turquoise;
+        opacity: 0.3;
+      }
+    }
+
+    &:hover {
+      color: $caribbean_green;
+      border-color: $caribbean_green;
+
+      &:after {
+        background-color: $caribbean_green;
+        opacity: 0.3;
+      }
+    }
+  }
 }

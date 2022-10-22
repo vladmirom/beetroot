@@ -115,11 +115,11 @@
       }
     }
 
-    // & .feature {
-    //   &__link {
-    //     @include button ($theme-light: true);
-    //   }
-    // }
+    & .feature {
+      &__link {
+        @include button ($theme-light: true);
+      }
+    }
   }
 
   & .footer {
@@ -271,9 +271,9 @@
           color: $white;
         }
 
-        // &__link {
-        //   @include button ($theme-dark: true);
-        // }
+        &__link {
+          @include button ($theme-dark: true);
+        }
       }
     }
   }
