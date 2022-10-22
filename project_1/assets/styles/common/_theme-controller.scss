@@ -59,8 +59,24 @@
       background-image: url('../images/statistics-light.jpg');
     }
 
-    &__content-description {
-      background-color: $white;
+    &__content {
+      &--background {
+        background-color: $white;
+      }
+      
+      & .number {
+        &__title {
+          color: $yankees_blue;
+
+          &--highlighted {
+            color: $gray;
+          }
+        }
+
+        &__subtitle {
+          color: $yankees_blue;
+        }
+      }
     }
   }
 
@@ -139,8 +155,24 @@
       background-image: url('../images/statistics-dark.jpg');
     }
 
-    &__content-description {
-      background-color: $mirage;
+    &__content {
+      &--background {
+        background-color: $mirage;
+      }
+      
+      & .number {
+        &__title {
+          color: $white;
+
+          &--highlighted {
+            color: $white;
+          }
+        }
+
+        &__subtitle {
+          color: $white;
+        }
+      }
     }
   }
 
