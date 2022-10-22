@@ -18,8 +18,8 @@
     }
     
     &__image {
-      width: rem(670px);
-      height: rem(560px);
+      width: rem(570px);
+      height: rem(670px);
       background-size: contain;
       background-repeat: no-repeat;
     }
@@ -70,7 +70,29 @@
 
         &__subtitle {
           text-align: center;
-          margin-bottom: rem(40px);
+        }
+
+        @each $number in first, second {
+          &__#{$number} {
+            &:after {
+              content: '';
+              display: block;
+              width: rem(100px);
+              height: rem(1px);
+              background-color: $pewter_blue;
+              margin: rem(40px) auto;
+            };
+          }
+        }
+      }
+
+      & .content-description {
+        &__text {
+          margin-bottom: rem(50px);
+
+          &--first {
+            margin-bottom: rem(30px);
+          }
         }
       }
     }

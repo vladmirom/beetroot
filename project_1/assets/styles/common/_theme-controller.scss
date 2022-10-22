@@ -77,6 +77,12 @@
           color: $yankees_blue;
         }
       }
+
+      & .content-description {
+        &__link {
+          @include link( $theme-light: true );
+        }
+      }
     }
   }
 
@@ -171,6 +177,16 @@
 
         &__subtitle {
           color: $white;
+        }
+      }
+
+      & .content-description {
+        &__text {
+          color: $white;
+        }
+
+        &__link {
+          @include link( $theme-dark: true );
         }
       }
     }

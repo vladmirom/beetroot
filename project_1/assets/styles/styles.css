@@ -165,6 +165,42 @@ p {
 .body:has(.theme-switcher) .section-statistics__content .number__subtitle {
   color: #262A3F;
 }
+.body:has(.theme-switcher) .section-statistics__content .content-description__link {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  font-size: 1.25rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.5s ease;
+}
+.body:has(.theme-switcher) .section-statistics__content .content-description__link:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0.625rem;
+  left: 0.625rem;
+  z-index: -1;
+  width: 100%;
+  height: 0.8125rem;
+}
+.body:has(.theme-switcher) .section-statistics__content .content-description__link:link, .body:has(.theme-switcher) .section-statistics__content .content-description__link:visited, .body:has(.theme-switcher) .section-statistics__content .content-description__link:active {
+  color: #F1897B;
+}
+.body:has(.theme-switcher) .section-statistics__content .content-description__link:link:after, .body:has(.theme-switcher) .section-statistics__content .content-description__link:visited:after, .body:has(.theme-switcher) .section-statistics__content .content-description__link:active:after {
+  background-color: #F1897B;
+  opacity: 0.3;
+}
+.body:has(.theme-switcher) .section-statistics__content .content-description__link:hover {
+  color: #E54F3A;
+}
+.body:has(.theme-switcher) .section-statistics__content .content-description__link:hover:after {
+  background-color: #E54F3A;
+  opacity: 0.3;
+}
 .body:has(.theme-switcher) .footer {
   border-color: #E4E4E4;
   color: #262A3F;
@@ -253,6 +289,45 @@ p {
 }
 .body:has(.theme-switcher:checked) .section-statistics__content .number__subtitle {
   color: #ffffff;
+}
+.body:has(.theme-switcher:checked) .section-statistics__content .content-description__text {
+  color: #ffffff;
+}
+.body:has(.theme-switcher:checked) .section-statistics__content .content-description__link {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  font-size: 1.25rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.5s ease;
+}
+.body:has(.theme-switcher:checked) .section-statistics__content .content-description__link:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0.625rem;
+  left: 0.625rem;
+  z-index: -1;
+  width: 100%;
+  height: 0.8125rem;
+}
+.body:has(.theme-switcher:checked) .section-statistics__content .content-description__link:link, .body:has(.theme-switcher:checked) .section-statistics__content .content-description__link:visited, .body:has(.theme-switcher:checked) .section-statistics__content .content-description__link:active {
+  color: #53F3CD;
+}
+.body:has(.theme-switcher:checked) .section-statistics__content .content-description__link:link:after, .body:has(.theme-switcher:checked) .section-statistics__content .content-description__link:visited:after, .body:has(.theme-switcher:checked) .section-statistics__content .content-description__link:active:after {
+  background-color: #53F3CD;
+  opacity: 0.3;
+}
+.body:has(.theme-switcher:checked) .section-statistics__content .content-description__link:hover {
+  color: #02E0AB;
+}
+.body:has(.theme-switcher:checked) .section-statistics__content .content-description__link:hover:after {
+  background-color: #02E0AB;
+  opacity: 0.3;
 }
 .body:has(.theme-switcher:checked) .footer {
   color: #ffffff;
@@ -487,8 +562,8 @@ p {
   position: relative;
 }
 .section-statistics__image {
-  width: 41.875rem;
-  height: 35rem;
+  width: 35.625rem;
+  height: 41.875rem;
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -530,5 +605,26 @@ p {
 }
 .section-statistics__content .number__subtitle {
   text-align: center;
-  margin-bottom: 2.5rem;
+}
+.section-statistics__content .number__first:after {
+  content: "";
+  display: block;
+  width: 6.25rem;
+  height: 0.0625rem;
+  background-color: #85BBB1;
+  margin: 2.5rem auto;
+}
+.section-statistics__content .number__second:after {
+  content: "";
+  display: block;
+  width: 6.25rem;
+  height: 0.0625rem;
+  background-color: #85BBB1;
+  margin: 2.5rem auto;
+}
+.section-statistics__content .content-description__text {
+  margin-bottom: 3.125rem;
+}
+.section-statistics__content .content-description__text--first {
+  margin-bottom: 1.875rem;
 }/*# sourceMappingURL=styles.css.map */
