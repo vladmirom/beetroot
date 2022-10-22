@@ -1,11 +1,11 @@
 /**
-  * A hero  section styles.
+  * Statistics section styles.
   */
 
 .section {
   &-statistics {
     position: relative;
-    margin-top: rem(-280px);
+    margin: rem(-280px) 0 rem(120px);
     z-index: 2;
 
     &__container {

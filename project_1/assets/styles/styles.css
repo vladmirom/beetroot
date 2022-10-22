@@ -32,7 +32,7 @@ h2,
   font-family: "Playfair Display", serif;
   font-size: 2.5rem;
   font-weight: 400;
-  line-height: 2.4375rem;
+  line-height: 3rem;
   margin-bottom: 1.875rem;
 }
 
@@ -201,6 +201,12 @@ p {
   background-color: #E54F3A;
   opacity: 0.3;
 }
+.body:has(.theme-switcher) .section-posts__post {
+  border-color: #E4E4E4;
+}
+.body:has(.theme-switcher) .section-posts__post .post__title--highlighted {
+  color: #85BBB1;
+}
 .body:has(.theme-switcher) .footer {
   border-color: #E4E4E4;
   color: #262A3F;
@@ -328,6 +334,18 @@ p {
 .body:has(.theme-switcher:checked) .section-statistics__content .content-description__link:hover:after {
   background-color: #02E0AB;
   opacity: 0.3;
+}
+.body:has(.theme-switcher:checked) .section-posts__post {
+  border-color: #515773;
+}
+.body:has(.theme-switcher:checked) .section-posts .post__title {
+  color: #ffffff;
+}
+.body:has(.theme-switcher:checked) .section-posts .post__title--highlighted {
+  color: #689FF2;
+}
+.body:has(.theme-switcher:checked) .section-posts .post__content {
+  color: #ffffff;
 }
 .body:has(.theme-switcher:checked) .footer {
   color: #ffffff;
@@ -507,7 +525,7 @@ p {
 }
 
 /**
-  * A hero  section styles.
+  * Hero section styles.
   */
 .section {
   position: relative;
@@ -543,11 +561,11 @@ p {
 }
 
 /**
-  * A hero  section styles.
+  * Statistics section styles.
   */
 .section-statistics {
   position: relative;
-  margin-top: -17.5rem;
+  margin: -17.5rem 0 7.5rem;
   z-index: 2;
 }
 .section-statistics__container {
@@ -627,4 +645,26 @@ p {
 }
 .section-statistics__content .content-description__text--first {
   margin-bottom: 1.875rem;
+}
+
+/**
+  * Posts section styles.
+  */
+.section-posts__container {
+  width: 81.25%;
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.section-posts__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  -moz-column-gap: 1.875rem;
+       column-gap: 1.875rem;
+}
+.section-posts__post {
+  padding: 3.125rem 2.1875rem;
+  margin-bottom: 3.75rem;
+  border-top: 0.0625rem solid;
 }/*# sourceMappingURL=styles.css.map */

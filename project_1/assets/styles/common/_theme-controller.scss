@@ -86,6 +86,20 @@
     }
   }
 
+  & .section-posts {
+    &__post {
+      border-color: $gray;
+
+      & .post {
+        &__title {
+          &--highlighted {
+            color: $pewter_blue;
+          }
+        }
+      }
+    }
+  }
+
   & .footer {
     border-color: $gray;
     color: $yankees_blue;
@@ -188,6 +202,26 @@
         &__link {
           @include link( $theme-dark: true );
         }
+      }
+    }
+  }
+
+  & .section-posts {
+    &__post {
+      border-color: $independence;
+    }
+
+    & .post {
+      &__title {
+        color: $white;
+
+        &--highlighted {
+          color: $cornflower_blue;
+        }
+      }
+
+      &__content {
+        color: $white;
       }
     }
   }
