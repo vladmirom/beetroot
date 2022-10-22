@@ -3,6 +3,8 @@
   */
 
 .section {
+  position: relative;
+
   &-hero {
     width: 100%;
     min-height: rem(1000px);
@@ -25,6 +27,13 @@
     &__subtitle {
       max-width: 40%;
       margin-bottom: rem(50px);
+    }
+
+    &__gradient {
+      position: absolute;
+      width: 100%;
+      height: rem(825.75px);
+      left: 0px;
     }
   }
 }

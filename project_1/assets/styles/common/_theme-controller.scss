@@ -47,6 +47,11 @@
     &__link {
       @include link( $theme-light: true );
     }
+
+    &__gradient {
+      background: linear-gradient(183.11deg, rgba(255, 255, 255, 0) 46.73%, $white 63.21%);
+      top: rem(475px);
+    }
   }
 
   & .section-statistics {
@@ -121,6 +126,11 @@
 
     &__link {
       @include link( $theme-dark: true );
+    }
+
+    &__gradient {
+      background: linear-gradient(183.11deg, rgba(22, 25, 38, 0) 46.73%, $mirage 63.21%);
+      top: rem(450px);
     }
   }
 

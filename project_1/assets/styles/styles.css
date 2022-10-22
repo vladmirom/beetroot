@@ -146,6 +146,10 @@ p {
   background-color: #E54F3A;
   opacity: 0.3;
 }
+.body:has(.theme-switcher) .section-hero__gradient {
+  background: linear-gradient(183.11deg, rgba(255, 255, 255, 0) 46.73%, #ffffff 63.21%);
+  top: 29.6875rem;
+}
 .body:has(.theme-switcher) .section-statistics__image {
   background-image: url("../images/statistics-light.jpg");
 }
@@ -221,6 +225,10 @@ p {
 .body:has(.theme-switcher:checked) .section-hero__link:hover:after {
   background-color: #02E0AB;
   opacity: 0.3;
+}
+.body:has(.theme-switcher:checked) .section-hero__gradient {
+  background: linear-gradient(183.11deg, rgba(22, 25, 38, 0) 46.73%, #161925 63.21%);
+  top: 28.125rem;
 }
 .body:has(.theme-switcher:checked) .section-statistics__image {
   background-image: url("../images/statistics-dark.jpg");
@@ -408,6 +416,9 @@ p {
 /**
   * A hero  section styles.
   */
+.section {
+  position: relative;
+}
 .section-hero {
   width: 100%;
   min-height: 62.5rem;
@@ -431,12 +442,20 @@ p {
   max-width: 40%;
   margin-bottom: 3.125rem;
 }
+.section-hero__gradient {
+  position: absolute;
+  width: 100%;
+  height: 51.609375rem;
+  left: 0px;
+}
 
 /**
   * A hero  section styles.
   */
 .section-statistics {
+  position: relative;
   margin-top: -17.5rem;
+  z-index: 2;
 }
 .section-statistics__container {
   width: 81.25%;

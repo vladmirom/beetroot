@@ -4,7 +4,9 @@
 
 .section {
   &-statistics {
+    position: relative;
     margin-top: rem(-280px);
+    z-index: 2;
 
     &__container {
       @include container;
