@@ -1,0 +1,66 @@
+/**
+  * Feeatures section styles.
+  */
+
+.section {
+  &-features {
+    position: relative;
+    margin-bottom: rem(60px);
+    
+    &__container {
+      @include container;
+    }
+
+    &__flex {
+      @include flex-vertical-center;
+      position: relative;
+    }
+
+    &__image {
+      width: rem(600px);
+      height: rem(540px);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-image: url('../images/features.jpg');
+    }
+
+    &__content {
+      position: absolute;
+      right: 0;
+
+      &-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        column-gap: rem(100px);
+        row-gap: rem(70px);
+      }
+
+      max-width: rem(770px);
+      padding: rem(75px) 0 rem(75px) rem(70px);
+
+      &--background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.9;
+      }
+
+      .feature {
+        position: relative;
+
+        &__list {
+          list-style: none;
+          padding-left: none;
+        }
+
+        &__item {
+          margin-bottom: rem(5px);
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+}

@@ -210,6 +210,9 @@ p {
 .body:has(.theme-switcher) .section-quotation__blockquote:before {
   background-image: url("../images/quote-light.svg");
 }
+.body:has(.theme-switcher) .section-features__content--background {
+  background-color: #ffffff;
+}
 .body:has(.theme-switcher) .footer {
   border-color: #E4E4E4;
   color: #262A3F;
@@ -352,6 +355,15 @@ p {
 }
 .body:has(.theme-switcher:checked) .section-quotation__blockquote:before {
   background-image: url("../images/quote-dark.svg");
+}
+.body:has(.theme-switcher:checked) .section-features__content--background {
+  background-color: #161925;
+}
+.body:has(.theme-switcher:checked) .section-features__content .feature__title {
+  color: #ffffff;
+}
+.body:has(.theme-switcher:checked) .section-features__content .feature__item {
+  color: #ffffff;
 }
 .body:has(.theme-switcher:checked) .footer {
   color: #ffffff;
@@ -705,9 +717,68 @@ p {
   left: -3.75rem;
   width: 6.375rem;
   height: 5.25rem;
-  background-image: url("../images/quote-light.svg");
+  background-repeat: no-repeat;
 }
 .section-quotation__author {
   color: #ffffff;
   font-style: italic;
+}
+
+/**
+  * Feeatures section styles.
+  */
+.section-features {
+  position: relative;
+  margin-bottom: 3.75rem;
+}
+.section-features__container {
+  width: 81.25%;
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.section-features__flex {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.section-features__image {
+  width: 37.5rem;
+  height: 33.75rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url("../images/features.jpg");
+}
+.section-features__content {
+  position: absolute;
+  right: 0;
+  max-width: 48.125rem;
+  padding: 4.6875rem 0 4.6875rem 4.375rem;
+}
+.section-features__content-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  -moz-column-gap: 6.25rem;
+       column-gap: 6.25rem;
+  row-gap: 4.375rem;
+}
+.section-features__content--background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.9;
+}
+.section-features__content .feature {
+  position: relative;
+}
+.section-features__content .feature__list {
+  list-style: none;
+  padding-left: none;
+}
+.section-features__content .feature__item {
+  margin-bottom: 0.3125rem;
+  opacity: 0.8;
 }/*# sourceMappingURL=styles.css.map */

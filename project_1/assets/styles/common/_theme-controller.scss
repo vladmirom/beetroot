@@ -108,6 +108,20 @@
     }
   }
 
+  & .section-features {
+    &__content {
+      &--background {
+        background-color: $white;
+      }
+    }
+
+    // & .feature {
+    //   &__link {
+    //     @include button ($theme-light: true);
+    //   }
+    // }
+  }
+
   & .footer {
     border-color: $gray;
     color: $yankees_blue;
@@ -238,6 +252,28 @@
     &__blockquote {
       &:before {
         background-image: url('../images/quote-dark.svg');
+      }
+    }
+  }
+
+  & .section-features {
+    &__content {
+      &--background {
+        background-color: $mirage;
+      }
+
+      & .feature {
+        &__title {
+          color: $white;
+        }
+  
+        &__item {
+          color: $white;
+        }
+
+        // &__link {
+        //   @include button ($theme-dark: true);
+        // }
       }
     }
   }

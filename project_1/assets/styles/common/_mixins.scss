@@ -80,3 +80,35 @@
     }
   }
 }
+
+@mixin button ($theme-light: false, $theme-dark: false ) {
+    // Basic styling
+    display: block;
+    min-width: rem(300px);
+    height: rem(90px);
+    padding: rem(33px) rem(89px);
+
+    &:after {
+      top: rem(55px);
+      left: rem(10px);
+      width: 100%;
+    }
+
+    // Color switch
+    @if $theme-light {
+      @include link ($theme-light: true);
+      border: 1px solid $gray;
+
+      &:hover {
+        border-color: $carmine_pink;
+      }
+  
+    } @else if $theme-dark {
+      @include link ($theme-dark: true);
+      border: 1px solid $independence;
+  
+      &:hover {
+        border-color: $caribbean_green;
+      }
+    }
+}
