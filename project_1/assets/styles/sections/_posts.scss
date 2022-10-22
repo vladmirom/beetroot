@@ -4,6 +4,8 @@
 
 .section {
   &-posts {
+    margin-bottom: rem(60px);
+    
     &__container {
       @include container;
     }

@@ -1,0 +1,40 @@
+/**
+  * Quotation section styles.
+  */
+
+.section {
+  &-quotation {
+    margin-bottom: rem(60px);
+    
+    &__container {
+      @include container;
+    }
+
+    &__wrapper {
+      background-image: url('../images/quotation.jpg');
+      padding: rem(100px) rem(300px) rem(100px) rem(160px);
+    }
+
+    &__blockquote {
+      position: relative;
+      color: $white;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: rem(-30px);
+        left: rem(-60px);
+
+        width: rem(102px);
+        height: rem(84px);
+
+        background-image: url('../images/quote-light.svg');
+      }
+    }
+
+    &__author {
+      color: $white;
+      font-style: italic;
+    }
+  }
+}

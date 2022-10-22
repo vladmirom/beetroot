@@ -207,6 +207,9 @@ p {
 .body:has(.theme-switcher) .section-posts__post .post__title--highlighted {
   color: #85BBB1;
 }
+.body:has(.theme-switcher) .section-quotation__blockquote:before {
+  background-image: url("../images/quote-light.svg");
+}
 .body:has(.theme-switcher) .footer {
   border-color: #E4E4E4;
   color: #262A3F;
@@ -346,6 +349,9 @@ p {
 }
 .body:has(.theme-switcher:checked) .section-posts .post__content {
   color: #ffffff;
+}
+.body:has(.theme-switcher:checked) .section-quotation__blockquote:before {
+  background-image: url("../images/quote-dark.svg");
 }
 .body:has(.theme-switcher:checked) .footer {
   color: #ffffff;
@@ -650,6 +656,9 @@ p {
 /**
   * Posts section styles.
   */
+.section-posts {
+  margin-bottom: 3.75rem;
+}
 .section-posts__container {
   width: 81.25%;
   max-width: 1170px;
@@ -667,4 +676,38 @@ p {
   padding: 3.125rem 2.1875rem;
   margin-bottom: 3.75rem;
   border-top: 0.0625rem solid;
+}
+
+/**
+  * Quotation section styles.
+  */
+.section-quotation {
+  margin-bottom: 3.75rem;
+}
+.section-quotation__container {
+  width: 81.25%;
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.section-quotation__wrapper {
+  background-image: url("../images/quotation.jpg");
+  padding: 6.25rem 18.75rem 6.25rem 10rem;
+}
+.section-quotation__blockquote {
+  position: relative;
+  color: #ffffff;
+}
+.section-quotation__blockquote:before {
+  content: "";
+  position: absolute;
+  top: -1.875rem;
+  left: -3.75rem;
+  width: 6.375rem;
+  height: 5.25rem;
+  background-image: url("../images/quote-light.svg");
+}
+.section-quotation__author {
+  color: #ffffff;
+  font-style: italic;
 }/*# sourceMappingURL=styles.css.map */
