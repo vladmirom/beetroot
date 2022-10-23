@@ -116,6 +116,10 @@
     }
 
     & .feature {
+      &__button {
+        @include button ($theme-light: true);
+      }
+
       &__link {
         @include button ($theme-light: true);
       }
@@ -141,7 +145,7 @@
   background-color: $mirage;
   transition: all 0.5s ease;
 
-  &  .header {
+  & .header {
     &__wrapper {
       background: linear-gradient(270deg, rgba(22, 25, 38, 0.5) 0%, 
                                           rgba(22, 25, 38, 0) 24.1%, 
@@ -271,8 +275,13 @@
           color: $white;
         }
 
+        &__button {
+          @include link ($theme-dark: true);
+        }
+
+
         &__link {
-          @include button ($theme-dark: true);
+          @include link ($theme-dark: true);
         }
       }
     }
