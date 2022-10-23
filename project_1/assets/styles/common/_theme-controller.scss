@@ -108,6 +108,14 @@
     }
   }
 
+  .section-media {
+    & .description__title {
+      &--highlighted {
+        color: $pewter_blue;
+      }
+    }
+  }
+
   & .section-features {
     &__content {
       &--background {
@@ -256,6 +264,14 @@
     &__blockquote {
       &:before {
         background-image: url('../images/quote-dark.svg');
+      }
+    }
+  }
+
+  .section-media {
+    & .description__title {
+      &--highlighted {
+        color: $cornflower_blue;
       }
     }
   }

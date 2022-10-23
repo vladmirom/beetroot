@@ -1,0 +1,17 @@
+/**
+  * Media section styles.
+  */
+
+.section {
+  &-media {
+    margin-bottom: rem(60px);
+    
+    &__container {
+      @include container;
+    }
+
+    & .description__content {
+      max-width: rem(897px);
+    }
+  }
+}

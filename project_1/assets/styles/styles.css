@@ -210,6 +210,9 @@ p {
 .body:has(.theme-switcher) .section-quotation__blockquote:before {
   background-image: url("../images/quote-light.svg");
 }
+.body:has(.theme-switcher) .section-media .description__title--highlighted {
+  color: #85BBB1;
+}
 .body:has(.theme-switcher) .section-features__content--background {
   background-color: #ffffff;
 }
@@ -439,6 +442,9 @@ p {
 }
 .body:has(.theme-switcher:checked) .section-quotation__blockquote:before {
   background-image: url("../images/quote-dark.svg");
+}
+.body:has(.theme-switcher:checked) .section-media .description__title--highlighted {
+  color: #689FF2;
 }
 .body:has(.theme-switcher:checked) .section-features__content--background {
   background-color: #161925;
@@ -878,6 +884,22 @@ p {
 .section-quotation__author {
   color: #ffffff;
   font-style: italic;
+}
+
+/**
+  * Media section styles.
+  */
+.section-media {
+  margin-bottom: 3.75rem;
+}
+.section-media__container {
+  width: 81.25%;
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.section-media .description__content {
+  max-width: 56.0625rem;
 }
 
 /**
