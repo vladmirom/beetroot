@@ -114,6 +114,31 @@
         color: $pewter_blue;
       }
     }
+
+    & .video {
+      &__tablet {
+        border-color: $gray;
+
+        &-camera {
+          border-color: $gray;
+        }
+
+        &-controller {
+          border-color: $gray;
+        }
+      }
+
+      &__button {
+        &--circle {
+          fill: $ucla_blue;
+          opacity: 0.3;
+        }
+
+        &--triangle {
+          fill: $yankees_blue;
+        }
+      }
+    }
   }
 
   & .section-features {
@@ -269,9 +294,46 @@
   }
 
   .section-media {
-    & .description__title {
-      &--highlighted {
-        color: $cornflower_blue;
+    & .video {
+      &__tablet {
+        border-color: $independence;
+
+        &-camera {
+          border-color: $independence;
+        }
+
+        &-controller {
+          border-color: $independence;
+        }
+      }
+
+      &__image-overlay {
+        box-shadow: inset 0 0 0 rem(2000px) rgba(22, 25, 37, 0.7);
+      }
+
+      &__button {
+        &--circle {
+          fill: $cornflower_blue;
+          opacity: 0.3;
+        }
+
+        &--triangle {
+          fill: $cornflower_blue;
+        }
+      }
+    }
+
+    & .description {
+      &__title {
+        color: $white;
+        
+        &--highlighted {
+          color: $cornflower_blue;
+        }
+      }
+
+      &__content {
+        color: $white;
       }
     }
   }
