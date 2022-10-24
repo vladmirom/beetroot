@@ -898,6 +898,30 @@ p {
   margin-left: auto;
   margin-right: auto;
 }
+.section-media .video__tablet {
+  position: relative;
+  padding: 1.9375rem 4.375rem 1.9375rem 1.875rem;
+  border: 0.0625rem solid black;
+  border-radius: 2rem;
+}
+.section-media .video__tablet-camera {
+  position: absolute;
+  top: calc(50% - 6.5px);
+  left: 0.5rem;
+  border: 0.0625rem solid black;
+  border-radius: 2rem;
+  width: 0.8125rem;
+  height: 0.8125rem;
+}
+.section-media .video__tablet-controller {
+  position: absolute;
+  top: calc(50% - 17.5px);
+  right: 0.875rem;
+  border: 0.0625rem solid black;
+  border-radius: 2rem;
+  width: 2.1875rem;
+  height: 2.1875rem;
+}
 .section-media .video__wrapper {
   position: relative;
   padding-bottom: 56.25%; /* 16:9 */

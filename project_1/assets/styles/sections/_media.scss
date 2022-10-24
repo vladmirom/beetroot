@@ -11,6 +11,35 @@
     }
 
     & .video {
+      &__tablet {
+        position: relative;
+        padding: rem(31px) rem(70px) rem(31px) rem(30px);
+        border: rem(1px) solid black;
+        border-radius: rem(32px);
+
+        &-camera {
+          position: absolute;
+          top: calc(50% - (13px/2));
+          left: rem(8px);
+
+          border: rem(1px) solid black;
+          border-radius: rem(32px);
+          width: rem(13px);
+          height: rem(13px);
+        }
+
+        &-controller {
+          position: absolute;
+          top: calc(50% - (35px/2));
+          right: rem(14px);
+
+          border: rem(1px) solid black;
+          border-radius: rem(32px);
+          width: rem(35px);
+          height: rem(35px);
+        }
+      }
+
       &__wrapper {
         position: relative;
         padding-bottom: 56.25%; /* 16:9 */
