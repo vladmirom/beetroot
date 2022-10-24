@@ -149,10 +149,6 @@
     }
 
     & .feature {
-      &__button {
-        @include button ($theme-light: true);
-      }
-
       &__link {
         @include button ($theme-light: true);
       }
@@ -326,7 +322,7 @@
     & .description {
       &__title {
         color: $white;
-        
+
         &--highlighted {
           color: $cornflower_blue;
         }
@@ -353,13 +349,8 @@
           color: $white;
         }
 
-        &__button {
-          @include link ($theme-dark: true);
-        }
-
-
         &__link {
-          @include link ($theme-dark: true);
+          @include button ($theme-dark: true);
         }
       }
     }
