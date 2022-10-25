@@ -108,7 +108,7 @@
     }
   }
 
-  .section-media {
+  & .section-media {
     & .description__title {
       &--highlighted {
         color: $pewter_blue;
@@ -151,6 +151,16 @@
     & .feature {
       &__link {
         @include button ($theme-light: true);
+      }
+    }
+  }
+
+  & .section-reviews {
+    & .content {
+      &__title {
+        &--highlighted {
+          color: $pewter_blue;
+        }
       }
     }
   }
@@ -289,7 +299,7 @@
     }
   }
 
-  .section-media {
+  & .section-media {
     & .video {
       &__tablet {
         border-color: $independence;
@@ -352,6 +362,22 @@
         &__link {
           @include button ($theme-dark: true);
         }
+      }
+    }
+  }
+
+  & .section-reviews {
+    & .content {
+      &__title {
+        color: $white;
+
+        &--highlighted {
+          color: $cornflower_blue;
+        }
+      }
+
+      &__text {
+        color: $white;
       }
     }
   }
