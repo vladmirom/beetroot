@@ -1,3 +1,5 @@
-@import 'variables/variables';
-@import 'global/global';
-@import 'sections/our-team/our-team';
+@import 'common/rem';
+@import 'common/variables';
+@import 'common/global';
+
+@import 'sections/our-team';

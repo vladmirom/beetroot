@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"notes.css"}
+{"version":3,"sources":["_banner.scss","notes.css","../common/_variables.scss","../common/_mixins.scss"],"names":[],"mappings":"AAAA;EACE,yBAAA;EACA,mBAAA;ACCF;ADCE;EACE,mBAAA;EACA,UECE;ECDJ,eAAA;EACA,iBAAA;AFEF;AEAE;EACE,gBAAA;AFEJ;ADFE;EAEE,kBAAA;ACGJ;ADAE;EACE,YAAA;ACEJ;ADAI;EACE,iBAAA;ACEN","file":"notes.css"}

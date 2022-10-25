@@ -1,1 +1,22 @@
-/*# sourceMappingURL=notes.css.map */
+.banner {
+  background-color: #898F8F;
+  padding: 100px 50px;
+}
+.banner__title {
+  margin-bottom: 40px;
+  color: red;
+  font-size: 20px;
+  line-height: 24px;
+}
+.banner__title .bold {
+  font-weight: 600;
+}
+.banner, .banner__title {
+  text-align: center;
+}
+.banner__text {
+  color: white;
+}
+.banner__text--bold {
+  font-weight: bold;
+}/*# sourceMappingURL=notes.css.map */
