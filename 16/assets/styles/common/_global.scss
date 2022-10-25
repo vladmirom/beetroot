@@ -8,7 +8,7 @@
 
 html {
   font-size: $body-font-size;
-  line-height: 24px;
+  line-height: rem(24px);
 }
 
 body {

@@ -5,8 +5,8 @@
 .banner__title {
   margin-bottom: 40px;
   color: red;
-  font-size: 20px;
-  line-height: 24px;
+  font-size: rem(20px);
+  line-height: rem(24px);
 }
 .banner__title .bold {
   font-weight: 600;
