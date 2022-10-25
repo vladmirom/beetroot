@@ -109,6 +109,7 @@ p {
   color: #262A3F;
 }
 .body:has(.theme-switcher) .section-hero__title--highlighted {
+  font-style: italic;
   color: #85BBB1;
 }
 .body:has(.theme-switcher) .section-hero__link {
@@ -206,12 +207,14 @@ p {
   border-color: #E4E4E4;
 }
 .body:has(.theme-switcher) .section-posts__post .post__title--highlighted {
+  font-style: italic;
   color: #85BBB1;
 }
 .body:has(.theme-switcher) .section-quotation__blockquote:before {
   background-image: url("../images/quote-light.svg");
 }
 .body:has(.theme-switcher) .section-media .description__title--highlighted {
+  font-style: italic;
   color: #85BBB1;
 }
 .body:has(.theme-switcher) .section-media .video__tablet {
@@ -276,6 +279,11 @@ p {
   opacity: 0.3;
 }
 .body:has(.theme-switcher) .section-reviews .content__title--highlighted {
+  font-style: italic;
+  color: #85BBB1;
+}
+.body:has(.theme-switcher) .section-contact .info__title--highlighted {
+  font-style: italic;
   color: #85BBB1;
 }
 .body:has(.theme-switcher) .footer {
@@ -307,6 +315,7 @@ p {
   color: #ffffff;
 }
 .body:has(.theme-switcher:checked) .section-hero__title--highlighted {
+  font-style: italic;
   color: #689FF2;
 }
 .body:has(.theme-switcher:checked) .section-hero__subtitle {
@@ -413,6 +422,7 @@ p {
   color: #ffffff;
 }
 .body:has(.theme-switcher:checked) .section-posts .post__title--highlighted {
+  font-style: italic;
   color: #689FF2;
 }
 .body:has(.theme-switcher:checked) .section-posts .post__content {
@@ -444,6 +454,7 @@ p {
   color: #ffffff;
 }
 .body:has(.theme-switcher:checked) .section-media .description__title--highlighted {
+  font-style: italic;
   color: #689FF2;
 }
 .body:has(.theme-switcher:checked) .section-media .description__content {
@@ -504,6 +515,7 @@ p {
   color: #ffffff;
 }
 .body:has(.theme-switcher:checked) .section-reviews .content__title--highlighted {
+  font-style: italic;
   color: #689FF2;
 }
 .body:has(.theme-switcher:checked) .section-reviews .content__text {
@@ -708,9 +720,6 @@ p {
   max-width: 50%;
   padding-top: 16.25rem;
 }
-.section-hero__title--highlighted {
-  font-style: italic;
-}
 .section-hero__subtitle {
   max-width: 40%;
   margin-bottom: 3.125rem;
@@ -833,9 +842,6 @@ p {
   margin-bottom: 3.75rem;
   border-top: 0.0625rem solid;
 }
-.section-posts .post__title--highlighted {
-  font-style: italic;
-}
 
 /**
   * Quotation section styles.
@@ -943,9 +949,6 @@ p {
   width: 100%;
   height: 100%;
 }
-.section-media .description__title--highlighted {
-  font-style: italic;
-}
 .section-media .description__content {
   max-width: 56.0625rem;
 }
@@ -1024,9 +1027,6 @@ p {
 .section-reviews__content {
   margin-bottom: 3.125rem;
 }
-.section-reviews .content__title--highlighted {
-  font-style: italic;
-}
 .section-reviews .content__text {
   max-width: 35%;
 }
@@ -1087,4 +1087,22 @@ p {
   font-style: italic;
   color: #ffffff;
   z-index: 2;
+}
+
+/**
+  * Quotation section styles.
+  */
+.section-contact {
+  margin-bottom: 6.25rem;
+}
+.section-contact__container {
+  width: 81.25%;
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.section-contact__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14.375rem;
 }/*# sourceMappingURL=styles.css.map */

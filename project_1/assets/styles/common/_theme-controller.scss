@@ -40,7 +40,7 @@
       color: $yankees_blue;
 
       &--highlighted {
-        color: $pewter_blue;
+        @include highlighted ($theme-light: true);
       }
     }
 
@@ -93,7 +93,7 @@
       & .post {
         &__title {
           &--highlighted {
-            color: $pewter_blue;
+            @include highlighted ($theme-light: true);
           }
         }
       }
@@ -111,7 +111,7 @@
   & .section-media {
     & .description__title {
       &--highlighted {
-        color: $pewter_blue;
+        @include highlighted ($theme-light: true);
       }
     }
 
@@ -159,7 +159,17 @@
     & .content {
       &__title {
         &--highlighted {
-          color: $pewter_blue;
+          @include highlighted ($theme-light: true);
+        }
+      }
+    }
+  }
+
+  & .section-contact {
+    & .info {
+      &__title { 
+        &--highlighted {
+          @include highlighted ($theme-light: true);
         }
       }
     }
@@ -217,7 +227,7 @@
       color: $white;
 
       &--highlighted {
-        color: $cornflower_blue;
+        @include highlighted ($theme-dark: true);
       }
     }
 
@@ -281,7 +291,7 @@
         color: $white;
 
         &--highlighted {
-          color: $cornflower_blue;
+          @include highlighted ($theme-dark: true);
         }
       }
 
@@ -334,7 +344,7 @@
         color: $white;
 
         &--highlighted {
-          color: $cornflower_blue;
+          @include highlighted ($theme-dark: true);
         }
       }
 
@@ -372,7 +382,7 @@
         color: $white;
 
         &--highlighted {
-          color: $cornflower_blue;
+          @include highlighted ($theme-dark: true);
         }
       }
 

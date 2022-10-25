@@ -22,13 +22,5 @@
       margin-bottom: rem(60px);
       border-top: rem(1px) solid;
     }
-
-    & .post {
-      &__title {
-        &--highlighted {
-          font-style: italic;
-        }
-      }
-    }
   }
 }

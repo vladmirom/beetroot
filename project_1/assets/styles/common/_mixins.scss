@@ -10,6 +10,16 @@
   align-items: center;
 }
 
+@mixin highlighted ($theme-light: false, $theme-dark: false ) {
+  font-style: italic;
+
+  @if $theme-light {
+    color: $pewter_blue;
+  } @else if $theme-dark {
+    color: $cornflower_blue;
+  }
+}
+
 @mixin link ($theme-light: false, $theme-dark: false ) {
   // Basic styling
   display: inline-block;

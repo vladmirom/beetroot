@@ -87,12 +87,6 @@
     }
 
     & .description {
-      &__title {
-        &--highlighted {
-          font-style: italic;
-        }
-      }
-
       &__content {
         max-width: rem(897px);
       }
