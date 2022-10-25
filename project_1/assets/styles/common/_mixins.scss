@@ -32,7 +32,10 @@
   letter-spacing: 0.08em;
   text-transform: uppercase;
   text-decoration: none;
+  border: none;
+  background: none;
   transition: all 0.5s ease;
+  cursor: pointer;
 
   &:after {
     content: '';
@@ -46,8 +49,17 @@
     height: rem(13px);
   }
 
-  // Color switch
+  // Color switch.
   @if $theme-light {
+    // For <button> or <input> element.
+    color: $congo_pink;
+
+    &:after {
+      background-color: $congo_pink;
+      opacity: 0.3;
+    }
+
+    // For <a> element.
     &:link,
     &:visited,
     &:active {
@@ -69,6 +81,15 @@
     }
 
   } @else if $theme-dark {
+    // For <button> or <input> element.
+    color: $turquoise;
+
+    &:after {
+      background-color: $turquoise;
+      opacity: 0.3;
+    }
+
+    // For <a> element.
     &:link,
     &:visited,
     &:active {

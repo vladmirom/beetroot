@@ -177,6 +177,21 @@
         }
       }
     }
+
+    & .form {
+      &__item {
+        border-color: rgba(38, 42, 63, 0.1);
+        color: rgba(38, 42, 63, 0.5);
+
+        &::placeholder {
+          color: $yankees_blue;
+        }
+      }
+      
+      &__submit {
+        @include link ($theme-light: true);
+      }
+    }
   }
 
   & .footer {
@@ -403,9 +418,30 @@
 
     & .info {
       &__title { 
+        color: $white;
+
         &--highlighted {
           @include highlighted ($theme-dark: true);
         }
+      }
+
+      &__text {
+        color: $white;
+      }
+    }
+
+    & .form {
+      &__item {
+        color: rgba(255, 255, 255, 0.5);
+        border-color: rgba(255, 255, 255, 0.1);
+
+        &::placeholder {
+          color: $white;
+        }
+      }
+
+      &__submit {
+        @include link ($theme-dark: true);
       }
     }
   }

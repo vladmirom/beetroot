@@ -325,7 +325,31 @@
           </div>
 
           <div class="section-contact__form form">
-            
+            <form class="form" 
+                  action="formHandler/post.php" 
+                  method="POST" 
+                  autocomplete="on">
+
+              <input type="text" 
+                     class="form__item" 
+                     name="name" 
+                     id="name" 
+                     placeholder="Your name">
+
+              <input type="email" 
+                     class="form__item" 
+                     name="email" 
+                     id="email" 
+                     placeholder="Email">
+
+              <input type="text" 
+                     class="form__item" 
+                     name="tellMore" 
+                     id="tellMore" 
+                     placeholder="Tell more">
+
+              <button type="submit" class="form__submit">Send Request</button>
+            </form>
           </div>
         </div>
       </div>
