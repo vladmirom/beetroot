@@ -282,6 +282,9 @@ p {
   font-style: italic;
   color: #85BBB1;
 }
+.body:has(.theme-switcher) .section-contact__grid {
+  border-color: #E4E4E4;
+}
 .body:has(.theme-switcher) .section-contact .info__title--highlighted {
   font-style: italic;
   color: #85BBB1;
@@ -520,6 +523,13 @@ p {
 }
 .body:has(.theme-switcher:checked) .section-reviews .content__text {
   color: #ffffff;
+}
+.body:has(.theme-switcher:checked) .section-contact__grid {
+  border-color: #515773;
+}
+.body:has(.theme-switcher:checked) .section-contact .info__title--highlighted {
+  font-style: italic;
+  color: #689FF2;
 }
 .body:has(.theme-switcher:checked) .footer {
   color: #ffffff;
@@ -1105,4 +1115,6 @@ p {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 14.375rem;
+  padding-top: 3.75rem;
+  border-top: 1px solid;
 }/*# sourceMappingURL=styles.css.map */
