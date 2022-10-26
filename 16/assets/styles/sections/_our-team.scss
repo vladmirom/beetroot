@@ -5,6 +5,10 @@
 .our-team {
   padding: 121px 0 122px;
 
+  &__container {
+    @include container;
+  }
+
   &__header {
     @include flex-vertical-column-center;
 
@@ -24,7 +28,7 @@
       max-width: rem(450px);
       width: 100%;
       height: rem(20px);
-      margin-bottom: rem(20px);
+      margin-bottom: rem(40px);
 
       &--line {
         width: 100%;
@@ -41,6 +45,64 @@
           height: rem(20px);
         }
       }
+    }
+  }
+
+  &__profile {
+    display: grid;
+    grid-template-columns: 1fr 1px 1fr;
+    gap: rem(85px);
+
+    &-image {
+      padding-top: rem(65px);
+      padding-bottom: rem(65px);
+      padding-left: rem(70px);
+    }
+
+    & .profile-image {
+      &__wrapper {
+        @include flex-center;
+
+        position: relative;
+        display: block;
+
+        width: rem(430px);
+        height: rem(430px);
+      }
+
+      &__corner {
+        position: absolute;
+
+        width: 100px;
+        height: 100px;
+
+        @each $key, $val in $borders {
+          &--#{$key} {
+            border-#{$key}: 1px solid $gold;
+            border-#{$val}: 1px solid $gold;
+            #{$key}: 0;
+            #{$val}: 0;
+          } 
+        }
+      }
+
+      &__person {
+        padding: rem(15px);
+      }
+    }
+
+    &-separator {
+      height: 100%;
+      width: rem(1px);
+      padding-top: rem(65px);
+
+      background-color: $gold;
+    }
+
+    &-description {
+      padding-top: rem(65px);
+      padding-bottom: rem(65px);
+      padding-right: rem(70px);
     }
   }
 

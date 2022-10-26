@@ -11,6 +11,14 @@ $black: #333333;
 $white: #ffffff;
 $red: red;
 
+// Borders.
+$borders: (
+  top: right,
+  right: bottom,
+  bottom: left,
+  left: top
+);
+
 // Fonts
 $font-family-headings: 'Roboto', sans-serif; 
 $font-family-body: 'Raleway', sans-serif;
