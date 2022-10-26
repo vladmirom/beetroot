@@ -73,8 +73,8 @@
       &__corner {
         position: absolute;
 
-        width: 100px;
-        height: 100px;
+        width: rem(100px);
+        height: rem(100px);
 
         @each $key, $val in $borders {
           &--#{$key} {
@@ -101,8 +101,48 @@
 
     &-description {
       padding-top: rem(65px);
-      padding-bottom: rem(65px);
       padding-right: rem(70px);
+      padding-bottom: rem(65px);
+      text-align: center;
+
+      &-title {
+        color: $dark-grey;
+
+        &:after {
+          content: "";
+          display: block;
+          width: rem(100px);
+          height: rem(1px);
+          background-color: $gold;
+          margin: 30px auto;
+        }
+      }
+
+      &-position {
+        color: $dark-grey;
+      }
+
+      &-separator {
+        display: block;
+        gap: rem(5px);
+
+        width: rem(50px);
+        margin: rem(20px) auto rem(25px);
+
+        @for $i from 1 through 3 {
+          &--#{$i} {
+            display: inline-block;
+            height: rem(5px);
+            background-color: $gold;
+            gap: rem(5px);
+            width: rem(10px);
+          }
+        }
+
+        &--2 {
+          width: rem(20px);
+        }
+      }
     }
   }
 

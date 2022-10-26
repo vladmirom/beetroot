@@ -51,7 +51,6 @@ h2,
   font-weight: 900;
   line-height: 2.625rem;
   text-transform: capitalize;
-  margin-bottom: 1.875rem;
 }
 
 h3,
@@ -148,8 +147,8 @@ h5,
 }
 .our-team__profile .profile-image__corner {
   position: absolute;
-  width: 100px;
-  height: 100px;
+  width: 6.25rem;
+  height: 6.25rem;
 }
 .our-team__profile .profile-image__corner--top {
   border-top: 1px solid #FFCC00;
@@ -186,6 +185,51 @@ h5,
 }
 .our-team__profile-description {
   padding-top: 4.0625rem;
-  padding-bottom: 4.0625rem;
   padding-right: 4.375rem;
+  padding-bottom: 4.0625rem;
+  text-align: center;
+}
+.our-team__profile-description-title {
+  color: #666666;
+}
+.our-team__profile-description-title:after {
+  content: "";
+  display: block;
+  width: 6.25rem;
+  height: 0.0625rem;
+  background-color: #FFCC00;
+  margin: 30px auto;
+}
+.our-team__profile-description-position {
+  color: #666666;
+}
+.our-team__profile-description-separator {
+  display: block;
+  gap: 0.3125rem;
+  width: 3.125rem;
+  margin: 1.25rem auto 1.5625rem;
+}
+.our-team__profile-description-separator--1 {
+  display: inline-block;
+  height: 0.3125rem;
+  background-color: #FFCC00;
+  gap: 0.3125rem;
+  width: 0.625rem;
+}
+.our-team__profile-description-separator--2 {
+  display: inline-block;
+  height: 0.3125rem;
+  background-color: #FFCC00;
+  gap: 0.3125rem;
+  width: 0.625rem;
+}
+.our-team__profile-description-separator--3 {
+  display: inline-block;
+  height: 0.3125rem;
+  background-color: #FFCC00;
+  gap: 0.3125rem;
+  width: 0.625rem;
+}
+.our-team__profile-description-separator--2 {
+  width: 1.25rem;
 }/*# sourceMappingURL=styles.css.map */
