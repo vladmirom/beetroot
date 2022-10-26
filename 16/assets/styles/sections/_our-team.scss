@@ -6,8 +6,42 @@
   padding: 121px 0 122px;
 
   &__header {
-    display: flex;
-    justify-content: center;
+    @include flex-vertical-column-center;
+
+    &-subtitle {
+      color: $grey;
+    }
+
+    &-title {
+      color: $gold;
+    }
+
+    &-separator {
+      display: flex;
+      align-items: center;
+      gap: rem(5px);
+
+      max-width: rem(450px);
+      width: 100%;
+      height: rem(20px);
+      margin-bottom: rem(20px);
+
+      &--line {
+        width: 100%;
+        height: rem(1px);
+        background-color: $gold;
+      }
+
+      &--icon {
+        fill: $gold;
+        height: rem(20px);
+
+        & svg {
+          width: rem(20px);
+          height: rem(20px);
+        }
+      }
+    }
   }
 
 }
