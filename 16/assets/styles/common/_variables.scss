@@ -1,3 +1,7 @@
+/**
+ * Website variables styles.
+ */
+
 // Colors.
 $grey: #898F8F;
 $dark-grey: #666666;
@@ -7,8 +11,21 @@ $black: #333333;
 $white: #ffffff;
 $red: red;
 
-// Fonts.
-$font-raleway: 'Raleway', sans-serif;
-$font-roboto: 'Roboto', sans-serif;
+// Fonts
+$font-family-headings: 'Roboto', sans-serif; 
+$font-family-body: 'Raleway', sans-serif;
 $font-open-sans: 'Open Sans', sans-serif;
-$body-font-size: 14px;
+
+$font-body: 14px;
+$h1-font-size: rem(60px);
+$h2-font-size: rem(36px);
+$h3-font-size: rem(24px);
+$h4-font-size: rem(18px);
+$h5-font-size: rem(14px);
+
+$line-height: rem(24px);
+$h1-line-height: rem(66px);
+$h2-line-height: rem(42px);
+$h3-line-height: rem(36px);
+$h4-line-height: rem(24px);
+$h5-line-height: rem(14px);

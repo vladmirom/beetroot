@@ -1,0 +1,61 @@
+/**
+ * Typography styles.
+ */
+
+ .body {
+  font-family: $font-family-body;
+  font-size: $font-body;
+  font-weight: 500;
+  line-height: $line-height;
+  margin: 0;
+}
+
+h1,
+.h1 {
+  font-family: $font-family-headings;
+  font-size: $h1-font-size;
+  font-weight: 900;
+  line-height: $h1-line-height;
+  text-transform: uppercase;
+  margin-bottom: rem(40px);
+}
+
+h2,
+.h2 {
+  font-family: $font-family-headings;
+  font-size: $h2-font-size;
+  font-weight: 900;
+  line-height: $h2-line-height;
+  text-transform: capitalize;
+  margin-bottom: rem(30px);
+}
+
+h3,
+.h3 {
+  font-family: $font-family-body;
+  font-size: $h3-font-size;
+  font-weight: 400;
+  line-height: $h3-line-height;
+  text-transform: capitalize;
+  margin-bottom: rem(30px);
+}
+
+h4,
+.h4 {
+  font-family: $font-family-body;
+  font-size: $h4-font-size;
+  font-weight: 400;
+  line-height: $h4-line-height;
+  text-transform: uppercase;
+  margin-bottom: rem(15px);
+}
+
+h5,
+.h5 {
+  font-family: $font-open-sans;
+  font-size: $h5-font-size;
+  font-weight: 700;
+  line-height: $h5-line-height;
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
