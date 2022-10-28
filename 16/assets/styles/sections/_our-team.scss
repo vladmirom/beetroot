@@ -1,0 +1,165 @@
+/**
+ * Our team section styles.
+ */
+
+.our-team {
+  padding: 121px 0 122px;
+
+  &__container {
+    @include container;
+  }
+
+  &__header {
+    @include flex-vertical-column-center;
+
+    &-subtitle {
+      color: $grey;
+    }
+
+    &-title {
+      color: $gold;
+    }
+
+    &-separator {
+      display: flex;
+      align-items: center;
+      gap: rem(5px);
+
+      max-width: rem(450px);
+      width: 100%;
+      height: rem(20px);
+      margin-bottom: rem(40px);
+
+      &--line {
+        width: 100%;
+        height: rem(1px);
+        background-color: $gold;
+      }
+
+      &--icon {
+        fill: $gold;
+        height: rem(20px);
+
+        & svg {
+          width: rem(20px);
+          height: rem(20px);
+        }
+      }
+    }
+  }
+
+  &__profile {
+    display: grid;
+    grid-template-columns: 1fr 1px 1fr;
+    gap: rem(85px);
+
+    &-image {
+      padding-top: rem(65px);
+      padding-bottom: rem(65px);
+      padding-left: rem(70px);
+    }
+
+    & .profile-image {
+      &__wrapper {
+        @include flex-center;
+
+        position: relative;
+        display: block;
+
+        width: rem(430px);
+        height: rem(430px);
+      }
+
+      &__corner {
+        position: absolute;
+
+        width: rem(100px);
+        height: rem(100px);
+
+        @each $key, $val in $borders {
+          &--#{$key} {
+            border-#{$key}: 1px solid $gold;
+            border-#{$val}: 1px solid $gold;
+            #{$key}: 0;
+            #{$val}: 0;
+          } 
+        }
+      }
+
+      &__person {
+        padding: rem(15px);
+      }
+    }
+
+    &-separator {
+      height: 100%;
+      width: rem(1px);
+      padding-top: rem(65px);
+
+      background-color: $gold;
+    }
+
+    &-description {
+      padding-top: rem(65px);
+      padding-right: rem(70px);
+      padding-bottom: rem(65px);
+      text-align: center;
+
+      &-title {
+        color: $dark-grey;
+
+        &:after {
+          content: "";
+          display: block;
+          width: rem(100px);
+          height: rem(1px);
+          background-color: $gold;
+          margin: 30px auto;
+        }
+      }
+
+      &-position {
+        color: $dark-grey;
+        margin-bottom: rem(30px);
+      }
+
+      & .social-media {
+        @include flex-center;
+        gap: rem(5px);
+
+        margin-bottom: rem(49px);
+
+        &__icon {
+          @include social-media-icon;
+        }
+      }
+
+      &-separator {
+        display: block;
+        gap: rem(5px);
+
+        width: rem(50px);
+        margin: rem(20px) auto rem(25px);
+
+        @for $i from 1 through 3 {
+          &--#{$i} {
+            display: inline-block;
+            height: rem(5px);
+            background-color: $gold;
+            gap: rem(5px);
+            width: rem(10px);
+          }
+        }
+
+        &--2 {
+          width: rem(20px);
+        }
+      }
+
+      &-link {
+        @include link;
+      }
+    }
+  }
+
+}
