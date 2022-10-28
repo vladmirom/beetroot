@@ -202,6 +202,37 @@ h5,
 }
 .our-team__profile-description-position {
   color: #666666;
+  margin-bottom: 1.875rem;
+}
+.our-team__profile-description .social-media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3125rem;
+  margin-bottom: 3.0625rem;
+}
+.our-team__profile-description .social-media__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.875rem;
+  height: 1.875rem;
+  border: 2px solid #CCCCCC;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.our-team__profile-description .social-media__icon svg {
+  height: 0.75rem;
+  width: 100%;
+  fill: #CCCCCC;
+  transition: all 0.3s ease;
+}
+.our-team__profile-description .social-media__icon:hover {
+  border-color: #FFCC00;
+}
+.our-team__profile-description .social-media__icon:hover svg {
+  fill: #FFCC00;
 }
 .our-team__profile-description-separator {
   display: block;
@@ -232,4 +263,24 @@ h5,
 }
 .our-team__profile-description-separator--2 {
   width: 1.25rem;
+}
+.our-team__profile-description-link {
+  display: inline-block;
+  padding: 0.3125rem 0.625rem;
+  border: 0.0625rem solid;
+  transition: all 0.3s ease;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  font-size: 0.875rem;
+  line-height: 0.875rem;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.our-team__profile-description-link:link, .our-team__profile-description-link:visited, .our-team__profile-description-link:active {
+  color: #666666;
+  border-color: #FFCC00;
+}
+.our-team__profile-description-link:hover {
+  color: #FFCC00;
+  border-color: #666666;
 }/*# sourceMappingURL=styles.css.map */

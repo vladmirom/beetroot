@@ -120,6 +120,18 @@
 
       &-position {
         color: $dark-grey;
+        margin-bottom: rem(30px);
+      }
+
+      & .social-media {
+        @include flex-center;
+        gap: rem(5px);
+
+        margin-bottom: rem(49px);
+
+        &__icon {
+          @include social-media-icon;
+        }
       }
 
       &-separator {
@@ -142,6 +154,10 @@
         &--2 {
           width: rem(20px);
         }
+      }
+
+      &-link {
+        @include link;
       }
     }
   }
