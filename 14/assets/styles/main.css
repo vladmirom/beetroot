@@ -1,0 +1,218 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+:root {
+  --base-font: 16px;
+  --base-color: #16133D;
+  --brand-green-color: #3DB370;
+  --light-green-color: #E1F4F5;
+  --turquoise-color: #CAEFF2;
+  --dark-green-color: #52C29D;
+  --blue-color: #B9DCFF;
+  --light-blue-color: #D1E7FF;
+  --dark-blue-color: #007FFC;
+  --gray-color: #E8F3FF;
+  --light-gray-color: #F4FEFF;
+}
+
+html {
+  font-family: 'Roboto', sans-serif;
+  font-size: var(--base-font);
+  line-height: 1.75rem; /* 28px */
+  font-weight: 400;
+  color: var(--base-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600; 
+} 
+
+h1, .h1 {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 2.5rem; /* 40px */
+  line-height: 130%;
+  letter-spacing: 2%;
+}
+
+body {
+  margin: 0; /* Fixing margin issue in Chrome */
+}
+
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+.block-grid {
+  display: grid;
+}
+
+.block-grid__teemplate-3col {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.875rem; /* 30px */
+}
+
+/* Header styles */
+.header {
+  background-color: #fff;
+  border-bottom: 1px solid #EFEEF3;
+  padding: 1.375rem 0; /* 22px */
+}
+
+.header__logo {
+  width: 12.5rem; /* 200px */
+  height: 2.1875rem; /* 35px */
+}
+
+.header__logo .logo__text {
+  fill: #16133D;
+}
+
+.logo__flower {
+  fill: none;
+  stroke: var(--brand-green-color);
+}
+
+.logo__flower--fill {
+  fill: var(--brand-green-color);
+}
+
+/* Main content styles */
+.content {
+  margin: 6.25rem 0; /* 100px */
+}
+
+.content__subtitle {
+  line-height: 1.3125rem; /* 21px */
+  color: #7690A8;
+  text-transform: uppercase;
+}
+
+.content__title {
+  margin-top: 0.9375rem; /* 15px */
+  margin-bottom: 2.5rem; /* 40px */
+}
+
+.content__card {
+  padding: 2.5rem; /* 40px */
+  border: 1px solid #E5EAF4;
+  border-radius: 8px;
+  transition: all .2s ease-out; 
+}
+
+.content__card:hover {
+  border-color: var(--brand-green-color);
+}
+
+.content__card-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem; /* 64px */
+  height: 4rem; /* 64px */
+  border: 1px solid rgba(21, 101, 216, 0.1);
+  border-radius: 1rem; /* 16px */
+  margin-bottom: 1.875rem; /* 30px */
+}
+
+.content__card:hover .content__card-icon {
+  border-color: rgba(61, 179, 112, 0.1);
+}
+
+.card-icon__svg-fill,
+.card-icon__svg-stroke {
+  transition: all .2s ease-out; 
+}
+
+.card-icon__svg-fill--blue {
+  fill: var(--blue-color);
+}
+
+.card-icon__svg-fill--light-blue {
+  fill: var(--light-blue-color);
+}
+
+.card-icon__svg-fill--dark-blue {
+  fill: var(--dark-blue-color);
+}
+
+.card-icon__svg-fill--gray {
+  fill: var(--gray-color);
+}
+
+.card-icon__svg-stroke--dark-blue {
+  stroke: var(--dark-blue-color);
+}
+
+.content__card:hover .card-icon__svg-fill--blue {
+  fill: var(--turquoise-color);
+}
+
+.content__card:hover .card-icon__svg-fill--light-blue {
+  fill: var(--light-green-color);
+}
+
+.content__card:hover .card-icon__svg-fill--dark-blue {
+  fill: var(--dark-green-color);
+}
+
+.content__card:hover .card-icon__svg-fill--gray {
+  fill: var(--light-gray-color);
+}
+
+.content__card:hover .card-icon__svg-fill--gray {
+  fill: var(--light-gray-color);
+}
+
+.content__card-title {
+  font-weight: 400;
+  font-size: 1.5rem; /* 24px */
+  line-height: 1.3125rem; /* 24px */
+  letter-spacing: 2%;
+  margin-bottom: 0.9375rem; /* 15px */
+}
+
+.content__card-text {
+  margin-bottom: 1.875rem; /* 30px */
+}
+
+.content__card-link {
+  color: var(--brand-green-color);
+  font-weight: 600;
+  line-height: 1.1875rem; /* 19px */
+  text-decoration: none;
+}
+
+/* Footer styles */
+.footer {
+  background-color: var(--base-color);
+  padding: 2.5rem 0; /* 40px */
+}
+
+.footer__logo {
+  margin-bottom: 2.5rem; /* 40px */
+}
+
+.footer__logo svg {
+  width: 12.5rem; /* 200px */
+  height: 2.1875rem; /* 35px */
+}
+
+.footer__social-media {
+  display: flex;
+  gap: 10px;
+}
+
+.footer__social-media-item svg {
+  width: 2.375rem; /* 38px */
+  height: 2.375rem; /* 38px */
+  fill: #0D0D0D;
+  transition: all .2s ease-out; 
+}
+
+.footer__social-media-link:hover svg {
+  fill: var(--brand-green-color);
+}
