@@ -80,3 +80,18 @@ function getKmPerHour( ) {
   let qQuestionReply = document.getElementById("kmPerHourReply");
   qQuestionReply.innerHTML = message;
 }
+
+// Converting USD to Eur.
+document.querySelector('#convertBtn').addEventListener('click', convertUsdEuro);
+
+function convertUsdEuro( ) {
+  let usd = prompt("Add your amount of USD.");
+  let convertionRate = 1.0036;
+
+  let eur = usd * convertionRate;
+  let eurRounded = Math.round(eur);
+  let message = `If you exchange &#36;${usd} to €, you will receive <strong>${eurRounded}€<strong>.`;
+
+  let qQuestionReply = document.getElementById("convertReply");
+  qQuestionReply.innerHTML = message;
+}
