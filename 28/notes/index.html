@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../assets/styles/styles.css">
+
+  <title>Lesson 28</title>
+</head>
+
+<body>
+  <header></header>
+
+  <main>
+    <section class="section section__container">
+      <p>all scripts should go to bottom to let the html of the page render faster.</p>
+      <p>tag script has 2 attributes:
+      <ol>
+        <li>type = "text/javascript". In modern js we don't need to declare it, browsers understand that this is js.
+        </li>
+        <li>language = "javascript". The same as previous.</li>
+      </ol>
+      so normal connection of the js would be using &lt;script&gt;&lt;/script&gt; tag.
+      </p>
+      <p>If we add a scfipt as a &lt;script src="../assets/scripts/script.js"&gt; console.log('Hello World')
+        &lt;/script&gt;. The "Hello World" inside of the script won't be executed.</p>
+      <p><mark>"</mark>use strict<mark>"</mark>, or <mark>'</mark>use strict<mark>'</mark> - is the directive in the beginning of .js file, or beginning of script, or
+        inside the function. Tells to use some newer functions in js. Note: can't turn it off. The use case is to writee
+        cleare code and keep developers in line.</p>
+
+        <h3>Js variables</h3>
+        <p>there are 3 ways to declare the variable</p>
+        <ul>
+          <li>var - can be visible everywhere in the doc.</li>
+          <li>let - is a variable that can be re-written. It is accessible only in the place where we have <mark>{}</mark>.</li>
+          <li>const - can not be redeclared.</li>
+        </ul>
+
+        <p>The name can include:</p>
+        <ul>
+          <li>It can have letters, digits, dollar sign, and underscore.</li>
+          <li>It can not have the digit first.</li>
+          <li>It is recommended to use latin letters, not cyrilic or hieroglyphs.</li>
+          <li>It is not recommended to use hyphen and numbers.</li>
+          <li>Register counts here: <mark>u</mark>ser and <mark>U</mark>ser are 2 different variables.</li>
+          <li>There are reserveed words that is not recommended to use: <a href="https://www.w3schools.com/js/js_reserved.asp">https://www.w3schools.com/js/js_reserved.asp</a></li>
+        </ul>
+
+        <p>Styles of variable cases</p>
+        <ul>
+          <li>myUserInfo - camel case.</li>
+          <li>my_user_info - snake case.</li>
+          <li>MyUserInfo - pascal case.</li>
+          <li>my-user-info - kebab case.</li>
+        </ul>
+
+        <p>Basic functions:</p>
+        <ul>
+          <li>Alert - just creates a message.</li>
+          <li>Prompt - we can get a value from here.</li>
+          <li>Confirm - we can get the boolean.</li>
+        </ul>
+
+
+        <h3>Types of data</h3>
+        <p>There are 8 types of data. However, many sources give different number of data types</p>
+        <ol>
+          <li>Number - represents integers and floats.
+            <ul>
+              <li>Integers</li>
+              <li>Floats</li>
+              <li>Infinity - can be infinity or -infinity</li>
+              <li>NaN - "Not a number".</li>
+            </ul>
+          </li>
+          <li>BigInt - 2 у 53 ступені - 1. Can be with + and with -.</li>
+          <li>String - has 3 ways to declare. When using sqewed parenthesis, we can add variables inside.</li>
+          <li>Boolean - trye/false.</li>
+          <li>null - значення пустоти. Значення присвоєне і є пустотою.</li>
+          <li>underfined - значення не присвоєне.</li>
+          <li>Arrays.</li>
+          <li>Objects.</li>
+        </ol>
+        <p>All types that have 1 value are named primitive, the others (object and array) are called constructives.</p>
+
+        <p>Function <strong>typeof</strong> helps to define the type of data. Can use with () and without.</p>
+        <p><strong>typeof null</strong> always gives result as object. This is inner JS error.</p>
+
+        <h3>Math in JS</h3>
+        <p>Math is built in JS.</p>
+    </section>
+
+    <section>
+      <nav>
+        <ul>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+        </ul>
+      </nav>
+    </section>
+  </main>
+
+  <footer>
+    <script>
+      // console.log('Hello word!', 1);
+      // console.log(2);
+    </script>
+    <script src="../assets/scripts/notes.js"></script>
+  </footer>
+</body>
+
+</html>
