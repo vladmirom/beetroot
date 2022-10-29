@@ -108,11 +108,67 @@
 
           <div class="section-medium__task">
             <h3>Check the leangth of quadrangle and calculate the area of it.</h3>
-            <p class="section-medium__task-text">Having fun is greeat, but we have a job to do. Do you see that
+            <p class="section-medium__task-text">Having fun is great, but we have a job to do. Do you see that
               building, yes, that one, in shape of quadrangle. We need to calculate the area of it. Tell me the length
               of one of the sides and I will calculate the area.</p>
-            <p class="section-medium__task-text" id="qLengthReply"></p>
-              <button class="section-medium__task-button" id="qLengthBtn">What is the length of the quadrangle's side?</button>
+            <p class="section-medium__task-text" id="qLengthReply">If you don't know, just give me a guess.</p>
+            <button class="section-medium__task-button" id="qLengthBtn">What is the length of the quadrangle's
+              side?</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-maximum">
+      <div class="section-maximum__container">
+        <div class="section-maximum__wrap">
+          <h1 class="h2">Maximum tasks</h1>
+
+          <div class="section-maximum__task">
+            <h3>Check the radius of a circle and calculate the area of it.</h3>
+            <p class="section-maximum__task-text">Well done with quadrangle. What about that building in the shape of a
+              circle?</p>
+            <p class="section-maximum__task-text" id="cRadiusReply">This should not be hard, expecially after the quadrangle.</p>
+            <button class="section-maximum__task-button" id="cRadiusBtn">What is the radius of the circle?</button>
+          </div>
+
+          <div class="section-maximum__task">
+            <h3>Calculate a speed the user needs to drive in a car, by asking the length betweens cities and the time he
+              wants to spend in the trip.</h3>
+            <p class="section-maximum__task-text">Did you buy a new car? This is a new Tesla. Is it fast? How much do
+              you think it would take you to go from Helsinki to Mykolaiv? Let's see, I can calculate the speed per hour
+              if you tell me the distance in km and the desired time in route.<span id="userAgeReply"></span></p>
+
+            <form id="speedCalculation" class="section-maximum__task-form form" action="formHandler/get.php"
+              method="GET">
+              <div class="form__grid">
+                <div class="form__column">
+                  <label class="form__label" for="speedCalculationDistance">Distance</label>
+                  <input class="form__number" type="number" name="speedCalculationDistance"
+                    id="speedCalculationDistance">
+                </div>
+
+                <div class="form__column">
+                  <label class="form__label" for="lastName">Time in route (in hours)</label>
+                  <input class="form__number" type="number" name="speedCalculationTime" id="speedCalculationTime">
+                </div>
+              </div>
+
+              <p class="section-maximum__task-text" id="kmPerHourReply">Remember to obey the traffic rules and use common sense.</p>
+
+              <!-- Since we don't need to submit the form and we don't have the php server, changing "submit" button type to "button".-->
+              <button type="button" class="section-maximum__task-button" id="speedBtn">Calculate</button>
+            </form>
+          </div>
+
+          <div class="section-maximum__task">
+            <h3>Check the leangth of quadrangle and calculate the area of it.</h3>
+            <p class="section-maximum__task-text">Having fun is greeat, but we have a job to do. Do you see that
+              building, yes, that one, in shape of quadrangle. We need to calculate the area of it. Tell me the length
+              of one of the sides and I will calculate the area.</p>
+            <p class="section-maximum__task-text" id="qLengthReply"></p>
+            <button class="section-maximum__task-button" id="qLengthBtn">What is the length of the quadrangle's
+              side?</button>
           </div>
         </div>
       </div>

@@ -2,8 +2,6 @@
  * Medium tasks
  */
 
- console.log('hi');
- 
 // Asking the name of the user
 document.querySelector('#nameBtn').addEventListener('click', getUserName);
 
@@ -45,5 +43,40 @@ function getQuadrangleSideLength( ) {
   let message = `The area of that building is ${qSideArea} meters.`;
 
   let qQuestionReply = document.getElementById("qLengthReply");
+  qQuestionReply.innerHTML = message;
+}
+
+/**
+ * Difficult tasks
+ */
+
+// Asking the radius of circle
+document.querySelector('#cRadiusBtn').addEventListener('click', getCircleRadius);
+
+function getCircleRadius( ) {
+  let cRadius = prompt("What is the radius of the circle in meters?");
+  const piNumber = 3.14159265;
+  let cArea = piNumber * (cRadius ** 2);
+  let cAreaRounded = Math.round(cArea);
+  let message = `The area of that building is ${cAreaRounded} meters.`;
+
+  let qQuestionReply = document.getElementById("cRadiusReply");
+  qQuestionReply.innerHTML = message;
+}
+
+// Asking the distance between cities and time in route.
+document.querySelector('#speedBtn').addEventListener('click', getKmPerHour);
+
+function getKmPerHour( ) {
+  let distance = document.getElementById('speedCalculationDistance').value;
+  let time = document.getElementById('speedCalculationTime').value;
+
+  let kmPerHour = distance / time;
+  let speedRounded = Math.round(kmPerHour);
+  let message = `If you plan to travel ${distance} kilometers in ${time} hours, you should be traveling around ${speedRounded} kilometers per hour.`;
+
+  console.log(message);
+
+  let qQuestionReply = document.getElementById("kmPerHourReply");
   qQuestionReply.innerHTML = message;
 }
