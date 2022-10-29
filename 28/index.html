@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Playfair+Display:ital@0;1&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="assets/styles/styles.css">
+
+  <title>Volodymyr Melnychenko | Introduction to JavaScript</title>
+</head>
+
+<body class="body">
+  <main class="main">
+    <section class="section-minimum">
+      <div class="section-minimum__container">
+        <div class="section-minimum__wrap">
+          <h1 class="h2">Minimum tasks</h1>
+
+          <div class="section-minimum__task">
+            <h3>Create the HTML-file with all possible ways to connect scripts.</h3>
+            <p>We can either write the scripts (preferrably) in the bottom (footer) of the document via
+              &lt;script&gt;&lt;/script&gt;, or add them as a separate file adding the path to that file in &lt;script
+              src="../assets/scripts/script.js"&gt;&lt;/script&gt;</p>
+          </div>
+
+          <div class="section-minimum__task">
+            <h3>Working wiht variables</h3>
+            <p>Making it more fun, I'm going to use diffent styles of variable casses.</p>
+            <p>I add 4 people: 4 first names and 4 last names and commenting some of them out.</p>
+          </div>
+
+          <div class="section-minimum__task">
+            <h3>Commenting lines of code.</h3>
+            <p>I know 2 ways to comment code:</p>
+            <ul class="section-minimum__task-list">
+              <li>
+                One line commenting with
+                <span class="section-minimum__task-list-code">//</span>
+                .
+              </li>
+              <li>
+                Multiple line commenting with
+                <span class="section-minimum__task-list-code">/* */</span>
+                .
+              </li>
+            </ul>
+          </div>
+
+          <div class="section-minimum__task">
+            <h3>Most Common Programming Case Types.</h3>
+            <ul class="section-minimum__task-list">
+              <li>
+                Camel case
+                <span class="section-minimum__task-list-code">camelCaseVariable</span>
+                .
+              </li>
+              <li>
+                Snake Case
+                <span class="section-minimum__task-list-code">snake_case_variable</span>
+                .
+              </li>
+              <li>
+                Kebab case
+                <span class="section-minimum__task-list-code">kebab-case-variable</span>
+                .
+              </li>
+              <li>
+                Pascal Case
+                <span class="section-minimum__task-list-code">PascalCaseVariable</span>
+                .
+              </li>
+              <li>
+                Upper Case Snake Case
+                <span class="section-minimum__task-list-code">UPPER_CASE_SNAKE_VARIABLE</span>
+                .
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section-medium">
+      <div class="section-medium__container">
+        <div class="section-medium__wrap">
+          <h1 class="h2">Medium tasks</h1>
+
+          <div class="section-medium__task">
+            <h3>As the name of the user and show "Hi, *name*".</h3>
+            <p class="section-medium__task-text">Hey mate, you look familiar.</p>
+            <button class="section-medium__task-button" id="nameBtn">Hi there!</button>
+          </div>
+
+          <div class="section-medium__task">
+            <h3>Check the year of birth of the user and calculate what is his age.</h3>
+            <p class="section-medium__task-text">Oh, hi there! I can see you drink bear. You seem to look too young for
+              that, what is your birht year? <span id="userAgeReply"></span></p>
+            <button class="section-medium__task-button" id="ageBtn">What is your birth year?</button>
+          </div>
+
+          <div class="section-medium__task">
+            <h3>Check the leangth of quadrangle and calculate the area of it.</h3>
+            <p class="section-medium__task-text">Having fun is greeat, but we have a job to do. Do you see that
+              building, yes, that one, in shape of quadrangle. We need to calculate the area of it. Tell me the length
+              of one of the sides and I will calculate the area.</p>
+            <p class="section-medium__task-text" id="qLengthReply"></p>
+              <button class="section-medium__task-button" id="qLengthBtn">What is the length of the quadrangle's side?</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- This part is for level 1 -->
+    <script>
+      let userName = 'Markus',
+        // user_name = 'Jaakko',
+        // user-name = 'Raino',
+        UserName = 'Mikko';
+
+      const userLastName = 'Karikivi';
+      // const user_last_name = 'Teittinen';
+      // const user-last-name = 'Lepistö';
+      const UserLastName = 'Multanen';
+    </script>
+
+    <!-- This part is for levels 2-3 -->
+    <script src="assets/scripts/scripts.js"></script>
+  </main>
+</body>
+
+</html>

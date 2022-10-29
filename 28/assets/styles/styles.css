@@ -1,0 +1,181 @@
+/*--------------------------------------------------------------
+  # Utils: REM helper
+--------------------------------------------------------------*/
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+html {
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.body {
+  background-color: #FAE6D8;
+}
+
+.main {
+  margin: 6.25rem 1.25rem;
+}
+
+.list, .section-medium__task-list, .section-minimum__task-list {
+  list-style: inside;
+  padding-left: 1.25rem;
+}
+
+.body {
+  font-family: "Lato", sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.625rem;
+  margin: 0;
+}
+
+h1,
+.h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.75rem;
+  font-weight: 400;
+  line-height: 3.25rem;
+  margin-bottom: 1.25rem;
+}
+
+h2,
+.h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  line-height: 3rem;
+  margin-bottom: 1.875rem;
+}
+
+h3,
+.h3 {
+  font-family: "Lato", sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 2.875rem;
+  margin-bottom: 0.9375rem;
+  letter-spacing: 0.04em;
+}
+
+h4,
+.h4 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 3rem;
+  margin-bottom: 0.9375rem;
+  letter-spacing: 0.05em;
+}
+
+h5,
+.h5 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.25rem;
+  letter-spacing: 0.08em;
+}
+
+h6,
+.h6 {
+  font-family: "Lato", sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.625rem;
+}
+
+p {
+  opacity: 0.8;
+}
+
+.section {
+  margin: 100px 0;
+}
+.section__container {
+  width: 92%;
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/**
+  * Minimum tasks section styles.
+  */
+.section-minimum {
+  margin-bottom: 3.125rem;
+}
+.section-minimum__container {
+  width: 92%;
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.section-minimum__wrap {
+  color: #fff;
+  border-radius: 0.625rem;
+  padding: 4.375rem 4.6875rem;
+  background-color: #ED5C52;
+}
+.section-minimum__task {
+  margin-bottom: 3.125rem;
+}
+.section-minimum__task-list-code {
+  background-color: rgba(87, 142, 247, 0.3);
+  padding: 0 0.625rem;
+  border-radius: 0.3125rem;
+}
+
+/**
+  * Medium tasks section styles.
+  */
+.section-medium {
+  margin-bottom: 3.125rem;
+}
+.section-medium__container {
+  width: 92%;
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.section-medium__wrap {
+  color: #fff;
+  border-radius: 0.625rem;
+  padding: 4.375rem 4.6875rem;
+  background-color: #F8C964;
+}
+.section-medium__task {
+  margin-bottom: 3.125rem;
+}
+.section-medium__task-text {
+  margin-bottom: 1.25rem;
+}
+.section-medium__task-button {
+  display: flex;
+  align-items: center;
+  font-family: "Lato", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5rem;
+  padding: 0.8125rem 2.5rem;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: all 0.2s linear;
+  background: #FF9900;
+  color: #fff;
+}
+.section-medium__task-button:hover {
+  background: #F29D38;
+}
+.section-medium__task-list-code {
+  background-color: rgba(87, 142, 247, 0.3);
+  padding: 0 0.625rem;
+  border-radius: 0.3125rem;
+}/*# sourceMappingURL=styles.css.map */
