@@ -17,7 +17,6 @@
 </head>
 
 <body class="body">
-
   <header class="header">
     <div class="header__wrapper">
       <div class="header__container">
@@ -44,6 +43,7 @@
           </div>
 
           <div class="header__menu">
+            <input class="header__burger-input" type="checkbox" id="header-burger">
             <nav class="header__nav nav">
               <ul class="nav__list">
                 <li class="nav__item">
@@ -69,10 +69,14 @@
 
             <label for="themeSwitcher">
               <input class="theme-switcher" type="checkbox" id="themeSwitcher" name="themeSwitcher">
-              <span class="check">
-                <span class="check__m"></span>
+              <span class="switch">
+                <span class="switch__inside"></span>
               </span>
             </label>
+
+            <label class="header__burger-label" for="header-burger">
+              <span class="header__burger"></span>
+            </label>   
           </div>
         </div>
       </div>

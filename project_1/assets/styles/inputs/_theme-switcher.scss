@@ -7,7 +7,7 @@
   display: none;
 
   &:checked {
-    & ~ .check {
+    & ~ .switch {
       background-color: $white;
   
       &:before {
@@ -18,7 +18,7 @@
         transform: translateX(rem(0px));
       }
 
-      & .check__m {
+      & .switch__inside {
         &:after {
           display: none;
         }
@@ -27,7 +27,7 @@
   }
 }
 
-.check {
+.switch {
   position: relative;
   display: block;
   width: rem(50px);
@@ -64,7 +64,7 @@
     transform: translateX(rem(50px));
   }
 
-  &__m {
+  &__inside {
     &:before {
       content: 'Dark';
       font-size: rem(10px);

@@ -1,6 +1,10 @@
 /*--------------------------------------------------------------
   # Utils: REM helper
 --------------------------------------------------------------*/
+/**
+  * Breakpoint viewport sizes and media queries.
+  * Using (benchmarking :) ) Bootstrap 5 breakpoints.
+  */
 *,
 ::after,
 ::before {
@@ -698,20 +702,20 @@ p {
   visibility: none;
   display: none;
 }
-.theme-switcher:checked ~ .check {
+.theme-switcher:checked ~ .switch {
   background-color: #ffffff;
 }
-.theme-switcher:checked ~ .check:before {
+.theme-switcher:checked ~ .switch:before {
   transform: translateX(-6.25rem);
 }
-.theme-switcher:checked ~ .check:after {
+.theme-switcher:checked ~ .switch:after {
   transform: translateX(0rem);
 }
-.theme-switcher:checked ~ .check .check__m:after {
+.theme-switcher:checked ~ .switch .switch__inside:after {
   display: none;
 }
 
-.check {
+.switch {
   position: relative;
   display: block;
   width: 3.125rem;
@@ -722,7 +726,7 @@ p {
   transition: all 0.5s ease;
   overflow: hidden;
 }
-.check:before {
+.switch:before {
   content: "";
   position: absolute;
   top: 0.15625rem;
@@ -734,7 +738,7 @@ p {
   transition: all 0.5s ease;
   z-index: 1;
 }
-.check:after {
+.switch:after {
   content: "";
   position: absolute;
   top: 0.15625rem;
@@ -746,7 +750,7 @@ p {
   transition: all 0.5s ease;
   transform: translateX(3.125rem);
 }
-.check__m:before {
+.switch__inside:before {
   content: "Dark";
   font-size: 0.625rem;
   font-weight: 400;
@@ -756,7 +760,7 @@ p {
   color: #161925;
   transform: translateX(0.9375rem);
 }
-.check__m:after {
+.switch__inside:after {
   content: "Light";
   font-size: 0.625rem;
   font-weight: 400;
@@ -772,20 +776,57 @@ p {
   * NOTE: theme switcher is styled in inputs/theme-switcher.scss
   */
 .header {
-  position: absolute;
+  position: relative;
   width: 100%;
 }
-.header__wrapper {
-  padding: 1.5rem 0;
-  -webkit-backdrop-filter: blur(4.5px);
-          backdrop-filter: blur(4.5px);
-  margin-top: 1.875rem;
+@media (min-width: 992px) {
+  .header {
+    position: absolute;
+  }
+}
+@media (min-width: 992px) {
+  .header__wrapper {
+    padding: 1.5rem 0;
+    -webkit-backdrop-filter: blur(4.5px);
+            backdrop-filter: blur(4.5px);
+    margin-top: 1.875rem;
+  }
 }
 .header__container {
-  width: 81.25%;
-  max-width: 1170px;
+  width: 93.75%;
+  max-width: 540px;
   margin-left: auto;
   margin-right: auto;
+}
+@media (min-width: 576px) {
+  .header__container {
+    width: 93.75%;
+    max-width: 720px;
+  }
+}
+@media (min-width: 768px) {
+  .header__container {
+    width: 96.7741935484%;
+    max-width: 960px;
+  }
+}
+@media (min-width: 992px) {
+  .header__container {
+    width: 95%;
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1200px) {
+  .header__container {
+    width: 95%;
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1400px) {
+  .header__container {
+    width: 81.25%;
+    max-width: 1170px;
+  }
 }
 .header__block {
   display: flex;
@@ -835,10 +876,40 @@ p {
   border-top: 1px solid;
 }
 .footer__container {
-  width: 81.25%;
-  max-width: 1170px;
+  width: 93.75%;
+  max-width: 540px;
   margin-left: auto;
   margin-right: auto;
+}
+@media (min-width: 576px) {
+  .footer__container {
+    width: 93.75%;
+    max-width: 720px;
+  }
+}
+@media (min-width: 768px) {
+  .footer__container {
+    width: 96.7741935484%;
+    max-width: 960px;
+  }
+}
+@media (min-width: 992px) {
+  .footer__container {
+    width: 95%;
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1200px) {
+  .footer__container {
+    width: 95%;
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1400px) {
+  .footer__container {
+    width: 81.25%;
+    max-width: 1170px;
+  }
 }
 .footer__copyright {
   opacity: 0.6;
@@ -873,10 +944,40 @@ p {
   background-position: center center;
 }
 .section-hero__container {
-  width: 81.25%;
-  max-width: 1170px;
+  width: 93.75%;
+  max-width: 540px;
   margin-left: auto;
   margin-right: auto;
+}
+@media (min-width: 576px) {
+  .section-hero__container {
+    width: 93.75%;
+    max-width: 720px;
+  }
+}
+@media (min-width: 768px) {
+  .section-hero__container {
+    width: 96.7741935484%;
+    max-width: 960px;
+  }
+}
+@media (min-width: 992px) {
+  .section-hero__container {
+    width: 95%;
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1200px) {
+  .section-hero__container {
+    width: 95%;
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1400px) {
+  .section-hero__container {
+    width: 81.25%;
+    max-width: 1170px;
+  }
 }
 .section-hero__title {
   max-width: 50%;
@@ -902,10 +1003,40 @@ p {
   z-index: 2;
 }
 .section-statistics__container {
-  width: 81.25%;
-  max-width: 1170px;
+  width: 93.75%;
+  max-width: 540px;
   margin-left: auto;
   margin-right: auto;
+}
+@media (min-width: 576px) {
+  .section-statistics__container {
+    width: 93.75%;
+    max-width: 720px;
+  }
+}
+@media (min-width: 768px) {
+  .section-statistics__container {
+    width: 96.7741935484%;
+    max-width: 960px;
+  }
+}
+@media (min-width: 992px) {
+  .section-statistics__container {
+    width: 95%;
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1200px) {
+  .section-statistics__container {
+    width: 95%;
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1400px) {
+  .section-statistics__container {
+    width: 81.25%;
+    max-width: 1170px;
+  }
 }
 .section-statistics__flex {
   display: flex;
@@ -987,10 +1118,40 @@ p {
   margin-bottom: 3.75rem;
 }
 .section-posts__container {
-  width: 81.25%;
-  max-width: 1170px;
+  width: 93.75%;
+  max-width: 540px;
   margin-left: auto;
   margin-right: auto;
+}
+@media (min-width: 576px) {
+  .section-posts__container {
+    width: 93.75%;
+    max-width: 720px;
+  }
+}
+@media (min-width: 768px) {
+  .section-posts__container {
+    width: 96.7741935484%;
+    max-width: 960px;
+  }
+}
+@media (min-width: 992px) {
+  .section-posts__container {
+    width: 95%;
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1200px) {
+  .section-posts__container {
+    width: 95%;
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1400px) {
+  .section-posts__container {
+    width: 81.25%;
+    max-width: 1170px;
+  }
 }
 .section-posts__grid {
   display: grid;
@@ -1012,10 +1173,40 @@ p {
   margin-bottom: 3.75rem;
 }
 .section-quotation__container {
-  width: 81.25%;
-  max-width: 1170px;
+  width: 93.75%;
+  max-width: 540px;
   margin-left: auto;
   margin-right: auto;
+}
+@media (min-width: 576px) {
+  .section-quotation__container {
+    width: 93.75%;
+    max-width: 720px;
+  }
+}
+@media (min-width: 768px) {
+  .section-quotation__container {
+    width: 96.7741935484%;
+    max-width: 960px;
+  }
+}
+@media (min-width: 992px) {
+  .section-quotation__container {
+    width: 95%;
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1200px) {
+  .section-quotation__container {
+    width: 95%;
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1400px) {
+  .section-quotation__container {
+    width: 81.25%;
+    max-width: 1170px;
+  }
 }
 .section-quotation__wrapper {
   background-image: url("../images/quotation.jpg");
@@ -1046,10 +1237,40 @@ p {
   margin-bottom: 7.5rem;
 }
 .section-media__container {
-  width: 81.25%;
-  max-width: 1170px;
+  width: 93.75%;
+  max-width: 540px;
   margin-left: auto;
   margin-right: auto;
+}
+@media (min-width: 576px) {
+  .section-media__container {
+    width: 93.75%;
+    max-width: 720px;
+  }
+}
+@media (min-width: 768px) {
+  .section-media__container {
+    width: 96.7741935484%;
+    max-width: 960px;
+  }
+}
+@media (min-width: 992px) {
+  .section-media__container {
+    width: 95%;
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1200px) {
+  .section-media__container {
+    width: 95%;
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1400px) {
+  .section-media__container {
+    width: 81.25%;
+    max-width: 1170px;
+  }
 }
 .section-media .video__tablet {
   position: relative;
@@ -1123,10 +1344,40 @@ p {
   margin-bottom: 3.75rem;
 }
 .section-features__container {
-  width: 81.25%;
-  max-width: 1170px;
+  width: 93.75%;
+  max-width: 540px;
   margin-left: auto;
   margin-right: auto;
+}
+@media (min-width: 576px) {
+  .section-features__container {
+    width: 93.75%;
+    max-width: 720px;
+  }
+}
+@media (min-width: 768px) {
+  .section-features__container {
+    width: 96.7741935484%;
+    max-width: 960px;
+  }
+}
+@media (min-width: 992px) {
+  .section-features__container {
+    width: 95%;
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1200px) {
+  .section-features__container {
+    width: 95%;
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1400px) {
+  .section-features__container {
+    width: 81.25%;
+    max-width: 1170px;
+  }
 }
 .section-features__flex {
   display: flex;
@@ -1181,10 +1432,40 @@ p {
   margin-bottom: 6.25rem;
 }
 .section-reviews__container {
-  width: 81.25%;
-  max-width: 1170px;
+  width: 93.75%;
+  max-width: 540px;
   margin-left: auto;
   margin-right: auto;
+}
+@media (min-width: 576px) {
+  .section-reviews__container {
+    width: 93.75%;
+    max-width: 720px;
+  }
+}
+@media (min-width: 768px) {
+  .section-reviews__container {
+    width: 96.7741935484%;
+    max-width: 960px;
+  }
+}
+@media (min-width: 992px) {
+  .section-reviews__container {
+    width: 95%;
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1200px) {
+  .section-reviews__container {
+    width: 95%;
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1400px) {
+  .section-reviews__container {
+    width: 81.25%;
+    max-width: 1170px;
+  }
 }
 .section-reviews__content {
   margin-bottom: 3.125rem;
@@ -1258,10 +1539,40 @@ p {
   margin-bottom: 6.25rem;
 }
 .section-contact__container {
-  width: 81.25%;
-  max-width: 1170px;
+  width: 93.75%;
+  max-width: 540px;
   margin-left: auto;
   margin-right: auto;
+}
+@media (min-width: 576px) {
+  .section-contact__container {
+    width: 93.75%;
+    max-width: 720px;
+  }
+}
+@media (min-width: 768px) {
+  .section-contact__container {
+    width: 96.7741935484%;
+    max-width: 960px;
+  }
+}
+@media (min-width: 992px) {
+  .section-contact__container {
+    width: 95%;
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1200px) {
+  .section-contact__container {
+    width: 95%;
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1400px) {
+  .section-contact__container {
+    width: 81.25%;
+    max-width: 1170px;
+  }
 }
 .section-contact__grid {
   display: grid;

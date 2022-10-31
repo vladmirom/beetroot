@@ -4,14 +4,21 @@
   */
 
   .header {
-    position: absolute;
+    position: relative;
     width: 100%;
+
+    @include media-breakpoint-up(lg) {
+      position: absolute;
+    }
+    
     
     &__wrapper {
-      padding: rem(24px) 0;
-      backdrop-filter: blur(4.5px);
-
-      margin-top: rem(30px);
+      @include media-breakpoint-up(lg) {
+        padding: rem(24px) 0;
+        backdrop-filter: blur(4.5px);
+  
+        margin-top: rem(30px);
+      }
     }
 
     &__container {
