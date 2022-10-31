@@ -7,14 +7,15 @@
     position: relative;
     width: 100%;
 
-    @include media-breakpoint-up(lg) {
+    @include media-breakpoint-up(md) {
       position: absolute;
     }
     
     
     &__wrapper {
-      @include media-breakpoint-up(lg) {
-        padding: rem(24px) 0;
+      padding: rem(24px) 0;
+
+      @include media-breakpoint-up(md) {
         backdrop-filter: blur(4.5px);
   
         margin-top: rem(30px);
@@ -31,7 +32,19 @@
     }
 
     &__menu {
-      @include flex-vertical-center;
+      @include media-breakpoint-down(md) {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: $white;
+        transform: translateX(-100%);
+        transition: all .3s linear;
+      }
+
+      @include media-breakpoint-up(md) {
+        @include flex-vertical-center;
+      }
     }
 
     &__nav {
