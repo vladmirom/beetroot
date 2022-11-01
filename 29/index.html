@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Playfair+Display:ital@0;1&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="assets/styles/styles.css">
+
+  <title>Volodymyr Melnychenko | Data types and operators</title>
+</head>
+
+<body class="body">
+  <main class="main">
+    <section class="section-minimum">
+      <div class="section-minimum__container">
+        <div class="section-minimum__wrap">
+          <h1 class="h2">Minimum tasks</h1>
+
+          <div class="section-minimum__task">
+            <h3>Add 0.1 and 0.2 and receive the mathimatically correct answer.</h3>
+            <p>We can use several ways to fix the floating point error of 0.1 + 0.2 = 0.30000000000000004.</p>
+            <ul class="section-minimum__task-list">
+              <li>Using toFixed: <span id="floatingPointErrorResultOne"></span></li>
+              <li>Using *10: <span id="floatingPointErrorResultTwo"></span></li>
+            </ul>
+          </div>
+
+          <div class="section-minimum__task">
+            <h3>Calculate integer 1 and string 2, and receive the mathimatically correct answer.</h3>
+            <p>The integer and the string will be added (glued) together, like here: <span id="integerAndStringResultOne"></span>.</p>
+            <p>But if we use it with <span class="section-minimum__task-code">Number()</span>, the result will be: <span id="integerAndStringResultTwo"></span>.</p>
+            <p>Or, we can use <span class="section-minimum__task-code">parseInt()</span>, and the the result will be the same: <span id="integerAndStringResultThree"></span>.</p>
+          </div>
+
+          <div class="section-minimum__task">
+            <h3>Calculate how many files of 820MB size could fit into the flash drive.</h3>
+            <p>Please add the size of the flash drive in GB and we can tell how many files can fit it.</p>
+            <p class="section-minimum__task-text">Do you think it's big enough? <span id="flashDriveResult"></span></p>
+            <button class="section-minimum__task-button" id="flashDriveBtn">Press me</button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section-medium">
+      <div class="section-medium__container">
+        <div class="section-medium__wrap">
+          <h1 class="h2">Medium tasks</h1>
+
+          <div class="section-medium__task">
+            <h3>As the name of the user and show "Hi, *name*".</h3>
+            <p class="section-medium__task-text">Hey mate, you look familiar.</p>
+            <button class="section-medium__task-button" id="nameBtn">Hi there!</button>
+          </div>
+
+          <div class="section-medium__task">
+            <h3>Check the year of birth of the user and calculate what is his age.</h3>
+            <p class="section-medium__task-text">Oh, hi there! I can see you drink bear. You seem to look too young for
+              that, what is your birht year? <span id="userAgeReply"></span></p>
+            <button class="section-medium__task-button" id="ageBtn">What is your birth year?</button>
+          </div>
+
+          <div class="section-medium__task">
+            <h3>Check the leangth of quadrangle and calculate the area of it.</h3>
+            <p class="section-medium__task-text">Having fun is great, but we have a job to do. Do you see that
+              building, yes, that one, in shape of quadrangle. We need to calculate the area of it. Tell me the length
+              of one of the sides and I will calculate the area.</p>
+            <p class="section-medium__task-text" id="qLengthReply">If you don't know, just give me a guess.</p>
+            <button class="section-medium__task-button" id="qLengthBtn">What is the length of the quadrangle's
+              side?</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-maximum">
+      <div class="section-maximum__container">
+        <div class="section-maximum__wrap">
+          <h1 class="h2">Maximum tasks</h1>
+
+          <div class="section-maximum__task">
+            <h3>Check the radius of a circle and calculate the area of it.</h3>
+            <p class="section-maximum__task-text">Well done with quadrangle. What about that building in the shape of a
+              circle?</p>
+            <p class="section-maximum__task-text" id="cRadiusReply">This should not be hard, expecially after the
+              quadrangle.</p>
+            <button class="section-maximum__task-button" id="cRadiusBtn">What is the radius of the circle?</button>
+          </div>
+
+          <div class="section-maximum__task">
+            <h3>Calculate a speed the user needs to drive in a car, by asking the length betweens cities and the time he
+              wants to spend in the trip.</h3>
+            <p class="section-maximum__task-text">Did you buy a new car? This is a new Tesla. Is it fast? How much do
+              you think it would take you to go from Helsinki to Mykolaiv? Let's see, I can calculate the speed per hour
+              if you tell me the distance in km and the desired time in route.<span id="userAgeReply"></span></p>
+
+            <form id="speedCalculation" class="section-maximum__task-form form" action="formHandler/get.php"
+              method="GET">
+              <div class="form__grid">
+                <div class="form__column">
+                  <label class="form__label" for="speedCalculationDistance">Distance</label>
+                  <input class="form__number" type="number" name="speedCalculationDistance"
+                    id="speedCalculationDistance">
+                </div>
+
+                <div class="form__column">
+                  <label class="form__label" for="lastName">Time in route (in hours)</label>
+                  <input class="form__number" type="number" name="speedCalculationTime" id="speedCalculationTime">
+                </div>
+              </div>
+
+              <p class="section-maximum__task-text" id="kmPerHourReply">Remember to obey the traffic rules and use
+                common sense.</p>
+
+              <!-- Since we don't need to submit the form and we don't have the php server, changing "submit" button type to "button".-->
+              <button type="button" class="section-maximum__task-button" id="speedBtn">Calculate</button>
+            </form>
+          </div>
+
+          <div class="section-maximum__task">
+            <h3>Currency convertor.</h3>
+            <p class="section-maximum__task-text">If you travel from Ukraine to Finland, you need Euros. Use this
+              convertor and add the amount you'd like exchange and I will calculate the amount of Euros you will get.
+            </p>
+            <p class="section-maximum__task-text" id="convertReply">Since the conversion rate is changing every day, we use <strong>1.0036</strong>.</p>
+            <button class="section-maximum__task-button" id="convertBtn">Convert</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- This part is for level 1 -->
+    <script>
+      let userName = 'Markus',
+        // user_name = 'Jaakko',
+        // user-name = 'Raino',
+        UserName = 'Mikko';
+
+      const userLastName = 'Karikivi';
+      // const user_last_name = 'Teittinen';
+      // const user-last-name = 'Lepistö';
+      const UserLastName = 'Multanen';
+    </script>
+
+    <!-- This part is for levels 2-3 -->
+    <script async src="assets/scripts/scripts.js"></script>
+  </main>
+</body>
+
+</html>

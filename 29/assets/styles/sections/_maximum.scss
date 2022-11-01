@@ -1,0 +1,54 @@
+/**
+  * Maximum tasks section styles.
+  */
+
+.section {
+  &-maximum {
+    margin-bottom: rem(50px);
+
+    &__container {
+      @include container;
+    }
+
+    &__wrap {
+      @include section-wrap;
+      background-color: $apple;
+    }
+
+    &__task {
+      margin-bottom: rem(50px);
+
+      &-text {
+        margin-bottom: rem(20px);
+      }
+
+      &-button {
+        @include button;
+      }
+      
+      & .form {
+        &__grid {
+          display: grid;
+          grid-template-columns: repeat( 2, 1fr ) 2fr;
+          gap: (30px);
+        }
+
+        &__label {
+          display: block;
+          font-size: rem(14px);
+        }
+
+        &__number {
+          display: block;
+          width: 100%;
+
+          border: none;
+          border-radius: 0.25rem;
+
+          padding: rem(11px) rem(10px);
+          margin-bottom: rem(20px);
+        }
+      }
+    }
+  }
+}
