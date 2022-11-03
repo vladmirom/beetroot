@@ -23,7 +23,7 @@ html {
   margin: 6.25rem 1.25rem;
 }
 
-.list, .section-medium__task-list, .section-minimum__task-list {
+.list, .section-maximum__task-list, .section-medium__task-list, .section-minimum__task-list {
   list-style: inside;
   padding-left: 1.25rem;
 }
@@ -263,20 +263,8 @@ p {
 .section-maximum__task-button:hover {
   background: #F29D38;
 }
-.section-maximum__task .form__grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr) 2fr;
-  gap: 30px;
-}
-.section-maximum__task .form__label {
-  display: block;
-  font-size: 0.875rem;
-}
-.section-maximum__task .form__number {
-  display: block;
-  width: 100%;
-  border: none;
-  border-radius: 0.25rem;
-  padding: 0.6875rem 0.625rem;
-  margin-bottom: 1.25rem;
+.section-maximum__task-code {
+  background-color: rgba(87, 142, 247, 0.3);
+  padding: 0 0.625rem;
+  border-radius: 0.3125rem;
 }/*# sourceMappingURL=styles.css.map */

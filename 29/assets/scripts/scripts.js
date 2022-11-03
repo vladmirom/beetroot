@@ -133,48 +133,21 @@ function reverseNumber( ) {
  * Difficult tasks
  */
 
-// Asking the radius of circle
-document.querySelector('#cRadiusBtn').addEventListener('click', getCircleRadius);
+// Calculating the deposit investment.
+document.querySelector('#depositBtn').addEventListener('click', calculateDeposit);
 
-function getCircleRadius( ) {
-  let cRadius = prompt("What is the radius of the circle in meters?");
-  const piNumber = 3.14159265;
-  let cArea = piNumber * (cRadius ** 2);
-  let cAreaRounded = Math.round(cArea);
-  let message = `The area of that building is ${cAreaRounded} meters.`;
+function calculateDeposit( ) {
+  let cash = prompt("How much do you want to put on deposit?"),
+      depositTime = prompt("How many month do you want to keep your money on deposit?")
+      depositPerccentage = 0.05, // It's for easier calculation 
+      monthInAYear = 12;
 
-  let qQuestionReply = document.getElementById("cRadiusReply");
-  qQuestionReply.innerHTML = message;
-}
+  let yearlyIncome = cash * depositPerccentage; // only percentage, without the deposit itself
+  let mothlyIncome = yearlyIncome / monthInAYear;
+  let depositPercentageIncome = Number.parseFloat(mothlyIncome * depositTime).toFixed(2);
+  let fullIncome = Number(cash) + Number(depositPercentageIncome);
+  let message = `If you invest ${cash}€ to the bank deposit for ${depositTime} month, you will receive <strong>${depositPercentageIncome}€</strong> as a percentage income, or <strong>${fullIncome}€</strong> as the whole summ.`;
 
-// Asking the distance between cities and time in route.
-document.querySelector('#speedBtn').addEventListener('click', getKmPerHour);
-
-function getKmPerHour( ) {
-  let distance = document.getElementById('speedCalculationDistance').value;
-  let time = document.getElementById('speedCalculationTime').value;
-
-  let kmPerHour = distance / time;
-  let speedRounded = Math.round(kmPerHour);
-  let message = `If you plan to travel ${distance} kilometers in ${time} hours, you should be traveling around ${speedRounded} kilometers per hour.`;
-
-  console.log(message);
-
-  let qQuestionReply = document.getElementById("kmPerHourReply");
-  qQuestionReply.innerHTML = message;
-}
-
-// Converting USD to Eur.
-document.querySelector('#convertBtn').addEventListener('click', convertUsdEuro);
-
-function convertUsdEuro( ) {
-  let usd = prompt("Add your amount of USD.");
-  let convertionRate = 1.0036;
-
-  let eur = usd * convertionRate;
-  let eurRounded = Math.round(eur);
-  let message = `If you exchange &#36;${usd} to €, you will receive <strong>${eurRounded}€<strong>.`;
-
-  let qQuestionReply = document.getElementById("convertReply");
-  qQuestionReply.innerHTML = message;
+  let depositReply = document.getElementById("depositReply");
+  depositReply.innerHTML = message;
 }

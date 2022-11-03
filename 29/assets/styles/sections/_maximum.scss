@@ -25,29 +25,15 @@
       &-button {
         @include button;
       }
-      
-      & .form {
-        &__grid {
-          display: grid;
-          grid-template-columns: repeat( 2, 1fr ) 2fr;
-          gap: (30px);
-        }
 
-        &__label {
-          display: block;
-          font-size: rem(14px);
-        }
+      &-list {
+        @extend .list;
+      }
 
-        &__number {
-          display: block;
-          width: 100%;
-
-          border: none;
-          border-radius: 0.25rem;
-
-          padding: rem(11px) rem(10px);
-          margin-bottom: rem(20px);
-        }
+      &-code {
+        background-color: $cornflower-blue;
+        padding: 0 rem(10px);
+        border-radius: rem(5px);
       }
     }
   }

@@ -87,51 +87,19 @@
           <h1 class="h2">Maximum tasks</h1>
 
           <div class="section-maximum__task">
-            <h3>Check the radius of a circle and calculate the area of it.</h3>
-            <p class="section-maximum__task-text">Well done with quadrangle. What about that building in the shape of a
-              circle?</p>
-            <p class="section-maximum__task-text" id="cRadiusReply">This should not be hard, expecially after the
-              quadrangle.</p>
-            <button class="section-maximum__task-button" id="cRadiusBtn">What is the radius of the circle?</button>
+            <h3>Calculate the deposit pecentage cost.</h3>
+            <p class="section-maximum__task-text">Quite often, we need to calculate how much money we gain or lose. Here is the calculation of the cost for the bank deposit with 5% yearly.</p>
+            <p class="section-maximum__task-text" id="depositReply">Think of all the money you can earn!</p>
+            <button class="section-maximum__task-button" id="depositBtn">How much do you want to invest?</button>
           </div>
 
           <div class="section-maximum__task">
-            <h3>Calculate a speed the user needs to drive in a car, by asking the length betweens cities and the time he
-              wants to spend in the trip.</h3>
-            <p class="section-maximum__task-text">Did you buy a new car? This is a new Tesla. Is it fast? How much do
-              you think it would take you to go from Helsinki to Mykolaiv? Let's see, I can calculate the speed per hour
-              if you tell me the distance in km and the desired time in route.<span id="userAgeReply"></span></p>
-
-            <form id="speedCalculation" class="section-maximum__task-form form" action="formHandler/get.php"
-              method="GET">
-              <div class="form__grid">
-                <div class="form__column">
-                  <label class="form__label" for="speedCalculationDistance">Distance</label>
-                  <input class="form__number" type="number" name="speedCalculationDistance"
-                    id="speedCalculationDistance">
-                </div>
-
-                <div class="form__column">
-                  <label class="form__label" for="lastName">Time in route (in hours)</label>
-                  <input class="form__number" type="number" name="speedCalculationTime" id="speedCalculationTime">
-                </div>
-              </div>
-
-              <p class="section-maximum__task-text" id="kmPerHourReply">Remember to obey the traffic rules and use
-                common sense.</p>
-
-              <!-- Since we don't need to submit the form and we don't have the php server, changing "submit" button type to "button".-->
-              <button type="button" class="section-maximum__task-button" id="speedBtn">Calculate</button>
-            </form>
-          </div>
-
-          <div class="section-maximum__task">
-            <h3>Currency convertor.</h3>
-            <p class="section-maximum__task-text">If you travel from Ukraine to Finland, you need Euros. Use this
-              convertor and add the amount you'd like exchange and I will calculate the amount of Euros you will get.
-            </p>
-            <p class="section-maximum__task-text" id="convertReply">Since the conversion rate is changing every day, we use <strong>1.0036</strong>.</p>
-            <button class="section-maximum__task-button" id="convertBtn">Convert</button>
+            <h3>Playing around with operators.</h3>
+            <ul class="section-maximum__task-list">
+              <li><span class="section-maximum__task-code">2 &#38;&#38; 0 &#38;&#38; 3</span> equals to <span class="section-maximum__task-code">0</span></li>
+              <li><span class="section-maximum__task-code">2 || 0 || 3</span> equals to <span class="section-maximum__task-code">2</span></li>
+              <li><span class="section-maximum__task-code">2 &#38;&#38; 0 || 3</span> equals to <span class="section-maximum__task-code">3</span></li>
+            </ul>
           </div>
         </div>
       </div>
