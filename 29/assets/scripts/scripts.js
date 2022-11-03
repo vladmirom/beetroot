@@ -67,7 +67,10 @@ function getMoneyForChocolate( ) {
       willyWonkaGiphy = document.getElementById("willyWonkaGiphy"),
       willyWonkaReply = document.getElementById("willyWonkaReply");
 
-  if ( numberOfWonkaBars < 1 ) {
+  if ( isNaN(cash) ) {
+    giphy = `<img class="section-medium__task-meme-image" src="https://media.tenor.com/Muu7f65jjgIAAAAC/morgan-freeman-you-sneaky-thing-you.gif" alt="Sneaky trickseter">`;
+    message = `Ah you sneacky trickster, ${cash} is not a cash! We can't buy anything with it!`;
+  } else if ( numberOfWonkaBars < 1 ) {
     giphy = `<img class="section-medium__task-meme-image" src="https://media.tenor.com/SKRcWlLOJWoAAAAC/wallet-broke.gif" alt="Wallet Broke GIF - Wallet Broke Poor GIFs">`;
     message = `No money, no honey. We can't buy anything with ${cash}€! The prices are insane!`;
   } else if ( numberOfWonkaBars >= 1 && numberOfWonkaBars < 2 ) {
