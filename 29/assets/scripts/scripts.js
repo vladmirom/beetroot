@@ -66,7 +66,7 @@ function getMoneyForChocolate( ) {
       giphy,
       willyWonkaGiphy = document.getElementById("willyWonkaGiphy"),
       willyWonkaReply = document.getElementById("willyWonkaReply");
-console.log(numberOfWonkaBars);
+
   if ( numberOfWonkaBars < 1 ) {
     giphy = `<img class="section-medium__task-meme-image" src="https://media.tenor.com/SKRcWlLOJWoAAAAC/wallet-broke.gif" alt="Wallet Broke GIF - Wallet Broke Poor GIFs">`;
     message = `No money, no honey. We can't buy anything with ${cash}€! The prices are insane!`;
@@ -86,6 +86,47 @@ console.log(numberOfWonkaBars);
 
   willyWonkaGiphy.innerHTML = giphy;
   willyWonkaReply.innerHTML = message;
+}
+
+// Reverse number
+document.querySelector('#reverseBtn').addEventListener('click', reverseNumber);
+
+function reverseMethodOne(num) {
+  let rev = 0;
+  let lastDigit;
+
+  while(num != 0){
+    lastDigit = num % 10;
+    rev = rev * 10 + lastDigit;
+    num = Math.floor(num/10);
+  }
+
+  return (
+    rev
+  )                 
+}
+
+function reverseMethodTwo(num) {
+  return (
+    parseFloat(
+      num
+        .toString()
+        .split('')
+        .reverse()
+        .join('')
+    ) * Math.sign(num)
+  )                 
+}
+
+function reverseNumber( ) {
+  let integerToReverse = prompt("What number do you want to reverse?"),
+      methodOne = reverseMethodOne(integerToReverse),
+      methodtwo = reverseMethodTwo(integerToReverse),
+      reverseReplyOne = document.getElementById("reverseReplyOne"),
+      reverseReplyTwo = document.getElementById("reverseReplyTwo");
+
+  reverseReplyOne.innerHTML = methodOne;
+  reverseReplyTwo.innerHTML = methodtwo;
 }
 
 /**
