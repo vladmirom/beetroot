@@ -24,7 +24,7 @@ function getUserAge( ) {
     message = `Oh My God! You are so old, ${useArage} is not a joke! Take care of your self!`;
   } else if ( useArage == myAge ) {
     message = `This is a perfect age. Remember that Christ died at ${useArage}. Enjoy your life!`;
-  } else if ( useArage < myAge && 0 > myAge ) {
+  } else if ( useArage < myAge && useArage > 0 ) {
     message = `Ah, you are so young. At ${useArage} you have so many things to learn and experience for the first time. I'm little jelous.`;
   } else {
     message = `Seems that someone is sneaky and tells me the wrong date. Are you even born?`;
