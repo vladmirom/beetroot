@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../assets/styles/styles.css">
+
+  <title>Lesson 30 | JS Conditional Statements and Loops</title>
+</head>
+
+<body>
+  <header></header>
+
+  <main>
+    <section class="section section__container">
+      <h3>Increments and Decrements</h3>
+      <p>Increments are adding somethign to the value. It can be added via <span class="code">let i++</span>. Remember,
+        the order of actions of <span class="code">i++</span>:
+      <ol class="order-list">
+        <li>Console log will show the result of <span class="code">i</span>.</li>
+        <li>The increment <span class="code">++</span> will be added and the value will be saved in the memory.</li>
+      </ol>
+      </p>
+      <p> If we add the increment before the variable: <span class="code">let ++i</span>, the order of actions will bee
+        different:
+      <ol class="order-list">
+        <li>The increment <span class="code">++</span> will be added and the value will be saved in the memory.</li>
+        <li>Console log will show the result of <span class="code">i</span>.</li>
+      </ol>
+      </p>
+      <p>Decrements are deducting somethign from the value. <span class="code">let i--</span>.</p>
+      <ul class="list">
+        <li>Increments (and decrements) won't work with the text in the strings, will return <span
+            class="code">NaN</span>.</li>
+        <li>Increments (and decrements) will work with the number in the strings.</li>
+        <li>If the variable is empty string, the counter would use it as <span class="code">0</span>.</li>
+      </ul>
+    </section>
+
+    <section class="section section__container">
+      <h3>Conditional statements</h3>
+      <p>In code <span class="code">+</span> before your vaariable would change the variable to number. <span
+          class="code">+prompt('Enter your number')</span> is the same as <span class="code">Number(prompt('Enter your
+          number'))</span>
+      </p>
+      <p>It is not recomended to have more than 2 cheeks in ternary.</p>
+      <p>There's a switch case in JS.</p>
+    </section>
+
+    <section class="section section__container">
+      <h3>Loops</h3>
+      <p>There are 3 loop types in JS:
+      <ol class="order-list">
+        <li><span class="code">for</span></li>
+        <li><span class="code">while</span></li>
+        <li><span class="code">do while</span></li>
+      </ol>
+      </p>
+      <p><span class="code">for</span> should have 3 parts: the beginning, the condition, and the step. It can also work
+        without the first and the last, however, we need to use it like <span class="code">for(; 1+1;)</span>, where ;
+        will represent the missing parts.</p>
+      <p>The variable that is declared outside of the loop, and changes in the nested loop can be seen outside of the loops later.</p>
+      <p><span class="code">while</span> should have 1 part: the condition, and inside the loop, should have stepper. it's more common to use while with decrement.</p>
+      <p><span class="code">do while</span> will execute something at least once. Works similar to while. Used rarely.</p>
+    </section>
+  </main>
+
+  <footer>
+    <script src="../assets/scripts/notes.js"></script>
+  </footer>
+</body>
+
+</html>
