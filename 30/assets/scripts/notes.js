@@ -99,10 +99,10 @@ for (let i = 0; i < 3; i++) {
 console.log(num);
 
 // While loop
-let i = 3;
-while (i) {
-  console.log(i);
-  i--;
+let a = 3;
+while (a) {
+  console.log(a);
+  a--;
 }
 
 // Do while loop

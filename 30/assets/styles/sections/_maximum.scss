@@ -12,7 +12,8 @@
 
     &__wrap {
       @include section-wrap;
-      background-color: $charcoal;
+      color: $white;
+      background-color: $maximum;
     }
 
     &__task {

@@ -13,31 +13,33 @@
 
   <link rel="stylesheet" type="text/css" href="assets/styles/styles.css">
 
-  <title>Volodymyr Melnychenko | Data types and operators</title>
+  <title>Volodymyr Melnychenko | JS Conditional Statements and Loops</title>
 </head>
 
 <body class="body">
   <main class="main">
-    <h1 class="lesson-title">Homework for lesson 29: Data types and operators</h1>
+    <h1 class="lesson-title">Homework for lesson 30: JS Conditional Statements and Loops</h1>
     <section class="section-minimum">
       <div class="section-minimum__container">
         <div class="section-minimum__wrap">
           <h1 class="h2">Minimum tasks</h1>
 
           <div class="section-minimum__task">
-            <h3>Add 0.1 and 0.2 and receive the mathimatically correct answer.</h3>
-            <p>We can use several ways to fix the floating point error of 0.1 + 0.2 = 0.30000000000000004.</p>
-            <ul class="section-minimum__task-list">
-              <li>Using toFixed: <span id="floatingPointErrorResultOne"></span></li>
-              <li>Using *10: <span id="floatingPointErrorResultTwo"></span></li>
-            </ul>
+            <h3>Check the user's age.</h3>
+            <p class="section-minimum__task-text">When it comes to love, many people say age is just a number. But let's be real: Age really does matter when it comes to maturity level, interests, goals and physical ability.</p>
+            <p class="section-minimum__task-text">Some people say that there are 15 ways to find out how old is the person without actually asking. I'm not going to experiment with those ans will ask you directly.</p>
+            <p class="section-minimum__task-text">Who are you, stranger? <span id="ageReply"></span></p>
+            <button class="section-minimum__task-button" id="ageBtn">What is your age?</button>
           </div>
 
           <div class="section-minimum__task">
-            <h3>Calculate integer 1 and string 2, and receive the mathimatically correct answer.</h3>
-            <p>The integer and the string will be added (glued) together, like here: <span id="integerAndStringResultOne"></span>.</p>
-            <p>But if we use it with <span class="section-minimum__task-code">Number()</span>, the result will be: <span id="integerAndStringResultTwo"></span>.</p>
-            <p>Or, we can use <span class="section-minimum__task-code">parseInt()</span>, and the the result will be the same: <span id="integerAndStringResultThree"></span>.</p>
+            <h3>Show a special character from the user selected number.</h3>
+            <p>I reemember, that you have mentioned that you had problems with the special characters on the keyboard. Let me help you, select the number in the range.</p>
+            <div class="section-minimum__task-range range">
+              <input class="range__input" type="range" id="keyboardNumber" name="keyboardNumber" value="4" min="0" max="9" oninput="this.nextElementSibling.value = this.value">
+              <output>4</output>
+            </div>
+            <p class="section-minimum__task-result" id="keyboardNumberResult">Placeholder</p>
           </div>
 
           <div class="section-minimum__task">
@@ -62,7 +64,7 @@
             <div id="willyWonkaGiphy" class="section-medium__task-meme">
               <img class="section-medium__task-meme-image" src="https://media.tenor.com/oHhGqTsUmVkAAAAC/charlie-and-chocolate-factory-2005.gif" alt="Charlie And Chocolate Factory 2005 GIF - Charlie And Chocolate Factory 2005 Yes GIFs">
             </div>
-            <p class="section-medium__task-text">Let's buy some Wonka Bars. They cost quite a lot: 5.5€ per each. How much money do you have with you? <span id="willyWonkaReply"></span></p>
+            r
             <button class="section-medium__task-button" id="cashBtn">🤑</button>
           </div>
 

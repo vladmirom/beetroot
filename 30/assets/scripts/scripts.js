@@ -2,52 +2,85 @@
  * Minimum tasks
  */
 
-// Fixing floating point error.
-let firstCalculation = (0.1 + 0.2).toFixed(1);
-document.getElementById("floatingPointErrorResultOne").innerHTML = firstCalculation;
+// Checking user's age.
+document.querySelector('#ageBtn').addEventListener('click', getUserAge);
 
-let secondCalculation = (0.1 * 10 + 0.2 * 10) / 10;
-document.getElementById("floatingPointErrorResultTwo").innerHTML = secondCalculation;
+function getUserAge( ) {
+  let userReply = prompt("What is your age?");
 
-
-// Calculation of string and integer
-let myString = '1',
-    myInteger = 2;
-
-let thirdCalculation = myString + myInteger; // Normal concatenation.
-let fourthdCalculation = Number(myString) + myString; // First convert into int, then add.
-let fifthCalculation = parseInt(myString, 10) + myString; // First convert into int, then add.
-
-document.getElementById("integerAndStringResultOne").innerHTML = thirdCalculation;
-document.getElementById("integerAndStringResultTwo").innerHTML = fourthdCalculation;
-document.getElementById("integerAndStringResultThree").innerHTML = fifthCalculation;
-
-// Asking the side of quadrangle
-document.querySelector('#flashDriveBtn').addEventListener('click', getFlashDriveCapacity);
-
-function getFlashDriveCapacity( ) {
-  let flashSize = prompt("What is the size of your flash drive in GB?");
-  let flashSizeInMB = flashSize * 1000;
-  let fileSize = 820;
-  let numberOfFiles =  Math.round(flashSizeInMB / fileSize);
-  
-  const flashDriveStandardSizes = [64, 128, 256, 512];
-  let message = `Huh? What size is this, I can't reognize this.`;
-
-  if ( flashSize < 64 ) {
-    message = `Pfff, do you call this a flash drive? You can hardly fit in just ${numberOfFiles} files! Pathetic!`;
-  } else if ( flashSize >= 64 && flashSize < 128 ) {
-    message = `Meh. Not that big, but could contain ${numberOfFiles} files.`;
-  } else if ( flashSize >= 128 && flashSize < 256 ) {
-    message = `Oh, wow, that's a decent size already! ${numberOfFiles} files will fit in easily!`;
-  } else if ( flashSize >= 256 && flashSize < 512 ) {
-    message = `Wooow, that's quite a lot to take. Do you have enough of files, because this little baby can fit in ${numberOfFiles} of them.`;
-  } else if ( flashSize > 512 ) {
-    message = `Duude, wait, are you from the planet Earth? We don't have such cool technologies here. You can upload ${numberOfFiles} files into this masterpiece. Where did you get it from? 👽`;
+  if ( userReply < 0 ) {
+    message = `The age you wrote, seems to be incorrect. Please, give me the real number.`;
+  } else if ( userReply >= 0 && userReply <= 11 ) {
+    message = `Ah, you are so young, kid!`;
+  } else if ( userReply >= 12 && userReply <= 17 ) {
+    message = `Your age is great for exploging things. Being a tenager is one of the best things in the world. Enjoy it!`;
+  } else if ( userReply >= 18 && userReply <= 59 ) {
+    message = `Perfect age! Remember to balance your work life and the rest when you are adult.`;
+  } else if ( userReply > 60 ) {
+    message = `You are retired person and going to die soon, get ready!`;
   }
 
-  let flashDriveCapacityReply = document.getElementById("flashDriveResult");
-  flashDriveCapacityReply.innerHTML = message;
+  let ageReply = document.getElementById("ageReply");
+  ageReply.innerHTML = message;
+}
+
+// Asing for a keyboard number
+document.querySelector('#keyboardNumber').addEventListener('change', getRangeNumber);
+
+function getRangeNumber( ) {
+  let rangeNumber = +document.getElementById('keyboardNumber').value,
+      message;
+
+      console.log(typeof rangeNumber);
+
+  switch(rangeNumber) {
+    case 0:
+      message = `Your symbol of ${rangeNumber} keyboard is <strong>&#41;</strong>.`
+      break;
+
+    case 1:
+      message = `Your symbol of ${rangeNumber} keyboard is <strong>&#161;</strong> Nah, joking, it is <strong>&#33;</strong>`
+      break;
+
+    case 2:
+      message = `Your symbol of ${rangeNumber} keyboard is <strong>&#64;</strong>.`
+      break;
+
+    case 3:
+      message = `Your symbol of ${rangeNumber} keyboard is <strong>&#35;</strong>.`
+      break;
+
+    case 4:
+      message = `Your symbol of ${rangeNumber} keyboard is <strong>&#36;</strong>.`
+      break;
+
+    case 5:
+      message = `Your symbol of ${rangeNumber} keyboard is <strong>&#37;</strong>.`
+      break;
+
+    case 6:
+      message = `Your symbol of ${rangeNumber} keyboard is <strong>&#94;</strong>.`
+      break;
+
+    case 7:
+      message = `Your symbol of ${rangeNumber} keyboard is <strong>&#38;</strong>.`
+      break;
+
+    case 8:
+      message = `Your symbol of ${rangeNumber} keyboard is <strong>&#42;</strong>.`
+      break;
+
+    case 9:
+      message = `Your symbol of ${rangeNumber} keyboard is <strong>&#40;</strong>.`
+      break;
+
+    default:
+      message = `Can't find the symbol of ${rangeNumber}.`
+  }
+
+  let keyboardNumberResult = document.getElementById("keyboardNumberResult");
+  keyboardNumberResult.innerHTML = message;
+  keyboardNumberResult.style.visibility = 'visible';
 }
 
 /**

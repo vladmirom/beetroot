@@ -133,10 +133,10 @@ p {
   margin-right: auto;
 }
 .section-minimum__wrap {
-  color: #fff;
+  color: #404258;
   border-radius: 0.625rem;
   padding: 4.375rem 4.6875rem;
-  background-color: #6B728E;
+  background-color: #FAD6A5;
 }
 .section-minimum__task {
   margin-bottom: 3.125rem;
@@ -167,6 +167,18 @@ p {
   padding: 0 0.625rem;
   border-radius: 0.3125rem;
 }
+.section-minimum__task .range {
+  display: flex;
+  gap: 1.25rem;
+  width: 80%;
+  margin: 3.125rem 0;
+}
+.section-minimum__task .range__input {
+  width: 100%;
+}
+.section-minimum__task-result {
+  visibility: hidden;
+}
 
 /**
   * Medium tasks section styles.
@@ -181,10 +193,10 @@ p {
   margin-right: auto;
 }
 .section-medium__wrap {
-  color: #fff;
+  color: #404258;
   border-radius: 0.625rem;
   padding: 4.375rem 4.6875rem;
-  background-color: #50577A;
+  background-color: #9BA17B;
 }
 .section-medium__task {
   margin-bottom: 3.125rem;
@@ -238,10 +250,11 @@ p {
   margin-right: auto;
 }
 .section-maximum__wrap {
-  color: #fff;
+  color: #404258;
   border-radius: 0.625rem;
   padding: 4.375rem 4.6875rem;
-  background-color: #404258;
+  color: #fff;
+  background-color: #61764B;
 }
 .section-maximum__task {
   margin-bottom: 3.125rem;
