@@ -1,0 +1,13 @@
+.section {
+  margin: 100px 0;
+  
+  &__container {
+    @include container;
+  }
+}
+
+.code {
+  background-color: $cornflower-blue;
+  padding: 0 rem(10px);
+  border-radius: rem(5px);
+}

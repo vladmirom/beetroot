@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../assets/styles/styles.css">
+
+  <title>Lesson 31 | JS Functions</title>
+</head>
+
+<body>
+  <header></header>
+
+  <main>
+    <section class="section section__container">
+      <h3>JavaScript Functions</h3>
+      <p>Functions is used to create repeated code. These are some notes:</p>
+      <ol>
+        <li><span class="code">function name() {}</span> - is the way to declare function.</li>
+        <li><span class="code">let</span> variables can be visible only inside the function.</li>
+        <li>We can call a function in any place in the document. Either before, or after the function declaration.</li>
+        <li>We can declare variable in the function and it will be used after we called the function.</li>
+        <li>Functions don't support skipping the parameters. But we can add underfined variable as a first parameter.</li>
+        <li><span class="code">let variable = function () {}</span> - is the way to create functional expression.</li>
+        <li>Function declaration and function expression are differently used by js core. Functional expression can only be called after this expression.</li>
+        <li>Anonymous functions that don't have name. They can be used in functional expression.</li>
+        <li>IIFE - Immediately invoked function expression. Executes immediately anonymous expression.</li>
+        <li>If we create the variable in IIFE with <span class="code">var someVariable = </span>, it will be local, but it will be global if wee declare as  <span class="code">someVariable = </span>.</li>
+        <li>We can user arrow functions, they are very handy. <span class="code">let caclulate = (a, b) => a + b;</span> and we will call it as <span class="code">let caclulate(1, 2);</span>.</li>
+        <li>Function caan also declarared with new Function() <span class="code">let sayHowdy = new Function('a', 'b', 'return a + b');</span></li>
+      </ol>
+
+      <h3>Lexical scoping in javascript</h3>
+      <p>Neeed to check as a Homework. Also need to check locking.</p>
+    </section>
+  </main>
+
+  <footer>
+    <script src="../assets/scripts/notes.js"></script>
+  </footer>
+</body>
+
+</html>
