@@ -160,62 +160,30 @@ function calculateDividers( ) {
  * Medium tasks
  */
 
-// Asking user for cash to buy chockolates.
-document.querySelector('#cashBtn').addEventListener('click', getMoneyForChocolate);
-const wonkaBarPrice = 5.5;
+// Asking for number and checking if it is palindrome.
+document.querySelector('#palindromeBtn').addEventListener('click', checkPalindrome);
 
-function getMoneyForChocolate( ) {
-  let cash = prompt("How much money do you have with you?"),
-      numberOfWonkaBars = cash / wonkaBarPrice,
-      change = cash % wonkaBarPrice,
-      message,
-      giphy,
-      willyWonkaGiphy = document.getElementById("willyWonkaGiphy"),
-      willyWonkaReply = document.getElementById("willyWonkaReply");
+function checkPalindrome() {
+  let number = +prompt("Saippuakivikauppias - is Finnish word for soapstone dealer, and it is a plaindrome - can be read both ways the same. Give us your 5 or more digits number and we will check if it a palindrome."),
+      numberLength = number.toString().length,
+      numberReversed = reverseNumber(number);
 
-  if ( isNaN(cash) ) {
-    giphy = `<img class="section-medium__task-meme-image" src="https://media.tenor.com/Muu7f65jjgIAAAAC/morgan-freeman-you-sneaky-thing-you.gif" alt="Sneaky trickseter">`;
-    message = `Ah you sneacky trickster, ${cash} is not a cash! We can't buy anything with it!`;
-  } else if ( numberOfWonkaBars < 1 ) {
-    giphy = `<img class="section-medium__task-meme-image" src="https://media.tenor.com/SKRcWlLOJWoAAAAC/wallet-broke.gif" alt="Wallet Broke GIF - Wallet Broke Poor GIFs">`;
-    message = `No money, no honey. We can't buy anything with ${cash}€! The prices are insane!`;
-  } else if ( numberOfWonkaBars >= 1 && numberOfWonkaBars < 2 ) {
-    giphy = `<img class="section-medium__task-meme-image" src="https://media.tenor.com/53jKY28Sm44AAAAd/violet-beauregarde-karate-girl.gif" alt="Wallet Broke GIF - Wallet Broke Poor GIFs">`;
-    message = `We have enough just for one Wonka Bar. Let's be fit like Violet Beauregarde!`;
-  } else if ( numberOfWonkaBars > 1 && numberOfWonkaBars < 5 ) {
-    giphy = `<img class="section-medium__task-meme-image" src="https://media.tenor.com/hDI8fRd1lvoAAAAC/gamer-game.gif" alt="Gamer Telekuk GIF - Gamer Game Telekuk GIFs">`;
-    message = `${Math.round(numberOfWonkaBars)} is not enough bars! I understand that we have ${change}€ left, but we can't buy more.`;
-  } else if ( numberOfWonkaBars >= 5 && numberOfWonkaBars <= 10 ) {
-    giphy = `<img class="section-medium__task-meme-image" src="https://media.tenor.com/lgA-GrnDeJ4AAAAd/charlie-and-the-chocolate-factory-chocolate.gif" alt="Charlie And The Chocolate Factory Chocolate GIF - Charlie And The Chocolate Factory Chocolate Golden Ticket GIFs">`;
-    message = `You do love chocolate, you can buy ${Math.round(numberOfWonkaBars)} bars, and you will have ${change}€ left from your ${cash}.`;
-  } else if ( numberOfWonkaBars > 10 ) {
-    giphy = `<img class="section-medium__task-meme-image" src="https://media.tenor.com/jJDjKz_KjO4AAAAC/willy-wonka-and-the-chocolate-factory-veruca-salt.gif" alt="Charlie And The Chocolate Factory ">`;
-    message = `Rich... You don't have to rub into our faces that you can buy ${Math.round(numberOfWonkaBars)} bars, and I'm sure that you don't care of ${change}€ change.`;
+  if ( numberLength >= 5 ) {
+    if ( number === numberReversed) {
+      message = `The ${number} is palindrome.`;
+    } else {
+      message = `The ${number} is <strong> not a palindrome</strong>.`;
+    }
+  } else {
+    message = `The ${number} is less than 5 digits. Please, enter the correct number.`;
   }
 
-  willyWonkaGiphy.innerHTML = giphy;
-  willyWonkaReply.innerHTML = message;
+  let palindromeResult = document.getElementById("palindromeResult");
+  palindromeResult.innerHTML = message;
+  palindromeResult.style.visibility = 'visible';
 }
 
-// Reverse number
-document.querySelector('#reverseBtn').addEventListener('click', reverseNumber);
-
-function reverseMethodOne(num) {
-  let rev = 0;
-  let lastDigit;
-
-  while(num != 0){
-    lastDigit = num % 10;
-    rev = rev * 10 + lastDigit;
-    num = Math.floor(num/10);
-  }
-
-  return (
-    rev
-  )                 
-}
-
-function reverseMethodTwo(num) {
+function reverseNumber(num) {
   return (
     parseFloat(
       num
@@ -225,17 +193,6 @@ function reverseMethodTwo(num) {
         .join('')
     ) * Math.sign(num)
   )                 
-}
-
-function reverseNumber( ) {
-  let integerToReverse = prompt("What number do you want to reverse?"),
-      methodOne = reverseMethodOne(integerToReverse),
-      methodtwo = reverseMethodTwo(integerToReverse),
-      reverseReplyOne = document.getElementById("reverseReplyOne"),
-      reverseReplyTwo = document.getElementById("reverseReplyTwo");
-
-  reverseReplyOne.innerHTML = methodOne;
-  reverseReplyTwo.innerHTML = methodtwo;
 }
 
 /**
