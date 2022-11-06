@@ -83,6 +83,25 @@ function getRangeNumber( ) {
   keyboardNumberResult.style.visibility = 'visible';
 }
 
+// Calculating the sum of the range of numbers.
+document.querySelector('#rangeBtn').addEventListener('click', calculateRangeSum);
+
+function calculateRangeSum( ) {
+  let numberOne = +document.getElementById('firstNumber').value,
+      numberTwo = +document.getElementById('secondNumber').value,
+      result = Number();
+
+  for (let i = numberOne; i <= numberTwo; i++) {
+    result += i;
+  }
+
+  message = `The summ of all numbers in the range between (and including) ${numberOne} and ${numberTwo} equals <strong>${result}</strong>.`
+
+  let rangeResult = document.getElementById("rangeResult");
+  rangeResult.innerHTML = message;
+  rangeResult.style.visibility = 'visible';
+}
+
 /**
  * Medium tasks
  */
