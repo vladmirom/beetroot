@@ -83,7 +83,7 @@ function getRangeNumber( ) {
   keyboardNumberResult.style.visibility = 'visible';
 }
 
-// Calculating the sum of the range of numbers.
+// Calculating the sum of the range of two numbers.
 document.querySelector('#rangeBtn').addEventListener('click', calculateRangeSum);
 
 function calculateRangeSum( ) {
@@ -100,6 +100,60 @@ function calculateRangeSum( ) {
   let rangeResult = document.getElementById("rangeResult");
   rangeResult.innerHTML = message;
   rangeResult.style.visibility = 'visible';
+}
+
+// Calculating Greatest common divider of two numbers.
+document.querySelector('#gcdBtn').addEventListener('click', calculateGcd);
+
+function calculateGcd( ) {
+  let numberOne = +document.getElementById('firstGcdNumber').value,
+      numberTwo = +document.getElementById('secondGcdNumber').value,
+      resultNumberOne = numberOne,
+      resultNumberTwo = numberTwo;
+
+  numberOne = Math.abs(numberOne);
+  numberTwo = Math.abs(numberTwo);
+
+
+  while( numberTwo ) {
+    let divider = numberTwo;
+    numberTwo = numberOne % numberTwo;
+    numberOne = divider;
+  }
+
+  message = `Greatest common divider of two ${resultNumberOne} and ${resultNumberTwo} equals <strong>${numberOne}</strong>.`
+
+  let gcdResult = document.getElementById("gcdResult");
+  gcdResult.innerHTML = message;
+  gcdResult.style.visibility = 'visible';
+}
+
+// Calculating all dividers from a given number.
+document.querySelector('#dividersBtn').addEventListener('click', calculateDividers);
+
+function calculateDividers( ) {
+  let numberToTest = +document.getElementById('dividersNumber').value,
+      i = numberToTest,
+      divider = '',
+      result = '';
+
+  numberToTest = Math.abs(numberToTest);
+
+  while ( i ) {
+
+    if ( numberToTest % i === 0 ) {
+      divider = i === numberToTest ? i : i + ', ';
+      result = result.replace (/^/, divider); // I want it to be in ascending order. 
+    }
+  
+    i--;
+  }
+
+  message = `All dividers of ${numberToTest} number are: <strong>${result}</strong>.`
+
+  let dividersResult = document.getElementById("dividersResult");
+  dividersResult.innerHTML = message;
+  dividersResult.style.visibility = 'visible';
 }
 
 /**
