@@ -107,7 +107,7 @@ h3,
   letter-spacing: 0.04em;
 }
 
-h4, .section-projects .article__title,
+h4, .section-projects .article__title, .section-markup .article__title,
 .h4 {
   font-family: "Playfair Display", serif;
   font-size: 1.5rem;
@@ -144,6 +144,139 @@ p {
 /**
  * Styling for css and html section.
  */
+.section-markup {
+  width: 93.75%;
+  max-width: 540px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 3.125rem 0;
+}
+@media (min-width: 576px) {
+  .section-markup {
+    width: 93.75%;
+    max-width: 720px;
+  }
+}
+@media (min-width: 768px) {
+  .section-markup {
+    width: 96.7741935484%;
+    max-width: 960px;
+  }
+}
+@media (min-width: 992px) {
+  .section-markup {
+    width: 95%;
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1200px) {
+  .section-markup {
+    width: 95%;
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1400px) {
+  .section-markup {
+    width: 81.25%;
+    max-width: 1170px;
+  }
+}
+.section-markup__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+}
+.section-markup .article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 25rem;
+  padding: 0.9375rem;
+  margin-bottom: 2.5rem;
+  border-radius: 0.75rem;
+  background-color: #fff;
+  color: #404258;
+  position: relative;
+  cursor: pointer;
+}
+.section-markup .article:hover .article__overlay {
+  display: block;
+  background-color: #C55098;
+}
+.section-markup .article__overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  border-radius: 0.75rem;
+  transition: all 0.3s ease;
+}
+.section-markup .article__overlay-list {
+  width: 100%;
+  height: 100%;
+  gap: 1.875rem;
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.section-markup .article__overlay-link:link, .section-markup .article__overlay-link:visited, .section-markup .article__overlay-link:active, .section-markup .article__overlay-link:hover {
+  color: #fff;
+  text-decoration: none;
+}
+.section-markup .article__overlay-icon {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.75rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+.section-markup .article__overlay-icon-wrap {
+  width: 4rem;
+  height: 4rem;
+  background-color: #ED82A9;
+  border-radius: 0.75rem;
+}
+.section-markup .article__overlay-icon svg {
+  width: 60%;
+  height: auto;
+  fill: #fff;
+}
+.section-markup .article__overlay-icon:hover {
+  background-color: #fff;
+}
+.section-markup .article__overlay-icon:hover svg {
+  fill: #ED82A9;
+}
+.section-markup .article__overlay-description {
+  color: #fff;
+  font-size: 0.875rem;
+  text-align: center;
+}
+.section-markup .article__title {
+  margin-bottom: 0;
+}
+.section-markup .article__image {
+  width: 100%;
+}
+.section-markup .article__image-wrap {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
 /**
  * Styling for projects section.
  */
