@@ -5,7 +5,7 @@
 // Checking user's age.
 document.querySelector('#ageBtn').addEventListener('click', getUserAge);
 
-function getUserAge( ) {
+function getUserAge() {
   let userReply = prompt("What is your age?");
 
   if ( userReply < 0 ) {
@@ -27,7 +27,7 @@ function getUserAge( ) {
 // Asing for a keyboard number
 document.querySelector('#keyboardNumber').addEventListener('change', getRangeNumber);
 
-function getRangeNumber( ) {
+function getRangeNumber() {
   let rangeNumber = +document.getElementById('keyboardNumber').value,
       message;
 
@@ -86,7 +86,7 @@ function getRangeNumber( ) {
 // Calculating the sum of the range of two numbers.
 document.querySelector('#rangeBtn').addEventListener('click', calculateRangeSum);
 
-function calculateRangeSum( ) {
+function calculateRangeSum() {
   let numberOne = +document.getElementById('firstNumber').value,
       numberTwo = +document.getElementById('secondNumber').value,
       result = Number();
@@ -105,7 +105,7 @@ function calculateRangeSum( ) {
 // Calculating Greatest common divider of two numbers.
 document.querySelector('#gcdBtn').addEventListener('click', calculateGcd);
 
-function calculateGcd( ) {
+function calculateGcd() {
   let numberOne = +document.getElementById('firstGcdNumber').value,
       numberTwo = +document.getElementById('secondGcdNumber').value,
       resultNumberOne = numberOne,
@@ -131,7 +131,7 @@ function calculateGcd( ) {
 // Calculating all dividers from a given number.
 document.querySelector('#dividersBtn').addEventListener('click', calculateDividers);
 
-function calculateDividers( ) {
+function calculateDividers() {
   let numberToTest = +document.getElementById('dividersNumber').value,
       i = numberToTest,
       divider = '',
@@ -193,6 +193,38 @@ function reverseNumber(num) {
         .join('')
     ) * Math.sign(num)
   )                 
+}
+
+// Calculation of total with discount
+document.querySelector('#discountBtn').addEventListener('click', calculateTotal);
+
+function calculateTotal() {
+  let price = +prompt("Enter your number, please."),
+      message = '';
+
+  switch(true) {
+    case price >= 200 && price < 300:
+      total = price * 0.97; // 97%
+      message = `You get the 3% discount 🎉. The total is <strong>${total}</strong>.`
+      break;
+
+    case price >= 300 && price < 500:
+      total = price * 0.95; // 95%
+      message = `You get the 5% discount 🤩. The total is <strong>${total}</strong>.`
+      break;
+
+    case price >= 500:
+      total = price * 0.93; // 93%
+      message = `You get the 7% discount 🔥. The total is <strong>${total}</strong>.`
+      break;
+
+    default:
+      message = `Unfortunately, no discount for you. The minimum discount of 3% is applied for the price starting from 200.`
+  }
+
+  let discountResult = document.getElementById("discountResult");
+  discountResult.innerHTML = message;
+  discountResult.style.visibility = 'visible';
 }
 
 /**

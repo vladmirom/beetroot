@@ -1,0 +1,278 @@
+/*--------------------------------------------------------------
+  # Utils: REM helper
+--------------------------------------------------------------*/
+/**
+  * Breakpoint viewport sizes and media queries.
+  * Using (benchmarking :) ) Bootstrap 5 breakpoints.
+  */
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+html {
+  font-size: 18px;
+  line-height: 1.625rem;
+}
+
+.body {
+  background-color: #6B728E;
+  color: white;
+}
+
+.main {
+  margin: 6.25rem 0;
+}
+.main__title {
+  width: 93.75%;
+  max-width: 540px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+}
+@media (min-width: 576px) {
+  .main__title {
+    width: 93.75%;
+    max-width: 720px;
+  }
+}
+@media (min-width: 768px) {
+  .main__title {
+    width: 96.7741935484%;
+    max-width: 960px;
+  }
+}
+@media (min-width: 992px) {
+  .main__title {
+    width: 95%;
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1200px) {
+  .main__title {
+    width: 95%;
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1400px) {
+  .main__title {
+    width: 81.25%;
+    max-width: 1170px;
+  }
+}
+
+.list {
+  list-style: inside;
+  padding-left: 1.25rem;
+}
+
+.body {
+  font-family: "Lato", sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.625rem;
+  margin: 0;
+}
+
+h1,
+.h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.75rem;
+  font-weight: 400;
+  line-height: 3.25rem;
+  margin-bottom: 1.25rem;
+}
+
+h2,
+.h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  line-height: 3rem;
+  margin-bottom: 1.875rem;
+}
+
+h3,
+.h3 {
+  font-family: "Lato", sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 2.875rem;
+  margin-bottom: 0.9375rem;
+  letter-spacing: 0.04em;
+}
+
+h4, .section-projects .article__title,
+.h4 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 3rem;
+  margin-bottom: 0.9375rem;
+  letter-spacing: 0.05em;
+}
+
+h5,
+.h5 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.25rem;
+  letter-spacing: 0.08em;
+}
+
+h6,
+.h6 {
+  font-family: "Lato", sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.625rem;
+}
+
+p {
+  opacity: 0.8;
+}
+
+/**
+ * Styling for javascript section.
+ */
+/**
+ * Styling for css and html section.
+ */
+/**
+ * Styling for projects section.
+ */
+.section-projects {
+  width: 93.75%;
+  max-width: 540px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 3.125rem 0;
+}
+@media (min-width: 576px) {
+  .section-projects {
+    width: 93.75%;
+    max-width: 720px;
+  }
+}
+@media (min-width: 768px) {
+  .section-projects {
+    width: 96.7741935484%;
+    max-width: 960px;
+  }
+}
+@media (min-width: 992px) {
+  .section-projects {
+    width: 95%;
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1200px) {
+  .section-projects {
+    width: 95%;
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1400px) {
+  .section-projects {
+    width: 81.25%;
+    max-width: 1170px;
+  }
+}
+.section-projects__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+}
+.section-projects .article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 25rem;
+  padding: 0.9375rem;
+  margin-bottom: 2.5rem;
+  border-radius: 0.75rem;
+  background-color: #fff;
+  color: #404258;
+  position: relative;
+  cursor: pointer;
+}
+.section-projects .article:hover .article__overlay {
+  display: block;
+  background-color: #F3B764;
+}
+.section-projects .article__overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  border-radius: 0.75rem;
+  transition: all 0.3s ease;
+}
+.section-projects .article__overlay-list {
+  width: 100%;
+  height: 100%;
+  gap: 1.875rem;
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.section-projects .article__overlay-link:link, .section-projects .article__overlay-link:visited, .section-projects .article__overlay-link:active, .section-projects .article__overlay-link:hover {
+  color: #fff;
+  text-decoration: none;
+}
+.section-projects .article__overlay-icon {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.75rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+.section-projects .article__overlay-icon-wrap {
+  width: 4rem;
+  height: 4rem;
+  background-color: #F8CE70;
+  border-radius: 0.75rem;
+}
+.section-projects .article__overlay-icon svg {
+  width: 60%;
+  height: auto;
+  fill: #fff;
+}
+.section-projects .article__overlay-icon:hover {
+  background-color: #fff;
+}
+.section-projects .article__overlay-icon:hover svg {
+  fill: #F8CE70;
+}
+.section-projects .article__overlay-description {
+  color: #fff;
+  font-size: 0.875rem;
+  text-align: center;
+}
+.section-projects .article__image {
+  width: 100%;
+}
+.section-projects .article__image-wrap {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}/*# sourceMappingURL=styles.css.map */
