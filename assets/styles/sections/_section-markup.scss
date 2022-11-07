@@ -8,14 +8,13 @@
     padding: rem(50px) 0;
 
     &__grid {
-      @include grid-three-columns;
+      @include grid-four-columns;
     }
 
     & .article {
       @include flex-column-centered;
       min-height: rem(400px);
       padding: rem(15px);
-      margin-bottom: rem(40px);
       border-radius: rem(12px);
 
       background-color: $white;
@@ -58,26 +57,53 @@
           height: 100%;
           border-radius: rem(12px);
           @include flex-row-centered;
-          transition: all .3s ease;
 
           &-wrap {
             width: rem(64px);
             height: rem(64px);
-            background-color: $carisma;
             border-radius: rem(12px);
-          }
-
-          & svg {
-            width: 60%;
-            height: auto;
-            fill: $white;
-          }
-
-          &:hover {
-            background-color: $white;
+            background-color: $carisma;
+            transition: all .3s ease;
 
             & svg {
-              fill: $carisma;
+              width: 60%;
+              height: auto;
+              fill: $white;
+            }
+
+            &:hover {
+              background-color: $white;
+  
+              & svg {
+                fill: $carisma;
+              }
+            }
+
+            &--disabled {
+              background-color: $light-gray;
+              cursor: not-allowed;
+
+              & .article__overlay-icon {
+                & svg {
+                  fill: $gray;
+                }
+              }
+
+              & + .article__overlay-description {
+                opacity: 0.5;
+                cursor: not-allowed;
+              }
+
+              &:hover {
+                background-color: $light-gray;
+                cursor: not-allowed;
+  
+                & .article__overlay-icon {
+                  & svg {
+                    fill: $gray;
+                  }
+                }
+              }
             }
           }
         }
