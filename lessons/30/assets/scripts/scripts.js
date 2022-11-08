@@ -345,6 +345,70 @@ function calculateTenNumbers() {
   numbersResult.style.visibility = 'visible';
 }
 
+// Calculating days of week
+document.addEventListener('DOMContentLoaded', showToday);
+
+function showToday() {
+  console.log(defineTheDay(new Date().getDay()));
+  let daySwitchResult = document.getElementById("daySwitchResult"),
+      today = defineTheDay(new Date().getDay()),
+      message = `Today is <strong>${today}</strong>. Do you want to see the other day? Press the button.`
+      daySwitchResult.innerHTML = message;
+}
+
+document.querySelector('#daySwitchBtn').addEventListener('click', switchTheDay);
+let day = new Date().getDay(); // Current day
+
+function switchTheDay() {
+  if (day === 7) {
+    day = 1;
+  } else {
+    day++;
+  }
+
+  let nextDay = defineTheDay(day);
+
+  let daySwitchResult = document.getElementById("daySwitchResult"),
+      message = `The day is <strong>${nextDay}</strong>. Do you want to see the other day? Press the button.`;
+      daySwitchResult.innerHTML = message;
+}
+
+function defineTheDay(i) {
+  let dayOfTheWeek = '';
+  
+  switch( true ) {
+    case i === 1:
+      dayOfTheWeek = 'Monday';
+      break;
+
+    case i === 2:
+      dayOfTheWeek = 'Tuesday';
+      break;
+
+    case i === 3:
+      dayOfTheWeek = 'Wednesday';
+      break;
+    
+    case i === 4:
+      dayOfTheWeek = 'Thursday';
+      break;
+
+    case i === 5:
+      dayOfTheWeek = 'Friday';
+      break;
+
+    case i === 6:
+      dayOfTheWeek = 'Saturday';
+      break;
+
+    case i === 7:
+      dayOfTheWeek = 'Sunday';
+      break;
+  }
+
+  return dayOfTheWeek;
+}
+
 /**
  * Difficult tasks
  */
