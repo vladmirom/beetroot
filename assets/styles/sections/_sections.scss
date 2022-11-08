@@ -1,0 +1,17 @@
+/**
+ * Styling all three sections.
+ */
+
+ .section {
+  &-projects {
+    @include section( $rajah, $grandis, $grid-4: false );
+  }
+
+  &-markup {
+    @include section( $mulberry, $carisma );
+  }
+
+  &-javascript {
+    @include section( $state-blue, $picton-blue );
+  }
+ }

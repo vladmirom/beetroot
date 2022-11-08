@@ -107,7 +107,7 @@ h3,
   letter-spacing: 0.04em;
 }
 
-h4, .section-projects .article__title, .section-markup .article__title, .section-javascript .article__title,
+h4, .section-javascript .article__title, .section-markup .article__title, .section-projects .article__title,
 .h4 {
   font-family: "Playfair Display", serif;
   font-size: 1.5rem;
@@ -139,9 +139,9 @@ p {
 }
 
 /**
- * Styling for javascript section.
+ * Styling all three sections.
  */
-.section-javascript {
+.section-projects {
   width: 93.75%;
   max-width: 540px;
   margin-left: auto;
@@ -149,41 +149,41 @@ p {
   padding: 3.125rem 0;
 }
 @media (min-width: 576px) {
-  .section-javascript {
+  .section-projects {
     width: 93.75%;
     max-width: 720px;
   }
 }
 @media (min-width: 768px) {
-  .section-javascript {
+  .section-projects {
     width: 96.7741935484%;
     max-width: 960px;
   }
 }
 @media (min-width: 992px) {
-  .section-javascript {
+  .section-projects {
     width: 95%;
     max-width: 1140px;
   }
 }
 @media (min-width: 1200px) {
-  .section-javascript {
+  .section-projects {
     width: 95%;
     max-width: 1140px;
   }
 }
 @media (min-width: 1400px) {
-  .section-javascript {
+  .section-projects {
     width: 81.25%;
     max-width: 1170px;
   }
 }
-.section-javascript__grid {
+.section-projects__grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.25rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
 }
-.section-javascript .article {
+.section-projects .article {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -196,11 +196,11 @@ p {
   position: relative;
   cursor: pointer;
 }
-.section-javascript .article:hover .article__overlay {
+.section-projects .article:hover .article__overlay {
   display: block;
-  background-color: #6E6FF0;
+  background-color: #F3B764;
 }
-.section-javascript .article__overlay {
+.section-projects .article__overlay {
   display: none;
   position: absolute;
   top: 0;
@@ -211,7 +211,7 @@ p {
   border-radius: 0.75rem;
   transition: all 0.3s ease;
 }
-.section-javascript .article__overlay-list {
+.section-projects .article__overlay-list {
   width: 100%;
   height: 100%;
   gap: 1.875rem;
@@ -223,11 +223,11 @@ p {
   align-items: center;
   justify-content: center;
 }
-.section-javascript .article__overlay-link:link, .section-javascript .article__overlay-link:visited, .section-javascript .article__overlay-link:active, .section-javascript .article__overlay-link:hover {
+.section-projects .article__overlay-link:link, .section-projects .article__overlay-link:visited, .section-projects .article__overlay-link:active, .section-projects .article__overlay-link:hover {
   color: #fff;
   text-decoration: none;
 }
-.section-javascript .article__overlay-icon {
+.section-projects .article__overlay-icon {
   width: 100%;
   height: 100%;
   border-radius: 0.75rem;
@@ -236,64 +236,60 @@ p {
   align-items: center;
   justify-content: center;
 }
-.section-javascript .article__overlay-icon-wrap {
+.section-projects .article__overlay-icon-wrap {
   width: 4rem;
   height: 4rem;
   border-radius: 0.75rem;
-  background-color: #4CB1FC;
+  background-color: #F8CE70;
   transition: all 0.3s ease;
 }
-.section-javascript .article__overlay-icon-wrap svg {
+.section-projects .article__overlay-icon-wrap svg {
   width: 60%;
   height: auto;
   fill: #fff;
 }
-.section-javascript .article__overlay-icon-wrap:hover {
+.section-projects .article__overlay-icon-wrap:hover {
   background-color: #fff;
 }
-.section-javascript .article__overlay-icon-wrap:hover svg {
-  fill: #4CB1FC;
+.section-projects .article__overlay-icon-wrap:hover svg {
+  fill: #F8CE70;
 }
-.section-javascript .article__overlay-icon-wrap--disabled {
+.section-projects .article__overlay-icon-wrap--disabled {
   background-color: #dddddd;
   cursor: not-allowed;
 }
-.section-javascript .article__overlay-icon-wrap--disabled .article__overlay-icon svg {
+.section-projects .article__overlay-icon-wrap--disabled .article__overlay-icon svg {
   fill: #cccccc;
 }
-.section-javascript .article__overlay-icon-wrap--disabled + .article__overlay-description {
+.section-projects .article__overlay-icon-wrap--disabled + .article__overlay-description {
   opacity: 0.5;
   cursor: not-allowed;
 }
-.section-javascript .article__overlay-icon-wrap--disabled:hover {
+.section-projects .article__overlay-icon-wrap--disabled:hover {
   background-color: #dddddd;
   cursor: not-allowed;
 }
-.section-javascript .article__overlay-icon-wrap--disabled:hover .article__overlay-icon svg {
+.section-projects .article__overlay-icon-wrap--disabled:hover .article__overlay-icon svg {
   fill: #cccccc;
 }
-.section-javascript .article__overlay-description {
+.section-projects .article__overlay-description {
   color: #fff;
   font-size: 0.875rem;
   text-align: center;
 }
-.section-javascript .article__title {
+.section-projects .article__title {
   margin-bottom: 0;
 }
-.section-javascript .article__image {
+.section-projects .article__image {
   width: 100%;
 }
-.section-javascript .article__image-wrap {
+.section-projects .article__image-wrap {
   width: 80%;
   display: flex;
   align-items: center;
   display: flex;
   justify-content: center;
 }
-
-/**
- * Styling for css and html section.
- */
 .section-markup {
   width: 93.75%;
   max-width: 540px;
@@ -443,11 +439,7 @@ p {
   display: flex;
   justify-content: center;
 }
-
-/**
- * Styling for projects section.
- */
-.section-projects {
+.section-javascript {
   width: 93.75%;
   max-width: 540px;
   margin-left: auto;
@@ -455,59 +447,58 @@ p {
   padding: 3.125rem 0;
 }
 @media (min-width: 576px) {
-  .section-projects {
+  .section-javascript {
     width: 93.75%;
     max-width: 720px;
   }
 }
 @media (min-width: 768px) {
-  .section-projects {
+  .section-javascript {
     width: 96.7741935484%;
     max-width: 960px;
   }
 }
 @media (min-width: 992px) {
-  .section-projects {
+  .section-javascript {
     width: 95%;
     max-width: 1140px;
   }
 }
 @media (min-width: 1200px) {
-  .section-projects {
+  .section-javascript {
     width: 95%;
     max-width: 1140px;
   }
 }
 @media (min-width: 1400px) {
-  .section-projects {
+  .section-javascript {
     width: 81.25%;
     max-width: 1170px;
   }
 }
-.section-projects__grid {
+.section-javascript__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2.5rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
 }
-.section-projects .article {
+.section-javascript .article {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 25rem;
   padding: 0.9375rem;
-  margin-bottom: 2.5rem;
   border-radius: 0.75rem;
   background-color: #fff;
   color: #404258;
   position: relative;
   cursor: pointer;
 }
-.section-projects .article:hover .article__overlay {
+.section-javascript .article:hover .article__overlay {
   display: block;
-  background-color: #F3B764;
+  background-color: #6E6FF0;
 }
-.section-projects .article__overlay {
+.section-javascript .article__overlay {
   display: none;
   position: absolute;
   top: 0;
@@ -518,7 +509,7 @@ p {
   border-radius: 0.75rem;
   transition: all 0.3s ease;
 }
-.section-projects .article__overlay-list {
+.section-javascript .article__overlay-list {
   width: 100%;
   height: 100%;
   gap: 1.875rem;
@@ -530,11 +521,11 @@ p {
   align-items: center;
   justify-content: center;
 }
-.section-projects .article__overlay-link:link, .section-projects .article__overlay-link:visited, .section-projects .article__overlay-link:active, .section-projects .article__overlay-link:hover {
+.section-javascript .article__overlay-link:link, .section-javascript .article__overlay-link:visited, .section-javascript .article__overlay-link:active, .section-javascript .article__overlay-link:hover {
   color: #fff;
   text-decoration: none;
 }
-.section-projects .article__overlay-icon {
+.section-javascript .article__overlay-icon {
   width: 100%;
   height: 100%;
   border-radius: 0.75rem;
@@ -542,34 +533,55 @@ p {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
 }
-.section-projects .article__overlay-icon-wrap {
+.section-javascript .article__overlay-icon-wrap {
   width: 4rem;
   height: 4rem;
-  background-color: #F8CE70;
   border-radius: 0.75rem;
+  background-color: #4CB1FC;
+  transition: all 0.3s ease;
 }
-.section-projects .article__overlay-icon svg {
+.section-javascript .article__overlay-icon-wrap svg {
   width: 60%;
   height: auto;
   fill: #fff;
 }
-.section-projects .article__overlay-icon:hover {
+.section-javascript .article__overlay-icon-wrap:hover {
   background-color: #fff;
 }
-.section-projects .article__overlay-icon:hover svg {
-  fill: #F8CE70;
+.section-javascript .article__overlay-icon-wrap:hover svg {
+  fill: #4CB1FC;
 }
-.section-projects .article__overlay-description {
+.section-javascript .article__overlay-icon-wrap--disabled {
+  background-color: #dddddd;
+  cursor: not-allowed;
+}
+.section-javascript .article__overlay-icon-wrap--disabled .article__overlay-icon svg {
+  fill: #cccccc;
+}
+.section-javascript .article__overlay-icon-wrap--disabled + .article__overlay-description {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.section-javascript .article__overlay-icon-wrap--disabled:hover {
+  background-color: #dddddd;
+  cursor: not-allowed;
+}
+.section-javascript .article__overlay-icon-wrap--disabled:hover .article__overlay-icon svg {
+  fill: #cccccc;
+}
+.section-javascript .article__overlay-description {
   color: #fff;
   font-size: 0.875rem;
   text-align: center;
 }
-.section-projects .article__image {
+.section-javascript .article__title {
+  margin-bottom: 0;
+}
+.section-javascript .article__image {
   width: 100%;
 }
-.section-projects .article__image-wrap {
+.section-javascript .article__image-wrap {
   width: 80%;
   display: flex;
   align-items: center;
