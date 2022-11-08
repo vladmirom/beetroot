@@ -227,6 +227,124 @@ function calculateTotal() {
   discountResult.style.visibility = 'visible';
 }
 
+// Calculation of 10 numbers
+document.querySelector('#numbersBtn').addEventListener('click', calculateTenNumbers);
+
+function calculateTenNumbers() {
+  let numbersString = prompt("Enter your numbers, separated by coma sign."),
+      numbersStringNoSpaces = numbersString.replaceAll(' ', ''),
+      numbersArray = numbersStringNoSpaces.split(','); // Getting an array of substrings.
+
+  let posititveNumbersCount = 0,
+      negativeNumbersCount = 0,
+      zerosCount = 0,
+      evenNumbersCount = 0,
+      oddNumbersCount = 0,
+      numbersCount = 0,
+      isNanCount = 0,
+      message = '';
+
+  numbersArray.map(string => {
+    number = parseInt(string);
+
+    if ( !isNaN(number) ) {
+      numbersCount++; // Checking the total of all numbers entered.
+
+      if (Math.sign(number) === 1) { // Checking positive natural.
+        posititveNumbersCount++ 
+      } else if (Math.sign(number) === -1) { // Checking negative natural.
+        negativeNumbersCount++;
+      } else if (Math.sign(number) === 1 || Math.sign(number) === -0) {  // Checking zero.
+        zerosCount++; 
+      };
+
+      if(number % 2 == 0) {  // Checking even number.
+        evenNumbersCount++;
+      } else {  // Else === odd number.
+        oddNumbersCount++;
+      }
+
+    } else {
+      isNanCount++;
+    }
+  });
+
+  if (isNanCount) {
+    if (numbersCount) {
+      message = `Even though, the entered numbers were not all numbers (<strong>${isNanCount}</strong>), we managed to check <strong>${numbersCount}</strong> of them. `;
+      
+      if (posititveNumbersCount) {
+        message += `There ${posititveNumbersCount > 1 ? 'were': 'was'} <strong>${posititveNumbersCount}</strong> positive real number${posititveNumbersCount > 1 ? 's': ''}. `
+      } else {
+        message += `There were no positive real numbers. `
+      }
+
+      if (negativeNumbersCount) {
+        message += `There ${negativeNumbersCount > 1 ? 'were': 'was'} <strong>${negativeNumbersCount}</strong> negative real numbers${negativeNumbersCount > 1 ? 's': ''}. `
+      } else {
+        message += `There were no negative real numbers. `
+      }
+
+      if (zerosCount) {
+        message += `There ${zerosCount > 1 ? 'were': 'was'} <strong>${zerosCount}</strong> zero${zerosCount > 1 ? 's': ''}. `
+      } else {
+        message += `There were no zeros. `
+      }
+
+      if (evenNumbersCount) {
+        message += `There ${evenNumbersCount > 1 ? 'were': 'was'} <strong>${evenNumbersCount}</strong> even number${evenNumbersCount > 1 ? 's': ''}. `
+      } else {
+        message += `There were no even numbers. `
+      }
+
+      if (zerosCount) {
+        message += `There ${oddNumbersCount > 1 ? 'were': 'was'} <strong>${oddNumbersCount}</strong> odd number${oddNumbersCount > 1 ? 's': ''}. `
+      } else {
+        message += `There were no odd numbers. `
+      }
+
+    } else {
+      message = `We didn't find any numbers in your string.`
+    }
+  } else {
+    message = `Among your ${numbersCount} numbers we managed to find something. `;
+      
+    if (posititveNumbersCount) {
+      message += `There ${posititveNumbersCount > 1 ? 'were': 'was'} <strong>${posititveNumbersCount}</strong> positive real number${posititveNumbersCount > 1 ? 's': ''}. `
+    } else {
+      message += `There were no positive real numbers. `
+    }
+
+    if (negativeNumbersCount) {
+      message += `There ${negativeNumbersCount > 1 ? 'were': 'was'} <strong>${negativeNumbersCount}</strong> negative real numbers${negativeNumbersCount > 1 ? 's': ''}. `
+    } else {
+      message += `There were no negative real numbers. `
+    }
+
+    if (zerosCount) {
+      message += `There ${zerosCount > 1 ? 'were': 'was'} <strong>${zerosCount}</strong> zero${zerosCount > 1 ? 's': ''}. `
+    } else {
+      message += `There were no zeros. `
+    }
+
+    if (evenNumbersCount) {
+      message += `There ${evenNumbersCount > 1 ? 'were': 'was'} <strong>${evenNumbersCount}</strong> even number${evenNumbersCount > 1 ? 's': ''}. `
+    } else {
+      message += `There were no even numbers. `
+    }
+
+    if (zerosCount) {
+      message += `There ${oddNumbersCount > 1 ? 'were': 'was'} <strong>${oddNumbersCount}</strong> odd number${oddNumbersCount > 1 ? 's': ''}. `
+    } else {
+      message += `There were no odd numbers. `
+    }
+  }
+
+  let numbersResult = document.getElementById("numbersResult");
+  numbersResult.innerHTML = message;
+  numbersResult.style.visibility = 'visible';
+}
+
 /**
  * Difficult tasks
  */

@@ -345,15 +345,6 @@ input[type=range]:focus::-ms-fill-upper {
 .section-medium__task-text {
   margin-bottom: 1.25rem;
 }
-.section-medium__task-meme {
-  width: 30rem;
-  height: 16.125rem;
-  margin-bottom: 2.5rem;
-}
-.section-medium__task-meme-image {
-  width: 100%;
-  height: auto;
-}
 .section-medium__task-button {
   display: flex;
   align-items: center;
@@ -369,14 +360,13 @@ input[type=range]:focus::-ms-fill-upper {
   transition: all 0.2s linear;
   background: #FF9900;
   color: #fff;
+  margin-bottom: 1.25rem;
 }
 .section-medium__task-button:hover {
   background: #F29D38;
 }
-.section-medium__task-list-code {
-  background-color: rgba(87, 142, 247, 0.3);
-  padding: 0 0.625rem;
-  border-radius: 0.3125rem;
+.section-medium__task-list {
+  margin-bottom: 1.25rem;
 }
 .section-medium__task-result {
   visibility: hidden;

@@ -22,30 +22,14 @@
         margin-bottom: rem(20px);
       }
 
-      &-meme {
-        width: rem(480px);
-        height: rem(258px);
-        margin-bottom: rem(40px);
-
-        &-image {
-          width: 100%;
-          height: auto;
-        }
-      }
-
       &-button {
         @include button;
-        
+        margin-bottom: rem(20px);
       }
       
       &-list {
         @extend .list;
-  
-        &-code {
-          background-color: $cornflower-blue;
-          padding: 0 rem(10px);
-          border-radius: rem(5px);
-        }
+        margin-bottom: rem(20px);
       }
 
       &-result {
