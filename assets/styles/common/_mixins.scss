@@ -1,0 +1,221 @@
+@mixin container {
+  width: calc(540px / ( 576px / 100% ));
+  max-width: 540px;
+  margin-left: auto;
+  margin-right: auto;
+  
+  @include media-breakpoint-up(sm) {
+    width: calc(720px / ( 768px / 100% ));
+    max-width: 720px;
+  }
+
+  @include media-breakpoint-up(md) {
+    width: calc(960px / ( 992px / 100% ));
+    max-width: 960px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    width: calc(1140px / ( 1200px / 100% ));
+    max-width: 1140px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    width: calc(1140px / ( 1200px / 100% ));
+    max-width: 1140px;
+  }
+
+  @include media-breakpoint-up(xxl) {
+    width: calc(1170px / ( 1440px / 100% ));
+    max-width: 1170px;
+  }
+}
+
+@mixin flex-vertical-center {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-horisontal-center {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin flex-column-centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-row-centered {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin grid-two-columns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: rem(40px);
+}
+
+@mixin grid-four-columns {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: rem(20px);
+}
+
+@mixin overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  border-radius: rem(12px);
+  transition: all .3s ease;
+}
+
+@mixin list-unstyled {
+  list-style: none;
+	margin-left: 0;
+	padding-left: 0;
+}
+
+@mixin section( $overlay-color: $state-blue, $icon-color: $picton-blue, $grid-4: true ) {
+  @include container;
+    padding: rem(50px) 0;
+
+    &__grid {
+      @if ($grid-4) {
+        @include grid-four-columns;
+      } @else {
+        @include grid-two-columns;
+      }
+    }
+
+    & .article {
+      @include flex-column-centered;
+      min-height: rem(400px);
+      padding: rem(15px);
+      border-radius: rem(12px);
+
+      background-color: $white;
+      color: $charcoal;
+
+      position: relative;
+      cursor: pointer;
+
+      &:hover {
+        & .article__overlay {
+          display: block;
+          background-color: $overlay-color;
+        }
+      }
+
+      &__overlay {
+        @include overlay;
+
+        &-list {
+          width: 100%;
+          height: 100%;
+          gap: rem(30px);
+
+          @include list-unstyled;
+          @include flex-row-centered;
+        }
+
+        &-link {
+          &:link,
+          &:visited,
+          &:active,
+          &:hover {
+            color: $white;
+            text-decoration: none;
+          }
+        }
+
+        &-icon {
+          width: 100%;
+          height: 100%;
+          border-radius: rem(12px);
+          @include flex-row-centered;
+
+          &-wrap {
+            width: rem(64px);
+            height: rem(64px);
+            border-radius: rem(12px);
+            background-color: $icon-color;
+            transition: all .3s ease;
+
+            & svg {
+              width: 60%;
+              height: auto;
+              fill: $white;
+            }
+
+            &:hover {
+              background-color: $white;
+  
+              & svg {
+                fill: $icon-color;
+              }
+            }
+
+            &--disabled {
+              background-color: $light-gray;
+              cursor: not-allowed;
+
+              & .article__overlay-icon {
+                & svg {
+                  fill: $gray;
+                }
+              }
+
+              & + .article__overlay-description {
+                opacity: 0.5;
+                cursor: not-allowed;
+              }
+
+              &:hover {
+                background-color: $light-gray;
+                cursor: not-allowed;
+  
+                & .article__overlay-icon {
+                  & svg {
+                    fill: $gray;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        &-description {
+          color: $white;
+          font-size: rem(14px);
+          text-align: center;
+        }
+      }
+  
+      &__title {
+        @extend h4;
+        margin-bottom: 0;
+      }
+
+      &__image {
+        width: 100%;
+
+        &-wrap {
+          width: 80%;
+        
+          @include flex-vertical-center;
+          @include flex-horisontal-center;
+        }
+      }
+    }
+}
+
+
