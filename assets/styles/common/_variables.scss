@@ -1,0 +1,46 @@
+// Screen sizes
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+// Colors
+$white: #fff;
+$black: #000;
+$gray: #cccccc;
+$light-gray: #dddddd;
+$rhythm: #6B728E;
+$purple-navy: #50577A;
+$charcoal: #404258;
+$rajah: #F3B764;
+$grandis: #F8CE70;
+$mulberry: #C55098;
+$carisma: #ED82A9;
+$state-blue: #6E6FF0;
+$picton-blue: #4CB1FC;
+
+// Fonts
+$font-family-headings: 'Playfair Display', serif;
+$font-family-body: 'Lato', sans-serif;
+
+$font-body: 18px;
+$h1-font-size: rem(44px);
+$h2-font-size: rem(40px);
+$h3-font-size: rem(32px);
+$h4-font-size: rem(24px);
+$h5-font-size: rem(20px);
+$h6-font-size: rem(16px);
+$h7-font-size: rem(14px);
+
+$line-height: rem(26px);
+$h1-line-height: rem(52px);
+$h2-line-height: rem(48px);
+$h3-line-height: rem(46px);
+$h4-line-height: rem(48px);
+$h5-line-height: rem(20px);
+$h6-line-height: rem(26px);
+$h7-line-height: rem(26px);

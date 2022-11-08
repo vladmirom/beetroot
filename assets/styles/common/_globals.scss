@@ -1,0 +1,32 @@
+*,
+::after,
+::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+html {
+    font-size: $font-body;
+    line-height: $line-height;
+}
+
+.body {
+    background-color: $rhythm;
+    color: white;
+}
+
+.main {
+    margin: rem(100px) 0;
+    
+    &__title {
+        @include container;
+        @include flex-horisontal-center;
+    }
+}
+
+.list {
+    list-style: inside;
+    padding-left: 1.25rem;
+}
