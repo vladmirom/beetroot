@@ -18,7 +18,7 @@ fruit.at(-1) = 'clenentine'; // adds to the last element of the array.
 
 /* Getting values */
 fruit[0]; // => 'apple'.
-fruit[3].name; // => 'pinaple', since this is an objec in array.
+fruit[3].name; // => 'pinaple', since this is an object in array.
 
 /* Array methods */
 // Adding and removing values
