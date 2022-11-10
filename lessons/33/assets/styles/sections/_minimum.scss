@@ -1,0 +1,79 @@
+/**
+  * Minimum tasks section styles.
+  */
+
+.section {
+  &-minimum {
+    margin-bottom: rem(50px);
+
+    &__container {
+      @include container;
+    }
+
+    &__wrap {
+      @include section-wrap;
+      background-color: $minimum;
+    }
+
+    &__task {
+      margin-bottom: rem(50px);
+
+      &-text {
+        margin-bottom: rem(20px);
+      }
+
+      &-button {
+        @include button;
+      }
+      
+      &-list {
+        @extend .list;
+      }
+
+      &-code {
+        background-color: $cornflower-blue;
+        padding: 0 rem(10px);
+        border-radius: rem(5px);
+      }
+
+      & .range {
+        display: flex;
+        gap: rem(20px);
+        width: 80%;
+        margin: rem(50px) 0;
+
+        &__input {
+          width: 100%;
+        }
+      }
+
+      & .form {
+        &__grid {
+          display: grid;
+          grid-template-columns: repeat( 2, 1fr ) 2fr;
+          gap: (30px);
+        }
+
+        &__label {
+          display: block;
+          font-size: rem(14px);
+        }
+
+        &__number {
+          display: block;
+          width: 100%;
+
+          border: none;
+          border-radius: 0.25rem;
+
+          padding: rem(11px) rem(10px);
+          margin-bottom: rem(20px);
+        }
+      }
+
+      &-result {
+        visibility: hidden;
+      }
+    }
+  }
+}
