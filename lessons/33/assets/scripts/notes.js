@@ -138,7 +138,12 @@ fruit.forEach((one_fruit, index, array) => {
   // console.log(one_fruit, index, array);
 })
 
-// HOMEEWORK: indexOf, lastIndexOf, includes
+// IndexOf, lastIndexOf, includes metrods
+let indexArr = [1, 0, false, true, false];
+
+indexArr.indexOf(false); // => 2
+indexArr.lastIndexOf(false); // => 4
+indexArr.lastIndexOf(0); // => true
 
 // Find method.
 fruit.find(function(item, index, array) {
@@ -152,6 +157,27 @@ fruit.find((item => item === 'apple'));
 fruit.findIndex((item => item === 'apple')); // => 0
 
 // HOMEWORK: filter, sort, reverse, split, join. 
+// Filter method.
+let filterArr = [1, 2, 3, 4, 5, 6, 7];
+
+filterArr.filter(inBetween(3, 6)); // => 3,4,5,6
+filterArr.filter(inArray([1, 2, 10])); // => 1,2
+
+// Sort method.
+let sortArr = [ 1, 2, 15 ];
+sortArr.sort(); // => 1, 15, 2. String 2 is bigger than string 15.
+
+// Reverse method.
+let reverseArr = [1, 2, 3, 4, 5];
+reverseArr.reverse(); // => 5,4,3,2,1.
+
+// Split method.
+let splitArr = '1, 2, 3, 4, 5';
+splitArr.split(', '); // => [1, 2, 3, 4, 5.
+
+// Join method.
+let joinArr = '1, 2, 3, 4, 5';
+splitArr.split(', '); // => [1, 2, 3, 4, 5.
 
 // Map method. Mofidies each value.
 fruit = fruit.map((item => item + ' juice')); // => ['apple juice', 'orange juice', ...]
@@ -161,7 +187,7 @@ fruit = fruit.map((item => item + ' juice'));
 console.log(typeof {}); // object
 console.log(typeof []); // object
 
-console.log(Array.isArray(fruit) {}); // true
+console.log(Array.isArray(fruit)); // true
 console.log(Array.isArray({})); // false because object
 
 

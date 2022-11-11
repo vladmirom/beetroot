@@ -36,14 +36,14 @@
           <li><span class="code">fruit.findIndex((item => item === 'apple'));</span> will return the index of the finded 'apple'.</li>
           <li><span class="code">fruit = fruit.map((item => item + ' juice'));</span> will iterate through the whole array and do something with each value.</li>
           <li><span class="code">Array.isArray(fruit) {}</span> will check if the array is array, returns boolean.</li>
-          <li><span class="code">fruit.indexOf()</span></li>
-          <li><span class="code">fruit.lastIndexOf()</span></li>
-          <li><span class="code">fruit.includes()</span></li>
-          <li><span class="code">fruit.filter()</span></li>
-          <li><span class="code">fruit.sort()</span></li>
-          <li><span class="code">fruit.reverse()</span></li>
-          <li><span class="code">fruit.split()</span></li>
-          <li><span class="code">fruit.join()</span></li>
+          <li><span class="code">fruit.indexOf()</span> parces the array, searches for the value mentioned in parameter, and returns the index of the FIRST found value, or <span class="code">-1</span> If the value is not found. Can parse a string.</li>
+          <li><span class="code">fruit.lastIndexOf()</span> parces the array, searches for the value mentioned in parameter, and returns the index of the LAST found value, or <span class="code">-1</span> If the value is not found. Can parse a string.</li>
+          <li><span class="code">fruit.includes()</span> defines if the value exists in array. Returns boolean.</li>
+          <li><span class="code">fruit.filter()</span> filter all elements with the function f. It it returns true, the element will be added to the returned array. These filters will be handy: <span class="code">inBetween(a, b)</span> - between a and b, including them, and <span class="code">inArray([...])</span> - the values that are in this array.</li>
+          <li><span class="code">fruit.sort(fn)</span> sorts elements in array in ascending order. Method converts values into the strings and then compares them. It is possible to create own sorting algorithms.</li>
+          <li><span class="code">fruit.reverse()</span> reverses the order of values in array and returns it.</li>
+          <li><span class="code">fruit.split(delim)</span> divides an array by the delimisher from the parameter.</li>
+          <li><span class="code">fruit.join(glue)</span> converts array into one string by adding all the values using a joint from the parameter.</li>
         </ul>
       </p>
       <p>We can receive the values from arrays this way: <span class="code">fruit[0];</span>.</p>
