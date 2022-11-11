@@ -156,7 +156,6 @@ fruit.find((item => item === 'apple'));
 // FindIndex method.
 fruit.findIndex((item => item === 'apple')); // => 0
 
-// HOMEWORK: filter, sort, reverse, split, join. 
 // Filter method.
 let filterArr = [1, 2, 3, 4, 5, 6, 7];
 

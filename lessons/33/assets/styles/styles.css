@@ -223,24 +223,35 @@ input[type=range]:focus::-ms-fill-upper {
   background: #9BA17B;
 }
 
-.section {
+/**
+  * Styling notes for the lesson.
+  */
+.notes__section {
   margin: 100px 0;
 }
-.section__container {
+.notes__section-container {
   width: 92%;
   max-width: 1170px;
   margin-left: auto;
   margin-right: auto;
 }
-
-.code {
+.notes__block {
+  margin-bottom: 1.25rem;
+}
+.notes__code {
   background-color: rgba(87, 142, 247, 0.3);
   padding: 0 0.625rem;
   border-radius: 0.3125rem;
 }
-
-.order-list {
+.notes__ordered-list {
   padding-left: 2.2rem;
+}
+.notes__ordered-list li {
+  padding-left: 0.5rem;
+}
+.notes__unordered-list {
+  list-style: inside;
+  padding-left: 1.25rem;
 }
 
 /**
