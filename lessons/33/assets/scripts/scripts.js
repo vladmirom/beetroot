@@ -1,8 +1,30 @@
 /**
- * Minimum tasks
+ * Shopping cart.
  */
 
-// Task with the car.
+const shoppingCartConstructor = () => {
+  // stuff goes here :)
+}
+
+const randomProductToAskUser = () => {
+  const randomProductsList = [
+    'green apple', 'red apple', 'pear', 'orange', 'lemon', 'banana', 'watermelon', 'grapes',
+    'strawbery', 'cherries', 'peach', 'mango', 'coconut', 'kivi', 'melon', 'pineaple',
+    'brocoli', 'tomato', 'cucumber', 'chili', 'garlic', 'onion', 'carrot', 'corn', 'potato',
+    'bagel', 'croissant', 'bread', 'chease', 'egg'
+  ];
+}
+
+Bakery and Bread.
+Meat and Seafood.
+Pasta and Rice.
+Oils, Sauces, Salad Dressings, and Condiments.
+Cereals and Breakfast Foods.
+Soups and Canned Goods.
+Frozen Foods.
+Dairy, Cheese, and Eggs.
+
+// Old stuff below, remove when finished.
 let car = {
   brand: 'Toyota',
   model: 'C-HR',
