@@ -10,6 +10,19 @@ const addProductToShoppingList = ( product ) => {
 
 }
 
+const availableProducts = ( listOfProducts ) => {
+
+  // return listOfAvailableProducts;
+}
+
+/**
+ * Creates a single product object.
+ * 
+ * @param { string } productName  The name of the product.
+ * @param { string } productIcon  The icon of the product for better visualization.
+ * @param { boolean } purchased   If this product is already purchased or not.
+ * @returns { object } newProduct.
+ */
 const productConstructor = ( productName, productIcon = '🙃', purchased = false ) => {
   let newProduct = {
     product_name: productName,
@@ -24,10 +37,13 @@ const productConstructor = ( productName, productIcon = '🙃', purchased = fals
   return newProduct;
 }
 
-const randomProductToAskUser = ( alreadyPicked ) => {
-  let randomProduct = '';
-
-  const randomProductsList = [ 
+/**
+ * Creates the array of all the products in the store. Each product is supposed to be an object.
+ * 
+ * @returns { array } productsInWarehouse.
+ */
+const productsWarehouse = () => {
+  const productsInWarehouse = [ 
     productConstructor('green apple', '🍏', true),
     productConstructor('red apple', '🍎'),
     productConstructor('pear', '🍐'),
@@ -70,22 +86,53 @@ const randomProductToAskUser = ( alreadyPicked ) => {
     productConstructor('peanuts', '🥜')
   ];
 
-  console.log(randomProductsList);
-
   // Removing products that we already selected from randomProductsList.
-  let uniqueRandomProductsList = randomProductsList.filter( ( product ) => !alreadyPicked.includes( product ) );
+  // let uniqueRandomProductsList = randomProductsList.filter( ( product ) => !alreadyPicked.includes( product ) );
 
   // Assing a randomProduct and return it. 
-  randomProduct = uniqueRandomProductsList[Math.floor(Math.random() * uniqueRandomProductsList.length)];
+  // randomProduct = uniqueRandomProductsList[Math.floor(Math.random() * uniqueRandomProductsList.length)];
   
-  return randomProduct;
+  return productsInWarehouse;
 }
 
-const addProductOrNot = ( product ) => {
+/**
+ * Filters the array of all the products and creates a list of purchased products.
+ * 
+ * @param { array } listOfProducts Array of all the products.
+ * @returns { array } listOfPurchasedProducts Only the purchased products.
+ */
+const purchasedProducts = ( listOfProducts ) => {
+  listOfPurchasedProducts = listOfProducts.filter( ( value ) => value.purchased === true );
 
+  return listOfPurchasedProducts;
 }
 
-randomProductToAskUser(['red apple', 'pear', 'orange']);
+/**
+ * Filters the array of all the products and creates a list of available products.
+ * 
+ * @param { array } listOfProducts Array of all the products.
+ * @returns { array } listOfAvailableProducts Only the available products.
+ */
+ const listOfAvailableProducts = ( listOfProducts ) => {
+  listOfAvailableProducts = listOfProducts.filter( ( value ) => value.purchased === false );
+
+  return listOfAvailableProducts;
+}
+
+/**
+ * Prepares the HTML responce to be published.
+ * 
+ * @param { array } listOfProducts An array to convert in HTML.
+ * @returns { string } resultHtml The string to be published.
+ */
+ const resultHtml = ( listOfProducts ) => {
+  let resultHtml = listOfProducts.map();
+  listOfAvailableProducts = listOfProducts.filter( ( value ) => value.purchased === false );
+
+  return resultHtml;
+}
+
+purchasedProducts(productsWarehouse());
 
 // Old stuff below, remove when finished.
 // let car = {
