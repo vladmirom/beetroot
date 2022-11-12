@@ -10,12 +10,12 @@ const addProductToShoppingList = ( product ) => {
 
 }
 
-const productConstructor = ( productName, productIcon ) => {
+const productConstructor = ( productName, productIcon = '🙃', purchased = false ) => {
   let newProduct = {
     product_name: productName,
     quantity: Math.floor(Math.random() * 5) + 1,
     product_price: Math.floor(Math.random() * 20) + 1,
-    purchased: false,
+    purchased: purchased,
     icon: productIcon
   }
 
@@ -24,40 +24,53 @@ const productConstructor = ( productName, productIcon ) => {
   return newProduct;
 }
 
-console.log(productConstructor('green apple', '🍏'));
-
 const randomProductToAskUser = ( alreadyPicked ) => {
   let randomProduct = '';
 
   const randomProductsList = [ 
-    productConstructor('green apple', '🍏'),
-    productConstructor('red apple', '🍏'),
-    productConstructor('pear', '🍏'),
-    productConstructor('orange', '🍏'),
-    productConstructor('lemon', '🍏'),
-    productConstructor('banana', '🍏'),
-    productConstructor('watermelon', '🍏'),
-    productConstructor('grapes', '🍏'),
-    productConstructor('strawbery', '🍏'),
-    productConstructor('cherries', '🍏'),
-    productConstructor('peach', '🍏'),
-    productConstructor('red apple', '🍏'),
-    productConstructor('mango', '🍏'),
-    productConstructor('coconut', '🍏'),
-    productConstructor('kivi', '🍏'),
-    productConstructor('melon', '🍏'),
-    productConstructor('pineaple', '🍏'),
-    productConstructor('brocoli', '🍏'),
-    productConstructor('tomato', '🍏'),
-    productConstructor('cucumber', '🍏'),
-    productConstructor('chili', '🍏'),
-    productConstructor('garlic', '🍏'),
-    productConstructor('onion', '🍏'),
-    productConstructor('carrot', '🍏'),
-     'corn', 'potato',
-    'bagel', 'croissant', 'bread', 'chease', 'egg', 'bacon', 'pizza', 'waffle', 'dumpling', 
-    'coockie', 'chockolate', 'honey', 'donut', 'peanuts', 'milk'
+    productConstructor('green apple', '🍏', true),
+    productConstructor('red apple', '🍎'),
+    productConstructor('pear', '🍐'),
+    productConstructor('orange', '🍊', true),
+    productConstructor('lemon', '🍋'),
+    productConstructor('banana', '🍌'),
+    productConstructor('watermelon', '🍉'),
+    productConstructor('grapes', '🍇'),
+    productConstructor('strawbery', '🍓', true),
+    productConstructor('cherries', '🍒'),
+    productConstructor('peach', '🍑'),
+    productConstructor('mango', '🥭'),
+    productConstructor('coconut', '🥥'),
+    productConstructor('kivi', '🥝'),
+    productConstructor('melon', '🍈'),
+    productConstructor('pineaple', '🍍'),
+    productConstructor('brocoli', '🥦', true),
+    productConstructor('tomato', '🍅'),
+    productConstructor('cucumber', '🥒', true),
+    productConstructor('chili', '🌶'),
+    productConstructor('garlic', '🧄', true),
+    productConstructor('onion', '🧅'),
+    productConstructor('carrot', '🥕'),
+    productConstructor('corn', '🌽'),
+    productConstructor('milk', '🥛'),
+    productConstructor('potato', '🥔', true),
+    productConstructor('bagel', '🥯'),
+    productConstructor('croissant', '🥐', true),
+    productConstructor('bread', '🍞'),
+    productConstructor('chease', '🧀', true),
+    productConstructor('egg', '🥚'),
+    productConstructor('bacon', '🥓'),
+    productConstructor('pizza', '🍕'),
+    productConstructor('waffle', '🧇'),
+    productConstructor('dumpling', '🥟'),
+    productConstructor('coockie', '🍪', true),
+    productConstructor('chockolate', '🍫'),
+    productConstructor('honey', '🍯'),
+    productConstructor('donut', '🍩', true),
+    productConstructor('peanuts', '🥜')
   ];
+
+  console.log(randomProductsList);
 
   // Removing products that we already selected from randomProductsList.
   let uniqueRandomProductsList = randomProductsList.filter( ( product ) => !alreadyPicked.includes( product ) );
