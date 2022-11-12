@@ -60,16 +60,25 @@
       </div>
 
       <div class="notes__block">
+        <h5>Comparing arrays.</h5> 
+        <ol class="notes__ordered-list">
+          <li><span class="notes__code">new Set()</span></li>
+          <li><span class="notes__code">indexOf</span> and <span class="notes__code">while</span>.</li>
+          <li><span class="notes__code">indexOf</span> and <span class="notes__code">filter</span>.</li>
+          <li>Add values to array via methods.</li>
+        </ol>
+      </div>
+
+      <div class="notes__block">
         <h5>Looping through array:</h5>
         <ol class="notes__ordered-list">
           <li>With the help of <span class="notes__code">for</span> loop. The classic example: <span class="notes__code">for (let i = 0; i &lt; fruit.length; i++) { do something with every element in array; }</span>.</li>
           <li>With the help of <span class="notes__code">for of</span> loop. Works well with arrays or strings. The example: <span class="notes__code">for (let char of 'test') { do something with char variable; }</span> and it will work 4 times: 't', then 'e', then 's', and the last one 't'.</li>
+          <li>With the help of <span class="notes__code">forEach()</span>. We can get single item, index and the general array in it, which is quite handy.</li>
           <li>The object iterator <span class="notes__code">for in</span> will work also, since array can be considered as object. However, this method works more slow than <span class="notes__code">for of</span>, and not commonly used.</li>
-          <li>Deep equity. It is similar to shallow equity, but goes deeper and compares the deeper levels of object properties.</li>
+          <li>With the help of methods: <span class="notes__code">map(), filter(), find()</span> </li>
         </ol>
       </div>
-      
-      <p><span class="code">const</span> can be changed with objects.</p>
     </section>
   </main>
 

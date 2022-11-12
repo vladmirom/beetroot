@@ -50,71 +50,28 @@ fruit.slice( 1, 3); // => 'banana', 'orange'
 fruit.concat(['pear', 'peach'], ['lemon', 'apple']); // => ['apple', 'banana', 'orange', 'grapes', 'pear', 'peach', 'lemon', 'apple'];
 
 /* Comparing arrays */
-//  HOMEWORK
-let fruit = {
-  sweet: 'apples',
-  sour: 'lemons',
-  bitter: 'grapefruit'
-}
+let array1 = [1, 2, 3];
+let array2 = [3, 3, 4, 5];
 
-let vegetables = {
-  sweet: 'pumpkin',
-  sour: 'rhubarb', // ревень
-  bitter: 'radish',
-  spicy: 'pepper'
-}
+// Method 1. new Set().
+let array3 = [...new Set([...array1,...array2])];
 
-// Method 1. Referential equality.
-fruit === vegetables; // false
-fruit === vegetables; // false
-Object.is(fruit, vegetables); // false
+// Method 2. IndexOf and while.
+let array4 = array1.concat(array2);
+let length = array4.length;
 
-// Method 2. Manual comparison.
-fruit.sweet === vegetables.sweet ; // false
-
-// Method 3. Shallow equality.
-const keys1 = Object.keys(fruit);
-const keys2 = Object.keys(vegetables);
-let result = true;
-
-if (keys1.length === keys2.length) {
-  for (let key of keys1) {
-    if (fruit[key] !== vegetables[key]) {
-      result = false;
-    }
+while (length--) {
+  let item = array3[length];
+  if (finalArray.indexOf(item) === -1) {
+    finalArray.unshift(item);
   }
-} else {
-  result = false;
 }
+// console.log(finalArray)
 
-// Method 5. Deep equity.
-function deepEqual(object1, object2) {
-  const keys1 = Object.keys(object1);
-  const keys2 = Object.keys(object2);
-  if (keys1.length !== keys2.length) {
-    return false;
-  }
-  for (const key of keys1) {
-    const val1 = object1[key];
-    const val2 = object2[key];
-    const areObjects = isObject(val1) && isObject(val2);
-    if (
-      areObjects && !deepEqual(val1, val2) ||
-      !areObjects && val1 !== val2
-    ) {
-      return false;
-    }
-  }
-  return true;
-}
-function isObject(object) {
-  return object != null && typeof object === 'object';
-}
-
-let objectDeepEquityComparisonResult = deepEqual(fruit, vegetables); // false
-
-// Method 5. JSON.stringify trick
-JSON.stringify(fruit) === JSON.stringify(vegetables); // true
+// Method 3. Filter and indexOf.
+let array5 = array1.concat(array2);
+let finalArray = array5.filter((item, idx) => array3.indexOf(item) === idx);
+// console.log(finalArray)
 
 /* Arrays in loop */
 for (let i = 0; i < fruit.length; i++) {
