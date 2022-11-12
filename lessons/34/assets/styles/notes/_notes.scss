@@ -1,0 +1,36 @@
+/**
+  * Styling notes for the lesson.
+  */
+
+.notes {
+  &__section {
+    margin: 100px 0;
+    
+    &-container {
+      @include container;
+    }
+  }
+
+  &__block {
+    margin-bottom: rem(20px);
+  }
+
+  &__code {
+    background-color: $cornflower-blue;
+    padding: 0 rem(10px);
+    border-radius: rem(5px);
+  }
+  
+  &__ordered-list {
+    padding-left: 2.2rem;
+
+    & li {
+      padding-left: rem(8px);
+    }
+  }
+
+  &__unordered-list {
+    list-style: inside;
+    padding-left: 1.25rem;
+  }
+}
