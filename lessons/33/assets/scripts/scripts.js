@@ -38,14 +38,14 @@ const productConstructor = ( productName, productIcon = '🙃', purchased = fals
 }
 
 /**
- * Creates the array of all the products in the store. Each product is supposed to be an object.
+ * Creates the array of all the products in the store. 
+ * Each product is supposed to be an object.
  * 
  * @returns { array } productsInWarehouse.
  */
 const productsWarehouse = () => {
   const productsInWarehouse = [ 
-    productConstructor('green apple', '🍏', true),
-    productConstructor('red apple', '🍎'),
+    productConstructor('apple', '🍎'),
     productConstructor('pear', '🍐'),
     productConstructor('orange', '🍊', true),
     productConstructor('lemon', '🍋'),
@@ -126,13 +126,27 @@ const purchasedProducts = ( listOfProducts ) => {
  * @returns { string } resultHtml The string to be published.
  */
  const resultHtml = ( listOfProducts ) => {
-  let resultHtml = listOfProducts.map();
-  listOfAvailableProducts = listOfProducts.filter( ( value ) => value.purchased === false );
+  let futureDomElement = ``;
+
+  let resultHtml = listOfProducts.map( product => {
+    futureDomElement += `<label for="${product.product_name}">`;
+    futureDomElement += `<input type="checkbox"`;
+    futureDomElement += `id="${product.product_name}"`;
+    futureDomElement += `name="${product.product_name}"`;
+    futureDomElement += `for="${product.product_name}"`; 
+    futureDomElement += `value="${product.product_name}">`;
+    futureDomElement += `</label>`;        
+  });
+
+  console.log(futureDomElement);
+  // listOfAvailableProducts = listOfProducts.filter( ( value ) => value.purchased === false );
 
   return resultHtml;
 }
 
-purchasedProducts(productsWarehouse());
+let purchasedProductsList = purchasedProducts(productsWarehouse());
+resultHtml(purchasedProductsList);
+
 
 // Old stuff below, remove when finished.
 // let car = {
