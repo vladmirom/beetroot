@@ -14,6 +14,12 @@
     background-color: $minimum;
   }
 
+  & .shopping-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: rem(30px);
+  }
+
   &__task {
     margin-bottom: rem(50px);
 

@@ -3,7 +3,14 @@
  */
 
 const shoppingCartConstructor = () => {
-  // stuff goes here :)
+  let purchasedProductsList = purchasedProducts(productsWarehouse()),
+      availableProductsList = listOfAvailableProducts(productsWarehouse());
+
+  // Purchased products list.
+  printShoppingList('js-purchased-products', resultHtml(purchasedProductsList));
+
+  // Available products list.
+  printShoppingList('js-available-products', resultHtml(availableProductsList));
 }
 
 const addProductToShoppingList = ( product ) => {
@@ -114,7 +121,7 @@ const purchasedProducts = ( listOfProducts ) => {
  * @returns { array } listOfAvailableProducts Only the available products.
  */
  const listOfAvailableProducts = ( listOfProducts ) => {
-  listOfAvailableProducts = listOfProducts.filter( ( value ) => value.purchased === false );
+  let listOfAvailableProducts = listOfProducts.filter( ( value ) => value.purchased === false );
 
   return listOfAvailableProducts;
 }
@@ -128,24 +135,39 @@ const purchasedProducts = ( listOfProducts ) => {
  const resultHtml = ( listOfProducts ) => {
   let futureDomElement = ``;
 
-  let resultHtml = listOfProducts.map( product => {
+ listOfProducts.map( product => {
     futureDomElement += `<label for="${product.product_name}">`;
     futureDomElement += `<input type="checkbox"`;
-    futureDomElement += `id="${product.product_name}"`;
-    futureDomElement += `name="${product.product_name}"`;
-    futureDomElement += `for="${product.product_name}"`; 
-    futureDomElement += `value="${product.product_name}">`;
+    futureDomElement += ` id="${product.product_name}"`;
+    futureDomElement += ` name="${product.product_name}"`;
+    futureDomElement += ` for="${product.product_name}"`; 
+    futureDomElement += ` value="${product.product_name}">`;
     futureDomElement += `</label>`;        
   });
 
-  console.log(futureDomElement);
   // listOfAvailableProducts = listOfProducts.filter( ( value ) => value.purchased === false );
 
-  return resultHtml;
+  return futureDomElement;
 }
 
-let purchasedProductsList = purchasedProducts(productsWarehouse());
-resultHtml(purchasedProductsList);
+/**
+ * Prints the result.
+ * 
+ * @param { string } selector Selector class to input the result into.
+ * @param { string } result The string that we want to show.
+ *
+ */
+function printShoppingList ( selector, result ) {
+  let listLocation = document.getElementsByClassName(selector);
+
+  for (let i = 0; i < listLocation.length; i++) {
+    listLocation[i].innerHTML = result;
+    listLocation[i].style.visibility = 'visible';
+  }
+}
+
+// Init the function.
+shoppingCartConstructor();
 
 
 // Old stuff below, remove when finished.
