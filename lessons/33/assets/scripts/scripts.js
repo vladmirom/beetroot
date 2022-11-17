@@ -2,6 +2,9 @@
  * Shopping cart.
  */
 
+/**
+ * Creates both lists that contain separate purchased and available products.
+ */
 const shoppingCartConstructor = () => {
   let purchasedProductsList = purchasedProducts(productsWarehouse()),
       availableProductsList = listOfAvailableProducts(productsWarehouse());
@@ -13,33 +16,26 @@ const shoppingCartConstructor = () => {
   printShoppingList('js-available-products', resultHtml(availableProductsList));
 }
 
-const addProductToShoppingList = ( product ) => {
-
-}
-
-const availableProducts = ( listOfProducts ) => {
-
-  // return listOfAvailableProducts;
-}
-
 /**
  * Creates a single product object.
  * 
- * @param { string } productName  The name of the product.
- * @param { string } productIcon  The icon of the product for better visualization.
- * @param { boolean } purchased   If this product is already purchased or not.
+ * @param { string } productName   The name of the product.
+ * @param { string } productIcon   The icon of the product for better visualization.
+ * @param { integer } quantity     The quantity of the products.
+ * @param { integer } productPrice   The price for 1 piece.
+ * @param { boolean } purchased    If this product is already purchased or not.
  * @returns { object } newProduct.
  */
-const productConstructor = ( productName, productIcon = '🙃', purchased = false ) => {
+const productConstructor = ( productName, productIcon = '🙃', quantity, productPrice, purchased = false ) => {
   let newProduct = {
     product_name: productName,
-    quantity: Math.floor(Math.random() * 5) + 1,
-    product_price: Math.floor(Math.random() * 20) + 1,
+    quantity: quantity,
+    product_price: productPrice,
     purchased: purchased,
     icon: productIcon
   }
 
-  newProduct.total = newProduct.quantity * newProduct.product_price;
+  newProduct.total = (newProduct.quantity * newProduct.product_price).toFixed(2);
 
   return newProduct;
 }
@@ -52,52 +48,46 @@ const productConstructor = ( productName, productIcon = '🙃', purchased = fals
  */
 const productsWarehouse = () => {
   const productsInWarehouse = [ 
-    productConstructor('apple', '🍎'),
-    productConstructor('pear', '🍐'),
-    productConstructor('orange', '🍊', true),
-    productConstructor('lemon', '🍋'),
-    productConstructor('banana', '🍌'),
-    productConstructor('watermelon', '🍉'),
-    productConstructor('grapes', '🍇'),
-    productConstructor('strawbery', '🍓', true),
-    productConstructor('cherries', '🍒'),
-    productConstructor('peach', '🍑'),
-    productConstructor('mango', '🥭'),
-    productConstructor('coconut', '🥥'),
-    productConstructor('kivi', '🥝'),
-    productConstructor('melon', '🍈'),
-    productConstructor('pineaple', '🍍'),
-    productConstructor('brocoli', '🥦', true),
-    productConstructor('tomato', '🍅'),
-    productConstructor('cucumber', '🥒', true),
-    productConstructor('chili', '🌶'),
-    productConstructor('garlic', '🧄', true),
-    productConstructor('onion', '🧅'),
-    productConstructor('carrot', '🥕'),
-    productConstructor('corn', '🌽'),
-    productConstructor('milk', '🥛'),
-    productConstructor('potato', '🥔', true),
-    productConstructor('bagel', '🥯'),
-    productConstructor('croissant', '🥐', true),
-    productConstructor('bread', '🍞'),
-    productConstructor('chease', '🧀', true),
-    productConstructor('egg', '🥚'),
-    productConstructor('bacon', '🥓'),
-    productConstructor('pizza', '🍕'),
-    productConstructor('waffle', '🧇'),
-    productConstructor('dumpling', '🥟'),
-    productConstructor('coockie', '🍪', true),
-    productConstructor('chockolate', '🍫'),
-    productConstructor('honey', '🍯'),
-    productConstructor('donut', '🍩', true),
-    productConstructor('peanuts', '🥜')
+    productConstructor('apple', '🍎', 5, 2.2),
+    productConstructor('pear', '🍐', 3, 2.5),
+    productConstructor('orange', '🍊', 6, 1.5, true),
+    productConstructor('lemon', '🍋', 2, 3.5),
+    productConstructor('banana', '🍌', 6, 1.9),
+    productConstructor('watermelon', '🍉', 1, 2),
+    productConstructor('grapes', '🍇', 3, 3.5),
+    productConstructor('strawbery', '🍓', 1, 5, true),
+    productConstructor('cherries', '🍒', 2, 4.5),
+    productConstructor('peach', '🍑', 7, 4.5),
+    productConstructor('mango', '🥭', 3, 3.4),
+    productConstructor('coconut', '🥥', 5, 5.3),
+    productConstructor('kivi', '🥝', 6, 2.4),
+    productConstructor('melon', '🍈', 2, 2.1),
+    productConstructor('pineaple', '🍍', 3, 5),
+    productConstructor('brocoli', '🥦', 4, 0.8, true),
+    productConstructor('tomato', '🍅', 5, 1.4),
+    productConstructor('cucumber', '🥒', 2, 3.6, true),
+    productConstructor('chili', '🌶', 2, 3.2),
+    productConstructor('garlic', '🧄', 2, 1.5, true),
+    productConstructor('onion', '🧅', 5, 0.5),
+    productConstructor('carrot', '🥕', 8, 0.5),
+    productConstructor('corn', '🌽', 4, 1),
+    productConstructor('milk', '🥛', 1, 1.2 ),
+    productConstructor('potato', '🥔', 5, 0.2, true),
+    productConstructor('bagel', '🥯', 2, 2.5),
+    productConstructor('croissant', '🥐', 5, 0.49, true),
+    productConstructor('bread', '🍞', 2, 3.5),
+    productConstructor('chease', '🧀', 2, 6.7, true),
+    productConstructor('egg', '🥚', 12, 0.3),
+    productConstructor('bacon', '🥓', 5, 0.5),
+    productConstructor('pizza', '🍕', 2, 10),
+    productConstructor('waffle', '🧇', 5, 3),
+    productConstructor('dumpling', '🥟', 20, 0.1),
+    productConstructor('coockie', '🍪', 5, 0.2, true),
+    productConstructor('chockolate', '🍫', 1, 3.3),
+    productConstructor('honey', '🍯', 1, 20),
+    productConstructor('donut', '🍩', 4, 1, true),
+    productConstructor('peanuts', '🥜', 50, 0.05)
   ];
-
-  // Removing products that we already selected from randomProductsList.
-  // let uniqueRandomProductsList = randomProductsList.filter( ( product ) => !alreadyPicked.includes( product ) );
-
-  // Assing a randomProduct and return it. 
-  // randomProduct = uniqueRandomProductsList[Math.floor(Math.random() * uniqueRandomProductsList.length)];
   
   return productsInWarehouse;
 }
@@ -118,7 +108,7 @@ const purchasedProducts = ( listOfProducts ) => {
  * Filters the array of all the products and creates a list of available products.
  * 
  * @param { array } listOfProducts Array of all the products.
- * @returns { array } listOfAvailableProducts Only the available products.
+ * @returns { array }  Only the available products.
  */
  const listOfAvailableProducts = ( listOfProducts ) => {
   let listOfAvailableProducts = listOfProducts.filter( ( value ) => value.purchased === false );
@@ -133,15 +123,20 @@ const purchasedProducts = ( listOfProducts ) => {
  * @returns { string } resultHtml The string to be published.
  */
  const resultHtml = ( listOfProducts ) => {
-  let futureDomElement = ``;
+  let futureDomElement = `<div class="product__list-heading"><span></span><span>Product</span><span>Qty</span><span>Price</span><span>Total</span></div>`;
 
  listOfProducts.map( product => {
-    futureDomElement += `<label for="${product.product_name}">`;
+    futureDomElement += `<label class="product__label" for="${product.product_name}">`;
     futureDomElement += `<input type="checkbox"`;
     futureDomElement += ` id="${product.product_name}"`;
+    futureDomElement += ` class="${product.purchased ? 'js-purchased-product' : 'js-available-product'}"`;
+    futureDomElement += ` value="${product.product_name}"`;
     futureDomElement += ` name="${product.product_name}"`;
     futureDomElement += ` for="${product.product_name}"`; 
-    futureDomElement += ` value="${product.product_name}">`;
+    futureDomElement += ` <span class="product__name">${product.icon} ${product.product_name.charAt(0).toUpperCase() + product.product_name.slice(1)}</span>`; 
+    futureDomElement += ` <span class="product__quantity">${product.quantity}</span>`; 
+    futureDomElement += ` <span class="product__price">${product.product_price}</span>`;
+    futureDomElement += ` <span class="product__total">${product.total}</span>`; 
     futureDomElement += `</label>`;        
   });
 
@@ -166,7 +161,73 @@ function printShoppingList ( selector, result ) {
   }
 }
 
-// Init the function.
+document.querySelector('#removeFromPurchased').addEventListener('click', () => {
+  let allCurrentlyPurchased = document.querySelectorAll('.js-purchased-product'),
+      updatedCurrentlyPurchasedArr = [];
+
+  let allSelected = document.querySelectorAll('input[type="checkbox"]:checked'),
+      selectedValues = [];
+
+  let allCurrentlyAvailable = document.querySelectorAll('.js-available-product'),
+      updatedCurrentlyAvailableArr = [];
+      
+  let purchasedProductsList = purchasedProducts(productsWarehouse()),
+      availableProductsList = listOfAvailableProducts(productsWarehouse());
+
+  let newPurchasedlist = [],
+      extractedProducts = [],
+      newAvailablelist = [];
+
+  // Step 1. Getting the current purchased products and form the new array of objects.
+  // NOTE: it migth be different from the original list after the first products removal.
+  Object.keys(allCurrentlyPurchased).forEach(key => {
+    let foundProduct = purchasedProductsList.find(o => o.product_name === allCurrentlyPurchased[key].value);
+    updatedCurrentlyPurchasedArr.push(foundProduct);
+  });
+
+  // Step 2. Getting the checked products.
+  Object.keys(allSelected).forEach(key => {
+    if (allSelected[key] === undefined) {
+      delete allSelected[key];
+    } else {
+      selectedValues.push(allSelected[key].value);
+    }
+  });
+
+  // Step 3. Removing selected products from the purchased list.
+  Object.keys(updatedCurrentlyPurchasedArr).forEach(key => {
+    if ( !selectedValues.includes( updatedCurrentlyPurchasedArr[key].product_name ) ) {
+      newPurchasedlist.push(updatedCurrentlyPurchasedArr[key]);
+    } else {
+      extractedProducts.push(updatedCurrentlyPurchasedArr[key]);
+    }
+  });
+
+  // Step 4. Getting the current available products and form the new array of objects.
+  // NOTE: it migth be different from the original list after the first products removal.
+  Object.keys(allCurrentlyAvailable).forEach(key => {
+    let foundProduct = availableProductsList.find(o => o.product_name === allCurrentlyAvailable[key].value);
+    updatedCurrentlyAvailableArr.push(foundProduct);
+  });
+
+  // Step 5. Adding selected products to the available list.
+  Object.keys(extractedProducts).forEach(key => {
+    // if ( selectedValues.includes( updatedCurrentlyAvailableArr[key].product_name ) ) {
+      updatedCurrentlyAvailableArr.push(extractedProducts[key]);
+    // }
+  });
+
+  console.log(updatedCurrentlyAvailableArr);
+
+  printShoppingList('js-purchased-products', resultHtml(newPurchasedlist));
+  // printShoppingList('js-availablee-products', resultHtml(newAvailablelist));
+
+  // Assing a randomProduct and return it. 
+  // randomProduct = uniqueRandomProductsList[Math.floor(Math.random() * uniqueRandomProductsList.length)];
+  
+});
+
+// Inint the function and construct the first load of product.
 shoppingCartConstructor();
 
 
