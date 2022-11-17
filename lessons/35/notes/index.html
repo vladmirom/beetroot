@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../assets/styles/styles.css">
+
+  <title>Lesson 36 | jQuery, Slick Slider/Swiper</title>
+</head>
+
+<body>
+  <main>
+    <section class="notes__section notes__section-container">
+      <div class="notes__block">
+        <h4>Smooth scroller</h4>
+        <p>We can add smooth scroll to the element with <strong>scrollIntoView()</strong>.</p>
+      </div>
+  
+      <div class="notes__block">
+        <h4>jQuery</h4> 
+        <p>Can be taken from: <span class="notes__code">https://code.jquery.com/jquery-3.6.1.min.js</span>.</p>
+        <p>All the parameters can be seen in <a href="https://api.jquery.com/">https://api.jquery.com/</a>.</p>
+      </div>
+
+      <div class="notes__block">
+        <h4>Slick Slider</h4>
+        <p>Slick slider is working based on jQuery. So it should be installed before the plugin.</p>
+        <p>Useful description of the plugin is here: <a href="https://kenwheeler.github.io/slick/">https://kenwheeler.github.io/slick/</a>.</p>
+        <p>More useful info is here: <a href="https://github.com/kenwheeler/slick">https://github.com/kenwheeler/slick</a></p>
+      </div>
+
+      <div class="notes__block">
+        <h4>Swiper Slider</h4>
+        <p>Swiper seems to be better than slick. First of all it is not using jQuery. Secondly, it has more options.</p>
+        <p>We can take it from here: <a href="https://swiperjs.com/get-started">https://swiperjs.com/get-started</a>.</p>
+      </div>
+    </section>
+
+    <section class="notes__section notes__section-container">
+      <div class="notes__block">
+        <h3>Practicing Scroll</h3>
+        <button id="button">Preess Me!</button>
+        <div class="visible-el">Visible element</div>
+        <div class="hidden-el">Hidden eelement</div>
+      </div>
+
+      <div class="notes__block">
+        <h3>Practicing jQuery</h3>
+        <div class="selector-1">Adding class to this element.</div>
+
+        <div id="myButton">Button 1</div>
+        <div id="myButton2">Button 2</div>
+
+        <ul class="list-practicing">
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="notes__section notes__section-container">
+      <div class="notes__block">
+        <h3>Slick slider</h3>
+        <div class="slick-slider">
+          <div class="custom-slider">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="notes__section notes__section-container">
+      <div class="notes__block">
+        <h3>Swiper slider (https://swiperjs.com/)</h3>
+          <div class="swiper my-swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">Slide 1</div>
+              <div class="swiper-slide">Slide 2</div>
+              <div class="swiper-slide">Slide 3</div>
+            </div>
+
+            <div class="swiper-pagination"></div>
+
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+    </section>
+  </main>
+
+  <footer>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="../assets/scripts/notes.js"></script>
+  </footer>
+</body>
+
+</html>

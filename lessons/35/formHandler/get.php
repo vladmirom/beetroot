@@ -1,0 +1,3 @@
+<?php 
+// Handling get requests
+?>
