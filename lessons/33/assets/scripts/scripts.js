@@ -6,7 +6,7 @@
  * Creates both lists that contain separate purchased and available products.
  */
 const shoppingCartConstructor = () => {
-  let purchasedProductsList = purchasedProducts(productsWarehouse()),
+  let purchasedProductsList = listOfPurchasedProducts(productsWarehouse()),
       availableProductsList = listOfAvailableProducts(productsWarehouse());
 
   // Purchased products list.
@@ -96,12 +96,12 @@ const productsWarehouse = () => {
  * Filters the array of all the products and creates a list of purchased products.
  * 
  * @param { array } listOfProducts Array of all the products.
- * @returns { array } listOfPurchasedProducts Only the purchased products.
+ * @returns { array } Only the purchased products.
  */
-const purchasedProducts = ( listOfProducts ) => {
-  listOfPurchasedProducts = listOfProducts.filter( ( value ) => value.purchased === true );
+const listOfPurchasedProducts = ( listOfProducts ) => {
+  purchasedProducts = listOfProducts.filter( ( value ) => value.purchased === true );
 
-  return listOfPurchasedProducts;
+  return purchasedProducts;
 }
 
 /**
@@ -161,29 +161,41 @@ function printShoppingList ( selector, result ) {
   }
 }
 
+let updatedProductsInStock = [];
+
 document.querySelector('#removeFromPurchased').addEventListener('click', () => {
-  let allCurrentlyPurchased = document.querySelectorAll('.js-purchased-product'),
-      updatedCurrentlyPurchasedArr = [];
+  let allProductsInStock = productsWarehouse();
+
+  if (typeof updatedProductsInStock !== 'undefined' && updatedProductsInStock.length === 0 ) {
+    updatedProductsInStock = listOfPurchasedProducts(allProductsInStock);
+  }
+
+  let currentlyPurchased = listOfPurchasedProducts(updatedProductsInStock),
+      currentlyAvailable = listOfAvailableProducts(updatedProductsInStock);
 
   let allSelected = document.querySelectorAll('input[type="checkbox"]:checked'),
       selectedValues = [];
 
-  let allCurrentlyAvailable = document.querySelectorAll('.js-available-product'),
-      updatedCurrentlyAvailableArr = [];
-      
-  let purchasedProductsList = purchasedProducts(productsWarehouse()),
-      allProductsInStock = productsWarehouse();
+  // let allCurrentlyAvailable = document.querySelectorAll('.js-available-product'),
+  //     updatedCurrentlyAvailableArr = [];
 
   let newPurchasedList = [],
       extractedProducts = [],
       newAvailableList = [];
 
-  // Step 1. Getting the current purchased products and form the new array of objects.
-  // NOTE: it migth be different from the original list after the first products removal.
-  Object.keys(allCurrentlyPurchased).forEach(key => {
-    let foundProduct = purchasedProductsList.find(o => o.product_name === allCurrentlyPurchased[key].value);
-    updatedCurrentlyPurchasedArr.push(foundProduct);
-  });
+
+
+
+
+
+
+
+  // // Step 1. Getting the current purchased products and form the new array of objects.
+  // // NOTE: it migth be different from the original list after the first products removal.
+  // Object.keys(allCurrentlyPurchased).forEach(key => {
+  //   let foundProduct = purchasedProductsList.find(o => o.product_name === allCurrentlyPurchased[key].value);
+  //   updatedCurrentlyPurchasedArr.push(foundProduct);
+  // });
 
   // Step 2. Getting the checked products.
   Object.keys(allSelected).forEach(key => {
@@ -194,34 +206,20 @@ document.querySelector('#removeFromPurchased').addEventListener('click', () => {
     }
   });
 
-  // Step 3. Removing selected products from the purchased list.
-  Object.keys(updatedCurrentlyPurchasedArr).forEach(key => {
-    if ( !selectedValues.includes( updatedCurrentlyPurchasedArr[key].product_name ) ) {
-      newPurchasedList.push(updatedCurrentlyPurchasedArr[key]);
+  // Step 3. Set value false to the purchased key in product object if it is selected.
+  Object.keys(currentlyPurchased).forEach(key => {
+    if ( !selectedValues.includes( currentlyPurchased[key].product_name ) ) {
+      newPurchasedList.push(currentlyPurchased[key]);
     } else {
-      updatedCurrentlyPurchasedArr[key].purchased = false;
-      extractedProducts.push(updatedCurrentlyPurchasedArr[key]);
+      Object.keys(updatedProductsInStock).forEach(key => {
+        if ( currentlyPurchased[key].product_name === updatedProductsInStock[key].product_name ) {
+          updatedProductsInStock[key].purchased = false;
+        } 
+      });
     }
   });
 
-  // Step 4. Getting the current available products and form the new array of objects.
-  // NOTE: it migth be different from the original list after the first products removal.
-  Object.keys(allCurrentlyAvailable).forEach(key => {
-    let foundProduct = allProductsInStock.find(o => o.product_name === allCurrentlyAvailable[key].value);
-    updatedCurrentlyAvailableArr.push(foundProduct);
-    newAvailableList = updatedCurrentlyAvailableArr;
-  });
-
-  // Step 5. Adding selected products to the available list.
-  Object.keys(extractedProducts).forEach(key => {
-    newAvailableList.push(extractedProducts[key]);
-  });
-
-  printShoppingList('js-purchased-products', resultHtml(newPurchasedList));
-  printShoppingList('js-available-products', resultHtml(newAvailableList));
-
-  // Assing a randomProduct and return it. 
-  // randomProduct = uniqueRandomProductsList[Math.floor(Math.random() * uniqueRandomProductsList.length)];
+  console.log(extractedProducts);
   
 });
 
