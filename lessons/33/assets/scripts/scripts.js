@@ -172,11 +172,11 @@ document.querySelector('#removeFromPurchased').addEventListener('click', () => {
       updatedCurrentlyAvailableArr = [];
       
   let purchasedProductsList = purchasedProducts(productsWarehouse()),
-      availableProductsList = listOfAvailableProducts(productsWarehouse());
+      allProductsInStock = productsWarehouse();
 
-  let newPurchasedlist = [],
+  let newPurchasedList = [],
       extractedProducts = [],
-      newAvailablelist = [];
+      newAvailableList = [];
 
   // Step 1. Getting the current purchased products and form the new array of objects.
   // NOTE: it migth be different from the original list after the first products removal.
@@ -197,8 +197,9 @@ document.querySelector('#removeFromPurchased').addEventListener('click', () => {
   // Step 3. Removing selected products from the purchased list.
   Object.keys(updatedCurrentlyPurchasedArr).forEach(key => {
     if ( !selectedValues.includes( updatedCurrentlyPurchasedArr[key].product_name ) ) {
-      newPurchasedlist.push(updatedCurrentlyPurchasedArr[key]);
+      newPurchasedList.push(updatedCurrentlyPurchasedArr[key]);
     } else {
+      updatedCurrentlyPurchasedArr[key].purchased = false;
       extractedProducts.push(updatedCurrentlyPurchasedArr[key]);
     }
   });
@@ -206,21 +207,18 @@ document.querySelector('#removeFromPurchased').addEventListener('click', () => {
   // Step 4. Getting the current available products and form the new array of objects.
   // NOTE: it migth be different from the original list after the first products removal.
   Object.keys(allCurrentlyAvailable).forEach(key => {
-    let foundProduct = availableProductsList.find(o => o.product_name === allCurrentlyAvailable[key].value);
+    let foundProduct = allProductsInStock.find(o => o.product_name === allCurrentlyAvailable[key].value);
     updatedCurrentlyAvailableArr.push(foundProduct);
+    newAvailableList = updatedCurrentlyAvailableArr;
   });
 
   // Step 5. Adding selected products to the available list.
   Object.keys(extractedProducts).forEach(key => {
-    // if ( selectedValues.includes( updatedCurrentlyAvailableArr[key].product_name ) ) {
-      updatedCurrentlyAvailableArr.push(extractedProducts[key]);
-    // }
+    newAvailableList.push(extractedProducts[key]);
   });
 
-  console.log(updatedCurrentlyAvailableArr);
-
-  printShoppingList('js-purchased-products', resultHtml(newPurchasedlist));
-  // printShoppingList('js-availablee-products', resultHtml(newAvailablelist));
+  printShoppingList('js-purchased-products', resultHtml(newPurchasedList));
+  printShoppingList('js-available-products', resultHtml(newAvailableList));
 
   // Assing a randomProduct and return it. 
   // randomProduct = uniqueRandomProductsList[Math.floor(Math.random() * uniqueRandomProductsList.length)];
