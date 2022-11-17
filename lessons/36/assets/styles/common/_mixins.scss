@@ -43,20 +43,26 @@
 
 @mixin button {
   @include flex-center;
-
-  font-family: $font-family-body;
-  font-size: $h4-font-size;
-  font-weight: 400;
-  line-height: $h4-line-height;
   padding: rem(20px) rem(30px);
 
   border: 2px solid $light-green;
-  border-radius: rem(42x);
+  border-radius: rem(4px);
   cursor: pointer;
   transition: all 0.2s ease;
 
   background: $light-green;
-  color: $white;
+
+  &:link,
+  &:visited,
+  &:active {
+    font-family: $font-family-body;
+    font-size: $h4-font-size;
+    font-weight: 400;
+    line-height: $h4-line-height;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $white;
+  }
 
   &:hover {
     background: $deep-blue;

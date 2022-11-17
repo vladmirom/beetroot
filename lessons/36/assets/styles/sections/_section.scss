@@ -21,12 +21,12 @@
     & .game-info {
       &__wrap {
         display: grid;
-        grid-template-columns: 1fr 2fr;
+        grid-template-columns: rem(160px) 1fr;
+        gap: rem(41px);
         padding: rem(60px) rem(40px);
+        background-color: $deep-blue;
 
         & .first-column {
-          min-width: rem(230px);
-
           &__image {
             width: 100%;
             margin-bottom: rem(25px);
@@ -45,6 +45,47 @@
 
             &--gold {
               fill: $yellow;
+            }
+          }
+        }
+
+        & .second-column {
+          &__heading {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+
+            &-title {
+              color: $white;
+            }
+          }
+
+          &__description {
+            max-width: 79.2%;
+            color: $light-grey;
+            margin-bottom: rem(50px);
+          }
+
+          &__cta {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+
+            &-price {
+              &-discount {
+                @extend h5;
+                color: $yellow;
+                margin-bottom: rem(4px);
+              }
+
+              &-total {
+                @extend h1;
+                color: $white;
+              }
+            }
+
+            &-button {
+              &-link {
+                @include button;
+              }
             }
           }
         }
