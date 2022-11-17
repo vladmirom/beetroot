@@ -12,7 +12,7 @@ h1,
   font-size: $h1-font-size;
   font-weight: 400;
   line-height: $h1-line-height;
-  margin-bottom: rem(20px);
+  margin-bottom: rem(15px);
 }
 
 h2,
@@ -21,7 +21,7 @@ h2,
   font-size: $h2-font-size;
   font-weight: 400;
   line-height: $h2-line-height;
-  margin-bottom: rem(30px);
+  margin-bottom: 0;
 }
 
 h3,
@@ -30,8 +30,8 @@ h3,
   font-size: $h3-font-size;
   font-weight: 400;
   line-height: $h3-line-height;
-  margin-bottom: rem(15px);
-  letter-spacing: 0.04em;
+  margin-bottom: 0;
+  text-transform: uppercase;
 }
 
 h4,
@@ -40,8 +40,7 @@ h4,
   font-size: $h4-font-size;
   font-weight: 400;
   line-height: $h4-line-height;
-  margin-bottom: rem(15px);
-  letter-spacing: 0.05em;
+  margin-bottom: rem(40px);
 }
 
 h5,
@@ -50,17 +49,5 @@ h5,
   font-size: $h5-font-size;
   font-weight: 400;
   line-height: $h5-line-height;
-  letter-spacing: 0.08em;
-}
-
-h6,
-.h6 {
-  font-family: $font-family-body;
-  font-size: $h6-font-size;
-  font-weight: 300;
-  line-height: $h6-line-height;
-}
-
-p {
-  opacity: 0.8;
+  letter-spacing: rem(4px);
 }

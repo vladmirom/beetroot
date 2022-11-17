@@ -8,24 +8,14 @@
 }
 
 html {
-    font-size: 16px;
-    line-height: 20px;
+    font-size: $font-body;
+    line-height: $line-height;
 }
 
 .body {
-    background-color: $serenade;
+    background-color: $dark-blue;
 }
 
 .main {
-    margin: 6.25rem 1.25rem;
-}
-
-.list {
-    list-style: inside;
-    padding-left: 1.25rem;
-}
-
-.lesson-title {
-    text-align: center;
-    margin-bottom: rem(50px);
+    margin: rem(82px) 0;
 }

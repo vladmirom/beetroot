@@ -1,6 +1,10 @@
 /*--------------------------------------------------------------
   # Utils: REM helper
 --------------------------------------------------------------*/
+/**
+  * Breakpoint viewport sizes and media queries.
+  * Using (benchmarking :) ) Bootstrap 5 breakpoints.
+  */
 *,
 ::after,
 ::before {
@@ -11,216 +15,70 @@
 }
 
 html {
-  font-size: 16px;
-  line-height: 20px;
+  font-size: 14px;
+  line-height: 1.375rem;
 }
 
 .body {
-  background-color: #FAE6D8;
+  background-color: #2B3040;
 }
 
 .main {
-  margin: 6.25rem 1.25rem;
-}
-
-.list, .section-maximum__task-list, .section-medium__task-list, .section-minimum__task-list {
-  list-style: inside;
-  padding-left: 1.25rem;
-}
-
-.lesson-title {
-  text-align: center;
-  margin-bottom: 3.125rem;
+  margin: 5.125rem 0;
 }
 
 .body {
   font-family: "Lato", sans-serif;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 300;
-  line-height: 1.625rem;
+  line-height: 1.375rem;
   margin: 0;
 }
 
 h1,
 .h1 {
-  font-family: "Playfair Display", serif;
-  font-size: 2.75rem;
+  font-family: "Lato", sans-serif;
+  font-size: 2rem;
   font-weight: 400;
-  line-height: 3.25rem;
-  margin-bottom: 1.25rem;
+  line-height: 2rem;
+  margin-bottom: 0.9375rem;
 }
 
 h2,
 .h2 {
-  font-family: "Playfair Display", serif;
-  font-size: 2.5rem;
+  font-family: "Lato", sans-serif;
+  font-size: 1.25rem;
   font-weight: 400;
-  line-height: 3rem;
-  margin-bottom: 1.875rem;
+  line-height: 1.375rem;
+  margin-bottom: 0;
 }
 
 h3,
 .h3 {
   font-family: "Lato", sans-serif;
-  font-size: 2rem;
+  font-size: 1rem;
   font-weight: 400;
-  line-height: 2.875rem;
-  margin-bottom: 0.9375rem;
-  letter-spacing: 0.04em;
+  line-height: 1.25rem;
+  margin-bottom: 0;
+  text-transform: uppercase;
 }
 
 h4,
 .h4 {
-  font-family: "Playfair Display", serif;
-  font-size: 1.5rem;
+  font-family: "Lato", sans-serif;
+  font-size: 0.875rem;
   font-weight: 400;
-  line-height: 3rem;
-  margin-bottom: 0.9375rem;
-  letter-spacing: 0.05em;
+  line-height: 1.25rem;
+  margin-bottom: 2.5rem;
 }
 
 h5,
 .h5 {
-  font-family: "Playfair Display", serif;
-  font-size: 1.25rem;
-  font-weight: 400;
-  line-height: 1.25rem;
-  letter-spacing: 0.08em;
-}
-
-h6,
-.h6 {
   font-family: "Lato", sans-serif;
-  font-size: 1rem;
-  font-weight: 300;
-  line-height: 1.625rem;
-}
-
-p {
-  opacity: 0.8;
-}
-
-/**
- * Basic appearance.
- */
-input[type=range] {
-  -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
-  width: 100%; /* Specific width is required for Firefox. */
-  background: transparent; /* Otherwise white in Chrome */
-}
-
-input[type=range]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-}
-
-input[type=range]:focus {
-  outline: none; /* Removes the blue border. */
-}
-
-input[type=range]::-ms-track {
-  width: 100%;
-  cursor: pointer;
-  /* Hides the slider so custom styles can be added */
-  background: transparent;
-  border-color: transparent;
-  color: transparent;
-}
-
-/**
- * Styling the Thumb.
- */
-/* Special styling for WebKit/Blink */
-input[type=range]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  border: 0.0625rem solid #404258;
-  height: 2.25rem;
-  width: 1rem;
-  border-radius: 0.1875rem;
-  background: #FF9900;
-  cursor: pointer;
-  margin-top: -0.875rem; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
-  box-shadow: 0.0625rem 0.0625rem 0.0625rem #404258, 0rem 0rem 0.0625rem #0d0d0d;
-}
-
-/* All the same stuff for Firefox */
-input[type=range]::-moz-range-thumb {
-  box-shadow: 0.0625rem 0.0625rem 0.0625rem #404258, 0rem 0rem 0.0625rem #0d0d0d;
-  border: 0.0625rem solid #404258;
-  height: 2.25rem;
-  width: 1rem;
-  border-radius: 0.1875rem;
-  background: #FF9900;
-  cursor: pointer;
-}
-
-/* All the same stuff for IE */
-input[type=range]::-ms-thumb {
-  box-shadow: 0.0625rem 0.0625rem 0.0625rem #404258, 0rem 0rem 0.0625rem #0d0d0d;
-  border: 0.0625rem solid #404258;
-  height: 2.25rem;
-  width: 1rem;
-  border-radius: 0.1875rem;
-  background: #FF9900;
-  cursor: pointer;
-}
-
-/**
- * Styling the Track.
- */
-input[type=range]::-webkit-slider-runnable-track {
-  width: 100%;
-  height: 0.525rem;
-  cursor: pointer;
-  box-shadow: 0.0625rem 0.0625rem 0.0625rem #404258, 0rem 0rem 0.0625rem #0d0d0d;
-  background: #9BA17B;
-  border-radius: 0.08125rem;
-  border: 0.0125rem solid #404258;
-}
-
-input[type=range]:focus::-webkit-slider-runnable-track {
-  background: #9BA17B;
-}
-
-input[type=range]::-moz-range-track {
-  width: 100%;
-  height: 0.525rem;
-  cursor: pointer;
-  box-shadow: 0.0625rem 0.0625rem 0.0625rem #404258, 0rem 0rem 0.0625rem #404258;
-  background: #9BA17B;
-  border-radius: 0.08125rem;
-  border: 0.0125rem solid #404258;
-}
-
-input[type=range]::-ms-track {
-  width: 100%;
-  height: 0.525rem;
-  cursor: pointer;
-  background: transparent;
-  border-color: transparent;
-  border-width: 1rem 0;
-  color: transparent;
-}
-
-input[type=range]::-ms-fill-lower {
-  background: #9BA17B;
-  border: 0.0125rem solid #404258;
-  border-radius: 0.1625rem;
-  box-shadow: 0.0625rem 0.0625rem 0.0625rem #404258, 0rem 0rem 0.0625rem #404258;
-}
-
-input[type=range]:focus::-ms-fill-lower {
-  background: #9BA17B;
-}
-
-input[type=range]::-ms-fill-upper {
-  background: #9BA17B;
-  border: 0.0125rem solid #404258;
-  border-radius: 0.1625rem;
-  box-shadow: 0.0625rem 0.0625rem 0.0625rem #404258, 0rem 0rem 0.0625rem #404258;
-}
-
-input[type=range]:focus::-ms-fill-upper {
-  background: #9BA17B;
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 0.75rem;
+  letter-spacing: 0.25rem;
 }
 
 /**
@@ -230,10 +88,28 @@ input[type=range]:focus::-ms-fill-upper {
   margin: 100px 0;
 }
 .notes__section-container {
-  width: 92%;
-  max-width: 1170px;
+  width: 93.75%;
+  max-width: 540px;
   margin-left: auto;
   margin-right: auto;
+}
+@media (min-width: 576px) {
+  .notes__section-container {
+    width: 93.75%;
+    max-width: 720px;
+  }
+}
+@media (min-width: 768px) {
+  .notes__section-container {
+    width: 96.7741935484%;
+    max-width: 960px;
+  }
+}
+@media (min-width: 992px) {
+  .notes__section-container {
+    width: 69.4444444444%;
+    max-width: 1000px;
+  }
 }
 .notes__block {
   margin-bottom: 1.25rem;
@@ -282,181 +158,66 @@ input[type=range]:focus::-ms-fill-upper {
   height: 300px;
 }
 
-/**
-  * Minimum tasks section styles.
-  */
-.section-minimum {
-  margin-bottom: 3.125rem;
-}
-.section-minimum__container {
-  width: 92%;
-  max-width: 1170px;
+.section__container {
+  width: 93.75%;
+  max-width: 540px;
   margin-left: auto;
   margin-right: auto;
 }
-.section-minimum__wrap {
-  color: #404258;
-  border-radius: 0.625rem;
-  padding: 4.375rem 4.6875rem;
-  background-color: #FAD6A5;
+@media (min-width: 576px) {
+  .section__container {
+    width: 93.75%;
+    max-width: 720px;
+  }
 }
-.section-minimum__task {
-  margin-bottom: 3.125rem;
+@media (min-width: 768px) {
+  .section__container {
+    width: 96.7741935484%;
+    max-width: 960px;
+  }
 }
-.section-minimum__task-text {
-  margin-bottom: 1.25rem;
+@media (min-width: 992px) {
+  .section__container {
+    width: 69.4444444444%;
+    max-width: 1000px;
+  }
 }
-.section-minimum__task-button {
-  display: flex;
-  align-items: center;
-  font-family: "Lato", sans-serif;
-  font-size: 1rem;
-  font-weight: 700;
-  line-height: 1.5rem;
-  padding: 0.8125rem 2.5rem;
-  margin-bottom: 1.25rem;
-  border: none;
-  border-radius: 0.25rem;
-  cursor: pointer;
-  transition: all 0.2s linear;
-  background: #FF9900;
-  color: #fff;
-}
-.section-minimum__task-button:hover {
-  background: #F29D38;
-}
-.section-minimum__task-code {
-  background-color: rgba(87, 142, 247, 0.3);
-  padding: 0 0.625rem;
-  border-radius: 0.3125rem;
-}
-.section-minimum__task .range {
-  display: flex;
-  gap: 1.25rem;
-  width: 80%;
-  margin: 3.125rem 0;
-}
-.section-minimum__task .range__input {
+.section__wrap {
+  position: relative;
   width: 100%;
+  padding: 9.625rem 12.5rem;
 }
-.section-minimum__task .form__grid {
+.section__wrap-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(41, 45, 62, 0.8);
+  z-index: -2;
+}
+.section__wrap .game-info__wrap {
   display: grid;
-  grid-template-columns: repeat(2, 1fr) 2fr;
-  gap: 30px;
+  grid-template-columns: 1fr 2fr;
+  padding: 3.75rem 2.5rem;
 }
-.section-minimum__task .form__label {
-  display: block;
-  font-size: 0.875rem;
+.section__wrap .game-info__wrap .first-column {
+  min-width: 14.375rem;
 }
-.section-minimum__task .form__number {
-  display: block;
+.section__wrap .game-info__wrap .first-column__image {
   width: 100%;
-  border: none;
-  border-radius: 0.25rem;
-  padding: 0.6875rem 0.625rem;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5625rem;
 }
-.section-minimum__task-result {
-  visibility: hidden;
-}
-
-/**
-  * Medium tasks section styles.
-  */
-.section-medium {
-  margin-bottom: 3.125rem;
-}
-.section-medium__container {
-  width: 92%;
-  max-width: 1170px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.section-medium__wrap {
-  color: #404258;
-  border-radius: 0.625rem;
-  padding: 4.375rem 4.6875rem;
-  background-color: #9BA17B;
-}
-.section-medium__task {
-  margin-bottom: 3.125rem;
-}
-.section-medium__task-text {
-  margin-bottom: 1.25rem;
-}
-.section-medium__task-button {
+.section__wrap .game-info__wrap .first-column__stars {
   display: flex;
-  align-items: center;
-  font-family: "Lato", sans-serif;
-  font-size: 1rem;
-  font-weight: 700;
-  line-height: 1.5rem;
-  padding: 0.8125rem 2.5rem;
-  margin-bottom: 1.25rem;
-  border: none;
-  border-radius: 0.25rem;
-  cursor: pointer;
-  transition: all 0.2s linear;
-  background: #FF9900;
-  color: #fff;
-  margin-bottom: 1.25rem;
+  width: 100%;
+  justify-content: space-around;
 }
-.section-medium__task-button:hover {
-  background: #F29D38;
+.section__wrap .game-info__wrap .first-column__star {
+  width: 1.25rem;
+  height: 1.25rem;
+  fill: #8D91A3;
 }
-.section-medium__task-list {
-  margin-bottom: 1.25rem;
-}
-.section-medium__task-result {
-  visibility: hidden;
-}
-
-/**
-  * Maximum tasks section styles.
-  */
-.section-maximum {
-  margin-bottom: 3.125rem;
-}
-.section-maximum__container {
-  width: 92%;
-  max-width: 1170px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.section-maximum__wrap {
-  color: #404258;
-  border-radius: 0.625rem;
-  padding: 4.375rem 4.6875rem;
-  color: #fff;
-  background-color: #61764B;
-}
-.section-maximum__task {
-  margin-bottom: 3.125rem;
-}
-.section-maximum__task-text {
-  margin-bottom: 1.25rem;
-}
-.section-maximum__task-button {
-  display: flex;
-  align-items: center;
-  font-family: "Lato", sans-serif;
-  font-size: 1rem;
-  font-weight: 700;
-  line-height: 1.5rem;
-  padding: 0.8125rem 2.5rem;
-  margin-bottom: 1.25rem;
-  border: none;
-  border-radius: 0.25rem;
-  cursor: pointer;
-  transition: all 0.2s linear;
-  background: #FF9900;
-  color: #fff;
-}
-.section-maximum__task-button:hover {
-  background: #F29D38;
-}
-.section-maximum__task-code {
-  background-color: rgba(87, 142, 247, 0.3);
-  padding: 0 0.625rem;
-  border-radius: 0.3125rem;
+.section__wrap .game-info__wrap .first-column__star--gold {
+  fill: #FFDD3F;
 }/*# sourceMappingURL=styles.css.map */
