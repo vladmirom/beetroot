@@ -282,6 +282,9 @@ p {
 }
 .section-projects .article__image {
   width: 100%;
+  min-height: 200px;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .section-projects .article__image-wrap {
   width: 80%;
@@ -431,6 +434,9 @@ p {
 }
 .section-markup .article__image {
   width: 100%;
+  min-height: 200px;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .section-markup .article__image-wrap {
   width: 80%;
@@ -580,6 +586,9 @@ p {
 }
 .section-javascript .article__image {
   width: 100%;
+  min-height: 200px;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .section-javascript .article__image-wrap {
   width: 80%;
