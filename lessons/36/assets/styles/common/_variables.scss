@@ -20,6 +20,13 @@ $yellow: #FFDD3F;
 $light-green: #13E28D;
 $overlay: rgba(41, 45, 62, 0.8);
 
+// Borders.
+$icon-color: (
+  white: $white,
+  yellow: $yellow,
+  green: $light-green
+);
+
 // For notes
 $cornflower-blue: rgb(87, 142, 247, 0.3);
 

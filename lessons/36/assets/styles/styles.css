@@ -183,8 +183,18 @@ h5, .section__wrap .game-info__wrap .second-column__cta-price-discount,
 .section__wrap {
   position: relative;
   width: 100%;
-  padding: 9.625rem 12.5rem;
+  padding: 0.625rem 1.25rem;
   background-image: url("../images/lesson-36-bg-img.webp");
+}
+@media (min-width: 768px) {
+  .section__wrap {
+    padding: 3.125rem 6.25rem;
+  }
+}
+@media (min-width: 992px) {
+  .section__wrap {
+    padding: 9.625rem 12.5rem;
+  }
 }
 .section__wrap-overlay {
   position: absolute;
@@ -200,14 +210,26 @@ h5, .section__wrap .game-info__wrap .second-column__cta-price-discount,
 .section__wrap .game-info__pagination {
   position: relative;
   background-color: #2B3040;
-  padding: 1.75rem 3.125rem;
+  padding: 1.75rem 1.25rem;
+}
+@media (min-width: 768px) {
+  .section__wrap .game-info__pagination {
+    padding: 1.75rem 3.125rem;
+  }
 }
 .section__wrap .game-info__wrap {
   display: grid;
-  grid-template-columns: 10rem 1fr;
-  gap: 2.5625rem;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 5rem;
   padding: 3.75rem 2.5rem;
   background-color: #212534;
+}
+@media (min-width: 768px) {
+  .section__wrap .game-info__wrap {
+    grid-template-columns: 10rem 1fr;
+    grid-template-rows: unset;
+  }
 }
 .section__wrap .game-info__wrap .first-column__image {
   width: 100%;
@@ -256,13 +278,25 @@ h5, .section__wrap .game-info__wrap .second-column__cta-price-discount,
   font-weight: 400;
 }
 .section__wrap .game-info__wrap .second-column__description {
-  max-width: 79.2%;
   color: #B7BACD;
   margin-bottom: 3.125rem;
 }
+@media (min-width: 768px) {
+  .section__wrap .game-info__wrap .second-column__description {
+    max-width: 79.2%;
+  }
+}
 .section__wrap .game-info__wrap .second-column__cta {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 1.25rem;
+}
+@media (min-width: 768px) {
+  .section__wrap .game-info__wrap .second-column__cta {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: unset;
+  }
 }
 .section__wrap .game-info__wrap .second-column__cta-price-discount {
   color: #FFDD3F;
@@ -274,6 +308,12 @@ h5, .section__wrap .game-info__wrap .second-column__cta-price-discount,
 .section__wrap .game-info__wrap .second-column__cta-price-total .crossed {
   -webkit-text-decoration-line: line-through;
           text-decoration-line: line-through;
+  margin-right: 1.25rem;
+}
+@media (min-width: 768px) {
+  .section__wrap .game-info__wrap .second-column__cta-price-total .crossed {
+    margin-right: unset;
+  }
 }
 .section__wrap .game-info__wrap .second-column__cta-button {
   margin-right: 0.8125rem;
@@ -320,9 +360,13 @@ h5, .section__wrap .game-info__wrap .second-column__cta-price-discount,
 .swiper-pagination {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
   justify-content: space-between;
   position: relative;
+}
+@media (min-width: 768px) {
+  .swiper-pagination {
+    flex-wrap: wrap;
+  }
 }
 .swiper-pagination .swiper-pagination-bullet {
   flex: 0 0 30%;
@@ -341,18 +385,35 @@ h5, .section__wrap .game-info__wrap .second-column__cta-price-discount,
 }
 .swiper-pagination .swiper-pagination-bullet__text {
   text-transform: uppercase;
-  font-size: 1rem;
+  font-size: 0.75rem;
   line-height: 1.75rem;
   font-weight: 400;
   color: #8D91A3;
   transition: all 0.3s ease;
 }
+@media (min-width: 768px) {
+  .swiper-pagination .swiper-pagination-bullet__text {
+    line-height: 1.75rem;
+  }
+}
 .swiper-pagination .swiper-pagination-bullet-active .swiper-pagination-bullet__icon, .swiper-pagination .swiper-pagination-bullet:hover .swiper-pagination-bullet__icon {
   margin-bottom: 0.9375rem;
 }
-.swiper-pagination .swiper-pagination-bullet-active .swiper-pagination-bullet__icon svg, .swiper-pagination .swiper-pagination-bullet:hover .swiper-pagination-bullet__icon svg {
+.swiper-pagination .swiper-pagination-bullet-active .swiper-pagination-bullet__icon--white svg, .swiper-pagination .swiper-pagination-bullet:hover .swiper-pagination-bullet__icon--white svg {
   fill: #fff;
 }
-.swiper-pagination .swiper-pagination-bullet-active .swiper-pagination-bullet__text, .swiper-pagination .swiper-pagination-bullet:hover .swiper-pagination-bullet__text {
+.swiper-pagination .swiper-pagination-bullet-active .swiper-pagination-bullet__icon--yellow svg, .swiper-pagination .swiper-pagination-bullet:hover .swiper-pagination-bullet__icon--yellow svg {
+  fill: #FFDD3F;
+}
+.swiper-pagination .swiper-pagination-bullet-active .swiper-pagination-bullet__icon--green svg, .swiper-pagination .swiper-pagination-bullet:hover .swiper-pagination-bullet__icon--green svg {
+  fill: #13E28D;
+}
+.swiper-pagination .swiper-pagination-bullet-active .swiper-pagination-bullet__text--white, .swiper-pagination .swiper-pagination-bullet:hover .swiper-pagination-bullet__text--white {
   color: #fff;
+}
+.swiper-pagination .swiper-pagination-bullet-active .swiper-pagination-bullet__text--yellow, .swiper-pagination .swiper-pagination-bullet:hover .swiper-pagination-bullet__text--yellow {
+  color: #FFDD3F;
+}
+.swiper-pagination .swiper-pagination-bullet-active .swiper-pagination-bullet__text--green, .swiper-pagination .swiper-pagination-bullet:hover .swiper-pagination-bullet__text--green {
+  color: #13E28D;
 }/*# sourceMappingURL=styles.css.map */

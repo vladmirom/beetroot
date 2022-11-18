@@ -8,9 +8,12 @@
 
 .swiper-pagination {
   @include flex-vertical-center;
-  flex-wrap: wrap;
   justify-content: space-between;
   position: relative;
+
+  @include media-breakpoint-up(md) {
+    flex-wrap: wrap;
+  }
 
   & .swiper-pagination-bullet {
     flex: 0 0 30%;
@@ -31,25 +34,37 @@
 
     &__text {
       text-transform: uppercase;
-      font-size: $h3-font-size;
+      font-size: $h5-font-size;
       line-height: rem(28px);
       font-weight: 400;
       color: $grey;
       transition: all 0.3s ease;
+
+      @include media-breakpoint-up(md) {
+        line-height: rem(28px);
+      }
     }
 
     &-active,
     &:hover {
       & .swiper-pagination-bullet__icon {
         margin-bottom: rem(15px);
-  
-        & svg {
-          fill: $white;
+
+        @each $key, $val in $icon-color {
+          &--#{$key} {
+            & svg {
+              fill: #{$val};
+            }
+          } 
         }
       }
 
       & .swiper-pagination-bullet__text {
-        color: $white;
+        @each $key, $val in $icon-color {
+          &--#{$key} {
+            color: #{$val};
+          } 
+        }
       }
     }
   }

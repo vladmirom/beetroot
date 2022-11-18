@@ -49,22 +49,79 @@ const horizonIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 51
       let bullet = '';
       if (index === 0) {
         bullet = `<div class="${className}">`;
-        bullet += `<div class="swiper-pagination-bullet__icon">${farcryIcon}</div>`;
-        bullet += `<p class="swiper-pagination-bullet__text">Far Cry</p>`;
+        bullet += `<div class="swiper-pagination-bullet__icon swiper-pagination-bullet__icon--green">${farcryIcon}</div>`;
+        bullet += `<p class="swiper-pagination-bullet__text swiper-pagination-bullet__text--green">Far Cry</p>`;
         bullet += `</div>`;
       } else if ( index === 1 ) {
         bullet = `<div class="${className}">`;
-        bullet += `<div class="swiper-pagination-bullet__icon">${godOfWarIcon}</div>`;
-        bullet += `<p class="swiper-pagination-bullet__text">God of War</p>`;
+        bullet += `<div class="swiper-pagination-bullet__icon swiper-pagination-bullet__icon--green">${godOfWarIcon}</div>`;
+        bullet += `<p class="swiper-pagination-bullet__text swiper-pagination-bullet__text--green">God of War</p>`;
         bullet += `</div>`;
       } else if ( index === 2 ) {
         bullet = `<div class="${className}">`;
-        bullet += `<div class="swiper-pagination-bullet__icon">${horizonIcon}</div>`;
-        bullet += `<p class="swiper-pagination-bullet__text">Horizon</p>`;
+        bullet += `<div class="swiper-pagination-bullet__icon swiper-pagination-bullet__icon--green">${horizonIcon}</div>`;
+        bullet += `<p class="swiper-pagination-bullet__text swiper-pagination-bullet__text--green">Horizon</p>`;
         bullet += `</div>`;
       } 
       
       return bullet;
     },
+  },
+  breakpoints: {
+    480: {
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        renderBullet: function (index, className) {
+          let bullet = '';
+          if (index === 0) {
+            bullet = `<div class="${className}">`;
+            bullet += `<div class="swiper-pagination-bullet__icon swiper-pagination-bullet__icon--yellow">${farcryIcon}</div>`;
+            bullet += `<p class="swiper-pagination-bullet__text swiper-pagination-bullet__text--yellow">Far Cry</p>`;
+            bullet += `</div>`;
+          } else if ( index === 1 ) {
+            bullet = `<div class="${className}">`;
+            bullet += `<div class="swiper-pagination-bullet__icon swiper-pagination-bullet__icon--yellow">${godOfWarIcon}</div>`;
+            bullet += `<p class="swiper-pagination-bullet__text swiper-pagination-bullet__text--yellow">God of War</p>`;
+            bullet += `</div>`;
+          } else if ( index === 2 ) {
+            bullet = `<div class="${className}">`;
+            bullet += `<div class="swiper-pagination-bullet__icon swiper-pagination-bullet__icon--yellow">${horizonIcon}</div>`;
+            bullet += `<p class="swiper-pagination-bullet__text swiper-pagination-bullet__text--yellow">Horizon</p>`;
+            bullet += `</div>`;
+          } 
+          
+          return bullet;
+        }
+      }
+    },
+    912: {
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        renderBullet: function (index, className) {
+          let bullet = '';
+          if (index === 0) {
+            bullet = `<div class="${className}">`;
+            bullet += `<div class="swiper-pagination-bullet__icon swiper-pagination-bullet__icon--white">${farcryIcon}</div>`;
+            bullet += `<p class="swiper-pagination-bullet__text swiper-pagination-bullet__text--white">Far Cry</p>`;
+            bullet += `</div>`;
+          } else if ( index === 1 ) {
+            bullet = `<div class="${className}">`;
+            bullet += `<div class="swiper-pagination-bullet__icon swiper-pagination-bullet__icon--white">${godOfWarIcon}</div>`;
+            bullet += `<p class="swiper-pagination-bullet__text swiper-pagination-bullet__text--white">God of War</p>`;
+            bullet += `</div>`;
+          } else if ( index === 2 ) {
+            bullet = `<div class="${className}">`;
+            bullet += `<div class="swiper-pagination-bullet__icon swiper-pagination-bullet__icon--white">${horizonIcon}</div>`;
+            bullet += `<p class="swiper-pagination-bullet__text swiper-pagination-bullet__text--white">Horizon</p>`;
+            bullet += `</div>`;
+          } 
+          
+          return bullet;
+        }
+      }
+    }
   }
+
 });
