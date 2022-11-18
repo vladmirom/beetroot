@@ -51,11 +51,37 @@
 
         & .second-column {
           &__heading {
-            display: grid;
-            grid-template-columns: 3fr 1fr;
+            @include flex-vertical-center;
+            margin-top: rem(-17px);
+            margin-bottom: rem(40px);
 
             &-title {
+              flex: 0 0 70%;
               color: $white;
+            }
+            &-rating {
+              flex: 0 0 30%;
+
+              & .progress-ring {
+                &__circle {
+                  stroke: $light-green;
+                  stroke-width: rem(4px);
+                  fill: transparent;
+
+                  &-under {
+                    stroke: $light-grey;
+                    stroke-width: rem(2px);
+                    fill: transparent;
+                  }
+                }
+
+                &__text {
+                  fill: $light-grey;
+                  font-size: $h2-font-size;
+                  line-height: $h2-line-height;
+                  font-weight: 400;
+                }
+              }
             }
           }
 
@@ -79,10 +105,16 @@
               &-total {
                 @extend h1;
                 color: $white;
+
+                & .crossed {
+                  text-decoration-line: line-through;
+                }
               }
             }
 
             &-button {
+              margin-right: rem(13px);
+
               &-link {
                 @include button;
               }
@@ -93,3 +125,11 @@
     }
   }
 }
+
+.progress-ring__circle {
+  stroke-dasharray: 10 20;
+  transition: stroke-dashoffset 0.35s;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%,
+}
+

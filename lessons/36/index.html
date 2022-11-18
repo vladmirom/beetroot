@@ -26,7 +26,8 @@
             <div class="section__game-info game-info js-slider">
               <div class="swiper-wrapper">
                 <div class="swiper-pagination"></div>
-
+                
+                <!-- Slide 1 -->
                 <div class="swiper-slide game-info__wrap">
                   <div class="game-info__first-column first-column">
                     <img class="first-column__image" src="assets/images/farcry.webp" alt="Game cover image">
@@ -46,7 +47,13 @@
                         <h4>First Released Oct 6, 2021</h4>
                       </div>
 
-                      <div class="second-column__heading-rating">8.7</div>
+                      <div class="second-column__heading-rating">
+                        <svg class="progress-ring" width="80" height="80">
+                          <circle class="progress-ring__circle-under" r="37.5" cx="40" cy="40"/>
+                          <circle class="progress-ring__circle js-progress-ring--1" r="37.5" cx="40" cy="40"/>
+                          <text class="progress-ring__text" x="50%" y="50%" text-anchor="middle" dy=".5em">8.7</text>
+                        </svg>
+                      </div>
                     </div>
 
                     <div class="second-column__description">
@@ -65,8 +72,97 @@
                     </div>
                   </div>
                 </div>
-                <div class="swiper-slide game-info__wrap">slide 2</div>
-                <div class="swiper-slide game-info__wrap">slide 3</div>
+
+                <!-- Slide 2 -->
+                <div class="swiper-slide game-info__wrap">
+                  <div class="game-info__first-column first-column">
+                    <img class="first-column__image" src="assets/images/god-of-war.webp" alt="Game cover image">
+                    <div class="first-column__stars">
+                      <svg class="first-column__star first-column__star--gold"><use xlink:href="./assets/images/sprite.svg#star"/></svg>
+                      <svg class="first-column__star first-column__star--gold"><use xlink:href="./assets/images/sprite.svg#star"/></svg>
+                      <svg class="first-column__star first-column__star--gold"><use xlink:href="./assets/images/sprite.svg#star"/></svg>
+                      <svg class="first-column__star first-column__star--gold"><use xlink:href="./assets/images/sprite.svg#star"/></svg>
+                      <svg class="first-column__star first-column__star--gold"><use xlink:href="./assets/images/sprite.svg#star"/></svg>
+                    </div>
+                  </div>
+
+                  <div class="game-info__second-column second-column">
+                    <div class="second-column__heading">
+                      <div class="second-column__heading-title">
+                        <h1>God of War Ragnarök</h1>
+                        <h4>First Released Nov 9, 2022</h4>
+                      </div>
+
+                      <div class="second-column__heading-rating">
+                        <svg class="progress-ring" width="80" height="80">
+                          <circle class="progress-ring__circle-under" r="37.5" cx="40" cy="40"/>
+                          <circle class="progress-ring__circle js-progress-ring--2" r="37.5" cx="40" cy="40"/>
+                          <text class="progress-ring__text" x="50%" y="50%" text-anchor="middle" dy=".5em">9.4</text>
+                        </svg>
+                      </div>
+                    </div>
+
+                    <div class="second-column__description">
+                      Fimbulwinter is well underway. Kratos and Atreus must journey to each of the Nine Realms in search of answers as Asgardian forces prepare for a prophesied battle that will end the world. Along the way they will explore stunning, mythical landscapes, and face fearsome enemies in the form of Norse gods and monsters. The threat of Ragnarök grows ever closer. Kratos and Atreus must choose between their own safety and the safety of the realms.
+                    </div>
+
+                    <div class="second-column__cta">
+                      <div class="second-column__cta-price">
+                        <p class="second-column__cta-price-total">$139.95</p>
+                      </div>
+
+                      <div class="second-column__cta-button">
+                        <a href="#" class="second-column__cta-button-link">buy it now</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="swiper-slide game-info__wrap">
+                  <div class="game-info__first-column first-column">
+                    <img class="first-column__image" src="assets/images/horizon.webp" alt="Game cover image">
+                    <div class="first-column__stars">
+                      <svg class="first-column__star first-column__star--gold"><use xlink:href="./assets/images/sprite.svg#star"/></svg>
+                      <svg class="first-column__star first-column__star--gold"><use xlink:href="./assets/images/sprite.svg#star"/></svg>
+                      <svg class="first-column__star first-column__star--gold"><use xlink:href="./assets/images/sprite.svg#star"/></svg>
+                      <svg class="first-column__star first-column__star--gold"><use xlink:href="./assets/images/sprite.svg#star"/></svg>
+                      <svg class="first-column__star"><use xlink:href="./assets/images/sprite.svg#star"/></svg>
+                    </div>
+                  </div>
+
+                  <div class="game-info__second-column second-column">
+                    <div class="second-column__heading">
+                      <div class="second-column__heading-title">
+                        <h1>Horizon</h1>
+                        <h4>First Released Feb 18, 2022</h4>
+                      </div>
+
+                      <div class="second-column__heading-rating">
+                        <svg class="progress-ring" width="80" height="80">
+                          <circle class="progress-ring__circle-under" r="37.5" cx="40" cy="40"/>
+                          <circle class="progress-ring__circle js-progress-ring--3" r="37.5" cx="40" cy="40"/>
+                          <text class="progress-ring__text" x="50%" y="50%" text-anchor="middle" dy=".5em">8.9</text>
+                        </svg>
+                      </div>
+                    </div>
+
+                    <div class="second-column__description">
+                      Explore distant lands, fight bigger and more awe-inspiring machines, and encounter astonishing new tribes as you return to the far-future, post-apocalyptic world of Horizon.
+                    </div>
+
+                    <div class="second-column__cta">
+                      <div class="second-column__cta-price">
+                        <p class="second-column__cta-price-discount">32% OFF!</p>
+                        <p class="second-column__cta-price-total"><span class="crossed">$139.95</span> $86.76</p>
+                      </div>
+
+                      <div class="second-column__cta-button">
+                        <a href="#" class="second-column__cta-button-link">buy it now</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
               
