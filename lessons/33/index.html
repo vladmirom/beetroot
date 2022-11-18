@@ -24,106 +24,23 @@
         <div class="section__wrap">
           <h1 class="h2">Shopping list</h1>
 
-          <div class="section__task">
-            <h3>Use the car as an object and create meethods in it.</h3>
-            <p class="section__task-text">Hey friend. Welcome to <a href="https://www.lansiauto.fi/" target="_blank">LänsiAuto</a>! Do you like this Toyota C-HR? Would you like to know more about it? Here is some information.</p>
-            <div id="carSpecs"></div>
-            <p class="section__task-text">Some people say that there are 15 ways to find out how old is the
-              person without actually asking. I'm not going to experiment with those ans will ask you directly.</p>
-            <p class="section__task-text">Who are you, stranger? <span id="ageReply"></span></p>
-            <button class="section__task-button" id="ageBtn">What is your age?</button>
-          </div>
-
-          <div class="section__task">
-            <h3>Show a special character from the user selected number.</h3>
-            <p>I reemember, that you have mentioned that you had problems with the special characters on the keyboard.
-              Let me help you, select the number in the range.</p>
-            <div class="section__task-range range">
-              <input class="range__input" type="range" id="keyboardNumber" name="keyboardNumber" value="4" min="0"
-                max="9" oninput="this.nextElementSibling.value = this.value">
-              <output>4</output>
+          <div class="section__shopping-list shopping-list">
+            <div class="shopping-list-purchased product">
+              <h3 class="shopping-list-purchased__title">Purchased products</h3>
+              <span class="js-purchased-products"></span>
+              <button class="section__button" id="removeFromPurchased">Remove from purchased</button>
             </div>
-            <p class="section__task-result" id="keyboardNumberResult">Placeholder</p>
-          </div>
 
-          <div class="section__task">
-            <h3>Calculate the summ of the two numbers from the range.</h3>
-            <p class="section__task-text">Let's calculate the summ of all the numbers from the range. Please, add two numbers and click "Calculate"
-              button.</p>
-
-            <form id="rangeCalculation" class="section__task-form form" action="formHandler/get.php"
-              method="GET">
-              <div class="form__grid">
-                <div class="form__column">
-                  <label class="form__label" for="firstNumber">First number</label>
-                  <input class="form__number" type="number" name="firstNumber"
-                    id="firstNumber">
-                </div>
-
-                <div class="form__column">
-                  <label class="form__label" for="secondNumber">Second number</label>
-                  <input class="form__number" type="number" name="secondNumber" id="secondNumber">
-                </div>
-              </div>
-
-              <!-- Since we don't need to submit the form and we don't have the php server, changing "submit" button type to "button".-->
-              <button type="button" class="section__task-button" id="rangeBtn">Calculate</button>
-            </form>
-
-            <p class="section__task-result" id="rangeResult">Placeholder</p>
-          </div>
-
-          <div class="section__task">
-            <h3>Calculate the Greatest common divider of two integers.</h3>
-            <p class="section__task-text">Let's calculate the Greatest common divider of two integers. Please, add two numbers and click "Calculate"
-              button.</p>
-
-            <form id="gcdCalculation" class="section__task-form form" action="formHandler/get.php"
-              method="GET">
-              <div class="form__grid">
-                <div class="form__column">
-                  <label class="form__label" for="firstGcdNumber">First number</label>
-                  <input class="form__number" type="number" name="firstGcdNumber"
-                    id="firstGcdNumber">
-                </div>
-
-                <div class="form__column">
-                  <label class="form__label" for="secondGcdNumber">Second number</label>
-                  <input class="form__number" type="number" name="secondGcdNumber" id="secondGcdNumber">
-                </div>
-              </div>
-
-              <!-- Since we don't need to submit the form and we don't have the php server, changing "submit" button type to "button".-->
-              <button type="button" class="section__task-button" id="gcdBtn">Calculate</button>
-            </form>
-
-            <p class="section__task-result" id="gcdResult">Placeholder</p>
-          </div>
-
-          <div class="section__task">
-            <h3>Calculate all dividers from a given number.</h3>
-            <p class="section__task-text">Let's calculate all the dividers from a given number. Please, add a number and click "Calculate"
-              button.</p>
-
-            <form id="gcdCalculation" class="section__task-form form" action="formHandler/get.php"
-              method="GET">
-              <div class="form__grid">
-                <div class="form__column">
-                  <label class="form__label" for="dividersNumber">Number to calculate</label>
-                  <input class="form__number" type="number" name="dividersNumber"
-                    id="dividersNumber">
-                </div>
-              </div>
-
-              <!-- Since we don't need to submit the form and we don't have the php server, changing "submit" button type to "button".-->
-              <button type="button" class="section__task-button" id="dividersBtn">Calculate</button>
-            </form>
-
-            <p class="section__task-result" id="dividersResult">Placeholder</p>
+            <div class="shopping-list-available product">
+              <h3 class="shopping-list-available__title">Available products</h3>
+              <span class="js-available-products"></span>
+              <button class="section__button" id="addToPurchased">Add to purchased</button>
+            </div>
           </div>
         </div>
       </div>
     </section>
+
     <footer>
           <script async src="assets/scripts/scripts.js"></script>
     </footer>

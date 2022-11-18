@@ -11,7 +11,45 @@
 
   &__wrap {
     @include section-wrap;
-    background-color: $minimum;
+  }
+
+  & .shopping-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: rem(30px);
+
+    &-purchased,
+    &-available {
+      &__title {
+        margin-bottom: rem(25px);
+      }
+    }
+
+    & .product {
+      &__list-heading {
+        display: grid;
+        grid-template-columns: 1fr 5fr 1fr 1fr 1fr;
+        font-size: rem(12px);
+        font-weight: bold;
+        padding: rem(10px) 0;
+        background-color: $midnight-blue;
+        color: $white;
+      }
+
+      &__label {
+        display: grid;
+        grid-template-columns: 1fr 5fr 1fr 1fr 1fr;
+        padding: rem(10px) 0;
+
+        &:nth-of-type(even) {
+          background-color: $golden-poppy;
+        }
+
+        &:nth-of-type(odd) {
+          background-color: $gold;
+        }
+      }
+    }
   }
 
   &__task {

@@ -23,7 +23,7 @@ html {
   margin: 6.25rem 1.25rem;
 }
 
-.list, .section__task-list {
+.list, .section-maximum__task-list, .section-medium__task-list, .section-minimum__task-list {
   list-style: inside;
   padding-left: 1.25rem;
 }
@@ -246,28 +246,28 @@ input[type=range]:focus::-ms-fill-upper {
 /**
   * Minimum tasks section styles.
   */
-.section {
+.section-minimum {
   margin-bottom: 3.125rem;
 }
-.section__container {
+.section-minimum__container {
   width: 92%;
   max-width: 1170px;
   margin-left: auto;
   margin-right: auto;
 }
-.section__wrap {
+.section-minimum__wrap {
   color: #404258;
   border-radius: 0.625rem;
   padding: 4.375rem 4.6875rem;
   background-color: #FAD6A5;
 }
-.section__task {
+.section-minimum__task {
   margin-bottom: 3.125rem;
 }
-.section__task-text {
+.section-minimum__task-text {
   margin-bottom: 1.25rem;
 }
-.section__task-button {
+.section-minimum__task-button {
   display: flex;
   align-items: center;
   font-family: "Lato", sans-serif;
@@ -283,33 +283,33 @@ input[type=range]:focus::-ms-fill-upper {
   background: #FF9900;
   color: #fff;
 }
-.section__task-button:hover {
+.section-minimum__task-button:hover {
   background: #F29D38;
 }
-.section__task-code {
+.section-minimum__task-code {
   background-color: rgba(87, 142, 247, 0.3);
   padding: 0 0.625rem;
   border-radius: 0.3125rem;
 }
-.section__task .range {
+.section-minimum__task .range {
   display: flex;
   gap: 1.25rem;
   width: 80%;
   margin: 3.125rem 0;
 }
-.section__task .range__input {
+.section-minimum__task .range__input {
   width: 100%;
 }
-.section__task .form__grid {
+.section-minimum__task .form__grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr) 2fr;
   gap: 30px;
 }
-.section__task .form__label {
+.section-minimum__task .form__label {
   display: block;
   font-size: 0.875rem;
 }
-.section__task .form__number {
+.section-minimum__task .form__number {
   display: block;
   width: 100%;
   border: none;
@@ -317,6 +317,107 @@ input[type=range]:focus::-ms-fill-upper {
   padding: 0.6875rem 0.625rem;
   margin-bottom: 1.25rem;
 }
-.section__task-result {
+.section-minimum__task-result {
   visibility: hidden;
+}
+
+/**
+  * Medium tasks section styles.
+  */
+.section-medium {
+  margin-bottom: 3.125rem;
+}
+.section-medium__container {
+  width: 92%;
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.section-medium__wrap {
+  color: #404258;
+  border-radius: 0.625rem;
+  padding: 4.375rem 4.6875rem;
+  background-color: #9BA17B;
+}
+.section-medium__task {
+  margin-bottom: 3.125rem;
+}
+.section-medium__task-text {
+  margin-bottom: 1.25rem;
+}
+.section-medium__task-button {
+  display: flex;
+  align-items: center;
+  font-family: "Lato", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5rem;
+  padding: 0.8125rem 2.5rem;
+  margin-bottom: 1.25rem;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: all 0.2s linear;
+  background: #FF9900;
+  color: #fff;
+  margin-bottom: 1.25rem;
+}
+.section-medium__task-button:hover {
+  background: #F29D38;
+}
+.section-medium__task-list {
+  margin-bottom: 1.25rem;
+}
+.section-medium__task-result {
+  visibility: hidden;
+}
+
+/**
+  * Maximum tasks section styles.
+  */
+.section-maximum {
+  margin-bottom: 3.125rem;
+}
+.section-maximum__container {
+  width: 92%;
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.section-maximum__wrap {
+  color: #404258;
+  border-radius: 0.625rem;
+  padding: 4.375rem 4.6875rem;
+  color: #fff;
+  background-color: #61764B;
+}
+.section-maximum__task {
+  margin-bottom: 3.125rem;
+}
+.section-maximum__task-text {
+  margin-bottom: 1.25rem;
+}
+.section-maximum__task-button {
+  display: flex;
+  align-items: center;
+  font-family: "Lato", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5rem;
+  padding: 0.8125rem 2.5rem;
+  margin-bottom: 1.25rem;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: all 0.2s linear;
+  background: #FF9900;
+  color: #fff;
+}
+.section-maximum__task-button:hover {
+  background: #F29D38;
+}
+.section-maximum__task-code {
+  background-color: rgba(87, 142, 247, 0.3);
+  padding: 0 0.625rem;
+  border-radius: 0.3125rem;
 }/*# sourceMappingURL=styles.css.map */
