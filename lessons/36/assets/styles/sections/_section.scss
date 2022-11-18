@@ -7,6 +7,7 @@
     position: relative;
     width: 100%;
     padding: rem(154px) rem(200px);
+    background-image: url('../images/lesson-36-bg-img.webp');
 
     &-overlay {
       position: absolute;
@@ -15,10 +16,11 @@
       width: 100%;
       height: 100%;
       background: $overlay;
-      z-index: -2;
     }
 
     & .game-info {
+      position: relative;
+
       &__pagination {
         position: relative;
         background-color: $dark-blue;

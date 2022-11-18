@@ -184,6 +184,7 @@ h5, .section__wrap .game-info__wrap .second-column__cta-price-discount,
   position: relative;
   width: 100%;
   padding: 9.625rem 12.5rem;
+  background-image: url("../images/lesson-36-bg-img.webp");
 }
 .section__wrap-overlay {
   position: absolute;
@@ -192,7 +193,9 @@ h5, .section__wrap .game-info__wrap .second-column__cta-price-discount,
   width: 100%;
   height: 100%;
   background: rgba(41, 45, 62, 0.8);
-  z-index: -2;
+}
+.section__wrap .game-info {
+  position: relative;
 }
 .section__wrap .game-info__pagination {
   position: relative;

@@ -1,21 +1,21 @@
 *,
 ::after,
 ::before {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    outline: none;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
 }
 
 html {
-    font-size: $font-body;
-    line-height: $line-height;
+  font-size: $font-body;
+  line-height: $line-height;
 }
 
 .body {
-    background-color: $dark-blue;
+  background-color: $dark-blue;
 }
 
 .main {
-    margin: rem(82px) 0;
+  margin: rem(82px) 0;
 }
