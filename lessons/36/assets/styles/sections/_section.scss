@@ -19,6 +19,12 @@
     }
 
     & .game-info {
+      &__pagination {
+        position: relative;
+        background-color: $dark-blue;
+        padding: rem(28px) rem(50px);
+      }
+
       &__wrap {
         display: grid;
         grid-template-columns: rem(160px) 1fr;
@@ -132,4 +138,3 @@
   transform: rotate(-90deg);
   transform-origin: 50% 50%,
 }
-

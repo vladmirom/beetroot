@@ -7,9 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700"
-    rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 
   <link rel="stylesheet" type="text/css" href="assets/styles/styles.css">
 
@@ -24,9 +23,13 @@
             <div class="section__wrap-overlay"></div>
 
             <div class="section__game-info game-info js-slider">
-              <div class="swiper-wrapper">
+              <div class="game-info__pagination">
                 <div class="swiper-pagination"></div>
-                
+              </div>
+
+              <div class="swiper-wrapper">
+                <!-- Pagination -->
+              
                 <!-- Slide 1 -->
                 <div class="swiper-slide game-info__wrap">
                   <div class="game-info__first-column first-column">
@@ -103,7 +106,7 @@
                     </div>
 
                     <div class="second-column__description">
-                      Fimbulwinter is well underway. Kratos and Atreus must journey to each of the Nine Realms in search of answers as Asgardian forces prepare for a prophesied battle that will end the world. Along the way they will explore stunning, mythical landscapes, and face fearsome enemies in the form of Norse gods and monsters. The threat of Ragnarök grows ever closer. Kratos and Atreus must choose between their own safety and the safety of the realms.
+                      Fimbulwinter is well underway. Kratos and Atreus must journey to each of the Nine Realms in search of answers as Asgardian forces prepare for a prophesied battle that will end the world.
                     </div>
 
                     <div class="second-column__cta">
@@ -170,7 +173,8 @@
       </div>
     </section>
     <footer>
-          <script async src="assets/scripts/scripts.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+      <script async src="assets/scripts/scripts.js"></script>
     </footer>
   </main>
 </body>

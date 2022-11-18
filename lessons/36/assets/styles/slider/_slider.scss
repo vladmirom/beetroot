@@ -1,0 +1,56 @@
+/** 
+ * Styling slider.
+ */
+
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  bottom: unset;
+}
+
+.swiper-pagination {
+  @include flex-vertical-center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  position: relative;
+
+  & .swiper-pagination-bullet {
+    flex: 0 0 30%;
+    min-height: rem(64px);
+    background-color: transparent;
+    opacity: 1;
+
+    &__icon {
+      margin-bottom: rem(15px);
+
+      & svg {
+        height: rem(22px);
+        width: auto;
+        fill: $grey;
+        transition: all 0.3s ease;
+      }
+    }
+
+    &__text {
+      text-transform: uppercase;
+      font-size: $h3-font-size;
+      line-height: rem(28px);
+      font-weight: 400;
+      color: $grey;
+      transition: all 0.3s ease;
+    }
+
+    &-active,
+    &:hover {
+      & .swiper-pagination-bullet__icon {
+        margin-bottom: rem(15px);
+  
+        & svg {
+          fill: $white;
+        }
+      }
+
+      & .swiper-pagination-bullet__text {
+        color: $white;
+      }
+    }
+  }
+}

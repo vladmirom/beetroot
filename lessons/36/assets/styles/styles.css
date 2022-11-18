@@ -194,6 +194,11 @@ h5, .section__wrap .game-info__wrap .second-column__cta-price-discount,
   background: rgba(41, 45, 62, 0.8);
   z-index: -2;
 }
+.section__wrap .game-info__pagination {
+  position: relative;
+  background-color: #2B3040;
+  padding: 1.75rem 3.125rem;
+}
 .section__wrap .game-info__wrap {
   display: grid;
   grid-template-columns: 10rem 1fr;
@@ -300,4 +305,51 @@ h5, .section__wrap .game-info__wrap .second-column__cta-price-discount,
   transition: stroke-dashoffset 0.35s;
   transform: rotate(-90deg);
   transform-origin: 50% 50%;
+}
+
+/** 
+ * Styling slider.
+ */
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  bottom: unset;
+}
+
+.swiper-pagination {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  position: relative;
+}
+.swiper-pagination .swiper-pagination-bullet {
+  flex: 0 0 30%;
+  min-height: 4rem;
+  background-color: transparent;
+  opacity: 1;
+}
+.swiper-pagination .swiper-pagination-bullet__icon {
+  margin-bottom: 0.9375rem;
+}
+.swiper-pagination .swiper-pagination-bullet__icon svg {
+  height: 1.375rem;
+  width: auto;
+  fill: #8D91A3;
+  transition: all 0.3s ease;
+}
+.swiper-pagination .swiper-pagination-bullet__text {
+  text-transform: uppercase;
+  font-size: 1rem;
+  line-height: 1.75rem;
+  font-weight: 400;
+  color: #8D91A3;
+  transition: all 0.3s ease;
+}
+.swiper-pagination .swiper-pagination-bullet-active .swiper-pagination-bullet__icon, .swiper-pagination .swiper-pagination-bullet:hover .swiper-pagination-bullet__icon {
+  margin-bottom: 0.9375rem;
+}
+.swiper-pagination .swiper-pagination-bullet-active .swiper-pagination-bullet__icon svg, .swiper-pagination .swiper-pagination-bullet:hover .swiper-pagination-bullet__icon svg {
+  fill: #fff;
+}
+.swiper-pagination .swiper-pagination-bullet-active .swiper-pagination-bullet__text, .swiper-pagination .swiper-pagination-bullet:hover .swiper-pagination-bullet__text {
+  color: #fff;
 }/*# sourceMappingURL=styles.css.map */
