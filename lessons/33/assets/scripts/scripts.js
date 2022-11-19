@@ -166,27 +166,21 @@ let updatedProductsInStock = [];
 document.querySelector('#removeFromPurchased').addEventListener('click', () => {
   let allProductsInStock = productsWarehouse();
 
-  if (typeof updatedProductsInStock !== 'undefined' && updatedProductsInStock.length === 0 ) {
-    updatedProductsInStock = listOfPurchasedProducts(allProductsInStock);
-  }
+  // If this is first iteration assign the generated list, if not, 
+  // it should already have the the new list of products from the previous iteration.
+  if ( updatedProductsInStock !== 'undefined' && updatedProductsInStock.length === 0 ) {
+    updatedProductsInStock = allProductsInStock;
+  } 
 
+  // We need these to make sure that the checked products were removed from and added to the correct lists.
   let currentlyPurchased = listOfPurchasedProducts(updatedProductsInStock),
-      currentlyAvailable = listOfAvailableProducts(updatedProductsInStock);
+      currentlyAvailable = listOfAvailableProducts(updatedProductsInStock),
+      updatedPurchasedHtml = '',
+      updatedAvailableHtml = '';
 
+  // All selected elements and their values.
   let allSelected = document.querySelectorAll('input[type="checkbox"]:checked'),
       selectedValues = [];
-
-  // let allCurrentlyAvailable = document.querySelectorAll('.js-available-product'),
-  //     updatedCurrentlyAvailableArr = [];
-
-  let newPurchasedList = [],
-      extractedProducts = [],
-      newAvailableList = [];
-
-
-
-
-
 
 
 
@@ -208,20 +202,20 @@ document.querySelector('#removeFromPurchased').addEventListener('click', () => {
 
   // Step 3. Set value false to the purchased key in product object if it is selected.
   Object.keys(currentlyPurchased).forEach(key => {
-    if ( !selectedValues.includes( currentlyPurchased[key].product_name ) ) {
-      newPurchasedList.push(currentlyPurchased[key]);
-    } else {
-      Object.keys(updatedProductsInStock).forEach(key => {
-        if ( currentlyPurchased[key].product_name === updatedProductsInStock[key].product_name ) {
-          updatedProductsInStock[key].purchased = false;
-        } 
-      });
+    if ( selectedValues.includes( currentlyPurchased[key].product_name ) ) {
+      updatedProductsInStock.find(product => product.product_name === currentlyPurchased[key].product_name).purchased = false;
     }
   });
 
-  console.log(extractedProducts);
-  
+  console.log(listOfPurchasedProducts( updatedProductsInStock ));
+
+  updatedPurchasedHtml = resultHtml(listOfPurchasedProducts( updatedProductsInStock ));
+  updatedAvailableHtml = resultHtml(listOfAvailableProducts( updatedProductsInStock ));
+
+  printShoppingList('js-purchased-products', resultHtml( updatedPurchasedHtml ));
+  printShoppingList('js-available-products', resultHtml( updatedAvailableHtml ));
 });
+
 
 // Inint the function and construct the first load of product.
 shoppingCartConstructor();
