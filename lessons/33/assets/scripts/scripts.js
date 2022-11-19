@@ -138,6 +138,25 @@ const listOfPurchasedProducts = ( listOfProducts ) => {
 }
 
 /**
+ * Changing parameter purchased in products list.
+ * 
+ * @param { array } listOfProducts Array of all the products.
+ * @param { array } listOfProducts Array of all the products.
+ * @param { array } listOfProducts Array of all the products.
+ * @param { array } listOfProducts Array of all the products.
+ * @returns { array } With selected product values.
+ */
+ const updatingProductStock = ( currentProducts, selectedProductsValues, updatedProductsInStock, purchased = true ) => {
+  Object.keys(currentProducts).forEach(key => {
+    if ( selectedProductsValues.includes( currentProducts[key].product_name ) ) {
+      updatedProductsInStock.find(product => product.product_name === currentProducts[key].product_name).purchased = false;
+    }
+  });
+
+  return updatedProductsInStock;
+}
+
+/**
  * Prepares the HTML responce to be published.
  * 
  * @param { array } listOfProducts An array to convert in HTML.
