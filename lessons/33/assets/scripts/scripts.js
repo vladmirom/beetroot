@@ -140,20 +140,53 @@ const listOfPurchasedProducts = ( listOfProducts ) => {
 /**
  * Changing parameter purchased in products list.
  * 
- * @param { array } listOfProducts Array of all the products.
- * @param { array } listOfProducts Array of all the products.
- * @param { array } listOfProducts Array of all the products.
- * @param { array } listOfProducts Array of all the products.
- * @returns { array } With selected product values.
+ * @param { array } currentProducts         Of current products. Could be purchased or available.
+ * @param { array } selectedProductsValues  Of product names that were selected.
+ * @param { array } updatedProductsInStock  Of products in stock.
+ * @param { boolean } purchased             If we change the purchased products value to true or false.
+ * @returns { array }                       With updated products that have new purchased true/false values.
  */
  const updatingProductStock = ( currentProducts, selectedProductsValues, updatedProductsInStock, purchased = true ) => {
   Object.keys(currentProducts).forEach(key => {
     if ( selectedProductsValues.includes( currentProducts[key].product_name ) ) {
-      updatedProductsInStock.find(product => product.product_name === currentProducts[key].product_name).purchased = false;
+      updatedProductsInStock.find(product => product.product_name === currentProducts[key].product_name).purchased = purchased;
     }
   });
 
   return updatedProductsInStock;
+}
+
+/**
+ * Callback function to handles all the logic after add/remove products to/from the list button clicked.
+ * 
+ * @param { boolean } purchasedList         If we update the list of purchased products.
+ * 
+ */
+ let updatedProductsInStock = [];
+ const updateList = ( purchasedList = true ) => {
+  let allProductsInStock = productsWarehouse();
+
+  // If this is first iteration assign the generated list, if not, 
+  // it should already have the the new list of products from the previous iteration.
+  if ( updatedProductsInStock !== 'undefined' && updatedProductsInStock.length === 0 ) {
+    updatedProductsInStock = allProductsInStock;
+  } 
+
+  // We need these to make sure that the checked products were removed from and added to the correct lists.
+  let currentList = purchasedList === true ? listOfPurchasedProducts(updatedProductsInStock) : listOfAvailableProducts(updatedProductsInStock),
+      updatedList = [];
+
+  // All selected elements and their values.
+  let selectedValues = getSelectedProducts();
+
+  // Updating stock in accordance with purchased: true/false.
+  updatedProductsInStock = updatingProductStock( currentList, selectedValues, updatedProductsInStock, false);
+
+  // Re-generating lists from stock.
+  updatedList = purchasedList === true ? listOfPurchasedProducts( updatedProductsInStock ) : listOfAvailableProducts( updatedProductsInStock );
+console.log(updatedList);
+  // Print new lists.
+  printShoppingList( purchasedList === true ? 'js-purchased-products' : 'js-available-products', resultHtml( updatedList ));
 }
 
 /**
@@ -201,41 +234,9 @@ function printShoppingList ( selector, result ) {
   }
 }
 
-let updatedProductsInStock = [];
-
-document.querySelector('#removeFromPurchased').addEventListener('click', () => {
-  let allProductsInStock = productsWarehouse();
-
-  // If this is first iteration assign the generated list, if not, 
-  // it should already have the the new list of products from the previous iteration.
-  if ( updatedProductsInStock !== 'undefined' && updatedProductsInStock.length === 0 ) {
-    updatedProductsInStock = allProductsInStock;
-  } 
-
-  // We need these to make sure that the checked products were removed from and added to the correct lists.
-  let currentlyPurchased = listOfPurchasedProducts(updatedProductsInStock),
-      currentlyAvailable = listOfAvailableProducts(updatedProductsInStock),
-      updatedPurchasedHtml = '',
-      updatedAvailableHtml = '';
-
-  // All selected elements and their values.
-  let selectedValues = getSelectedProducts();
-
-  // TODO: move to separate function.
-  // Step 3. Set value false to the purchased key in product object if it is selected.
-  Object.keys(currentlyPurchased).forEach(key => {
-    if ( selectedValues.includes( currentlyPurchased[key].product_name ) ) {
-      updatedProductsInStock.find(product => product.product_name === currentlyPurchased[key].product_name).purchased = false;
-    }
-  });
-
-  updatedPurchasedHtml = listOfPurchasedProducts( updatedProductsInStock );
-  updatedAvailableHtml = listOfAvailableProducts( updatedProductsInStock );
-
-  printShoppingList('js-purchased-products', resultHtml( updatedPurchasedHtml ));
-  printShoppingList('js-available-products', resultHtml( updatedAvailableHtml ));
-});
-
+// Handle Add/Remove products to/from the list.
+document.querySelector('#removeFromPurchased').addEventListener('click', () => { updateList(); } );
+document.querySelector('#addToPurchased').addEventListener('click', () => { updateList( false ); } );
 
 // Inint the function and construct the first load of product.
 shoppingCartConstructor();
