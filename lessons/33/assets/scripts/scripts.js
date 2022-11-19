@@ -143,13 +143,13 @@ const listOfPurchasedProducts = ( listOfProducts ) => {
  * @param { array } currentProducts         Of current products. Could be purchased or available.
  * @param { array } selectedProductsValues  Of product names that were selected.
  * @param { array } updatedProductsInStock  Of products in stock.
- * @param { boolean } purchased             If we change the purchased products value to true or false.
+ * @param { boolean } isPurchased           Should we set purchased option to true.
  * @returns { array }                       With updated products that have new purchased true/false values.
  */
- const updatingProductStock = ( currentProducts, selectedProductsValues, updatedProductsInStock, purchased = true ) => {
+ const updatingProductStock = ( currentProducts, selectedProductsValues, updatedProductsInStock, isPurchased = true ) => {
   Object.keys(currentProducts).forEach(key => {
     if ( selectedProductsValues.includes( currentProducts[key].product_name ) ) {
-      updatedProductsInStock.find(product => product.product_name === currentProducts[key].product_name).purchased = purchased;
+      updatedProductsInStock.find(product => product.product_name === currentProducts[key].product_name).purchased = isPurchased;
     }
   });
 
@@ -174,7 +174,8 @@ const listOfPurchasedProducts = ( listOfProducts ) => {
 
   // We need these to make sure that the checked products were removed from and added to the correct lists.
   let currentList = purchasedList === true ? listOfPurchasedProducts(updatedProductsInStock) : listOfAvailableProducts(updatedProductsInStock),
-      updatedList = [];
+      updatedPurchasedList = [],
+      updatedAvailabelList = [];
 
   // All selected elements and their values.
   let selectedValues = getSelectedProducts();
@@ -183,10 +184,12 @@ const listOfPurchasedProducts = ( listOfProducts ) => {
   updatedProductsInStock = updatingProductStock( currentList, selectedValues, updatedProductsInStock, false);
 
   // Re-generating lists from stock.
-  updatedList = purchasedList === true ? listOfPurchasedProducts( updatedProductsInStock ) : listOfAvailableProducts( updatedProductsInStock );
-console.log(updatedList);
+  updatedPurchasedList = listOfPurchasedProducts( updatedProductsInStock );
+  updatedAvailabelList = listOfAvailableProducts( updatedProductsInStock );
+
   // Print new lists.
-  printShoppingList( purchasedList === true ? 'js-purchased-products' : 'js-available-products', resultHtml( updatedList ));
+  printShoppingList( 'js-purchased-products', resultHtml( updatedPurchasedList ));
+  printShoppingList( 'js-available-products', resultHtml( updatedAvailabelList ));
 }
 
 /**
