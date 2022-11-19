@@ -99,7 +99,7 @@ const productsWarehouse = () => {
  * @returns { array } Only the purchased products.
  */
 const listOfPurchasedProducts = ( listOfProducts ) => {
-  purchasedProducts = listOfProducts.filter( ( value ) => value.purchased === true );
+  purchasedProducts = listOfProducts.filter( ( product ) => product.purchased === true );
 
   return purchasedProducts;
 }
@@ -111,9 +111,30 @@ const listOfPurchasedProducts = ( listOfProducts ) => {
  * @returns { array }  Only the available products.
  */
  const listOfAvailableProducts = ( listOfProducts ) => {
-  let listOfAvailableProducts = listOfProducts.filter( ( value ) => value.purchased === false );
+  let listOfAvailableProducts = listOfProducts.filter( ( product ) => product.purchased === false );
 
   return listOfAvailableProducts;
+}
+
+/**
+ * Gets all the checked products and adds it's values to array.
+ * 
+ * @returns { array } With selected product values.
+ */
+ const getSelectedProducts = ( ) => {
+  let allSelected = document.querySelectorAll('input[type="checkbox"]:checked'),
+      selectedValues = [];
+
+  // Sanitizing and assigning selecteed product values to array.
+  Object.keys(allSelected).forEach(key => {
+    if (allSelected[key] === undefined) {
+      delete allSelected[key];
+    } else {
+      selectedValues.push(allSelected[key].value);
+    }
+  });
+
+  return selectedValues;
 }
 
 /**
@@ -179,27 +200,9 @@ document.querySelector('#removeFromPurchased').addEventListener('click', () => {
       updatedAvailableHtml = '';
 
   // All selected elements and their values.
-  let allSelected = document.querySelectorAll('input[type="checkbox"]:checked'),
-      selectedValues = [];
+  let selectedValues = getSelectedProducts();
 
-
-
-  // // Step 1. Getting the current purchased products and form the new array of objects.
-  // // NOTE: it migth be different from the original list after the first products removal.
-  // Object.keys(allCurrentlyPurchased).forEach(key => {
-  //   let foundProduct = purchasedProductsList.find(o => o.product_name === allCurrentlyPurchased[key].value);
-  //   updatedCurrentlyPurchasedArr.push(foundProduct);
-  // });
-
-  // Step 2. Getting the checked products.
-  Object.keys(allSelected).forEach(key => {
-    if (allSelected[key] === undefined) {
-      delete allSelected[key];
-    } else {
-      selectedValues.push(allSelected[key].value);
-    }
-  });
-
+  // TODO: move to separate function.
   // Step 3. Set value false to the purchased key in product object if it is selected.
   Object.keys(currentlyPurchased).forEach(key => {
     if ( selectedValues.includes( currentlyPurchased[key].product_name ) ) {
@@ -207,10 +210,8 @@ document.querySelector('#removeFromPurchased').addEventListener('click', () => {
     }
   });
 
-  console.log(listOfPurchasedProducts( updatedProductsInStock ));
-
-  updatedPurchasedHtml = resultHtml(listOfPurchasedProducts( updatedProductsInStock ));
-  updatedAvailableHtml = resultHtml(listOfAvailableProducts( updatedProductsInStock ));
+  updatedPurchasedHtml = listOfPurchasedProducts( updatedProductsInStock );
+  updatedAvailableHtml = listOfAvailableProducts( updatedProductsInStock );
 
   printShoppingList('js-purchased-products', resultHtml( updatedPurchasedHtml ));
   printShoppingList('js-available-products', resultHtml( updatedAvailableHtml ));

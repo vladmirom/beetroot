@@ -1,0 +1,71 @@
+/** 
+ * Styling slider.
+ */
+
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  bottom: unset;
+}
+
+.swiper-pagination {
+  @include flex-vertical-center;
+  justify-content: space-between;
+  position: relative;
+
+  @include media-breakpoint-up(md) {
+    flex-wrap: wrap;
+  }
+
+  & .swiper-pagination-bullet {
+    flex: 0 0 30%;
+    min-height: rem(64px);
+    background-color: transparent;
+    opacity: 1;
+
+    &__icon {
+      margin-bottom: rem(15px);
+
+      & svg {
+        height: rem(22px);
+        width: auto;
+        fill: $grey;
+        transition: all 0.3s ease;
+      }
+    }
+
+    &__text {
+      text-transform: uppercase;
+      font-size: $h5-font-size;
+      line-height: rem(28px);
+      font-weight: 400;
+      color: $grey;
+      transition: all 0.3s ease;
+
+      @include media-breakpoint-up(md) {
+        line-height: rem(28px);
+      }
+    }
+
+    &-active,
+    &:hover {
+      & .swiper-pagination-bullet__icon {
+        margin-bottom: rem(15px);
+
+        @each $key, $val in $icon-color {
+          &--#{$key} {
+            & svg {
+              fill: #{$val};
+            }
+          } 
+        }
+      }
+
+      & .swiper-pagination-bullet__text {
+        @each $key, $val in $icon-color {
+          &--#{$key} {
+            color: #{$val};
+          } 
+        }
+      }
+    }
+  }
+}
