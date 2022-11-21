@@ -2,12 +2,18 @@
  * Shopping cart.
  */
 
+/* ---------- Prepare and print 2 lists of products. ----------- */
+
 /**
  * Creates both lists that contain separate purchased and available products.
  */
 const shoppingCartConstructor = () => {
-  let purchasedProductsList = listOfPurchasedProducts(productsWarehouse()),
+  let smallerStock = productsWarehouse( 10 ),
+      purchasedProductsList = listOfPurchasedProducts(productsWarehouse()),
       availableProductsList = listOfAvailableProducts(productsWarehouse());
+
+  // Smaller list for main tasks.
+  printShoppingList('js-stock', resultHtml(smallerStock));
 
   // Purchased products list.
   printShoppingList('js-purchased-products', resultHtml(purchasedProductsList));
@@ -43,13 +49,14 @@ const productConstructor = ( productName, productIcon = '🙃', quantity, produc
 /**
  * Creates the array of all the products in the store. 
  * Each product is supposed to be an object.
- * 
- * @returns { array } productsInWarehouse.
+ *
+ * @param { integer } capacity   How many products we want to show in the list from the warehouse. 
+ * @returns { array }            List of products from warehouse.
  */
-const productsWarehouse = () => {
+const productsWarehouse = ( capacity = 39 ) => {
   const productsInWarehouse = [ 
-    productConstructor('apple', '🍎', 5, 2.2),
-    productConstructor('pear', '🍐', 3, 2.5),
+    productConstructor('apple', '🍎', 5, 2.2, true),
+    productConstructor('pear', '🍐', 3, 2.5, true),
     productConstructor('orange', '🍊', 6, 1.5, true),
     productConstructor('lemon', '🍋', 2, 3.5),
     productConstructor('banana', '🍌', 6, 1.9),
@@ -59,26 +66,26 @@ const productsWarehouse = () => {
     productConstructor('cherries', '🍒', 2, 4.5),
     productConstructor('peach', '🍑', 7, 4.5),
     productConstructor('mango', '🥭', 3, 3.4),
-    productConstructor('coconut', '🥥', 5, 5.3),
+    productConstructor('coconut', '🥥', 5, 5.3, true),
     productConstructor('kivi', '🥝', 6, 2.4),
-    productConstructor('melon', '🍈', 2, 2.1),
-    productConstructor('pineaple', '🍍', 3, 5),
+    productConstructor('melon', '🍈', 2, 2.1, true),
+    productConstructor('pineaple', '🍍', 3, 5,true),
     productConstructor('brocoli', '🥦', 4, 0.8, true),
     productConstructor('tomato', '🍅', 5, 1.4),
     productConstructor('cucumber', '🥒', 2, 3.6, true),
     productConstructor('chili', '🌶', 2, 3.2),
     productConstructor('garlic', '🧄', 2, 1.5, true),
     productConstructor('onion', '🧅', 5, 0.5),
-    productConstructor('carrot', '🥕', 8, 0.5),
-    productConstructor('corn', '🌽', 4, 1),
-    productConstructor('milk', '🥛', 1, 1.2 ),
+    productConstructor('carrot', '🥕', 8, 0.5, true),
+    productConstructor('corn', '🌽', 4, 1, true),
+    productConstructor('milk', '🥛', 1, 1.2, true),
     productConstructor('potato', '🥔', 5, 0.2, true),
     productConstructor('bagel', '🥯', 2, 2.5),
     productConstructor('croissant', '🥐', 5, 0.49, true),
     productConstructor('bread', '🍞', 2, 3.5),
     productConstructor('chease', '🧀', 2, 6.7, true),
     productConstructor('egg', '🥚', 12, 0.3),
-    productConstructor('bacon', '🥓', 5, 0.5),
+    productConstructor('bacon', '🥓', 5, 0.5, true),
     productConstructor('pizza', '🍕', 2, 10),
     productConstructor('waffle', '🧇', 5, 3),
     productConstructor('dumpling', '🥟', 20, 0.1),
@@ -89,7 +96,9 @@ const productsWarehouse = () => {
     productConstructor('peanuts', '🥜', 50, 0.05)
   ];
   
-  return productsInWarehouse;
+  let productsToShow = productsInWarehouse.slice( 0, capacity);
+
+  return productsToShow;
 }
 
 /**
@@ -114,88 +123,6 @@ const listOfPurchasedProducts = ( listOfProducts ) => {
   let listOfAvailableProducts = listOfProducts.filter( ( product ) => product.purchased === false );
 
   return listOfAvailableProducts;
-}
-
-/**
- * Gets all the checked products and adds it's values to array.
- * 
- * @returns { array } With selected product values.
- */
- const getSelectedProducts = ( ) => {
-  let allSelected = document.querySelectorAll('input[type="checkbox"]:checked'),
-      selectedValues = [];
-
-  // Sanitizing and assigning selecteed product values to array.
-  Object.keys(allSelected).forEach(key => {
-    if (allSelected[key] === undefined) {
-      delete allSelected[key];
-    } else {
-      selectedValues.push(allSelected[key].value);
-    }
-  });
-
-  return selectedValues;
-}
-
-/**
- * Changing parameter purchased in products list.
- * 
- * @param { array } currentProducts                    Of current products. Could be purchased or available.
- * @param { array } selectedProductsValues             Of product names that were selected.
- * @param { array } updatedProductsInStock             Of products in stock.
- * @param { boolean } checkingListOfPurchasedProducts  Defines which list we check.
- * @returns { array }                                  With updated products that have new purchased true/false values.
- */
- const updatingProductStock = ( currentProducts, selectedProductsValues, updatedProductsInStock, checkingListOfPurchasedProducts = true ) => {
-  let isPurchased = checkingListOfPurchasedProducts ? false : true;
-
-  Object.keys(currentProducts).forEach(key => {
-    if ( selectedProductsValues.includes( currentProducts[key].product_name ) ) {
-      console.log(!currentProducts[key].product_name.purchased, currentProducts[key].product_name);
-      updatedProductsInStock.find(product => product.product_name === currentProducts[key].product_name).purchased = isPurchased;
-    }
-  });
-
-  return updatedProductsInStock;
-}
-
-/**
- * Callback function to handles all the logic after add/remove products to/from the list button clicked.
- * 
- * @param { boolean } purchasedList         If we update the list of purchased products.
- * 
- */
- let updatedProductsInStock = [];
- const updateList = ( purchasedList = true ) => {
-  console.log('We are in updateList function');
-  let allProductsInStock = productsWarehouse();
-
-  // If this is first iteration assign the generated list, if not, 
-  // it should already have the the new list of products from the previous iteration.
-  if ( updatedProductsInStock !== 'undefined' && updatedProductsInStock.length === 0 ) {
-    updatedProductsInStock = allProductsInStock;
-  } 
-
-  // We need these to make sure that the checked products were removed from and added to the correct lists.
-  let currentList = purchasedList === true ? listOfPurchasedProducts(updatedProductsInStock) : listOfAvailableProducts(updatedProductsInStock),
-      updatedPurchasedList = [],
-      updatedAvailabelList = [];
-
-  // All selected elements and their values.
-  let selectedValues = getSelectedProducts();
-
-  // Updating stock in accordance with purchased: true/false.
-  updatedProductsInStock = updatingProductStock( currentList, selectedValues, updatedProductsInStock, purchasedList);
-  console.log( 'updatingProductStock is not updating the availabel list true/false');
-
-
-  // Re-generating lists from stock.
-  updatedPurchasedList = listOfPurchasedProducts( updatedProductsInStock );
-  updatedAvailabelList = listOfAvailableProducts( updatedProductsInStock );
-
-  // Print new lists.
-  printShoppingList( 'js-purchased-products', resultHtml( updatedPurchasedList ));
-  printShoppingList( 'js-available-products', resultHtml( updatedAvailabelList ));
 }
 
 /**
@@ -241,6 +168,108 @@ function printShoppingList ( selector, result ) {
     listLocation[i].innerHTML = result;
     listLocation[i].style.visibility = 'visible';
   }
+}
+
+
+/* ---------- Manipulations with proucts ----------- */
+
+/**
+ * Gets all the checked products and adds it's values to array.
+ * 
+ * @returns { array } With selected product values.
+ */
+ const getSelectedProducts = ( ) => {
+  let allSelected = document.querySelectorAll('input[type="checkbox"]:checked'),
+      selectedValues = [];
+
+  // Sanitizing and assigning selecteed product values to array.
+  Object.keys(allSelected).forEach(key => {
+    if (allSelected[key] === undefined) {
+      delete allSelected[key];
+    } else {
+      selectedValues.push(allSelected[key].value);
+    }
+  });
+
+  return selectedValues;
+}
+
+/**
+ * Changing parameter purchased in products list.
+ * 
+ * @param { array } currentProducts                    Of current products. Could be purchased or available.
+ * @param { array } selectedProductsValues             Of product names that were selected.
+ * @param { array } updatedProductsInStock             Of products in stock.
+ * @param { boolean } checkingListOfPurchasedProducts  Defines which list we check.
+ * @returns { array }                                  With updated products that have new purchased true/false values.
+ */
+ const updatingProductStock = ( currentProducts, selectedProductsValues, updatedProductsInStock, checkingListOfPurchasedProducts = true ) => {
+  let isPurchased = checkingListOfPurchasedProducts ? false : true;
+
+  Object.keys(currentProducts).forEach(key => {
+    if ( selectedProductsValues.includes( currentProducts[key].product_name ) ) {
+      updatedProductsInStock.find(product => product.product_name === currentProducts[key].product_name).purchased = isPurchased;
+    }
+  });
+
+  return updatedProductsInStock;
+}
+
+/**
+ * Removes the product from the stock.
+ * 
+ * @param { array } currentProducts                    Of current products. Could be purchased or available.
+ * @param { array } selectedProductsValues             Of product names that were selected.
+ * @param { array } updatedProductsInStock             Of products in stock.
+ * @param { boolean } checkingListOfPurchasedProducts  Defines which list we check.
+ * @returns { array }                                  With updated products that have new purchased true/false values.
+ */
+ const removingFromProductStock = ( currentProducts, selectedProductsValues, updatedProductsInStock) => {
+  Object.keys(currentProducts).forEach(key => {
+    if ( selectedProductsValues.includes( currentProducts[key].product_name ) ) {
+      let selectedProductIndex = updatedProductsInStock.findIndex(object => {
+        return object.product_name === currentProducts[key].product_name;
+      });
+    }
+  });
+
+  return updatedProductsInStock;
+}
+
+/**
+ * Callback function to handles all the logic after add/remove products to/from the list button clicked.
+ * 
+ * @param { boolean } purchasedList         If we update the list of purchased products.
+ * 
+ */
+ let updatedProductsInStock = [];
+ const updateList = ( purchasedList = true ) => {
+  let allProductsInStock = productsWarehouse();
+
+  // If this is first iteration assign the generated list, if not, 
+  // it should already have the the new list of products from the previous iteration.
+  if ( updatedProductsInStock !== 'undefined' && updatedProductsInStock.length === 0 ) {
+    updatedProductsInStock = allProductsInStock;
+  } 
+
+  // We need these to make sure that the checked products were removed from and added to the correct lists.
+  let currentList = purchasedList === true ? listOfPurchasedProducts(updatedProductsInStock) : listOfAvailableProducts(updatedProductsInStock),
+      updatedPurchasedList = [],
+      updatedAvailabelList = [];
+
+  // All selected elements and their values.
+  let selectedValues = getSelectedProducts();
+
+  // Updating stock in accordance with purchased: true/false.
+  updatedProductsInStock = updatingProductStock( currentList, selectedValues, updatedProductsInStock, purchasedList);
+
+  // Re-generating lists from stock.
+  updatedPurchasedList = listOfPurchasedProducts( updatedProductsInStock );
+  updatedAvailabelList = listOfAvailableProducts( updatedProductsInStock );
+
+  // Print new lists.
+  printShoppingList( 'js-purchased-products', resultHtml( updatedPurchasedList ));
+  printShoppingList( 'js-available-products', resultHtml( updatedAvailabelList ));
 }
 
 // Handle Add/Remove products to/from the list.

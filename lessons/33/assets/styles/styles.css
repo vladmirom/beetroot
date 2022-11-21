@@ -23,7 +23,7 @@ html {
   margin: 6.25rem 1.25rem;
 }
 
-.list, .section__task-list {
+.list {
   list-style: inside;
   padding-left: 1.25rem;
 }
@@ -148,6 +148,11 @@ p {
   border-radius: 0.625rem;
   padding: 4.375rem 4.6875rem;
 }
+.section .main-task {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3.125rem;
+}
 .section .shopping-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -156,7 +161,7 @@ p {
 .section .shopping-list-purchased__title, .section .shopping-list-available__title {
   margin-bottom: 1.5625rem;
 }
-.section .shopping-list .product__list-heading {
+.section .product__list-heading {
   display: grid;
   grid-template-columns: 1fr 5fr 1fr 1fr 1fr;
   font-size: 0.75rem;
@@ -164,25 +169,25 @@ p {
   padding: 0.625rem 0;
   background-color: #A09ABC;
   color: #fff;
+  border-top-left-radius: 0.3125rem;
+  border-top-right-radius: 0.3125rem;
 }
-.section .shopping-list .product__label {
+.section .product__label {
   display: grid;
   grid-template-columns: 1fr 5fr 1fr 1fr 1fr;
   padding: 0.625rem 0;
 }
-.section .shopping-list .product__label:nth-of-type(even) {
+.section .product__label:nth-of-type(even) {
   background-color: #D5CFE1;
 }
-.section .shopping-list .product__label:nth-of-type(odd) {
+.section .product__label:nth-of-type(odd) {
   background-color: #E1DEE9;
 }
-.section__task {
-  margin-bottom: 3.125rem;
+.section .product__label:last-of-type {
+  border-bottom-left-radius: 0.3125rem;
+  border-bottom-right-radius: 0.3125rem;
 }
-.section__task-text {
-  margin-bottom: 1.25rem;
-}
-.section__task-button {
+.section__button {
   display: flex;
   align-items: center;
   font-family: "Lato", sans-serif;
@@ -197,41 +202,11 @@ p {
   transition: all 0.2s linear;
   background: #FF9900;
   color: #fff;
+  margin-top: 1.25rem;
 }
-.section__task-button:hover {
+.section__button:hover {
   background: #F29D38;
 }
-.section__task-code {
-  background-color: rgba(87, 142, 247, 0.3);
-  padding: 0 0.625rem;
-  border-radius: 0.3125rem;
-}
-.section__task .range {
-  display: flex;
-  gap: 1.25rem;
-  width: 80%;
-  margin: 3.125rem 0;
-}
-.section__task .range__input {
-  width: 100%;
-}
-.section__task .form__grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr) 2fr;
-  gap: 30px;
-}
-.section__task .form__label {
-  display: block;
-  font-size: 0.875rem;
-}
-.section__task .form__number {
-  display: block;
-  width: 100%;
-  border: none;
-  border-radius: 0.25rem;
-  padding: 0.6875rem 0.625rem;
-  margin-bottom: 1.25rem;
-}
-.section__task-result {
+.section-result {
   visibility: hidden;
 }/*# sourceMappingURL=styles.css.map */
