@@ -131,12 +131,13 @@ const listOfPurchasedProducts = ( listOfProducts ) => {
  * @param { array } listOfProducts An array to convert in HTML.
  * @returns { string } resultHtml The string to be published.
  */
- const resultHtml = ( listOfProducts ) => {
+ const resultHtml = ( listOfProducts, purchasedChecked = false ) => {
   let futureDomElement = `<div class="product__list-heading"><span></span><span>Product</span><span>Qty</span><span>Price</span><span>Total</span></div>`;
 
  listOfProducts.map( product => {
     futureDomElement += `<label class="product__label" for="${product.product_name}">`;
     futureDomElement += `<input type="checkbox"`;
+    futureDomElement += purchasedChecked && product.purchased ? ` checked` : ``;
     futureDomElement += ` id="${product.product_name}"`;
     futureDomElement += ` class="${product.purchased ? 'js-purchased-product' : 'js-available-product'}"`;
     futureDomElement += ` value="${product.product_name}"`;
@@ -172,6 +173,20 @@ function printShoppingList ( selector, result ) {
 
 
 /* ---------- Manipulations with proucts ----------- */
+/**
+ * Sort the array by purchased status.
+ * Available first, purchased the last.
+ * 
+ * @returns { array } Sorted array.
+ */
+ const sortProducts = ( productList ) => {
+
+  sortedList = productList.sort((a, b) => Number(a.purchased) - Number(b.purchased));
+
+  return sortedList;
+}
+
+
 
 /**
  * Gets all the checked products and adds it's values to array.
@@ -271,6 +286,11 @@ function printShoppingList ( selector, result ) {
   printShoppingList( 'js-purchased-products', resultHtml( updatedPurchasedList ));
   printShoppingList( 'js-available-products', resultHtml( updatedAvailabelList ));
 }
+
+
+/* ---------- Adding listeners to buttons ----------- */
+const sortedProducts = sortProducts( productsWarehouse( 10 ) );
+document.querySelector('#sortProducts').addEventListener('click', () => { printShoppingList('js-stock', resultHtml( sortedProducts, true )); } );
 
 // Handle Add/Remove products to/from the list.
 document.querySelector('#removeFromPurchased').addEventListener('click', () => { updateList(); } );
