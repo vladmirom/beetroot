@@ -190,7 +190,8 @@ const printShoppingList = ( selector, result ) => {
  * Sort the array by purchased status.
  * Available first, purchased the last.
  * 
- * @returns { array } Sorted array.
+ * @param { array } productList   Of products.
+ * @returns { array }             Sorted array.
  */
  const sortProducts = ( productList ) => {
 
@@ -202,7 +203,9 @@ const printShoppingList = ( selector, result ) => {
 /**
  * Changes purchased status of product by name.
  * 
- * @returns { array } Array with a newly added purchased product.
+ * @param { array } productList    Of products.
+ * @param { string } productName   The name of the product to be updated in the product list.
+ * @returns { array }              Array with a newly added purchased product.
  */
  const addToPurchasedByName = ( productList, productName ) => {
   productName = productName.toLowerCase();
@@ -215,6 +218,29 @@ const printShoppingList = ( selector, result ) => {
   return productList;
 }
 
+/**
+ * Removes product by creating a new array by product name.
+ * 
+ * @param { array } productList    Of products.
+ * @param { string } productName   The name of the product to be removed from the product list.
+ * @returns { array }              Array without the removed product.
+ */
+ const removeByName = ( productList, productName ) => {
+  productName = productName.toLowerCase();
+  const productIndex = productList.findIndex(object => {
+    return object.product_name === productName;
+  });
+
+  console.log(productIndex);
+
+  // function removeItemWithSlice(index) {
+  //   const firstArr = items.slice(0, index);
+  //   const secondArr = items.slice(index + 1);
+  //   return [...firstArr , ...secondArr]
+  // }
+
+  return productList;
+}
 
 /**
  * Gets all the checked products and adds it's values to array.
@@ -259,27 +285,6 @@ const printShoppingList = ( selector, result ) => {
 }
 
 /**
- * Removes the product from the stock.
- * 
- * @param { array } currentProducts                    Of current products. Could be purchased or available.
- * @param { array } selectedProductsValues             Of product names that were selected.
- * @param { array } updatedProductsInStock             Of products in stock.
- * @param { boolean } checkingListOfPurchasedProducts  Defines which list we check.
- * @returns { array }                                  With updated products that have new purchased true/false values.
- */
- const removingFromProductStock = ( currentProducts, selectedProductsValues, updatedProductsInStock) => {
-  Object.keys(currentProducts).forEach(key => {
-    if ( selectedProductsValues.includes( currentProducts[key].product_name ) ) {
-      let selectedProductIndex = updatedProductsInStock.findIndex(object => {
-        return object.product_name === currentProducts[key].product_name;
-      });
-    }
-  });
-
-  return updatedProductsInStock;
-}
-
-/**
  * Callback function to handles all the logic after add/remove products to/from the list button clicked.
  * 
  * @param { boolean } purchasedList         If we update the list of purchased products.
@@ -316,6 +321,12 @@ const printShoppingList = ( selector, result ) => {
 }
 
 /* ---------- Handlers ----------- */
+const sortProductsHandler = () => {
+  const sortedProducts = sortProducts( productsWarehouse( 10 ) );
+
+  printShoppingList('js-stock', resultHtml( sortedProducts, true ));
+ }
+
 const addToPurchasedByNameHandler = () => {
  let valueFromTheField = getInputValue( 'addToPurchasedProduct' ),
      updatedList = addToPurchasedByName( productsWarehouse( 10 ), valueFromTheField );
@@ -323,11 +334,20 @@ const addToPurchasedByNameHandler = () => {
   printShoppingList('js-stock', resultHtml(updatedList, true));
 }
 
+const removeByNameHandler = () => {
+  let valueFromTheField = getInputValue( 'removeProduct' ),
+      updatedList = removeByName( productsWarehouse( 10 ), valueFromTheField );
+ 
+   printShoppingList('js-stock', resultHtml(updatedList, true));
+ }
+
 /* ---------- Listeners ----------- */
 const sortedProducts = sortProducts( productsWarehouse( 10 ) );
-document.querySelector('#sortProducts').addEventListener('click', () => { printShoppingList('js-stock', resultHtml( sortedProducts, true )); } );
+document.querySelector('#sortProducts').addEventListener('click', () => { sortProductsHandler() } );
 
 document.querySelector('#addToPurchasedByName').addEventListener('click', () => { addToPurchasedByNameHandler() } );
+
+document.querySelector('#removeProduct').addEventListener('click', () => { removeByNameHandler()  } );
 
 // Handle Add/Remove products to/from the list.
 document.querySelector('#removeFromPurchased').addEventListener('click', () => { updateList(); } );

@@ -150,7 +150,7 @@ p {
 }
 .section .main-task {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 3.125rem;
 }
 .section .main-task .task {

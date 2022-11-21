@@ -15,7 +15,7 @@
 
   & .main-task {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: rem(50px);
 
     & .task {
