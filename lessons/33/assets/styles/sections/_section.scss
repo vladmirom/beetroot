@@ -25,6 +25,24 @@
         margin-bottom: rem(10px);
       }
     }
+
+    & .form {
+      &__label {
+        display: block;
+        font-size: rem(14px);
+      }
+
+      &__number {
+        display: block;
+        width: 100%;
+
+        border: none;
+        border-radius: 0.25rem;
+
+        padding: rem(11px) rem(10px);
+        margin-bottom: rem(20px);
+      }
+    }
   }
 
   & .shopping-list {

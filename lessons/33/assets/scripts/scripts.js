@@ -162,13 +162,26 @@ const listOfPurchasedProducts = ( listOfProducts ) => {
  * @param { string } result The string that we want to show.
  *
  */
-function printShoppingList ( selector, result ) {
+const printShoppingList = ( selector, result ) => {
   let listLocation = document.getElementsByClassName(selector);
 
   for (let i = 0; i < listLocation.length; i++) {
     listLocation[i].innerHTML = result;
     listLocation[i].style.visibility = 'visible';
   }
+}
+
+/**
+ * Gets the value from input elements after some button is clicked.
+ * 
+ * @param { string } inputSelector Selector id of the input element to get the value from.
+ * @param { string } result        The value from that input.
+ *
+ */
+ const getInputValue = ( inputSelector ) => {
+  const inputValue = document.getElementById(inputSelector).value;
+
+  return inputValue;
 }
 
 
@@ -186,6 +199,21 @@ function printShoppingList ( selector, result ) {
   return sortedList;
 }
 
+/**
+ * Changes purchased status of product by name.
+ * 
+ * @returns { array } Array with a newly added purchased product.
+ */
+ const addToPurchasedByName = ( productList, productName ) => {
+  productName = productName.toLowerCase();
+  let isFoundProduct =  productList.find(product => product.product_name === productName) !== undefined;
+
+  if ( isFoundProduct ) {
+    productList.find(product => product.product_name === productName).purchased = true;
+  }
+
+  return productList;
+}
 
 
 /**
@@ -287,10 +315,19 @@ function printShoppingList ( selector, result ) {
   printShoppingList( 'js-available-products', resultHtml( updatedAvailabelList ));
 }
 
+/* ---------- Handlers ----------- */
+const addToPurchasedByNameHandler = () => {
+ let valueFromTheField = getInputValue( 'addToPurchasedProduct' ),
+     updatedList = addToPurchasedByName( productsWarehouse( 10 ), valueFromTheField );
 
-/* ---------- Adding listeners to buttons ----------- */
+  printShoppingList('js-stock', resultHtml(updatedList, true));
+}
+
+/* ---------- Listeners ----------- */
 const sortedProducts = sortProducts( productsWarehouse( 10 ) );
 document.querySelector('#sortProducts').addEventListener('click', () => { printShoppingList('js-stock', resultHtml( sortedProducts, true )); } );
+
+document.querySelector('#addToPurchasedByName').addEventListener('click', () => { addToPurchasedByNameHandler() } );
 
 // Handle Add/Remove products to/from the list.
 document.querySelector('#removeFromPurchased').addEventListener('click', () => { updateList(); } );

@@ -159,6 +159,18 @@ p {
 .section .main-task .task__paragraph {
   margin-bottom: 0.625rem;
 }
+.section .main-task .form__label {
+  display: block;
+  font-size: 0.875rem;
+}
+.section .main-task .form__number {
+  display: block;
+  width: 100%;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.6875rem 0.625rem;
+  margin-bottom: 1.25rem;
+}
 .section .shopping-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
