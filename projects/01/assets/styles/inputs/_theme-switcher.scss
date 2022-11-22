@@ -1,0 +1,91 @@
+/**
+  * A set of classes to style the theme switcher checkbox.
+  */
+
+.theme-switcher {
+  visibility: none;
+  display: none;
+
+  &:checked {
+    & ~ .switch {
+      background-color: $white;
+  
+      &:before {
+        transform: translateX(rem(-100px));
+      }
+  
+      &:after {
+        transform: translateX(rem(0px));
+      }
+
+      & .switch__inside {
+        &:after {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.switch {
+  position: relative;
+  display: block;
+  width: rem(50px);
+  height: rem(20px);
+  background-color: $mirage;
+  border-radius: rem(20px);
+  cursor: pointer;
+  transition: all 0.5s ease;
+  overflow: hidden;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: rem(2.5px);
+    left: rem(2.5px);
+    background-color: $white;
+    width: rem(15px);
+    height: rem(15px);
+    border-radius: 50%;
+    transition: all 0.5s ease;
+    z-index: 1;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: rem(2.5px);
+    right: rem(2.5px);
+    background-color: $yankees_blue;
+    width: rem(15px);
+    height: rem(15px);
+    border-radius: 50%;
+    transition: all 0.5s ease;
+    transform: translateX(rem(50px));
+  }
+
+  &__inside {
+    &:before {
+      content: 'Dark';
+      font-size: rem(10px);
+      font-weight: 400;
+      position: absolute;
+      top: rem(-3px);
+      right: rem(35px);
+      color: $mirage;
+      transform: translateX(rem(15px));
+    }
+
+    &:after {
+      content: 'Light';
+      font-size: rem(10px);
+      font-weight: 400;
+      position: absolute;
+      top: rem(-3px);
+      right: rem(55px);
+      color: $white;
+      transform: translateX(rem(50px));
+    }
+  }
+}
+

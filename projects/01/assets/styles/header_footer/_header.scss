@@ -1,0 +1,149 @@
+/**
+  * Header styling.
+  * NOTE: theme switcher is styled in inputs/theme-switcher.scss
+  */
+
+  .header {
+    position: relative;
+    width: 100%;
+
+    @include media-breakpoint-up(md) {
+      position: absolute;
+    }
+    
+    
+    &__wrapper {
+      padding: rem(24px) 0;
+
+      @include media-breakpoint-up(md) {
+        backdrop-filter: blur(4.5px);
+  
+        margin-top: rem(30px);
+      }
+    }
+
+    &__container {
+      @include container;
+    }
+
+    &__block {
+      @include flex-vertical-center;
+      justify-content: space-between; 
+    }
+
+    &__menu {
+      @include media-breakpoint-down(md) {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: $white;
+        transform: translateX(-100%);
+        transition: all .3s linear;
+      }
+
+      @include media-breakpoint-up(md) {
+        @include flex-vertical-center;
+      }
+    }
+
+    &__burger {
+      @include flex-vertical-center;
+
+      position: relative;
+      width: 34px;
+      height: 20px;
+
+      background-color: transparent;
+      border-top: 2px solid $black;
+      border-bottom: 2px solid $black;
+
+      @include media-breakpoint-up(md) {
+        display: none;
+      }
+
+      &:before,
+      &:after {
+          content: '';
+          display: block;
+
+          position: absolute;
+          left: 0;
+          width: 100%;
+          height: 2px;
+          background-color: $black;
+          transition: all .3s linear;
+      }
+
+      &:after {
+          opacity: 0;
+      }
+    }
+
+    &__burger-input {
+      display: none;
+
+      &:checked {
+        & ~ .header__burger-label {
+            .header__burger {
+                border-color: transparent;
+
+                &:before {
+                    transform: rotate(45deg);
+                }
+
+                &:after {
+                    opacity: 1;
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+
+        & + .header__menu {
+            transform: translateX(0);
+        }
+      }
+    }
+
+    &__burger-label {
+        margin-left: 30px;
+        padding: 10px 0 10px 10px;
+    }
+
+    &__nav {
+      @include flex-vertical-center;
+      margin-right: rem(50px);
+    }
+
+    & .nav {
+      &__list {
+        display: flex;
+        list-style: none;
+        padding-left: 0;
+        gap: rem(30px);
+      }
+
+      &__item {
+        font-size: $h7-font-size;
+        font-weight: 400;
+        line-height: rem(24px);
+        letter-spacing: 0.08em;
+      }
+
+      &__link {
+        &:link,
+        &:visited,
+        &:active {
+          text-decoration: none;
+        }
+
+        &:after {
+          content: '';
+          display: block;
+          height: rem(3px);
+          opacity: 0;
+          transition: opacity .5s ease;
+        }
+      }
+    }
+  }

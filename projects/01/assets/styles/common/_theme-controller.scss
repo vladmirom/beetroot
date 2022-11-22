@@ -1,0 +1,461 @@
+/**
+  * A set of classes to switch styles of the whole theme when using the theme switcher checkbox.
+  */
+
+// Light theme
+.body:has(.theme-switcher) {
+  background-color: $white;
+  transition: all 0.5s ease;
+
+  & .header {
+    &__wrapper {
+      background: linear-gradient(270deg, rgba(255, 255, 255, 0.5) 0%, 
+                                          rgba(255, 255, 255, 0.244636) 24.1%, 
+                                          rgba(255, 255, 255, 0) 47.19%), 
+                                          rgba(255, 255, 255, 0.02);
+    }
+
+    & .nav {
+      &__link {
+        &:link,
+        &:visited,
+        &:active {
+          color: $yankees_blue;
+        }
+
+        &:hover {
+          &:after {
+            background: $congo_pink;
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  & .section-hero {
+    background-image: url('../images/hero-light.jpg');
+
+    &__title {
+      color: $yankees_blue;
+
+      &--highlighted {
+        @include highlighted ($theme-light: true);
+      }
+    }
+
+    &__link {
+      @include link( $theme-light: true );
+    }
+
+    &__gradient {
+      background: linear-gradient(183.11deg, rgba(255, 255, 255, 0) 46.73%, $white 63.21%);
+      top: rem(475px);
+    }
+  }
+
+  & .section-statistics {
+    &__image {
+      background-image: url('../images/statistics-light.jpg');
+    }
+
+    &__content {
+      &--background {
+        background-color: $white;
+      }
+      
+      & .number {
+        &__title {
+          color: $yankees_blue;
+
+          &--highlighted {
+            color: $gray;
+          }
+        }
+
+        &__subtitle {
+          color: $yankees_blue;
+        }
+      }
+
+      & .content-description {
+        &__link {
+          @include link( $theme-light: true );
+        }
+      }
+    }
+  }
+
+  & .section-posts {
+    &__post {
+      border-color: $gray;
+
+      & .post {
+        &__title {
+          &--highlighted {
+            @include highlighted ($theme-light: true);
+          }
+        }
+      }
+    }
+  }
+
+  & .section-quotation {
+    &__blockquote {
+      &:before {
+        background-image: url('../images/quote-light.svg');
+      }
+    }
+  }
+
+  & .section-media {
+    & .description__title {
+      &--highlighted {
+        @include highlighted ($theme-light: true);
+      }
+    }
+
+    & .video {
+      &__tablet {
+        border-color: $gray;
+
+        &-camera {
+          border-color: $gray;
+        }
+
+        &-controller {
+          border-color: $gray;
+        }
+      }
+
+      &__button {
+        &--circle {
+          fill: $ucla_blue;
+          opacity: 0.3;
+        }
+
+        &--triangle {
+          fill: $yankees_blue;
+        }
+      }
+    }
+  }
+
+  & .section-features {
+    &__content {
+      &--background {
+        background-color: $white;
+      }
+    }
+
+    & .feature {
+      &__link {
+        @include button ($theme-light: true);
+      }
+    }
+  }
+
+  & .section-reviews {
+    & .content {
+      &__title {
+        &--highlighted {
+          @include highlighted ($theme-light: true);
+        }
+      }
+    }
+  }
+
+  & .section-contact {
+    &__grid {
+      border-color: $gray;
+    }
+
+    & .info {
+      &__title { 
+        &--highlighted {
+          @include highlighted ($theme-light: true);
+        }
+      }
+    }
+
+    & .form {
+      &__item {
+        border-color: rgba(38, 42, 63, 0.1);
+        color: rgba(38, 42, 63, 0.5);
+
+        &::placeholder {
+          color: $yankees_blue;
+        }
+      }
+      
+      &__submit {
+        @include link ($theme-light: true);
+      }
+    }
+  }
+
+  & .footer {
+    border-color: $gray;
+    color: $yankees_blue;
+
+    &__link {
+      &:link,
+      &:visited,
+      &:active {
+        color: $yankees_blue;
+      }
+    }
+  }
+}
+
+// Dark theme
+.body:has(.theme-switcher:checked) {
+  background-color: $mirage;
+  transition: all 0.5s ease;
+
+  & .header {
+    &__wrapper {
+      background: linear-gradient(270deg, rgba(22, 25, 38, 0.5) 0%, 
+                                          rgba(22, 25, 38, 0) 24.1%, 
+                                          rgba(22, 25, 38, 0) 47.19%), 
+                                          rgba(22, 25, 38, 0.02);
+    }
+
+    & .nav {
+      &__link {
+        &:link,
+        &:visited,
+        &:active {
+          color: $white;
+        }
+
+        &:hover {
+          &:after {
+            background: linear-gradient(96.73deg, #53F3CD 6.73%, rgba(83, 243, 205, 0) 116.9%);
+            opacity: 0.3;
+          }
+        }
+      }
+    }
+  }
+
+  & .section-hero {
+    background-image: url('../images/hero-dark.jpg');
+
+    &__title {
+      color: $white;
+
+      &--highlighted {
+        @include highlighted ($theme-dark: true);
+      }
+    }
+
+    &__subtitle {
+      color: $white;
+    }
+
+    &__link {
+      @include link( $theme-dark: true );
+    }
+
+    &__gradient {
+      background: linear-gradient(183.11deg, rgba(22, 25, 38, 0) 46.73%, $mirage 63.21%);
+      top: rem(450px);
+    }
+  }
+
+  & .section-statistics {
+    &__image {
+      background-image: url('../images/statistics-dark.jpg');
+    }
+
+    &__content {
+      &--background {
+        background-color: $mirage;
+      }
+      
+      & .number {
+        &__title {
+          color: $white;
+
+          &--highlighted {
+            color: $white;
+          }
+        }
+
+        &__subtitle {
+          color: $white;
+        }
+      }
+
+      & .content-description {
+        &__text {
+          color: $white;
+        }
+
+        &__link {
+          @include link( $theme-dark: true );
+        }
+      }
+    }
+  }
+
+  & .section-posts {
+    &__post {
+      border-color: $independence;
+    }
+
+    & .post {
+      &__title {
+        color: $white;
+
+        &--highlighted {
+          @include highlighted ($theme-dark: true);
+        }
+      }
+
+      &__content {
+        color: $white;
+      }
+    }
+  }
+
+  & .section-quotation {
+    &__blockquote {
+      &:before {
+        background-image: url('../images/quote-dark.svg');
+      }
+    }
+  }
+
+  & .section-media {
+    & .video {
+      &__tablet {
+        border-color: $independence;
+
+        &-camera {
+          border-color: $independence;
+        }
+
+        &-controller {
+          border-color: $independence;
+        }
+      }
+
+      &__image-overlay {
+        box-shadow: inset 0 0 0 rem(2000px) rgba(22, 25, 37, 0.7);
+      }
+
+      &__button {
+        &--circle {
+          fill: $cornflower_blue;
+          opacity: 0.3;
+        }
+
+        &--triangle {
+          fill: $cornflower_blue;
+        }
+      }
+    }
+
+    & .description {
+      &__title {
+        color: $white;
+
+        &--highlighted {
+          @include highlighted ($theme-dark: true);
+        }
+      }
+
+      &__content {
+        color: $white;
+      }
+    }
+  }
+
+  & .section-features {
+    &__content {
+      &--background {
+        background-color: $mirage;
+      }
+
+      & .feature {
+        &__title {
+          color: $white;
+        }
+  
+        &__item {
+          color: $white;
+        }
+
+        &__link {
+          @include button ($theme-dark: true);
+        }
+      }
+    }
+  }
+
+  & .section-reviews {
+    & .content {
+      &__title {
+        color: $white;
+
+        &--highlighted {
+          @include highlighted ($theme-dark: true);
+        }
+      }
+
+      &__text {
+        color: $white;
+      }
+    }
+  }
+
+  & .section-contact {
+    &__grid {
+      border-color: $independence;
+    }
+
+    & .info {
+      &__title { 
+        color: $white;
+
+        &--highlighted {
+          @include highlighted ($theme-dark: true);
+        }
+      }
+
+      &__text {
+        color: $white;
+      }
+    }
+
+    & .form {
+      &__item {
+        color: rgba(255, 255, 255, 0.5);
+        border-color: rgba(255, 255, 255, 0.1);
+
+        &::placeholder {
+          color: $white;
+        }
+      }
+
+      &__submit {
+        @include link ($theme-dark: true);
+      }
+    }
+  }
+
+  & .footer {
+    color: $white;
+    border-color: $independence;
+
+    &__link {
+      &:link,
+      &:visited,
+      &:active {
+        color: $white;
+      }
+    }
+  }
+}

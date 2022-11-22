@@ -1,0 +1,95 @@
+/**
+  * Media section styles.
+  */
+
+.section {
+  &-media {
+    margin-bottom: rem(120px);
+    
+    &__container {
+      @include container;
+    }
+
+    & .video {
+      &__tablet {
+        position: relative;
+        padding: rem(31px) rem(70px) rem(31px) rem(30px);
+        border: rem(1px) solid;
+        border-radius: rem(32px);
+        margin-bottom: rem(50px);
+
+        &-camera {
+          position: absolute;
+          top: calc(50% - (13px/2));
+          left: rem(8px);
+
+          border: rem(1px) solid;
+          border-radius: rem(32px);
+          width: rem(13px);
+          height: rem(13px);
+        }
+
+        &-controller {
+          position: absolute;
+          top: calc(50% - (35px/2));
+          right: rem(14px);
+
+          border: rem(1px) solid black;
+          border-radius: rem(32px);
+          width: rem(35px);
+          height: rem(35px);
+        }
+      }
+
+      &__image-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        @include flex-vertical-center;
+        justify-content: center;
+
+        background-image: url('../images/screensaver-video.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        padding: rem(31px) rem(70px) rem(31px) rem(30px);
+        cursor: pointer;
+        z-index: 1;
+
+        &:hover {
+          // NOTE: I don't see how to make it better than this without js. When I hover over the element, it's blinking,
+          //       the same with the display: none;. 
+          z-index: -1;
+        }
+      }
+
+      &__button {
+        width: rem(120px);
+        height: rem(120px);
+      }
+
+
+      &__wrapper {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 */
+        height: 0;
+      }
+
+      &__iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    & .description {
+      &__content {
+        max-width: rem(897px);
+      }
+    }
+  }
+}

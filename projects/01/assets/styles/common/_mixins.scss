@@ -1,0 +1,218 @@
+@mixin container {
+  width: calc(540px / ( 576px / 100% ));
+  max-width: 540px;
+  margin-left: auto;
+  margin-right: auto;
+  
+  @include media-breakpoint-up(sm) {
+    width: calc(720px / ( 768px / 100% ));
+    max-width: 720px;
+  }
+
+  @include media-breakpoint-up(md) {
+    width: calc(960px / ( 992px / 100% ));
+    max-width: 960px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    width: calc(1140px / ( 1200px / 100% ));
+    max-width: 1140px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    width: calc(1140px / ( 1200px / 100% ));
+    max-width: 1140px;
+  }
+
+  @include media-breakpoint-up(xxl) {
+    width: calc(1170px / ( 1440px / 100% ));
+    max-width: 1170px;
+  }
+}
+
+@mixin flex-vertical-center {
+  display: flex;
+  align-items: center;
+}
+
+@mixin highlighted ($theme-light: false, $theme-dark: false ) {
+  font-style: italic;
+
+  @if $theme-light {
+    color: $pewter_blue;
+  } @else if $theme-dark {
+    color: $cornflower_blue;
+  }
+}
+
+@mixin link ($theme-light: false, $theme-dark: false ) {
+  // Basic styling
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+
+  font-size: $h5-font-size;
+  line-height: $h5-line-height;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: none;
+  background: none;
+  transition: all 0.5s ease;
+  cursor: pointer;
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: rem(10px);
+    left: rem(10px);
+    z-index: -1;
+
+    width: 100%;
+    height: rem(13px);
+  }
+
+  // Color switch.
+  @if $theme-light {
+    // For <button> or <input> element.
+    color: $congo_pink;
+
+    &:after {
+      background-color: $congo_pink;
+      opacity: 0.3;
+    }
+
+    // For <a> element.
+    &:link,
+    &:visited,
+    &:active {
+      color: $congo_pink;
+
+      &:after {
+        background-color: $congo_pink;
+        opacity: 0.3;
+      }
+    }
+
+    &:hover {
+      color: $carmine_pink;
+
+      &:after {
+        background-color: $carmine_pink;
+        opacity: 0.3;
+      }
+    }
+
+  } @else if $theme-dark {
+    // For <button> or <input> element.
+    color: $turquoise;
+
+    &:after {
+      background-color: $turquoise;
+      opacity: 0.3;
+    }
+
+    // For <a> element.
+    &:link,
+    &:visited,
+    &:active {
+      color: $turquoise;
+
+      &:after {
+        background-color: $turquoise;
+        opacity: 0.3;
+      }
+    }
+
+    &:hover {
+      color: $caribbean_green;
+
+      &:after {
+        background-color: $caribbean_green;
+        opacity: 0.3;
+      }
+    }
+  }
+}
+
+@mixin button ($theme-light: false, $theme-dark: false ) {
+  // Basic styling
+  display: block;
+  position: relative;
+  z-index: 1;
+
+  min-width: rem(300px);
+  height: rem(90px);
+  padding: rem(33px) rem(89px);
+
+  font-size: $h5-font-size;
+  line-height: $h5-line-height;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.5s ease;
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: rem(43px);
+    left: rem(100px);
+    z-index: -1;
+
+    width: 37%;
+    height: rem(13px);
+    transition: all 0.5s ease;
+  }
+
+  // Color switch
+  @if $theme-light {
+    &:link,
+    &:visited,
+    &:active {
+      color: $congo_pink;
+      border: 1px solid $gray;
+
+      &:after {
+        background-color: $congo_pink;
+        opacity: 0.3;
+      }
+    }
+
+    &:hover {
+      color: $carmine_pink;
+      border-color: $carmine_pink;
+
+      &:after {
+        background-color: $carmine_pink;
+        opacity: 0.3;
+      }
+    }
+
+  } @else if $theme-dark {
+    &:link,
+    &:visited,
+    &:active {
+      color: $turquoise;
+      border: 1px solid $independence;
+
+      &:after {
+        background-color: $turquoise;
+        opacity: 0.3;
+      }
+    }
+
+    &:hover {
+      color: $caribbean_green;
+      border-color: $caribbean_green;
+
+      &:after {
+        background-color: $caribbean_green;
+        opacity: 0.3;
+      }
+    }
+  }
+}
