@@ -225,6 +225,6 @@ p {
 .section__button:hover {
   background: #F29D38;
 }
-.section-result {
+.section__result {
   visibility: hidden;
 }/*# sourceMappingURL=styles.css.map */

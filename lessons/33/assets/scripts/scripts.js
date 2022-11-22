@@ -245,6 +245,22 @@ const printShoppingList = ( selector, result ) => {
 }
 
 /**
+ * Calculates the total price of all the products in the list.
+ * 
+ * @param { array } productList   Of products.
+ * @returns { integer }           Total price.
+ */
+ const calculateTotal = ( productList ) => {
+  let totalPrice = 0;
+
+  for ( let product of productList) {
+    totalPrice = +product.total + totalPrice;
+  }
+
+  return totalPrice;
+}
+
+/**
  * Gets all the checked products and adds it's values to array.
  * 
  * @returns { array } With selected product values.
@@ -341,7 +357,33 @@ const removeByNameHandler = () => {
       updatedList = removeByName( productsWarehouse( 10 ), valueFromTheField );
 
    printShoppingList('js-stock', resultHtml(updatedList));
- }
+}
+
+const addNewProductHandler = () => {
+  // 1. Check if product exists and add the quantity in existing.
+  // 2. Create new object in array.
+
+  let valueFromTheField = getInputValue( 'removeProductFromStock' ),
+      updatedList = removeByName( productsWarehouse( 10 ), valueFromTheField );
+
+   printShoppingList('js-stock', resultHtml(updatedList));
+}
+
+const calculateTotalHandler = () => {
+  const totalPrice = calculateTotal( productsWarehouse( 10 ) ),
+        message = `The total price for all products is ${totalPrice}€.`;
+
+  printShoppingList('js-caclulate-total', message);
+}
+
+const calculateTotalSeparatelyHandler = ( calculatePurchased = true ) => {
+  
+}
+
+const sortProductsAlphabeticallyHandler = ( ) => {
+  
+}
+
 
 /* ---------- Listeners ----------- */
 const sortedProducts = sortProducts( productsWarehouse( 10 ) );
@@ -350,6 +392,8 @@ document.querySelector('#sortProducts').addEventListener('click', () => { sortPr
 document.querySelector('#addToPurchasedByName').addEventListener('click', () => { addToPurchasedByNameHandler() } );
 
 document.querySelector('#removeProduct').addEventListener('click', () => { removeByNameHandler() } );
+
+document.querySelector('#caclulateTotal').addEventListener('click', () => { calculateTotalHandler() } );
 
 // Handle Add/Remove products to/from the list.
 document.querySelector('#removeFromPurchased').addEventListener('click', () => { updateList(); } );
