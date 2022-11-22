@@ -231,13 +231,15 @@ const printShoppingList = ( selector, result ) => {
     return object.product_name === productName;
   });
 
-  console.log(productIndex);
+  removeItemWithSlice = ( productList, index ) => {
+    const firstArr = productList.slice(0, index);
+    const secondArr = productList.slice(index + 1);
+    return [...firstArr , ...secondArr]
+  }
 
-  // function removeItemWithSlice(index) {
-  //   const firstArr = items.slice(0, index);
-  //   const secondArr = items.slice(index + 1);
-  //   return [...firstArr , ...secondArr]
-  // }
+  if ( productIndex !== -1 ) {
+    productList = removeItemWithSlice( productList, productIndex );
+  }
 
   return productList;
 }
@@ -335,10 +337,10 @@ const addToPurchasedByNameHandler = () => {
 }
 
 const removeByNameHandler = () => {
-  let valueFromTheField = getInputValue( 'removeProduct' ),
+  let valueFromTheField = getInputValue( 'removeProductFromStock' ),
       updatedList = removeByName( productsWarehouse( 10 ), valueFromTheField );
- 
-   printShoppingList('js-stock', resultHtml(updatedList, true));
+
+   printShoppingList('js-stock', resultHtml(updatedList));
  }
 
 /* ---------- Listeners ----------- */
@@ -347,7 +349,7 @@ document.querySelector('#sortProducts').addEventListener('click', () => { sortPr
 
 document.querySelector('#addToPurchasedByName').addEventListener('click', () => { addToPurchasedByNameHandler() } );
 
-document.querySelector('#removeProduct').addEventListener('click', () => { removeByNameHandler()  } );
+document.querySelector('#removeProduct').addEventListener('click', () => { removeByNameHandler() } );
 
 // Handle Add/Remove products to/from the list.
 document.querySelector('#removeFromPurchased').addEventListener('click', () => { updateList(); } );

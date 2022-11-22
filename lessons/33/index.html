@@ -48,8 +48,7 @@
                 <form id="addingProductToPurchased" class="task__form form" action="formHandler/get.php"
                 method="GET">
                   <label class="form__label" for="addToPurchasedProduct">Product name</label>
-                  <input class="form__number" type="text" name="addToPurchasedProduct"
-                    id="addToPurchasedProduct">
+                  <input class="form__number" type="text" name="addToPurchasedProduct" id="addToPurchasedProduct">
                   <!-- Since we don't need to submit the form and we don't have the php server, changing "submit" button type to "button".-->
                   <button type="button" class="section__button" id="addToPurchasedByName">Add to purchased</button>
                 </form>
@@ -58,13 +57,13 @@
               <div class="task">
                 <p class="task__paragraph"><b>2.1.</b> Remove the product from the list by creating the new list without this product.</p>
              
-                <form id="removeProductByName" class="task__form form" action="formHandler/get.php"
+                <form id="removeProductFromList" class="task__form form" action="formHandler/get.php"
                 method="GET">
-                  <label class="form__label" for="removeProduct">Product name</label>
-                  <input class="form__number" type="text" name="removeProduct"
-                    id="removeProduct">
+                  <label class="form__label" for="removeProductFromStock">Product name</label>
+                  <input class="form__number" type="text" name="removeProductFromStock" id="removeProductFromStock">
+
                   <!-- Since we don't need to submit the form and we don't have the php server, changing "submit" button type to "button".-->
-                  <button type="button" class="section__button" id="removeByName">Remove</button>
+                  <button type="button" class="section__button" id="removeProduct">Add to purchased</button>
                 </form>
               </div>
 
