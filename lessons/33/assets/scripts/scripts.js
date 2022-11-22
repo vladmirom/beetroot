@@ -8,18 +8,9 @@
  * Creates both lists that contain separate purchased and available products.
  */
 const shoppingCartConstructor = () => {
-  let smallerStock = productsWarehouse( 10 ),
-      purchasedProductsList = listOfPurchasedProducts(productsWarehouse()),
-      availableProductsList = listOfAvailableProducts(productsWarehouse());
+  let smallerStock = productsWarehouse( 15 );
 
-  // Smaller list for main tasks.
   printShoppingList('js-stock', resultHtml(smallerStock));
-
-  // Purchased products list.
-  printShoppingList('js-purchased-products', resultHtml(purchasedProductsList));
-
-  // Available products list.
-  printShoppingList('js-available-products', resultHtml(availableProductsList));
 }
 
 /**
@@ -99,30 +90,6 @@ const productsWarehouse = ( capacity = 39 ) => {
   let productsToShow = productsInWarehouse.slice( 0, capacity);
 
   return productsToShow;
-}
-
-/**
- * Filters the array of all the products and creates a list of purchased products.
- * 
- * @param { array } listOfProducts Array of all the products.
- * @returns { array } Only the purchased products.
- */
-const listOfPurchasedProducts = ( listOfProducts ) => {
-  purchasedProducts = listOfProducts.filter( ( product ) => product.purchased === true );
-
-  return purchasedProducts;
-}
-
-/**
- * Filters the array of all the products and creates a list of available products.
- * 
- * @param { array } listOfProducts Array of all the products.
- * @returns { array }  Only the available products.
- */
- const listOfAvailableProducts = ( listOfProducts ) => {
-  let listOfAvailableProducts = listOfProducts.filter( ( product ) => product.purchased === false );
-
-  return listOfAvailableProducts;
 }
 
 /**
@@ -268,7 +235,7 @@ const printShoppingList = ( selector, result ) => {
     totalPrice = +product.total + totalPrice;
   }
 
-  return totalPrice;
+  return totalPrice.toFixed(2);
 }
 
 /**
@@ -287,104 +254,26 @@ const printShoppingList = ( selector, result ) => {
     }
   }
 
-  return totalPrice;
-}
-
-/**
- * Gets all the checked products and adds it's values to array.
- * 
- * @returns { array } With selected product values.
- */
- const getSelectedProducts = ( ) => {
-  let allSelected = document.querySelectorAll('input[type="checkbox"]:checked'),
-      selectedValues = [];
-
-  // Sanitizing and assigning selecteed product values to array.
-  Object.keys(allSelected).forEach(key => {
-    if (allSelected[key] === undefined) {
-      delete allSelected[key];
-    } else {
-      selectedValues.push(allSelected[key].value);
-    }
-  });
-
-  return selectedValues;
-}
-
-/**
- * Changing parameter purchased in products list.
- * 
- * @param { array } currentProducts                    Of current products. Could be purchased or available.
- * @param { array } selectedProductsValues             Of product names that were selected.
- * @param { array } updatedProductsInStock             Of products in stock.
- * @param { boolean } checkingListOfPurchasedProducts  Defines which list we check.
- * @returns { array }                                  With updated products that have new purchased true/false values.
- */
- const updatingProductStock = ( currentProducts, selectedProductsValues, updatedProductsInStock, checkingListOfPurchasedProducts = true ) => {
-  let isPurchased = checkingListOfPurchasedProducts ? false : true;
-
-  Object.keys(currentProducts).forEach(key => {
-    if ( selectedProductsValues.includes( currentProducts[key].product_name ) ) {
-      updatedProductsInStock.find(product => product.product_name === currentProducts[key].product_name).purchased = isPurchased;
-    }
-  });
-
-  return updatedProductsInStock;
-}
-
-/**
- * Callback function to handles all the logic after add/remove products to/from the list button clicked.
- * 
- * @param { boolean } purchasedList         If we update the list of purchased products.
- * 
- */
- let updatedProductsInStock = [];
- const updateList = ( purchasedList = true ) => {
-  let allProductsInStock = productsWarehouse();
-
-  // If this is first iteration assign the generated list, if not, 
-  // it should already have the the new list of products from the previous iteration.
-  if ( updatedProductsInStock !== 'undefined' && updatedProductsInStock.length === 0 ) {
-    updatedProductsInStock = allProductsInStock;
-  } 
-
-  // We need these to make sure that the checked products were removed from and added to the correct lists.
-  let currentList = purchasedList === true ? listOfPurchasedProducts(updatedProductsInStock) : listOfAvailableProducts(updatedProductsInStock),
-      updatedPurchasedList = [],
-      updatedAvailabelList = [];
-
-  // All selected elements and their values.
-  let selectedValues = getSelectedProducts();
-
-  // Updating stock in accordance with purchased: true/false.
-  updatedProductsInStock = updatingProductStock( currentList, selectedValues, updatedProductsInStock, purchasedList);
-
-  // Re-generating lists from stock.
-  updatedPurchasedList = listOfPurchasedProducts( updatedProductsInStock );
-  updatedAvailabelList = listOfAvailableProducts( updatedProductsInStock );
-
-  // Print new lists.
-  printShoppingList( 'js-purchased-products', resultHtml( updatedPurchasedList ));
-  printShoppingList( 'js-available-products', resultHtml( updatedAvailabelList ));
+  return totalPrice.toFixed(2);
 }
 
 /* ---------- Handlers ----------- */
 const sortProductsHandler = () => {
-  const sortedProducts = sortProducts( productsWarehouse( 10 ) );
+  const sortedProducts = sortProducts( productsWarehouse( 15 ) );
 
   printShoppingList('js-stock', resultHtml( sortedProducts, true ));
  }
 
 const addToPurchasedByNameHandler = () => {
  let valueFromTheField = getInputValue( 'addToPurchasedProduct' ),
-     updatedList = addToPurchasedByName( productsWarehouse( 10 ), valueFromTheField );
+     updatedList = addToPurchasedByName( productsWarehouse( 15 ), valueFromTheField );
 
   printShoppingList('js-stock', resultHtml(updatedList, true));
 }
 
 const removeByNameHandler = () => {
   let valueFromTheField = getInputValue( 'removeProductFromStock' ),
-      updatedList = removeByName( productsWarehouse( 10 ), valueFromTheField );
+      updatedList = removeByName( productsWarehouse( 15 ), valueFromTheField );
 
    printShoppingList('js-stock', resultHtml(updatedList));
 }
@@ -394,35 +283,34 @@ const addNewProductHandler = () => {
   // 2. Create new object in array.
 
   let valueFromTheField = getInputValue( 'removeProductFromStock' ),
-      updatedList = removeByName( productsWarehouse( 10 ), valueFromTheField );
+      updatedList = removeByName( productsWarehouse( 15 ), valueFromTheField );
 
    printShoppingList('js-stock', resultHtml(updatedList));
 }
 
 const calculateTotalHandler = () => {
-  const totalPrice = calculateTotal( productsWarehouse( 10 ) ),
+  const totalPrice = calculateTotal( productsWarehouse( 15 ) ),
         message = `The total price for all products is <b>${totalPrice}€</b>.`;
 
   printShoppingList('js-caclulate-total', message);
 }
 
 const calculateTotalSeparatelyHandler = ( calculatePurchased = true ) => {
-  const totalOfPurchased = calculateTotalSeparately( productsWarehouse( 10 ) ),
-        totalOfAvailable = calculateTotalSeparately( productsWarehouse( 10 ), false ),
+  const totalOfPurchased = calculateTotalSeparately( productsWarehouse( 15 ) ),
+        totalOfAvailable = calculateTotalSeparately( productsWarehouse( 15 ), false ),
         message = `The total price for all purchased products is <b>${totalOfPurchased}€</b>, and for all available products is <b>${totalOfAvailable}€</b>.`;
 
         printShoppingList('js-caclulate-total-separately', message);
 }
 
 const sortProductsAlphabeticallyHandler = ( sortInASC = true ) => {
-  const sortedProducts = sortProducts( productsWarehouse( 10 ), true, sortInASC );
-console.log(sortedProducts);
+  const sortedProducts = sortProducts( productsWarehouse( 15 ), true, sortInASC );
+
   printShoppingList('js-stock', resultHtml( sortedProducts ));
 }
 
-
 /* ---------- Listeners ----------- */
-const sortedProducts = sortProducts( productsWarehouse( 10 ) );
+const sortedProducts = sortProducts( productsWarehouse( 15 ) );
 document.querySelector('#sortProducts').addEventListener('click', () => { sortProductsHandler() } );
 
 document.querySelector('#addToPurchasedByName').addEventListener('click', () => { addToPurchasedByNameHandler() } );
@@ -435,10 +323,6 @@ document.querySelector('#caclulateTotalSepaarately').addEventListener('click', (
 
 document.querySelector('#showAsc').addEventListener('click', () => { sortProductsAlphabeticallyHandler() } );
 document.querySelector('#showDesc').addEventListener('click', () => { sortProductsAlphabeticallyHandler( false ) } );
-
-// Handle Add/Remove products to/from the list.
-document.querySelector('#removeFromPurchased').addEventListener('click', () => { updateList(); } );
-document.querySelector('#addToPurchased').addEventListener('click', () => { updateList( false ); } );
 
 // Inint the function and construct the first load of product.
 shoppingCartConstructor();
