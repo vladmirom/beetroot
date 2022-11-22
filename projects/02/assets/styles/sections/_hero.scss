@@ -1,0 +1,35 @@
+/**
+  * Hero section styles.
+  */
+
+.section {
+  position: relative;
+
+  &-hero {
+    width: 100%;
+    min-height: rem(1000px);
+    background-size: cover;
+    background-position: center center;
+
+    &__container {
+      @include container;
+    }
+
+    &__title {
+      max-width: 50%;
+      padding-top: rem(260px);
+    } 
+
+    &__subtitle {
+      max-width: 40%;
+      margin-bottom: rem(50px);
+    }
+
+    &__gradient {
+      position: absolute;
+      width: 100%;
+      height: rem(825.75px);
+      left: 0px;
+    }
+  }
+}
