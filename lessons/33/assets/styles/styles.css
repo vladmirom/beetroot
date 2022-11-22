@@ -171,6 +171,11 @@ p {
   padding: 0.6875rem 0.625rem;
   margin-bottom: 1.25rem;
 }
+.section .main-task .form__row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
 .section .shopping-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

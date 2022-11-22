@@ -42,6 +42,12 @@
         padding: rem(11px) rem(10px);
         margin-bottom: rem(20px);
       }
+
+      &__row {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: rem(20px);
+      }
     }
   }
 

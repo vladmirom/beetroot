@@ -2,10 +2,8 @@
  * Shopping cart.
  */
 
-/* ---------- Prepare and print 2 lists of products. ----------- */
-
 /**
- * Creates both lists that contain separate purchased and available products.
+ * Creates the main list of products.
  */
 const shoppingCartConstructor = () => {
   let smallerStock = productsWarehouse( 15 );
@@ -23,7 +21,7 @@ const shoppingCartConstructor = () => {
  * @param { boolean } purchased    If this product is already purchased or not.
  * @returns { object } newProduct.
  */
-const productConstructor = ( productName, productIcon = '🙃', quantity, productPrice, purchased = false ) => {
+const productConstructor = ( productName, quantity, productPrice, productIcon = '🙃', purchased = false ) => {
   let newProduct = {
     product_name: productName,
     quantity: quantity,
@@ -46,45 +44,45 @@ const productConstructor = ( productName, productIcon = '🙃', quantity, produc
  */
 const productsWarehouse = ( capacity = 39 ) => {
   const productsInWarehouse = [ 
-    productConstructor('apple', '🍎', 5, 2.2, true),
-    productConstructor('pear', '🍐', 3, 2.5, true),
-    productConstructor('orange', '🍊', 6, 1.5, true),
-    productConstructor('lemon', '🍋', 2, 3.5),
-    productConstructor('banana', '🍌', 6, 1.9),
-    productConstructor('watermelon', '🍉', 1, 2),
-    productConstructor('grapes', '🍇', 3, 3.5),
-    productConstructor('strawbery', '🍓', 1, 5, true),
-    productConstructor('cherries', '🍒', 2, 4.5),
-    productConstructor('peach', '🍑', 7, 4.5),
-    productConstructor('mango', '🥭', 3, 3.4),
-    productConstructor('coconut', '🥥', 5, 5.3, true),
-    productConstructor('kivi', '🥝', 6, 2.4),
-    productConstructor('melon', '🍈', 2, 2.1, true),
-    productConstructor('pineaple', '🍍', 3, 5,true),
-    productConstructor('brocoli', '🥦', 4, 0.8, true),
-    productConstructor('tomato', '🍅', 5, 1.4),
-    productConstructor('cucumber', '🥒', 2, 3.6, true),
-    productConstructor('chili', '🌶', 2, 3.2),
-    productConstructor('garlic', '🧄', 2, 1.5, true),
-    productConstructor('onion', '🧅', 5, 0.5),
-    productConstructor('carrot', '🥕', 8, 0.5, true),
-    productConstructor('corn', '🌽', 4, 1, true),
-    productConstructor('milk', '🥛', 1, 1.2, true),
-    productConstructor('potato', '🥔', 5, 0.2, true),
-    productConstructor('bagel', '🥯', 2, 2.5),
-    productConstructor('croissant', '🥐', 5, 0.49, true),
-    productConstructor('bread', '🍞', 2, 3.5),
-    productConstructor('chease', '🧀', 2, 6.7, true),
-    productConstructor('egg', '🥚', 12, 0.3),
-    productConstructor('bacon', '🥓', 5, 0.5, true),
-    productConstructor('pizza', '🍕', 2, 10),
-    productConstructor('waffle', '🧇', 5, 3),
-    productConstructor('dumpling', '🥟', 20, 0.1),
-    productConstructor('coockie', '🍪', 5, 0.2, true),
-    productConstructor('chockolate', '🍫', 1, 3.3),
-    productConstructor('honey', '🍯', 1, 20),
-    productConstructor('donut', '🍩', 4, 1, true),
-    productConstructor('peanuts', '🥜', 50, 0.05)
+    productConstructor('apple', 5, 2.2, '🍎', true),
+    productConstructor('pear', 3, 2.5, '🍐', true),
+    productConstructor('orange', 6, 1.5, '🍊', true),
+    productConstructor('lemon', 2, 3.5, '🍋'),
+    productConstructor('banana', 6, 1.9, '🍌'),
+    productConstructor('watermelon', 1, 2, '🍉'),
+    productConstructor('grapes', 3, 3.5, '🍇'),
+    productConstructor('strawbery', 1, 5, '🍓', true),
+    productConstructor('cherries', 2, 4.5, '🍒'),
+    productConstructor('peach', 7, 4.5, '🍑'),
+    productConstructor('mango', 3, 3.4, '🥭'),
+    productConstructor('coconut', 5, 5.3, '🥥', true),
+    productConstructor('kivi', 6, 2.4, '🥝'),
+    productConstructor('melon', 2, 2.1, '🍈', true),
+    productConstructor('pineaple', 3, 5, '🍍', true),
+    productConstructor('brocoli', 4, 0.8, '🥦', true),
+    productConstructor('tomato', 5, 1.4, '🍅'),
+    productConstructor('cucumber', '🥒', 2, 3.6, '🥒', true),
+    productConstructor('chili', 2, 3.2, '🌶'),
+    productConstructor('garlic', 2, 1.5, '🧄', true),
+    productConstructor('onion', 5, 0.5, '🧅'),
+    productConstructor('carrot', 8, 0.5, '🥕', true),
+    productConstructor('corn', 4, 1, '🌽', true),
+    productConstructor('milk', 1, 1.2, '🥛', true),
+    productConstructor('potato', 5, 0.2, '🥔', true),
+    productConstructor('bagel', 2, 2.5, '🥯'),
+    productConstructor('croissant', 5, 0.49, '🥐', true),
+    productConstructor('bread', 2, 3.5, '🍞'),
+    productConstructor('chease', 2, 6.7, '🧀', true),
+    productConstructor('egg', 12, 0.3, '🥚'),
+    productConstructor('bacon', 5, 0.5, '🥓', true),
+    productConstructor('pizza', 2, 10, '🍕'),
+    productConstructor('waffle', 5, 3, '🧇'),
+    productConstructor('dumpling', 20, 0.1, '🥟'),
+    productConstructor('coockie', 5, 0.2, '🍪', true),
+    productConstructor('chockolate', 1, 3.3, '🍫'),
+    productConstructor('honey', 1, 20, '🍯'),
+    productConstructor('donut', 4, 1, '🍩', true),
+    productConstructor('peanuts', 50, 0.05, '🥜')
   ];
   
   let productsToShow = productsInWarehouse.slice( 0, capacity);
@@ -197,6 +195,29 @@ const printShoppingList = ( selector, result ) => {
 }
 
 /**
+ * Updates the current product or adds a new product to the list by product name.
+ * 
+ * @param { array } productList    Of products.
+ * @param { string } productName   The name of the product to be updated or added in the product list.
+ * @returns { array }              Array with updated or newly added product.
+ */
+ const addNewProductByName = ( productList, productName, productQuantity, productPrice ) => {
+  productName = productName.toLowerCase();
+  let foundProduct = productList.find(product => product.product_name === productName),
+      isFoundProduct =  foundProduct !== undefined;
+
+  if ( isFoundProduct ) {
+    let originalQuantiry = foundProduct.quantity;
+    foundProduct.quantity = originalQuantiry + productQuantity;
+    foundProduct.total = (foundProduct.quantity * foundProduct.product_price).toFixed(2);
+  } else {
+    productList[ productList.length - 1 ] = productConstructor( productName, productQuantity, productPrice );
+  }
+
+  return productList;
+}
+
+/**
  * Removes product by creating a new array by product name.
  * 
  * @param { array } productList    Of products.
@@ -279,13 +300,13 @@ const removeByNameHandler = () => {
 }
 
 const addNewProductHandler = () => {
-  // 1. Check if product exists and add the quantity in existing.
-  // 2. Create new object in array.
+  let productName = getInputValue( 'newProductName' ),
+      quantity = +getInputValue( 'newProductQuantity' ),
+      productPrice = +getInputValue( 'newProductPrice' );
 
-  let valueFromTheField = getInputValue( 'removeProductFromStock' ),
-      updatedList = removeByName( productsWarehouse( 15 ), valueFromTheField );
-
-   printShoppingList('js-stock', resultHtml(updatedList));
+  let updatedList = addNewProductByName( productsWarehouse( 15 ), productName, quantity, productPrice );
+   
+  printShoppingList('js-stock', resultHtml(updatedList));
 }
 
 const calculateTotalHandler = () => {
@@ -310,12 +331,13 @@ const sortProductsAlphabeticallyHandler = ( sortInASC = true ) => {
 }
 
 /* ---------- Listeners ----------- */
-const sortedProducts = sortProducts( productsWarehouse( 15 ) );
 document.querySelector('#sortProducts').addEventListener('click', () => { sortProductsHandler() } );
 
 document.querySelector('#addToPurchasedByName').addEventListener('click', () => { addToPurchasedByNameHandler() } );
 
 document.querySelector('#removeProduct').addEventListener('click', () => { removeByNameHandler() } );
+
+document.querySelector('#addNewProduct').addEventListener('click', () => { addNewProductHandler() } );
 
 document.querySelector('#caclulateTotal').addEventListener('click', () => { calculateTotalHandler() } );
 
