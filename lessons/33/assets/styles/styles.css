@@ -184,6 +184,11 @@ p {
 .section .shopping-list-purchased__title, .section .shopping-list-available__title {
   margin-bottom: 1.5625rem;
 }
+.section .product {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 1.25rem;
+}
 .section .product__list-heading {
   display: grid;
   grid-template-columns: 1fr 5fr 1fr 1fr 1fr;

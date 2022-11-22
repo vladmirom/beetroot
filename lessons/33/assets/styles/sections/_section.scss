@@ -65,6 +65,9 @@
   }
 
   & .product {
+    position: sticky;
+    top: rem(20px);
+    
     &__list-heading {
       display: grid;
       grid-template-columns: 1fr 5fr 1fr 1fr 1fr;
