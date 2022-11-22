@@ -1,0 +1,66 @@
+.body {
+  font-family: $font-family-body;
+  font-size: $font-body;
+  font-weight: 300;
+  line-height: $line-height;
+  margin: 0;
+}
+
+h1,
+.h1 {
+  font-family: $font-family-headings;
+  font-size: $h1-font-size;
+  font-weight: 400;
+  line-height: $h1-line-height;
+  margin-bottom: rem(20px);
+}
+
+h2,
+.h2 {
+  font-family: $font-family-headings;
+  font-size: $h2-font-size;
+  font-weight: 400;
+  line-height: $h2-line-height;
+  margin-bottom: rem(30px);
+}
+
+h3,
+.h3 {
+  font-family: $font-family-body;
+  font-size: $h3-font-size;
+  font-weight: 400;
+  line-height: $h3-line-height;
+  margin-bottom: rem(15px);
+  letter-spacing: 0.04em;
+}
+
+h4,
+.h4 {
+  font-family: $font-family-headings;
+  font-size: $h4-font-size;
+  font-weight: 400;
+  line-height: $h4-line-height;
+  margin-bottom: rem(15px);
+  letter-spacing: 0.05em;
+}
+
+h5,
+.h5 {
+  font-family: $font-family-headings;
+  font-size: $h5-font-size;
+  font-weight: 400;
+  line-height: $h5-line-height;
+  letter-spacing: 0.08em;
+}
+
+h6,
+.h6 {
+  font-family: $font-family-body;
+  font-size: $h6-font-size;
+  font-weight: 300;
+  line-height: $h6-line-height;
+}
+
+p {
+  opacity: 0.8;
+}

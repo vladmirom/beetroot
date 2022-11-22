@@ -1,0 +1,40 @@
+/**
+  * Minimum tasks section styles.
+  */
+
+.section {
+  &-minimum {
+    margin-bottom: rem(50px);
+
+    &__container {
+      @include container;
+    }
+
+    &__wrap {
+      @include section-wrap;
+      background-color: $rhythm;
+    }
+
+    &__task {
+      margin-bottom: rem(50px);
+
+      &-text {
+        margin-bottom: rem(20px);
+      }
+
+      &-button {
+        @include button;
+      }
+      
+      &-list {
+        @extend .list;
+      }
+
+      &-code {
+        background-color: $cornflower-blue;
+        padding: 0 rem(10px);
+        border-radius: rem(5px);
+      }
+    }
+  }
+}

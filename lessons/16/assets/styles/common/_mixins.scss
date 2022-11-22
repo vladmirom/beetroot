@@ -1,0 +1,84 @@
+/**
+ * Website mixins.
+ */
+
+@mixin container {
+  max-width: rem(1200px);
+  margin: 0 auto;
+}
+
+@mixin title {
+  font-size: rem(20px);
+  line-height: rem(24px);
+
+  .bold {
+    font-weight: 600;
+  }
+}
+
+@mixin flex-vertical-column-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin social-media-icon {
+  @include flex-center;
+
+  width: rem(30px);
+  height: rem(30px);
+
+  border: 2px solid $light-grey;
+  border-radius: 50%;
+
+  cursor: pointer;
+  transition: all .3s ease;
+
+  & svg {
+    height: rem(12px);
+    width: 100%;
+
+    fill: $light-grey;
+    transition: all .3s ease;
+  }
+
+  &:hover {
+    border-color: $gold;
+
+    & svg { 
+      fill: $gold;
+    }
+  }
+}
+
+@mixin link {
+  display: inline-block;
+  padding: rem(5px) rem(10px);
+  border: rem(1px) solid;
+  transition: all .3s ease;
+
+  font-family: $font-open-sans;
+  font-weight: 700;
+  font-size: $h5-font-size;
+  line-height: $h5-line-height;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  &:link,
+  &:visited,
+  &:active {
+    color: $dark-grey; 
+    border-color: $gold;
+  }
+
+  &:hover {
+    color: $gold; 
+    border-color: $dark-grey;
+  }
+}

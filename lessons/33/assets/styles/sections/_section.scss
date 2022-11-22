@@ -1,0 +1,118 @@
+/**
+  * Minimum tasks section styles.
+  */
+
+.section {
+  margin-bottom: rem(50px);
+
+  &__container {
+    @include container;
+  }
+
+  &__wrap {
+    @include section-wrap;
+  }
+
+  & .main-task {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: rem(50px);
+
+    & .task {
+      margin-bottom: rem(30px);
+
+      &__paragraph {
+        margin-bottom: rem(10px);
+      }
+    }
+
+    & .form {
+      &__label {
+        display: block;
+        font-size: rem(14px);
+      }
+
+      &__number {
+        display: block;
+        width: 100%;
+
+        border: none;
+        border-radius: 0.25rem;
+
+        padding: rem(11px) rem(10px);
+        margin-bottom: rem(20px);
+      }
+
+      &__row {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: rem(20px);
+      }
+    }
+  }
+
+  & .shopping-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: rem(30px);
+
+    &-purchased,
+    &-available {
+      &__title {
+        margin-bottom: rem(25px);
+      }
+    }
+  }
+
+  & .product {
+    position: sticky;
+    top: rem(20px);
+    
+    &__list-heading {
+      display: grid;
+      grid-template-columns: 1fr 5fr 1fr 1fr 1fr;
+      font-size: rem(12px);
+      font-weight: bold;
+      padding: rem(10px) 0;
+      background-color: $midnight-blue;
+      color: $white;
+      border-top-left-radius: rem(5px);
+      border-top-right-radius: rem(5px);
+    }
+
+    &__label {
+      display: grid;
+      grid-template-columns: 1fr 5fr 1fr 1fr 1fr;
+      padding: rem(10px) 0;
+
+      &:nth-of-type(even) {
+        background-color: $golden-poppy;
+      }
+
+      &:nth-of-type(odd) {
+        background-color: $gold;
+      }
+
+
+      &:last-of-type {
+        border-bottom-left-radius: rem(5px);
+        border-bottom-right-radius: rem(5px);
+      }
+    }
+  }
+
+  &__buttons-row {
+   display: flex;
+   justify-content: space-between;
+   gap: rem(10px);
+  }
+
+  &__button {
+    @include button;
+    margin-top: rem(20px);
+  }
+
+  &__result {
+    visibility: hidden;
+  }
+}

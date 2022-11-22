@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Playfair+Display:ital@0;1&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="assets/styles/styles.css">
+
+  <title>Volodymyr Melnychenko | JS Conditional Statements and Loops</title>
+</head>
+
+<body class="body">
+  <main class="main">
+    <h1 class="lesson-title">Homework for lesson 30: JS Conditional Statements and Loops</h1>
+    <section class="section-minimum">
+      <div class="section-minimum__container">
+        <div class="section-minimum__wrap">
+          <h1 class="h2">Minimum tasks</h1>
+
+          <div class="section-minimum__task">
+            <h3>Check the user's age.</h3>
+            <p class="section-minimum__task-text">When it comes to love, many people say age is just a number. But let's
+              be real: Age really does matter when it comes to maturity level, interests, goals and physical ability.
+            </p>
+            <p class="section-minimum__task-text">Some people say that there are 15 ways to find out how old is the
+              person without actually asking. I'm not going to experiment with those ans will ask you directly.</p>
+            <p class="section-minimum__task-text">Who are you, stranger? <span id="ageReply"></span></p>
+            <button class="section-minimum__task-button" id="ageBtn">What is your age?</button>
+          </div>
+
+          <div class="section-minimum__task">
+            <h3>Show a special character from the user selected number.</h3>
+            <p>I reemember, that you have mentioned that you had problems with the special characters on the keyboard.
+              Let me help you, select the number in the range.</p>
+            <div class="section-minimum__task-range range">
+              <input class="range__input" type="range" id="keyboardNumber" name="keyboardNumber" value="4" min="0"
+                max="9" oninput="this.nextElementSibling.value = this.value">
+              <output>4</output>
+            </div>
+            <p class="section-minimum__task-result" id="keyboardNumberResult">Placeholder</p>
+          </div>
+
+          <div class="section-minimum__task">
+            <h3>Calculate the summ of the two numbers from the range.</h3>
+            <p class="section-minimum__task-text">Let's calculate the summ of all the numbers from the range. Please, add two numbers and click "Calculate"
+              button.</p>
+
+            <form id="rangeCalculation" class="section-minimum__task-form form" action="formHandler/get.php"
+              method="GET">
+              <div class="form__grid">
+                <div class="form__column">
+                  <label class="form__label" for="firstNumber">First number</label>
+                  <input class="form__number" type="number" name="firstNumber"
+                    id="firstNumber">
+                </div>
+
+                <div class="form__column">
+                  <label class="form__label" for="secondNumber">Second number</label>
+                  <input class="form__number" type="number" name="secondNumber" id="secondNumber">
+                </div>
+              </div>
+
+              <!-- Since we don't need to submit the form and we don't have the php server, changing "submit" button type to "button".-->
+              <button type="button" class="section-minimum__task-button" id="rangeBtn">Calculate</button>
+            </form>
+
+            <p class="section-minimum__task-result" id="rangeResult">Placeholder</p>
+          </div>
+
+          <div class="section-minimum__task">
+            <h3>Calculate the Greatest common divider of two integers.</h3>
+            <p class="section-minimum__task-text">Let's calculate the Greatest common divider of two integers. Please, add two numbers and click "Calculate"
+              button.</p>
+
+            <form id="gcdCalculation" class="section-minimum__task-form form" action="formHandler/get.php"
+              method="GET">
+              <div class="form__grid">
+                <div class="form__column">
+                  <label class="form__label" for="firstGcdNumber">First number</label>
+                  <input class="form__number" type="number" name="firstGcdNumber"
+                    id="firstGcdNumber">
+                </div>
+
+                <div class="form__column">
+                  <label class="form__label" for="secondGcdNumber">Second number</label>
+                  <input class="form__number" type="number" name="secondGcdNumber" id="secondGcdNumber">
+                </div>
+              </div>
+
+              <!-- Since we don't need to submit the form and we don't have the php server, changing "submit" button type to "button".-->
+              <button type="button" class="section-minimum__task-button" id="gcdBtn">Calculate</button>
+            </form>
+
+            <p class="section-minimum__task-result" id="gcdResult">Placeholder</p>
+          </div>
+
+          <div class="section-minimum__task">
+            <h3>Calculate all dividers from a given number.</h3>
+            <p class="section-minimum__task-text">Let's calculate all the dividers from a given number. Please, add a number and click "Calculate"
+              button.</p>
+
+            <form id="gcdCalculation" class="section-minimum__task-form form" action="formHandler/get.php"
+              method="GET">
+              <div class="form__grid">
+                <div class="form__column">
+                  <label class="form__label" for="dividersNumber">Number to calculate</label>
+                  <input class="form__number" type="number" name="dividersNumber"
+                    id="dividersNumber">
+                </div>
+              </div>
+
+              <!-- Since we don't need to submit the form and we don't have the php server, changing "submit" button type to "button".-->
+              <button type="button" class="section-minimum__task-button" id="dividersBtn">Calculate</button>
+            </form>
+
+            <p class="section-minimum__task-result" id="dividersResult">Placeholder</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-medium">
+      <div class="section-medium__container">
+        <div class="section-medium__wrap">
+          <h1 class="h2">Medium tasks</h1>
+
+          <div class="section-medium__task">
+            <h3>Receive the 5 digits number and check if it is palindrome.</h3>
+            <p class="section-medium__task-text">We are doing some deep math here. Give us some 5 or more digit number and we will check if it is palindrome.</p>
+            <button class="section-medium__task-button" id="palindromeBtn">Is it Finnish saippuakivikauppias?</button>
+            <p class="section-medium__task-result" id="palindromeResult">Placeholder</p>
+          </div>
+
+          <div class="section-medium__task">
+            <h3>Discount calculation.</h3>
+            <p class="section-medium__task-text">People like discounts, so we prepared the discount calculator to check the finla price together with the discount. Give us your number and we will calculate the total.</p>
+
+            <button class="section-medium__task-button" id="discountBtn">Calculate your total</button>
+            <p class="section-medium__task-result" id="discountResult">Placeholder</p>
+          </div>
+
+          <div class="section-medium__task">
+            <h3>Ask for 10 integers and make calculations.</h3>
+            <p class="section-medium__task-text">Hey, here is a random task for you. Fill in 10 integers and we will calculate how many of them are:
+              <ul class="section-medium__task-list">
+                <li>Positive real numbers.</li>
+                <li>Negative real numbers.</li>
+                <li>Zeros.</li>
+                <li>Even numbers.</li>
+                <li>Odd numbers.</li>
+              </ul>
+            </p>
+
+            <button class="section-medium__task-button" id="numbersBtn">Enter your numbers</button>
+            <p class="section-medium__task-result" id="numbersResult">Placeholder</p>
+          </div>
+
+          <div class="section-medium__task">
+            <h3>Switch day of the week.</h3>
+            <p class="section-medium__task-text" id="daySwitchResult"></p>
+
+            <button class="section-medium__task-button" id="daySwitchBtn">The button 😈</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+          <script async src="assets/scripts/scripts.js"></script>
+    </footer>
+  </main>
+</body>
+
+</html>

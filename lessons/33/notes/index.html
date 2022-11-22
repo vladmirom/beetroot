@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../assets/styles/styles.css">
+
+  <title>Lesson 33 | JS Arrays</title>
+</head>
+
+<body>
+  <main>
+    <section class="notes__section notes__section-container">
+      <div class="notes__block">
+        <h3>Arrays</h3>
+        <p>Arrays can be created with the <strong>Array constructor</strong> or as <strong>Literal array</strong></p>
+        <p>Arrays in js are like the unassociative arrays in php. Associative arrays are Objects. Arrays have index and value. Functions are not usually stored in arrays.</p>
+      </div>
+  
+      <div class="notes__block">
+        <h5>Adding values to arrays:</h5> 
+        <ol class="notes__ordered-list">
+          <li><span class="notes__code">fruit[1] = 'orange';</span></li>
+          <li><span class="notes__code">fruit[fruit.lenght - 1 ] = 'banana';</span> adds to the last element of the array.</li>
+          <li><span class="notes__code">fruit.at(-1) = 'clenentine';</span> adds to the last element of the array.</li>
+          <li>Add values to array via methods.</li>
+        </ol>
+      </div>
+
+      <div class="notes__block">
+        <h5>Array methods (some of them):</h5>
+          <ul class="notes__unordered-list">
+            <li><span class="notes__code">fruit.length()</span> calculates the length of the array.</li>
+            <li><span class="notes__code">delete fruit[0]</span> deletes the value of the element in array, leaving the index.It will be <span class="notes__code">[0] => empty</span></li>
+            <li><span class="notes__code">fruit.splice( 2, 1)</span> will cut the element/s from array and return them. We need to add a starting index and number of elements that we want to remove as parameters. It also can negative first parameter, to start counting the index from the end of the array.</li>
+            <li><span class="notes__code">fruit.splice( 2, 0, 'melon', 'watermelon');</span> will add 2 more values after the s index.</li>
+            <li><span class="notes__code">fruit.slice( 1, 3)</span> Will copy values into the new array, without affecting the first array.</li>
+            <li><span class="notes__code">fruit.concat(['pear', 'peach'], ['lemon', 'apple'])</span> will copy values into the new array, and add to the end of fruit array 2 more arrays. Does not create unique values. So the new array can have 2 'apple'.</li>
+            <li><span class="notes__code">fruit.find(function(item, index, array) { })</span> will find some value in array.</li>
+            <li><span class="notes__code">fruit.findIndex((item => item === 'apple'));</span> will return the index of the finded 'apple'.</li>
+            <li><span class="notes__code">fruit = fruit.map((item => item + ' juice'));</span> will iterate through the whole array and do something with each value.</li>
+            <li><span class="notes__code">Array.isArray(fruit) {}</span> will check if the array is array, returns boolean.</li>
+            <li><span class="notes__code">fruit.indexOf()</span> parces the array, searches for the value mentioned in parameter, and returns the index of the FIRST found value, or <span class="notes__code">-1</span> If the value is not found. Can parse a string.</li>
+            <li><span class="notes__code">fruit.lastIndexOf()</span> parces the array, searches for the value mentioned in parameter, and returns the index of the LAST found value, or <span class="notes__code">-1</span> If the value is not found. Can parse a string.</li>
+            <li><span class="notes__code">fruit.includes()</span> defines if the value exists in array. Returns boolean.</li>
+            <li><span class="notes__code">fruit.filter()</span> filter all elements with the function f. It it returns true, the element will be added to the returned array. These filters will be handy: <span class="notes__code">inBetween(a, b)</span> - between a and b, including them, and <span class="notes__code">inArray([...])</span> - the values that are in this array.</li>
+            <li><span class="notes__code">fruit.sort(fn)</span> sorts elements in array in ascending order. Method converts values into the strings and then compares them. It is possible to create own sorting algorithms.</li>
+            <li><span class="notes__code">fruit.reverse()</span> reverses the order of values in array and returns it.</li>
+            <li><span class="notes__code">fruit.split(delim)</span> divides an array by the delimisher from the parameter.</li>
+            <li><span class="notes__code">fruit.join(glue)</span> converts array into one string by adding all the values using a joint from the parameter.</li>
+          </ul>
+        </p>
+      </div>
+
+      <div class="notes__block">
+        <h5>Getting values from the array.</h5>
+        <p>We can receive the values from arrays this way: <span class="notes__code">fruit[0];</span>.</p>
+      </div>
+
+      <div class="notes__block">
+        <h5>Comparing arrays.</h5> 
+        <ol class="notes__ordered-list">
+          <li><span class="notes__code">new Set()</span></li>
+          <li><span class="notes__code">indexOf</span> and <span class="notes__code">while</span>.</li>
+          <li><span class="notes__code">indexOf</span> and <span class="notes__code">filter</span>.</li>
+          <li>Add values to array via methods.</li>
+        </ol>
+      </div>
+
+      <div class="notes__block">
+        <h5>Looping through array:</h5>
+        <ol class="notes__ordered-list">
+          <li>With the help of <span class="notes__code">for</span> loop. The classic example: <span class="notes__code">for (let i = 0; i &lt; fruit.length; i++) { do something with every element in array; }</span>.</li>
+          <li>With the help of <span class="notes__code">for of</span> loop. Works well with arrays or strings. The example: <span class="notes__code">for (let char of 'test') { do something with char variable; }</span> and it will work 4 times: 't', then 'e', then 's', and the last one 't'.</li>
+          <li>With the help of <span class="notes__code">forEach()</span>. We can get single item, index and the general array in it, which is quite handy.</li>
+          <li>The object iterator <span class="notes__code">for in</span> will work also, since array can be considered as object. However, this method works more slow than <span class="notes__code">for of</span>, and not commonly used.</li>
+          <li>With the help of methods: <span class="notes__code">map(), filter(), find()</span> </li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <script src="../assets/scripts/notes.js"></script>
+  </footer>
+</body>
+
+</html>

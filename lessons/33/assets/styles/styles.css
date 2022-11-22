@@ -1,0 +1,245 @@
+/*--------------------------------------------------------------
+  # Utils: REM helper
+--------------------------------------------------------------*/
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+html {
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.body {
+  background-color: #FAE6D8;
+}
+
+.main {
+  margin: 6.25rem 1.25rem;
+}
+
+.list {
+  list-style: inside;
+  padding-left: 1.25rem;
+}
+
+.lesson-title {
+  text-align: center;
+  margin-bottom: 3.125rem;
+}
+
+.body {
+  font-family: "Lato", sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.625rem;
+  margin: 0;
+}
+
+h1,
+.h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.75rem;
+  font-weight: 400;
+  line-height: 3.25rem;
+  margin-bottom: 1.25rem;
+}
+
+h2,
+.h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  line-height: 3rem;
+  margin-bottom: 1.875rem;
+}
+
+h3,
+.h3 {
+  font-family: "Lato", sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 2.875rem;
+  margin-bottom: 0.9375rem;
+  letter-spacing: 0.04em;
+}
+
+h4,
+.h4 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 3rem;
+  margin-bottom: 0.9375rem;
+  letter-spacing: 0.05em;
+}
+
+h5,
+.h5 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.25rem;
+  letter-spacing: 0.08em;
+}
+
+h6,
+.h6 {
+  font-family: "Lato", sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.625rem;
+}
+
+p {
+  opacity: 0.8;
+}
+
+/**
+  * Styling notes for the lesson.
+  */
+.notes__section {
+  margin: 100px 0;
+}
+.notes__section-container {
+  width: 92%;
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.notes__block {
+  margin-bottom: 1.25rem;
+}
+.notes__code {
+  background-color: rgba(87, 142, 247, 0.3);
+  padding: 0 0.625rem;
+  border-radius: 0.3125rem;
+}
+.notes__ordered-list {
+  padding-left: 2.2rem;
+}
+.notes__ordered-list li {
+  padding-left: 0.5rem;
+}
+.notes__unordered-list {
+  list-style: inside;
+  padding-left: 1.25rem;
+}
+
+/**
+  * Minimum tasks section styles.
+  */
+.section {
+  margin-bottom: 3.125rem;
+}
+.section__container {
+  width: 92%;
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.section__wrap {
+  color: #404258;
+  border-radius: 0.625rem;
+  padding: 4.375rem 4.6875rem;
+}
+.section .main-task {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.125rem;
+}
+.section .main-task .task {
+  margin-bottom: 1.875rem;
+}
+.section .main-task .task__paragraph {
+  margin-bottom: 0.625rem;
+}
+.section .main-task .form__label {
+  display: block;
+  font-size: 0.875rem;
+}
+.section .main-task .form__number {
+  display: block;
+  width: 100%;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.6875rem 0.625rem;
+  margin-bottom: 1.25rem;
+}
+.section .main-task .form__row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+.section .shopping-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.875rem;
+}
+.section .shopping-list-purchased__title, .section .shopping-list-available__title {
+  margin-bottom: 1.5625rem;
+}
+.section .product {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 1.25rem;
+}
+.section .product__list-heading {
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr 1fr 1fr;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 0.625rem 0;
+  background-color: #A09ABC;
+  color: #fff;
+  border-top-left-radius: 0.3125rem;
+  border-top-right-radius: 0.3125rem;
+}
+.section .product__label {
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr 1fr 1fr;
+  padding: 0.625rem 0;
+}
+.section .product__label:nth-of-type(even) {
+  background-color: #D5CFE1;
+}
+.section .product__label:nth-of-type(odd) {
+  background-color: #E1DEE9;
+}
+.section .product__label:last-of-type {
+  border-bottom-left-radius: 0.3125rem;
+  border-bottom-right-radius: 0.3125rem;
+}
+.section__buttons-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.625rem;
+}
+.section__button {
+  display: flex;
+  align-items: center;
+  font-family: "Lato", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5rem;
+  padding: 0.8125rem 2.5rem;
+  margin-bottom: 1.25rem;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: all 0.2s linear;
+  background: #FF9900;
+  color: #fff;
+  margin-top: 1.25rem;
+}
+.section__button:hover {
+  background: #F29D38;
+}
+.section__result {
+  visibility: hidden;
+}/*# sourceMappingURL=styles.css.map */
