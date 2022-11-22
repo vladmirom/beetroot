@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../assets/styles/styles.css">
+
+  <title>Lesson 38 | Webstorage</title>
+</head>
+
+<body>
+  <section class="notes__section notes__section-container">
+    <div class="notes__block">
+      <h3>Cookies</h3>
+      <p>We can add remove and read cookies. Secured cookies can not be reemoved.</p>
+      <p>Can be found in Devtools (inspect) > Application > Cookies.</p>
+      <p>Path is localizing cookies. Path: / is for all the weebsite. Path: /about is for about page only.</p>
+      <p>Cookies are only available on 1 website. It depends on the domain name. If we haave iframe with another website cookies won't be accessible.</p>
+      <p>Cookies live within the session. They also can be set to expire.</p>
+      <p>Size of the cookie: it depends on value.</p>
+      <p>Check cookies: <span class="notes__code">document.cookie</span>. We can run it right in console</p>
+    </div>
+  </section>
+
+  <section class="notes__section notes__section-container">
+    <div class="notes__block">
+      <h3>Sessions</h3>
+      <p>Sessions are visible only in one tab. If you switch tabs session won't work.</p>
+      <p>Can be found in Devtools (inspect) > Application > Local Storraage.</p>
+    </div>
+  </section>
+
+  <footer>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../assets/scripts/notes.js"></script>
+  </footer>
+</body>
+
+</html>
