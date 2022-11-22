@@ -190,12 +190,23 @@ const printShoppingList = ( selector, result ) => {
  * Sort the array by purchased status.
  * Available first, purchased the last.
  * 
- * @param { array } productList   Of products.
- * @returns { array }             Sorted array.
+ * @param { array } productList     Of products.
+ * @param { boolean } byPrice       If we want to sort by price value.
+ * @param { boolean } productList   If we want to sort in ascending order. False === descending order.
+ * @returns { array }               Sorted array.
  */
- const sortProducts = ( productList ) => {
+ const sortProducts = ( productList, byPrice = false, asc = true ) => {
+  let sortedList = [];
 
-  sortedList = productList.sort((a, b) => Number(a.purchased) - Number(b.purchased));
+  if ( byPrice ) {
+    if (asc) {
+      sortedList = productList.sort((a, b) => Number( a.total ) - Number( b.total ));
+    } else {
+      sortedList = productList.sort((a, b) => Number( b.total ) - Number( a.total ));
+    }
+  } else {
+    sortedList = productList.sort((a, b) => Number( a.purchased ) - Number( b.purchased ));
+  }
 
   return sortedList;
 }
@@ -403,8 +414,10 @@ const calculateTotalSeparatelyHandler = ( calculatePurchased = true ) => {
         printShoppingList('js-caclulate-total-separately', message);
 }
 
-const sortProductsAlphabeticallyHandler = ( ) => {
-  
+const sortProductsAlphabeticallyHandler = ( sortInASC = true ) => {
+  const sortedProducts = sortProducts( productsWarehouse( 10 ), true, sortInASC );
+console.log(sortedProducts);
+  printShoppingList('js-stock', resultHtml( sortedProducts ));
 }
 
 
@@ -419,6 +432,9 @@ document.querySelector('#removeProduct').addEventListener('click', () => { remov
 document.querySelector('#caclulateTotal').addEventListener('click', () => { calculateTotalHandler() } );
 
 document.querySelector('#caclulateTotalSepaarately').addEventListener('click', () => { calculateTotalSeparatelyHandler() } );
+
+document.querySelector('#showAsc').addEventListener('click', () => { sortProductsAlphabeticallyHandler() } );
+document.querySelector('#showDesc').addEventListener('click', () => { sortProductsAlphabeticallyHandler( false ) } );
 
 // Handle Add/Remove products to/from the list.
 document.querySelector('#removeFromPurchased').addEventListener('click', () => { updateList(); } );

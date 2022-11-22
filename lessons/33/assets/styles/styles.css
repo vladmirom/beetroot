@@ -205,6 +205,11 @@ p {
   border-bottom-left-radius: 0.3125rem;
   border-bottom-right-radius: 0.3125rem;
 }
+.section__buttons-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.625rem;
+}
 .section__button {
   display: flex;
   align-items: center;

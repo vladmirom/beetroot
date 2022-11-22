@@ -92,6 +92,12 @@
     }
   }
 
+  &__buttons-row {
+   display: flex;
+   justify-content: space-between;
+   gap: rem(10px);
+  }
+
   &__button {
     @include button;
     margin-top: rem(20px);
