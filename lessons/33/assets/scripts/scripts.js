@@ -261,6 +261,25 @@ const printShoppingList = ( selector, result ) => {
 }
 
 /**
+ * Calculates the total price of the products by their purchase status.
+ * 
+ * @param { array } productList       Of products.
+ * @param { boolean } isPurchased     If calculation is done for purchased products.
+ * @returns { integer }               Total price.
+ */
+ const calculateTotalSeparately = ( productList, isPurchased = true ) => {
+  let totalPrice = 0;
+
+  for ( let product of productList) {
+    if ( product.purchased === isPurchased ) {
+      totalPrice = +product.total + totalPrice;
+    }
+  }
+
+  return totalPrice;
+}
+
+/**
  * Gets all the checked products and adds it's values to array.
  * 
  * @returns { array } With selected product values.
@@ -371,13 +390,17 @@ const addNewProductHandler = () => {
 
 const calculateTotalHandler = () => {
   const totalPrice = calculateTotal( productsWarehouse( 10 ) ),
-        message = `The total price for all products is ${totalPrice}€.`;
+        message = `The total price for all products is <b>${totalPrice}€</b>.`;
 
   printShoppingList('js-caclulate-total', message);
 }
 
 const calculateTotalSeparatelyHandler = ( calculatePurchased = true ) => {
-  
+  const totalOfPurchased = calculateTotalSeparately( productsWarehouse( 10 ) ),
+        totalOfAvailable = calculateTotalSeparately( productsWarehouse( 10 ), false ),
+        message = `The total price for all purchased products is <b>${totalOfPurchased}€</b>, and for all available products is <b>${totalOfAvailable}€</b>.`;
+
+        printShoppingList('js-caclulate-total-separately', message);
 }
 
 const sortProductsAlphabeticallyHandler = ( ) => {
@@ -394,6 +417,8 @@ document.querySelector('#addToPurchasedByName').addEventListener('click', () => 
 document.querySelector('#removeProduct').addEventListener('click', () => { removeByNameHandler() } );
 
 document.querySelector('#caclulateTotal').addEventListener('click', () => { calculateTotalHandler() } );
+
+document.querySelector('#caclulateTotalSepaarately').addEventListener('click', () => { calculateTotalSeparatelyHandler() } );
 
 // Handle Add/Remove products to/from the list.
 document.querySelector('#removeFromPurchased').addEventListener('click', () => { updateList(); } );
