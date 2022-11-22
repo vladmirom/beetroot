@@ -1,0 +1,10 @@
+[
+  {
+    "name": "Main page",
+    "url": "../pages/index.html" 
+  },
+  {
+    "name": "About page",
+    "url": "../pages/about.html" 
+  }
+]

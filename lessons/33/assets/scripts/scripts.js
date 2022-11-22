@@ -3,17 +3,12 @@
  */
 
 /**
- * Creates both lists that contain separate purchased and available products.
+ * Creates the main list of products.
  */
 const shoppingCartConstructor = () => {
-  let purchasedProductsList = listOfPurchasedProducts(productsWarehouse()),
-      availableProductsList = listOfAvailableProducts(productsWarehouse());
+  let smallerStock = productsWarehouse( 15 );
 
-  // Purchased products list.
-  printShoppingList('js-purchased-products', resultHtml(purchasedProductsList));
-
-  // Available products list.
-  printShoppingList('js-available-products', resultHtml(availableProductsList));
+  printShoppingList('js-stock', resultHtml(smallerStock));
 }
 
 /**
@@ -26,7 +21,7 @@ const shoppingCartConstructor = () => {
  * @param { boolean } purchased    If this product is already purchased or not.
  * @returns { object } newProduct.
  */
-const productConstructor = ( productName, productIcon = '🙃', quantity, productPrice, purchased = false ) => {
+const productConstructor = ( productName, quantity, productPrice, productIcon = '🙃', purchased = false ) => {
   let newProduct = {
     product_name: productName,
     quantity: quantity,
@@ -43,77 +38,56 @@ const productConstructor = ( productName, productIcon = '🙃', quantity, produc
 /**
  * Creates the array of all the products in the store. 
  * Each product is supposed to be an object.
- * 
- * @returns { array } productsInWarehouse.
+ *
+ * @param { integer } capacity   How many products we want to show in the list from the warehouse. 
+ * @returns { array }            List of products from warehouse.
  */
-const productsWarehouse = () => {
+const productsWarehouse = ( capacity = 39 ) => {
   const productsInWarehouse = [ 
-    productConstructor('apple', '🍎', 5, 2.2),
-    productConstructor('pear', '🍐', 3, 2.5),
-    productConstructor('orange', '🍊', 6, 1.5, true),
-    productConstructor('lemon', '🍋', 2, 3.5),
-    productConstructor('banana', '🍌', 6, 1.9),
-    productConstructor('watermelon', '🍉', 1, 2),
-    productConstructor('grapes', '🍇', 3, 3.5),
-    productConstructor('strawbery', '🍓', 1, 5, true),
-    productConstructor('cherries', '🍒', 2, 4.5),
-    productConstructor('peach', '🍑', 7, 4.5),
-    productConstructor('mango', '🥭', 3, 3.4),
-    productConstructor('coconut', '🥥', 5, 5.3),
-    productConstructor('kivi', '🥝', 6, 2.4),
-    productConstructor('melon', '🍈', 2, 2.1),
-    productConstructor('pineaple', '🍍', 3, 5),
-    productConstructor('brocoli', '🥦', 4, 0.8, true),
-    productConstructor('tomato', '🍅', 5, 1.4),
-    productConstructor('cucumber', '🥒', 2, 3.6, true),
-    productConstructor('chili', '🌶', 2, 3.2),
-    productConstructor('garlic', '🧄', 2, 1.5, true),
-    productConstructor('onion', '🧅', 5, 0.5),
-    productConstructor('carrot', '🥕', 8, 0.5),
-    productConstructor('corn', '🌽', 4, 1),
-    productConstructor('milk', '🥛', 1, 1.2 ),
-    productConstructor('potato', '🥔', 5, 0.2, true),
-    productConstructor('bagel', '🥯', 2, 2.5),
-    productConstructor('croissant', '🥐', 5, 0.49, true),
-    productConstructor('bread', '🍞', 2, 3.5),
-    productConstructor('chease', '🧀', 2, 6.7, true),
-    productConstructor('egg', '🥚', 12, 0.3),
-    productConstructor('bacon', '🥓', 5, 0.5),
-    productConstructor('pizza', '🍕', 2, 10),
-    productConstructor('waffle', '🧇', 5, 3),
-    productConstructor('dumpling', '🥟', 20, 0.1),
-    productConstructor('coockie', '🍪', 5, 0.2, true),
-    productConstructor('chockolate', '🍫', 1, 3.3),
-    productConstructor('honey', '🍯', 1, 20),
-    productConstructor('donut', '🍩', 4, 1, true),
-    productConstructor('peanuts', '🥜', 50, 0.05)
+    productConstructor('apple', 5, 2.2, '🍎', true),
+    productConstructor('pear', 3, 2.5, '🍐', true),
+    productConstructor('orange', 6, 1.5, '🍊', true),
+    productConstructor('lemon', 2, 3.5, '🍋'),
+    productConstructor('banana', 6, 1.9, '🍌'),
+    productConstructor('watermelon', 1, 2, '🍉'),
+    productConstructor('grapes', 3, 3.5, '🍇'),
+    productConstructor('strawbery', 1, 5, '🍓', true),
+    productConstructor('cherries', 2, 4.5, '🍒'),
+    productConstructor('peach', 7, 4.5, '🍑'),
+    productConstructor('mango', 3, 3.4, '🥭'),
+    productConstructor('coconut', 5, 5.3, '🥥', true),
+    productConstructor('kivi', 6, 2.4, '🥝'),
+    productConstructor('melon', 2, 2.1, '🍈', true),
+    productConstructor('pineaple', 3, 5, '🍍', true),
+    productConstructor('brocoli', 4, 0.8, '🥦', true),
+    productConstructor('tomato', 5, 1.4, '🍅'),
+    productConstructor('cucumber', '🥒', 2, 3.6, '🥒', true),
+    productConstructor('chili', 2, 3.2, '🌶'),
+    productConstructor('garlic', 2, 1.5, '🧄', true),
+    productConstructor('onion', 5, 0.5, '🧅'),
+    productConstructor('carrot', 8, 0.5, '🥕', true),
+    productConstructor('corn', 4, 1, '🌽', true),
+    productConstructor('milk', 1, 1.2, '🥛', true),
+    productConstructor('potato', 5, 0.2, '🥔', true),
+    productConstructor('bagel', 2, 2.5, '🥯'),
+    productConstructor('croissant', 5, 0.49, '🥐', true),
+    productConstructor('bread', 2, 3.5, '🍞'),
+    productConstructor('chease', 2, 6.7, '🧀', true),
+    productConstructor('egg', 12, 0.3, '🥚'),
+    productConstructor('bacon', 5, 0.5, '🥓', true),
+    productConstructor('pizza', 2, 10, '🍕'),
+    productConstructor('waffle', 5, 3, '🧇'),
+    productConstructor('dumpling', 20, 0.1, '🥟'),
+    productConstructor('coockie', 5, 0.2, '🍪', true),
+    productConstructor('chockolate', 1, 3.3, '🍫'),
+    productConstructor('honey', 1, 20, '🍯'),
+    productConstructor('donut', 4, 1, '🍩', true),
+    productConstructor('peanuts', 50, 0.05, '🥜')
   ];
   
-  return productsInWarehouse;
-}
+  let productsToShow = productsInWarehouse.slice( 0, capacity);
 
-/**
- * Filters the array of all the products and creates a list of purchased products.
- * 
- * @param { array } listOfProducts Array of all the products.
- * @returns { array } Only the purchased products.
- */
-const listOfPurchasedProducts = ( listOfProducts ) => {
-  purchasedProducts = listOfProducts.filter( ( value ) => value.purchased === true );
-
-  return purchasedProducts;
-}
-
-/**
- * Filters the array of all the products and creates a list of available products.
- * 
- * @param { array } listOfProducts Array of all the products.
- * @returns { array }  Only the available products.
- */
- const listOfAvailableProducts = ( listOfProducts ) => {
-  let listOfAvailableProducts = listOfProducts.filter( ( value ) => value.purchased === false );
-
-  return listOfAvailableProducts;
+  return productsToShow;
 }
 
 /**
@@ -122,12 +96,13 @@ const listOfPurchasedProducts = ( listOfProducts ) => {
  * @param { array } listOfProducts An array to convert in HTML.
  * @returns { string } resultHtml The string to be published.
  */
- const resultHtml = ( listOfProducts ) => {
+ const resultHtml = ( listOfProducts, purchasedChecked = false ) => {
   let futureDomElement = `<div class="product__list-heading"><span></span><span>Product</span><span>Qty</span><span>Price</span><span>Total</span></div>`;
 
  listOfProducts.map( product => {
     futureDomElement += `<label class="product__label" for="${product.product_name}">`;
     futureDomElement += `<input type="checkbox"`;
+    futureDomElement += purchasedChecked && product.purchased ? ` checked` : ``;
     futureDomElement += ` id="${product.product_name}"`;
     futureDomElement += ` class="${product.purchased ? 'js-purchased-product' : 'js-available-product'}"`;
     futureDomElement += ` value="${product.product_name}"`;
@@ -152,7 +127,7 @@ const listOfPurchasedProducts = ( listOfProducts ) => {
  * @param { string } result The string that we want to show.
  *
  */
-function printShoppingList ( selector, result ) {
+const printShoppingList = ( selector, result ) => {
   let listLocation = document.getElementsByClassName(selector);
 
   for (let i = 0; i < listLocation.length; i++) {
@@ -161,532 +136,215 @@ function printShoppingList ( selector, result ) {
   }
 }
 
-let updatedProductsInStock = [];
+/**
+ * Gets the value from input elements after some button is clicked.
+ * 
+ * @param { string } inputSelector Selector id of the input element to get the value from.
+ * @param { string } result        The value from that input.
+ *
+ */
+ const getInputValue = ( inputSelector ) => {
+  const inputValue = document.getElementById(inputSelector).value;
 
-document.querySelector('#removeFromPurchased').addEventListener('click', () => {
-  let allProductsInStock = productsWarehouse();
+  return inputValue;
+}
 
-  if (typeof updatedProductsInStock !== 'undefined' && updatedProductsInStock.length === 0 ) {
-    updatedProductsInStock = listOfPurchasedProducts(allProductsInStock);
+
+/* ---------- Manipulations with proucts ----------- */
+/**
+ * Sort the array by purchased status.
+ * Available first, purchased the last.
+ * 
+ * @param { array } productList     Of products.
+ * @param { boolean } byPrice       If we want to sort by price value.
+ * @param { boolean } productList   If we want to sort in ascending order. False === descending order.
+ * @returns { array }               Sorted array.
+ */
+ const sortProducts = ( productList, byPrice = false, asc = true ) => {
+  let sortedList = [];
+
+  if ( byPrice ) {
+    if (asc) {
+      sortedList = productList.sort((a, b) => Number( a.total ) - Number( b.total ));
+    } else {
+      sortedList = productList.sort((a, b) => Number( b.total ) - Number( a.total ));
+    }
+  } else {
+    sortedList = productList.sort((a, b) => Number( a.purchased ) - Number( b.purchased ));
   }
 
-  let currentlyPurchased = listOfPurchasedProducts(updatedProductsInStock),
-      currentlyAvailable = listOfAvailableProducts(updatedProductsInStock);
+  return sortedList;
+}
 
-  let allSelected = document.querySelectorAll('input[type="checkbox"]:checked'),
-      selectedValues = [];
+/**
+ * Changes purchased status of product by name.
+ * 
+ * @param { array } productList    Of products.
+ * @param { string } productName   The name of the product to be updated in the product list.
+ * @returns { array }              Array with a newly added purchased product.
+ */
+ const addToPurchasedByName = ( productList, productName ) => {
+  productName = productName.toLowerCase();
+  let isFoundProduct =  productList.find(product => product.product_name === productName) !== undefined;
 
-  // let allCurrentlyAvailable = document.querySelectorAll('.js-available-product'),
-  //     updatedCurrentlyAvailableArr = [];
+  if ( isFoundProduct ) {
+    productList.find(product => product.product_name === productName).purchased = true;
+  }
 
-  let newPurchasedList = [],
-      extractedProducts = [],
-      newAvailableList = [];
+  return productList;
+}
 
+/**
+ * Updates the current product or adds a new product to the list by product name.
+ * 
+ * @param { array } productList    Of products.
+ * @param { string } productName   The name of the product to be updated or added in the product list.
+ * @returns { array }              Array with updated or newly added product.
+ */
+ const addNewProductByName = ( productList, productName, productQuantity, productPrice ) => {
+  productName = productName.toLowerCase();
+  let foundProduct = productList.find(product => product.product_name === productName),
+      isFoundProduct =  foundProduct !== undefined;
 
+  if ( isFoundProduct ) {
+    let originalQuantiry = foundProduct.quantity;
+    foundProduct.quantity = originalQuantiry + productQuantity;
+    foundProduct.total = (foundProduct.quantity * foundProduct.product_price).toFixed(2);
+  } else {
+    productList[ productList.length - 1 ] = productConstructor( productName, productQuantity, productPrice );
+  }
 
+  return productList;
+}
 
-
-
-
-
-  // // Step 1. Getting the current purchased products and form the new array of objects.
-  // // NOTE: it migth be different from the original list after the first products removal.
-  // Object.keys(allCurrentlyPurchased).forEach(key => {
-  //   let foundProduct = purchasedProductsList.find(o => o.product_name === allCurrentlyPurchased[key].value);
-  //   updatedCurrentlyPurchasedArr.push(foundProduct);
-  // });
-
-  // Step 2. Getting the checked products.
-  Object.keys(allSelected).forEach(key => {
-    if (allSelected[key] === undefined) {
-      delete allSelected[key];
-    } else {
-      selectedValues.push(allSelected[key].value);
-    }
+/**
+ * Removes product by creating a new array by product name.
+ * 
+ * @param { array } productList    Of products.
+ * @param { string } productName   The name of the product to be removed from the product list.
+ * @returns { array }              Array without the removed product.
+ */
+ const removeByName = ( productList, productName ) => {
+  productName = productName.toLowerCase();
+  const productIndex = productList.findIndex(object => {
+    return object.product_name === productName;
   });
 
-  // Step 3. Set value false to the purchased key in product object if it is selected.
-  Object.keys(currentlyPurchased).forEach(key => {
-    if ( !selectedValues.includes( currentlyPurchased[key].product_name ) ) {
-      newPurchasedList.push(currentlyPurchased[key]);
-    } else {
-      Object.keys(updatedProductsInStock).forEach(key => {
-        if ( currentlyPurchased[key].product_name === updatedProductsInStock[key].product_name ) {
-          updatedProductsInStock[key].purchased = false;
-        } 
-      });
-    }
-  });
+  removeItemWithSlice = ( productList, index ) => {
+    const firstArr = productList.slice(0, index);
+    const secondArr = productList.slice(index + 1);
+    return [...firstArr , ...secondArr]
+  }
 
-  console.log(extractedProducts);
-  
-});
+  if ( productIndex !== -1 ) {
+    productList = removeItemWithSlice( productList, productIndex );
+  }
+
+  return productList;
+}
+
+/**
+ * Calculates the total price of all the products in the list.
+ * 
+ * @param { array } productList   Of products.
+ * @returns { integer }           Total price.
+ */
+ const calculateTotal = ( productList ) => {
+  let totalPrice = 0;
+
+  for ( let product of productList) {
+    totalPrice = +product.total + totalPrice;
+  }
+
+  return totalPrice.toFixed(2);
+}
+
+/**
+ * Calculates the total price of the products by their purchase status.
+ * 
+ * @param { array } productList       Of products.
+ * @param { boolean } isPurchased     If calculation is done for purchased products.
+ * @returns { integer }               Total price.
+ */
+ const calculateTotalSeparately = ( productList, isPurchased = true ) => {
+  let totalPrice = 0;
+
+  for ( let product of productList) {
+    if ( product.purchased === isPurchased ) {
+      totalPrice = +product.total + totalPrice;
+    }
+  }
+
+  return totalPrice.toFixed(2);
+}
+
+/* ---------- Handlers ----------- */
+const sortProductsHandler = () => {
+  const sortedProducts = sortProducts( productsWarehouse( 15 ) );
+
+  printShoppingList('js-stock', resultHtml( sortedProducts, true ));
+ }
+
+const addToPurchasedByNameHandler = () => {
+ let valueFromTheField = getInputValue( 'addToPurchasedProduct' ),
+     updatedList = addToPurchasedByName( productsWarehouse( 15 ), valueFromTheField );
+
+  printShoppingList('js-stock', resultHtml(updatedList, true));
+}
+
+const removeByNameHandler = () => {
+  let valueFromTheField = getInputValue( 'removeProductFromStock' ),
+      updatedList = removeByName( productsWarehouse( 15 ), valueFromTheField );
+
+   printShoppingList('js-stock', resultHtml(updatedList));
+}
+
+const addNewProductHandler = () => {
+  let productName = getInputValue( 'newProductName' ),
+      quantity = +getInputValue( 'newProductQuantity' ),
+      productPrice = +getInputValue( 'newProductPrice' );
+
+  let updatedList = addNewProductByName( productsWarehouse( 15 ), productName, quantity, productPrice );
+   
+  printShoppingList('js-stock', resultHtml(updatedList));
+}
+
+const calculateTotalHandler = () => {
+  const totalPrice = calculateTotal( productsWarehouse( 15 ) ),
+        message = `The total price for all products is <b>${totalPrice}€</b>.`;
+
+  printShoppingList('js-caclulate-total', message);
+}
+
+const calculateTotalSeparatelyHandler = ( calculatePurchased = true ) => {
+  const totalOfPurchased = calculateTotalSeparately( productsWarehouse( 15 ) ),
+        totalOfAvailable = calculateTotalSeparately( productsWarehouse( 15 ), false ),
+        message = `The total price for all purchased products is <b>${totalOfPurchased}€</b>, and for all available products is <b>${totalOfAvailable}€</b>.`;
+
+        printShoppingList('js-caclulate-total-separately', message);
+}
+
+const sortProductsAlphabeticallyHandler = ( sortInASC = true ) => {
+  const sortedProducts = sortProducts( productsWarehouse( 15 ), true, sortInASC );
+
+  printShoppingList('js-stock', resultHtml( sortedProducts ));
+}
+
+/* ---------- Listeners ----------- */
+document.querySelector('#sortProducts').addEventListener('click', () => { sortProductsHandler() } );
+
+document.querySelector('#addToPurchasedByName').addEventListener('click', () => { addToPurchasedByNameHandler() } );
+
+document.querySelector('#removeProduct').addEventListener('click', () => { removeByNameHandler() } );
+
+document.querySelector('#addNewProduct').addEventListener('click', () => { addNewProductHandler() } );
+
+document.querySelector('#caclulateTotal').addEventListener('click', () => { calculateTotalHandler() } );
+
+document.querySelector('#caclulateTotalSepaarately').addEventListener('click', () => { calculateTotalSeparatelyHandler() } );
+
+document.querySelector('#showAsc').addEventListener('click', () => { sortProductsAlphabeticallyHandler() } );
+document.querySelector('#showDesc').addEventListener('click', () => { sortProductsAlphabeticallyHandler( false ) } );
 
 // Inint the function and construct the first load of product.
 shoppingCartConstructor();
-
-
-// Old stuff below, remove when finished.
-// let car = {
-//   brand: 'Toyota',
-//   model: 'C-HR',
-//   year: 2022,
-//   type: 'Hybrid',
-//   fuel_type: 'Gasoline',
-//   engine: 1.8,
-//   power: '122 hp',
-//   'consumption per 100km in liters': 4.8,
-//   'acceleration to 100km': 11,
-//   tank_size_l: 50,
-//   average_speed: 90,
-//   driver: 'Volodymyr'
-// }
-
-// function showCarSpecs( car ) {
-//   let carSpecs = document.getElementById("carSpecs"),
-//       carKeys = Object.keys(car),
-//       carTechnicalInfo = ``;
-
-//   if (carKeys.length > 0) {
-//     carTechnicalInfo = `<ul>`;
-//       for (let key of carKeys) {
-//         carTechnicalInfo += `<li>${key}: ${car[key]}</li>`;
-//       }
-//     carTechnicalInfo += `</ul>`;
-//   }
-
-//   carSpecs.innerHTML = carTechnicalInfo;
-// }
-
-// document.addEventListener('DOMContentLoaded', showCarSpecs( car ));
-
-
-// document.querySelector('#ageBtn').addEventListener('click', getUserAge);
-
-// function getUserAge() {
-//   let userReply = prompt("What is your age?");
-
-//   if ( userReply < 0 ) {
-//     message = `The age you wrote, seems to be incorrect. Please, give me the real number.`;
-//   } else if ( userReply >= 0 && userReply <= 11 ) {
-//     message = `Ah, you are so young, kid!`;
-//   } else if ( userReply >= 12 && userReply <= 17 ) {
-//     message = `Your age is great for exploging things. Being a tenager is one of the best things in the world. Enjoy it!`;
-//   } else if ( userReply >= 18 && userReply <= 59 ) {
-//     message = `Perfect age! Remember to balance your work life and the rest when you are adult.`;
-//   } else if ( userReply > 60 ) {
-//     message = `You are retired person and going to die soon, get ready!`;
-//   }
-
-//   let ageReply = document.getElementById("ageReply");
-//   ageReply.innerHTML = message;
-// }
-
-// // Asing for a keyboard number
-// document.querySelector('#keyboardNumber').addEventListener('change', getRangeNumber);
-
-// function getRangeNumber() {
-//   let rangeNumber = +document.getElementById('keyboardNumber').value,
-//       message;
-
-//       console.log(typeof rangeNumber);
-
-//   switch(rangeNumber) {
-//     case 0:
-//       message = `Your symbol of ${rangeNumber} keyboard is <strong>&#41;</strong>.`
-//       break;
-
-//     case 1:
-//       message = `Your symbol of ${rangeNumber} keyboard is <strong>&#161;</strong> Nah, joking, it is <strong>&#33;</strong>`
-//       break;
-
-//     case 2:
-//       message = `Your symbol of ${rangeNumber} keyboard is <strong>&#64;</strong>.`
-//       break;
-
-//     case 3:
-//       message = `Your symbol of ${rangeNumber} keyboard is <strong>&#35;</strong>.`
-//       break;
-
-//     case 4:
-//       message = `Your symbol of ${rangeNumber} keyboard is <strong>&#36;</strong>.`
-//       break;
-
-//     case 5:
-//       message = `Your symbol of ${rangeNumber} keyboard is <strong>&#37;</strong>.`
-//       break;
-
-//     case 6:
-//       message = `Your symbol of ${rangeNumber} keyboard is <strong>&#94;</strong>.`
-//       break;
-
-//     case 7:
-//       message = `Your symbol of ${rangeNumber} keyboard is <strong>&#38;</strong>.`
-//       break;
-
-//     case 8:
-//       message = `Your symbol of ${rangeNumber} keyboard is <strong>&#42;</strong>.`
-//       break;
-
-//     case 9:
-//       message = `Your symbol of ${rangeNumber} keyboard is <strong>&#40;</strong>.`
-//       break;
-
-//     default:
-//       message = `Can't find the symbol of ${rangeNumber}.`
-//   }
-
-//   let keyboardNumberResult = document.getElementById("keyboardNumberResult");
-//   keyboardNumberResult.innerHTML = message;
-//   keyboardNumberResult.style.visibility = 'visible';
-// }
-
-// // Calculating the sum of the range of two numbers.
-// document.querySelector('#rangeBtn').addEventListener('click', calculateRangeSum);
-
-// function calculateRangeSum() {
-//   let numberOne = +document.getElementById('firstNumber').value,
-//       numberTwo = +document.getElementById('secondNumber').value,
-//       result = Number();
-
-//   for (let i = numberOne; i <= numberTwo; i++) {
-//     result += i;
-//   }
-
-//   message = `The summ of all numbers in the range between (and including) ${numberOne} and ${numberTwo} equals <strong>${result}</strong>.`
-
-//   let rangeResult = document.getElementById("rangeResult");
-//   rangeResult.innerHTML = message;
-//   rangeResult.style.visibility = 'visible';
-// }
-
-// // Calculating Greatest common divider of two numbers.
-// document.querySelector('#gcdBtn').addEventListener('click', calculateGcd);
-
-// function calculateGcd() {
-//   let numberOne = +document.getElementById('firstGcdNumber').value,
-//       numberTwo = +document.getElementById('secondGcdNumber').value,
-//       resultNumberOne = numberOne,
-//       resultNumberTwo = numberTwo;
-
-//   numberOne = Math.abs(numberOne);
-//   numberTwo = Math.abs(numberTwo);
-
-
-//   while( numberTwo ) {
-//     let divider = numberTwo;
-//     numberTwo = numberOne % numberTwo;
-//     numberOne = divider;
-//   }
-
-//   message = `Greatest common divider of two ${resultNumberOne} and ${resultNumberTwo} equals <strong>${numberOne}</strong>.`
-
-//   let gcdResult = document.getElementById("gcdResult");
-//   gcdResult.innerHTML = message;
-//   gcdResult.style.visibility = 'visible';
-// }
-
-// // Calculating all dividers from a given number.
-// document.querySelector('#dividersBtn').addEventListener('click', calculateDividers);
-
-// function calculateDividers() {
-//   let numberToTest = +document.getElementById('dividersNumber').value,
-//       i = numberToTest,
-//       divider = '',
-//       result = '';
-
-//   numberToTest = Math.abs(numberToTest);
-
-//   while ( i ) {
-
-//     if ( numberToTest % i === 0 ) {
-//       divider = i === numberToTest ? i : i + ', ';
-//       result = result.replace (/^/, divider); // I want it to be in ascending order. 
-//     }
-  
-//     i--;
-//   }
-
-//   message = `All dividers of ${numberToTest} number are: <strong>${result}</strong>.`
-
-//   let dividersResult = document.getElementById("dividersResult");
-//   dividersResult.innerHTML = message;
-//   dividersResult.style.visibility = 'visible';
-// }
-
-// /**
-//  * Medium tasks
-//  */
-
-// // Asking for number and checking if it is palindrome.
-// document.querySelector('#palindromeBtn').addEventListener('click', checkPalindrome);
-
-// function checkPalindrome() {
-//   let number = +prompt("Saippuakivikauppias - is Finnish word for soapstone dealer, and it is a plaindrome - can be read both ways the same. Give us your 5 or more digits number and we will check if it a palindrome."),
-//       numberLength = number.toString().length,
-//       numberReversed = reverseNumber(number);
-
-//   if ( numberLength >= 5 ) {
-//     if ( number === numberReversed) {
-//       message = `The ${number} is palindrome.`;
-//     } else {
-//       message = `The ${number} is <strong> not a palindrome</strong>.`;
-//     }
-//   } else {
-//     message = `The ${number} is less than 5 digits. Please, enter the correct number.`;
-//   }
-
-//   let palindromeResult = document.getElementById("palindromeResult");
-//   palindromeResult.innerHTML = message;
-//   palindromeResult.style.visibility = 'visible';
-// }
-
-// function reverseNumber(num) {
-//   return (
-//     parseFloat(
-//       num
-//         .toString()
-//         .split('')
-//         .reverse()
-//         .join('')
-//     ) * Math.sign(num)
-//   )                 
-// }
-
-// // Calculation of total with discount
-// document.querySelector('#discountBtn').addEventListener('click', calculateTotal);
-
-// function calculateTotal() {
-//   let price = +prompt("Enter your number, please."),
-//       message = '';
-
-//   switch(true) {
-//     case price >= 200 && price < 300:
-//       total = price * 0.97; // 97%
-//       message = `You get the 3% discount 🎉. The total is <strong>${total}</strong>.`
-//       break;
-
-//     case price >= 300 && price < 500:
-//       total = price * 0.95; // 95%
-//       message = `You get the 5% discount 🤩. The total is <strong>${total}</strong>.`
-//       break;
-
-//     case price >= 500:
-//       total = price * 0.93; // 93%
-//       message = `You get the 7% discount 🔥. The total is <strong>${total}</strong>.`
-//       break;
-
-//     default:
-//       message = `Unfortunately, no discount for you. The minimum discount of 3% is applied for the price starting from 200.`
-//   }
-
-//   let discountResult = document.getElementById("discountResult");
-//   discountResult.innerHTML = message;
-//   discountResult.style.visibility = 'visible';
-// }
-
-// // Calculation of 10 numbers
-// document.querySelector('#numbersBtn').addEventListener('click', calculateTenNumbers);
-
-// function calculateTenNumbers() {
-//   let numbersString = prompt("Enter your numbers, separated by coma sign."),
-//       numbersStringNoSpaces = numbersString.replaceAll(' ', ''),
-//       numbersArray = numbersStringNoSpaces.split(','); // Getting an array of substrings.
-
-//   let posititveNumbersCount = 0,
-//       negativeNumbersCount = 0,
-//       zerosCount = 0,
-//       evenNumbersCount = 0,
-//       oddNumbersCount = 0,
-//       numbersCount = 0,
-//       isNanCount = 0,
-//       message = '';
-
-//   numbersArray.map(string => {
-//     number = parseInt(string);
-
-//     if ( !isNaN(number) ) {
-//       numbersCount++; // Checking the total of all numbers entered.
-
-//       if (Math.sign(number) === 1) { // Checking positive natural.
-//         posititveNumbersCount++ 
-//       } else if (Math.sign(number) === -1) { // Checking negative natural.
-//         negativeNumbersCount++;
-//       } else if (Math.sign(number) === 1 || Math.sign(number) === -0) {  // Checking zero.
-//         zerosCount++; 
-//       };
-
-//       if(number % 2 == 0) {  // Checking even number.
-//         evenNumbersCount++;
-//       } else {  // Else === odd number.
-//         oddNumbersCount++;
-//       }
-
-//     } else {
-//       isNanCount++;
-//     }
-//   });
-
-//   if (isNanCount) {
-//     if (numbersCount) {
-//       message = `Even though, the entered numbers were not all numbers (<strong>${isNanCount}</strong>), we managed to check <strong>${numbersCount}</strong> of them. `;
-      
-//       if (posititveNumbersCount) {
-//         message += `There ${posititveNumbersCount > 1 ? 'were': 'was'} <strong>${posititveNumbersCount}</strong> positive real number${posititveNumbersCount > 1 ? 's': ''}. `
-//       } else {
-//         message += `There were no positive real numbers. `
-//       }
-
-//       if (negativeNumbersCount) {
-//         message += `There ${negativeNumbersCount > 1 ? 'were': 'was'} <strong>${negativeNumbersCount}</strong> negative real numbers${negativeNumbersCount > 1 ? 's': ''}. `
-//       } else {
-//         message += `There were no negative real numbers. `
-//       }
-
-//       if (zerosCount) {
-//         message += `There ${zerosCount > 1 ? 'were': 'was'} <strong>${zerosCount}</strong> zero${zerosCount > 1 ? 's': ''}. `
-//       } else {
-//         message += `There were no zeros. `
-//       }
-
-//       if (evenNumbersCount) {
-//         message += `There ${evenNumbersCount > 1 ? 'were': 'was'} <strong>${evenNumbersCount}</strong> even number${evenNumbersCount > 1 ? 's': ''}. `
-//       } else {
-//         message += `There were no even numbers. `
-//       }
-
-//       if (zerosCount) {
-//         message += `There ${oddNumbersCount > 1 ? 'were': 'was'} <strong>${oddNumbersCount}</strong> odd number${oddNumbersCount > 1 ? 's': ''}. `
-//       } else {
-//         message += `There were no odd numbers. `
-//       }
-
-//     } else {
-//       message = `We didn't find any numbers in your string.`
-//     }
-//   } else {
-//     message = `Among your ${numbersCount} numbers we managed to find something. `;
-      
-//     if (posititveNumbersCount) {
-//       message += `There ${posititveNumbersCount > 1 ? 'were': 'was'} <strong>${posititveNumbersCount}</strong> positive real number${posititveNumbersCount > 1 ? 's': ''}. `
-//     } else {
-//       message += `There were no positive real numbers. `
-//     }
-
-//     if (negativeNumbersCount) {
-//       message += `There ${negativeNumbersCount > 1 ? 'were': 'was'} <strong>${negativeNumbersCount}</strong> negative real numbers${negativeNumbersCount > 1 ? 's': ''}. `
-//     } else {
-//       message += `There were no negative real numbers. `
-//     }
-
-//     if (zerosCount) {
-//       message += `There ${zerosCount > 1 ? 'were': 'was'} <strong>${zerosCount}</strong> zero${zerosCount > 1 ? 's': ''}. `
-//     } else {
-//       message += `There were no zeros. `
-//     }
-
-//     if (evenNumbersCount) {
-//       message += `There ${evenNumbersCount > 1 ? 'were': 'was'} <strong>${evenNumbersCount}</strong> even number${evenNumbersCount > 1 ? 's': ''}. `
-//     } else {
-//       message += `There were no even numbers. `
-//     }
-
-//     if (zerosCount) {
-//       message += `There ${oddNumbersCount > 1 ? 'were': 'was'} <strong>${oddNumbersCount}</strong> odd number${oddNumbersCount > 1 ? 's': ''}. `
-//     } else {
-//       message += `There were no odd numbers. `
-//     }
-//   }
-
-//   let numbersResult = document.getElementById("numbersResult");
-//   numbersResult.innerHTML = message;
-//   numbersResult.style.visibility = 'visible';
-// }
-
-// // Calculating days of week
-// document.addEventListener('DOMContentLoaded', showToday);
-
-// function showToday() {
-//   console.log(defineTheDay(new Date().getDay()));
-//   let daySwitchResult = document.getElementById("daySwitchResult"),
-//       today = defineTheDay(new Date().getDay()),
-//       message = `Today is <strong>${today}</strong>. Do you want to see the other day? Press the button.`
-//       daySwitchResult.innerHTML = message;
-// }
-
-// document.querySelector('#daySwitchBtn').addEventListener('click', switchTheDay);
-// let day = new Date().getDay(); // Current day
-
-// function switchTheDay() {
-//   if (day === 7) {
-//     day = 1;
-//   } else {
-//     day++;
-//   }
-
-//   let nextDay = defineTheDay(day);
-
-//   let daySwitchResult = document.getElementById("daySwitchResult"),
-//       message = `The day is <strong>${nextDay}</strong>. Do you want to see the other day? Press the button.`;
-//       daySwitchResult.innerHTML = message;
-// }
-
-// function defineTheDay(i) {
-//   let dayOfTheWeek = '';
-  
-//   switch( true ) {
-//     case i === 1:
-//       dayOfTheWeek = 'Monday';
-//       break;
-
-//     case i === 2:
-//       dayOfTheWeek = 'Tuesday';
-//       break;
-
-//     case i === 3:
-//       dayOfTheWeek = 'Wednesday';
-//       break;
-    
-//     case i === 4:
-//       dayOfTheWeek = 'Thursday';
-//       break;
-
-//     case i === 5:
-//       dayOfTheWeek = 'Friday';
-//       break;
-
-//     case i === 6:
-//       dayOfTheWeek = 'Saturday';
-//       break;
-
-//     case i === 7:
-//       dayOfTheWeek = 'Sunday';
-//       break;
-//   }
-
-//   return dayOfTheWeek;
-// }
-
-// /**
-//  * Difficult tasks
-//  */
-
-// // Calculating the deposit investment.
-// document.querySelector('#depositBtn').addEventListener('click', calculateDeposit);
-
-// function calculateDeposit( ) {
-//   let cash = prompt("How much do you want to put on deposit?"),
-//       depositTime = prompt("How many month do you want to keep your money on deposit?")
-//       depositPerccentage = 0.05, // It's for easier calculation 
-//       monthInAYear = 12;
-
-//   let yearlyIncome = cash * depositPerccentage; // only percentage, without the deposit itself
-//   let mothlyIncome = yearlyIncome / monthInAYear;
-//   let depositPercentageIncome = Number.parseFloat(mothlyIncome * depositTime).toFixed(2);
-//   let fullIncome = Number(cash) + Number(depositPercentageIncome);
-//   let message = `If you invest ${cash}€ to the bank deposit for ${depositTime} month, you will receive <strong>${depositPercentageIncome}€</strong> as a percentage income, or <strong>${fullIncome}€</strong> as the whole summ.`;
-
-//   let depositReply = document.getElementById("depositReply");
-//   depositReply.innerHTML = message;
-// }
