@@ -1,0 +1,45 @@
+/**
+ * Header menu styling.
+ */
+
+ .menu {
+  &__list {
+    list-style: none;
+  }
+
+  &__item {
+    display: inline-block;
+
+    & + & {
+      margin-left: rem(70px);
+    }
+
+    &:before {
+      content: "";
+      display: inline-block;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      border: 1px solid $white;
+      background-color: transparent;
+      margin-right: rem(12px);
+      transition: background-color 0.3s ease;
+    }
+
+    &:hover {
+      &:before {
+        content: "";
+        background-color: $white;
+      }
+    }
+  }
+
+  &__link {
+    font-family: $font-family-menu;
+    font-size: $h6-font-size;
+    line-height: rem(18px);
+    color: $white;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+ }

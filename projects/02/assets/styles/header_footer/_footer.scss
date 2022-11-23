@@ -9,8 +9,6 @@
     padding: rem(30px) 0;
     border-top: 1px solid;
 
-    @extend .h7;
-
     &__container {
       @include container;
     }

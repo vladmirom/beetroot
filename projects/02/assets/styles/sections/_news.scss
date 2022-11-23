@@ -3,24 +3,5 @@
   */
 
 .section {
-  &-posts {
-    margin-bottom: rem(60px);
-    
-    &__container {
-      @include container;
-    }
-
-    &__grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(2, 1fr);
-      column-gap: rem(30px);
-    }
-
-    &__post {
-      padding: rem(50px) rem(35px);
-      margin-bottom: rem(60px);
-      border-top: rem(1px) solid;
-    }
-  }
+  font-size: $font-body;
 }

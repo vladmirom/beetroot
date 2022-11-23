@@ -35,14 +35,14 @@
   align-items: center;
 }
 
-@mixin highlighted ($theme-light: false, $theme-dark: false ) {
-  font-style: italic;
+@mixin flex-horisontal-center {
+  display: flex;
+  justify-content: center;
+}
 
-  @if $theme-light {
-    color: $pewter_blue;
-  } @else if $theme-dark {
-    color: $cornflower_blue;
-  }
+@mixin flex-center {
+  @include flex-vertical-center;
+  @include flex-horisontal-center;
 }
 
 @mixin link ($theme-light: false, $theme-dark: false ) {

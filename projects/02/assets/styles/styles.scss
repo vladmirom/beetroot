@@ -7,9 +7,10 @@
 
 @import 'header_footer/header';
 @import 'header_footer/footer';
+@import 'header_footer/menu';
 
-@import 'section/header';
-@import 'section/projects';
-@import 'section/news';
-@import 'section/gallery';
-@import 'section/contact';
+@import 'sections/hero';
+@import 'sections/projects';
+@import 'sections/news';
+@import 'sections/gallery';
+@import 'sections/contact';
