@@ -71,7 +71,7 @@ for (let i = 0; i < localStorage.length; i++) {
   
 }
 
-console.log(localStorageValue);
+// console.log(localStorageValue);
 
 /**
  * Working with Session Storage.
@@ -86,4 +86,4 @@ let sessionStorageValue = sessionStorage.getItem('test');
 // delete sessionStorage.test;
 // sessionStorage.removeItem('test');
 
-console.log(sessionStorageValue);
+// console.log(sessionStorageValue);
