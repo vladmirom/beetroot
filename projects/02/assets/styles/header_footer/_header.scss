@@ -129,8 +129,8 @@
   
     &__item {
       display: inline-block;
-      width: rem(40px);
-      height: rem(40px);
+      width: rem(37.5px);
+      height: rem(37.5px);
       border-radius: 50%;
       border: 1px solid $white;
       transition: all 0.3s ease;
@@ -144,12 +144,14 @@
         width: 100%;
         fill: $white;
       }
-  
-      &:hover {
-        background-color: $white;
-        
-        & svg {
-          fill:  $slate_blue;
+      
+      @include media-breakpoint-up(lg) {
+        &:hover {
+          background-color: $white;
+          
+          & svg {
+            fill:  $slate_blue;
+          }
         }
       }
     }
