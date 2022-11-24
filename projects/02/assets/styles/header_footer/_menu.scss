@@ -5,13 +5,30 @@
  .menu {
   &__list {
     list-style: none;
+    margin: rem(30px) 0;
+
+    @include media-breakpoint-up(md) {
+      display: inline-block;
+      margin-top: unset;
+      margin-bottom: unset;
+
+      & + & {
+        margin-left: rem(70px);
+      }
+    }
   }
 
   &__item {
-    display: inline-block;
+    display: block;
+    margin-bottom: rem(5px);
 
-    & + & {
-      margin-left: rem(70px);
+    @include media-breakpoint-up(md) {
+      display: inline-block;
+      margin-bottom: unset;
+
+      & + & {
+        margin-left: rem(70px);
+      }
     }
 
     &:before {
@@ -26,7 +43,7 @@
       transition: background-color 0.3s ease;
     }
 
-    @include media-breakpoint-up(lg) {
+    @include media-breakpoint-up(md) {
       &:hover {
         &:before {
           content: "";
@@ -43,5 +60,6 @@
     color: $white;
     text-transform: uppercase;
     text-decoration: none;
+
   }
  }
