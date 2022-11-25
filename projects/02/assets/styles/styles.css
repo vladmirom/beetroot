@@ -274,48 +274,13 @@ h6,
   * Footer styling.
   */
 .footer {
-  background-image: linear-gradient(251.06deg, #7E5AFF -2.19%, #55B7FF 103.21%), url(../../images/footer.webp);
+  position: relative;
+  background: url("../images/footer.webp"), linear-gradient(251.06deg, #7E5AFF -2.19%, #55B7FF 103.21%);
   padding: 11.2777777778rem 0.8333333333rem 2.7777777778rem;
 }
 @media (min-width: 992px) {
   .footer {
     padding: 11.2777777778rem 23.0555555556rem 13rem;
-  }
-}
-.footer__container {
-  width: 93.75%;
-  max-width: 540px;
-  margin-left: auto;
-  margin-right: auto;
-}
-@media (min-width: 576px) {
-  .footer__container {
-    width: 93.75%;
-    max-width: 720px;
-  }
-}
-@media (min-width: 768px) {
-  .footer__container {
-    width: 96.7741935484%;
-    max-width: 960px;
-  }
-}
-@media (min-width: 992px) {
-  .footer__container {
-    width: 95%;
-    max-width: 1140px;
-  }
-}
-@media (min-width: 1200px) {
-  .footer__container {
-    width: 95%;
-    max-width: 1140px;
-  }
-}
-@media (min-width: 1400px) {
-  .footer__container {
-    width: 81.25%;
-    max-width: 1170px;
   }
 }
 .footer__content {
