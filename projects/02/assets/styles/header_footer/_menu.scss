@@ -5,9 +5,9 @@
  .menu {
   &__list {
     list-style: none;
-    margin: rem(30px) 0;
+    margin: rem(50px) 0;
 
-    @include media-breakpoint-up(md) {
+    @include media-breakpoint-up(lg) {
       display: inline-block;
       margin-top: unset;
       margin-bottom: unset;
@@ -22,7 +22,7 @@
     display: block;
     margin-bottom: rem(5px);
 
-    @include media-breakpoint-up(md) {
+    @include media-breakpoint-up(lg) {
       display: inline-block;
       margin-bottom: unset;
 
@@ -43,7 +43,7 @@
       transition: background-color 0.3s ease;
     }
 
-    @include media-breakpoint-up(md) {
+    @include media-breakpoint-up(lg) {
       &:hover {
         &:before {
           content: "";
