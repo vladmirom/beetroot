@@ -31,7 +31,7 @@ h1,
 .h1 {
   font-family: "Montserrat", sans-serif;
   font-size: 4.4444444444rem;
-  font-weight: 400;
+  font-weight: 700;
   line-height: 5.4444444444rem;
   margin-bottom: 1.1111111111rem;
 }
@@ -238,8 +238,8 @@ h6,
 }
 .social-media__item {
   display: inline-block;
-  width: 2.0833333333rem;
-  height: 2.0833333333rem;
+  width: 2.2222222222rem;
+  height: 2.2222222222rem;
   border-radius: 50%;
   border: 1px solid #ffffff;
   transition: all 0.3s ease;
@@ -377,8 +377,93 @@ h6,
 /**
   * Hero section styles.
   */
-.section {
-  font-size: 18px;
+.section__hero-bg {
+  background: url("../images/hero.webp"), linear-gradient(251.06deg, #7E5AFF -2.19%, #55B7FF 103.21%);
+  min-height: 44.4444444444rem;
+  margin-top: -9.2777777778rem;
+}
+.section__hero-container {
+  width: 93.75%;
+  max-width: 540px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+@media (min-width: 576px) {
+  .section__hero-container {
+    width: 93.75%;
+    max-width: 720px;
+  }
+}
+@media (min-width: 768px) {
+  .section__hero-container {
+    width: 96.7741935484%;
+    max-width: 960px;
+  }
+}
+@media (min-width: 992px) {
+  .section__hero-container {
+    width: 95%;
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1200px) {
+  .section__hero-container {
+    width: 95%;
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1400px) {
+  .section__hero-container {
+    width: 81.25%;
+    max-width: 1170px;
+  }
+}
+.section__hero-content {
+  display: flex;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 44.4444444444rem;
+  color: #ffffff;
+}
+.section__hero-arrow {
+  position: absolute;
+  bottom: 2.7777777778rem;
+  left: calc(50% - 20px);
+}
+
+.arrow-down__wrap {
+  display: inline-block;
+  width: 2.2222222222rem;
+  height: 2.2222222222rem;
+  border-radius: 50%;
+  border: 1px solid #ffffff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.arrow-down__wrap svg {
+  height: 1rem;
+  width: 100%;
+  fill: #ffffff;
+}
+@media (min-width: 992px) {
+  .arrow-down__wrap:hover {
+    background-color: #ffffff;
+  }
+  .arrow-down__wrap:hover svg {
+    fill: #7562F6;
+  }
+}
+.arrow-down__link {
+  display: flex;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
 }
 
 /**

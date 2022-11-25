@@ -35,14 +35,14 @@
   align-items: center;
 }
 
-@mixin flex-horisontal-center {
+@mixin flex-horizontal-center {
   display: flex;
   justify-content: center;
 }
 
 @mixin flex-center {
   @include flex-vertical-center;
-  @include flex-horisontal-center;
+  @include flex-horizontal-center;
 }
 
 @mixin link ($theme-light: false, $theme-dark: false ) {
