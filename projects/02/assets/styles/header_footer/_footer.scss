@@ -3,42 +3,49 @@
   */
 
   .footer {
-    @include flex-vertical-center;
-    justify-content: space-between; 
-
-    padding: rem(30px) 0;
-    border-top: 1px solid;
+    background-image: $gradient-footer, url(../../images/footer.webp);
+    padding: rem(203px) rem(15px) rem(50px);
+    
+    @include media-breakpoint-up(lg) {
+      padding: rem(203px) rem(415px) rem(234px);
+    }
 
     &__container {
       @include container;
     }
 
+    &__content {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      margin-bottom: rem(41px);
 
-    &__copyright {
-      opacity: 0.6;
-    }
-
-    &__credits--made-by {
-      margin-right: rem(12px);
-      opacity: 0.6;
-    }
-
-    &__link {
-      & + & {
-        margin-left: rem(32px);
-      }
-      
-      &:link,
-      &:visited,
-      &:active {
-        opacity: 1;
-        letter-spacing: 0.08em;
-        font-weight: 400;
-        text-decoration: none;
+      @include media-breakpoint-up(lg) {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
       }
 
-      &:hover{
-        text-decoration: underline;
+      &-logo {
+        margin-bottom: rem(40px);
+        
+        @include media-breakpoint-up(lg) {
+          margin-bottom: unset;
+        }
+
+        & svg {
+          width: rem(214px);
+          height: rem(54px); 
+        }
+      }
+    }
+
+    &__credits {
+      text-align: center;
+      color: $white;
+
+      @include media-breakpoint-up(lg) {
+        text-align: left;
       }
     }
   }
