@@ -34,10 +34,10 @@
     &:before {
       content: "";
       display: inline-block;
-      width: 9px;
-      height: 9px;
+      width: rem(9px);
+      height: rem(9px);
       border-radius: 50%;
-      border: 1px solid $white;
+      border: rem(1px) solid $white;
       background-color: transparent;
       margin-right: rem(12px);
       transition: background-color 0.3s ease;

@@ -6,6 +6,7 @@
     position: relative;
     width: 100%;
     padding: rem(20px) 0;
+    z-index: 1;
 
     @include media-breakpoint-up(lg) {
       padding: rem(52px) 0;
@@ -26,6 +27,7 @@
     }
 
     &__menu {
+      display: none;
       position: absolute;
       top: 100%;
       left: 0;
@@ -117,6 +119,7 @@
         }
 
         & + .header__menu {
+          display: block;
           opacity: 1;
         }
       }

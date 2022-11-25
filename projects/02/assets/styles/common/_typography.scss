@@ -11,17 +11,28 @@ h1,
   font-family: $font-family-headings;
   font-size: $h1-font-size;
   font-weight: 700;
-  line-height: $h1-line-height;
+  font-size: rem(40px);
+  line-height: rem(49px);
   margin-bottom: rem(20px);
+
+  @include media-breakpoint-up(lg) {
+    font-size: $h1-font-size;
+    line-height: $h1-line-height;
+  }
 }
 
 h2,
 .h2 {
   font-family: $font-family-headings;
-  font-size: $h2-font-size;
+  font-size: rem(36px);
   font-weight: 400;
-  line-height: $h2-line-height;
+  line-height: rem(43px);
   margin-bottom: rem(30px);
+
+  @include media-breakpoint-up(lg) {
+    font-size: $h2-font-size;
+    line-height: $h2-line-height;
+  }
 }
 
 h3,
