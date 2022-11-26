@@ -15,6 +15,7 @@
     &__wrapper {
       @include flex-vertical-center;
       justify-content: space-between;
+      z-index: 2;
     }
 
     &__container {
