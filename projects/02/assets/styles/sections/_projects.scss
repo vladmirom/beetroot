@@ -3,5 +3,142 @@
   */
 
 .section {
-  font-size: $font-body;
+  &__projects {
+    padding: rem(100px) 0 rem(150px);
+
+    &-container {
+      @include container;
+    }
+  
+    &-title {
+      @include title;
+      @include flex-horizontal-center;
+  
+      text-transform: uppercase;
+      color: $madisson;
+      margin-bottom: rem(50px);
+
+      @include media-breakpoint-up(lg) {
+        margin-bottom: rem(127px);
+      }
+    }
+
+    & .teaser {
+      position: relative;
+      margin-bottom: rem(50px);
+
+      @include media-breakpoint-up(lg) {
+        margin-bottom: rem(177px);
+      }
+
+      &__img-bg {
+        width: 80%;
+        height: rem(260px);
+        position: absolute;
+        z-index: -1;
+
+        @include media-breakpoint-up(md) {
+          height: rem(600px);
+        }
+
+        @include media-breakpoint-up(lg) {
+          width: 40%;
+          height: rem(470px);
+        }
+
+        &--first {
+          top: rem(-35px);
+          left: 0;
+          background-color: $maiya_blue;
+
+          @include media-breakpoint-up(md) {
+            top: rem(-50px);
+          }
+
+          @include media-breakpoint-up(lg) {
+            top: unset;
+            bottom: rem(57px);
+          }
+        }
+  
+        &--second {
+          bottom: rem(35px);
+          right: 0;
+          background-color: $slate_blue;
+
+          @include media-breakpoint-up(md) {
+            bottom: rem(50px);
+          }
+
+          @include media-breakpoint-up(lg) {
+            bottom: rem(57px);
+          }
+        }
+      }
+
+      &__image {
+        width: 100%;
+      }
+
+      &__container {
+        @include container;
+        display: grid;
+        gap: rem(70px);
+
+        &--first {
+          @include media-breakpoint-up(lg) {
+            grid-template-columns: 7fr 5fr;
+          }
+        }
+  
+        &--second {
+          @include media-breakpoint-up(lg) {
+            grid-template-columns: 5fr 7fr;
+          }
+        }
+      }
+
+      &__description {
+        display: flex;
+        flex-direction: column;
+        align-self: flex-end;
+        margin-bottom: rem(26px);
+
+        &-subtitle {
+          text-transform: uppercase;
+          margin-bottom: 0;
+        }
+
+        &-title {
+          text-transform: uppercase;
+          margin-bottom: rem(19px);
+        }
+
+        &-content {
+          margin-bottom: rem(40px);
+        }
+
+        &-link {
+          @include link;
+          margin-bottom: rem(60px);
+        }
+
+        &-location {
+          @include flex-vertical-center;
+          font-style: italic;
+
+          &-icon {
+            height: rem(17px);
+            width: rem(9px);
+            margin-right: rem(10px);
+
+            & svg {
+              height: 100%;
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
 }

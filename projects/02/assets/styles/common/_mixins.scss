@@ -41,178 +41,54 @@
 }
 
 @mixin flex-center {
-  @include flex-vertical-center;
-  @include flex-horizontal-center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-@mixin link ($theme-light: false, $theme-dark: false ) {
+@mixin title ( $color: $madisson ) {
+  position: relative;
+  padding-top: 30px;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    display: block;
+    margin: 0 auto;
+    width: rem(100px);
+    border-bottom: 1px solid $color;
+  }
+}
+
+@mixin link () {
   // Basic styling
   display: inline-block;
   position: relative;
-  z-index: 1;
+  width: fit-content;
 
-  font-size: $h5-font-size;
-  line-height: $h5-line-height;
-  font-weight: 500;
-  letter-spacing: 0.08em;
+  font-size: $h6-font-size;
+  line-height: $h6-line-height;
+  padding: rem(16px) rem(41px) rem(17px);
+  font-weight: 400;
   text-transform: uppercase;
   text-decoration: none;
-  border: none;
-  background: none;
-  transition: all 0.5s ease;
+  border: rem(1px) solid $black;
+  background: transparent;
+  transition: all 0.3s ease;
   cursor: pointer;
 
-  &:after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: rem(10px);
-    left: rem(10px);
-    z-index: -1;
+  color: $black;
 
-    width: 100%;
-    height: rem(13px);
+  // For <a> element.
+  &:link,
+  &:visited,
+  &:active {
+    color: $black;
   }
 
-  // Color switch.
-  @if $theme-light {
-    // For <button> or <input> element.
-    color: $congo_pink;
-
-    &:after {
-      background-color: $congo_pink;
-      opacity: 0.3;
-    }
-
-    // For <a> element.
-    &:link,
-    &:visited,
-    &:active {
-      color: $congo_pink;
-
-      &:after {
-        background-color: $congo_pink;
-        opacity: 0.3;
-      }
-    }
-
-    &:hover {
-      color: $carmine_pink;
-
-      &:after {
-        background-color: $carmine_pink;
-        opacity: 0.3;
-      }
-    }
-
-  } @else if $theme-dark {
-    // For <button> or <input> element.
-    color: $turquoise;
-
-    &:after {
-      background-color: $turquoise;
-      opacity: 0.3;
-    }
-
-    // For <a> element.
-    &:link,
-    &:visited,
-    &:active {
-      color: $turquoise;
-
-      &:after {
-        background-color: $turquoise;
-        opacity: 0.3;
-      }
-    }
-
-    &:hover {
-      color: $caribbean_green;
-
-      &:after {
-        background-color: $caribbean_green;
-        opacity: 0.3;
-      }
-    }
-  }
-}
-
-@mixin button ($theme-light: false, $theme-dark: false ) {
-  // Basic styling
-  display: block;
-  position: relative;
-  z-index: 1;
-
-  min-width: rem(300px);
-  height: rem(90px);
-  padding: rem(33px) rem(89px);
-
-  font-size: $h5-font-size;
-  line-height: $h5-line-height;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  text-decoration: none;
-  transition: all 0.5s ease;
-
-  &:after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: rem(43px);
-    left: rem(100px);
-    z-index: -1;
-
-    width: 37%;
-    height: rem(13px);
-    transition: all 0.5s ease;
-  }
-
-  // Color switch
-  @if $theme-light {
-    &:link,
-    &:visited,
-    &:active {
-      color: $congo_pink;
-      border: 1px solid $gray;
-
-      &:after {
-        background-color: $congo_pink;
-        opacity: 0.3;
-      }
-    }
-
-    &:hover {
-      color: $carmine_pink;
-      border-color: $carmine_pink;
-
-      &:after {
-        background-color: $carmine_pink;
-        opacity: 0.3;
-      }
-    }
-
-  } @else if $theme-dark {
-    &:link,
-    &:visited,
-    &:active {
-      color: $turquoise;
-      border: 1px solid $independence;
-
-      &:after {
-        background-color: $turquoise;
-        opacity: 0.3;
-      }
-    }
-
-    &:hover {
-      color: $caribbean_green;
-      border-color: $caribbean_green;
-
-      &:after {
-        background-color: $caribbean_green;
-        opacity: 0.3;
-      }
-    }
+  &:hover {
+    background: $black;
+    color: $white;
   }
 }

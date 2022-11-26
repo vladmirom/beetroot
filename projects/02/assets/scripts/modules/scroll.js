@@ -10,7 +10,7 @@ const smoothScroll = ( buttonID, elementToScroll ) => {
   
     if (hiddenEl) {
       hiddenEl.scrollIntoView({
-        block: 'end',
+        block: 'start',
         behavior: 'smooth',
         alignToTop: true
       })
@@ -19,7 +19,7 @@ const smoothScroll = ( buttonID, elementToScroll ) => {
 
   const buttonSelector = document.getElementById(buttonID);
   if (buttonSelector) {
-    buttonSelector.addEventListener('click', () => { scrollToElement( elementToScroll ) });
+    buttonSelector.addEventListener('click', ( scrollEvent ) => {  scrollEvent.preventDefault(); scrollToElement( elementToScroll ) }); // Q2: is there a better way to write this?
   }
 };
 

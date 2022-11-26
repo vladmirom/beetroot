@@ -38,23 +38,23 @@
             <div class="header__menu menu">
               <nav>
                 <ul class="menu__list">
-                  <li class="menu__item">
-                    <a href="#projects" class="menu__link">
+                  <li class="menu__item" id="menuProjects">
+                    <a href="#" class="menu__link">
                       projects
                     </a>
                   </li>
                   <li class="menu__item">
-                    <a href="#news" class="menu__link">
+                    <a href="#news" class="menu__link" id="menuNews">
                       news
                     </a>
                   </li>
                   <li class="menu__item">
-                    <a href="#gallery" class="menu__link">
+                    <a href="#gallery" class="menu__link" id="menuGallery">
                       gallery
                     </a>
                   </li>
                   <li class="menu__item">
-                    <a href="#contact" class="menu__link">
+                    <a href="#contact" class="menu__link" id="menuContact">
                       contact
                     </a>
                   </li>
@@ -129,11 +129,8 @@
     <section id="hero" class="section__hero">
       <div class="section__hero-bg">
         <div class="section__hero-container">
-
-
-
           <div class="js-hero-slider">
-            <!-- Additional required wrapper -->
+            <!-- Required wrapper -->
             <div class="swiper-wrapper">
               <div class="swiper-slide section__hero-content">
                 <h1>Simple & modern</h1>
@@ -173,7 +170,53 @@
     </section>
 
     <section id="projects" class="section__projects">
-     
+      <div class="section__projects-title">
+        <h2>What we do</h2>
+      </div>
+
+      <div class="section__projets-teaser teaser">
+        <div class="teaser__img-bg teaser__img-bg--first"></div>
+        <div class="teaser__container teaser__container--first">
+          <img class="teaser__image" src="assets/images/project-1.webp" alt="Project-1">
+
+          <div class="teaser__description">
+            <h3 class="teaser__description-subtitle">One world</h3>
+            <h2 class="teaser__description-title">Trade center</h2>
+            <p class="teaser__description-content">Increasing prosperity in our lives can be accomplished by having the right frame of mind. The truth is, our thoughts are very powerful.</p>
+            <a href="#" class="teaser__description-link">More details</a>
+            <h5 class="teaser__description-location">
+              <span class="teaser__description-location-icon">
+                <svg>
+                  <use xlink:href="./assets/images/sprite.svg#markerMap"/>
+                </svg>
+              </span> 
+              New York City, United States - 1776 feet
+            </h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="section__projets-teaser teaser">
+        <div class="teaser__img-bg teaser__img-bg--second"></div>
+        <div class="teaser__container teaser__container--second">
+          <div class="teaser__description">
+            <h3 class="teaser__description-subtitle">International</h3>
+            <h2 class="teaser__description-title">Commerce Centre</h2>
+            <p class="teaser__description-content">Successful businesses have many things in common, today we'll look at the big 'R' of recognition and how a digital advertising network may help.</p>
+            <a href="#" class="teaser__description-link">More details</a>
+            <h5 class="teaser__description-location">
+              <span class="teaser__description-location-icon">
+                <svg>
+                  <use xlink:href="./assets/images/sprite.svg#markerMap"/>
+                </svg>
+              </span>
+              Hong Kong - 1588 feet
+            </h5>
+          </div>
+          
+          <img class="teaser__image" src="assets/images/project-2.webp" alt="Project-2">
+        </div>
+      </div>
     </section>
 
     <section id="news" class="section__news">
