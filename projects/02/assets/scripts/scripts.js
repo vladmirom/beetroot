@@ -1,8 +1,8 @@
 // Import modules
 import smoothScroll from './modules/scroll.js'
-import slider from './modules/slider.js';
+import sliderConstructor from './modules/slider.js';
 // import menuShowOnScroll from './modules/menuShowOnScroll';
-import visibleOnScroll from './modules/visibleOnScroll.js';
+// import visibleOnScroll from './modules/visibleOnScroll.js';
 
 window.addEventListener('load', () => {
   // Initialize modules
@@ -11,7 +11,9 @@ window.addEventListener('load', () => {
   smoothScroll( 'menunNews', 'news');
   smoothScroll( 'menuGallery', 'gallery');
   smoothScroll( 'menuContact', 'contact');
-  slider( '.js-hero-slider');
+  
+  sliderConstructor();
+
   // menuShowOnScroll();
   // visibleOnScroll();
 });

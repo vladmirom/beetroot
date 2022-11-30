@@ -5,7 +5,7 @@
 .section {
   &__hero {
     &-bg {
-      background-image: url('../images/hero.webp'), $gradient-footer;
+      background-image: url('../images/hero.webp'), $gradient-hero;
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
@@ -39,6 +39,14 @@
       @include media-breakpoint-up(md) {
         height: rem(800px); // Q1: I don't want static height here, I want it to be 100% to center the content. What's the best way?
         padding-right: unset;
+      }
+    }
+
+    &-slider {
+      .swiper-pagination-bullet {
+        & + & {
+          margin-top: rem(40px)!important;
+        }
       }
     }
 
@@ -84,29 +92,4 @@
     height: 100%;
     text-decoration: none;
   }
-}
-
-.swiper-wrapper {
-  max-height: 100vh;
-
-  @include media-breakpoint-up(lg) {
-    max-height: rem(800px);
-  }
-}
-
-.swiper-pagination-bullet {
-  width: rem(10px);
-  height: rem(10px);
-  border-radius: 50%;
-  border: rem(1px) solid $white;
-  background-color: transparent;
-  opacity: 1;
-
-  & + & {
-    margin-top: rem(40px)!important;
-  }
-}
-
-.swiper-pagination-bullet-active {
-  background-color: $white;
 }

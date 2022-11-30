@@ -2,10 +2,17 @@
  * Initializes the slider with the class.
  * 
  * @param { string } sliderSelector     The class of the slider.
+ * @param { object } sliderArguments    Slider settings.
  */
 
-const slider = ( sliderSelector ) => {
-  const swiper = new Swiper(sliderSelector, {
+const slider = ( sliderSelector, sliderArguments ) => {
+  const swiper = {};
+  swiper = new swiper( sliderSelector, sliderArguments );
+}
+
+const sliderConstructor = () => {
+  // Slider constants
+  const heroSlider = {
     slidesPerView: 1,
     loop: true,
     loopedSlides: 1,
@@ -23,7 +30,11 @@ const slider = ( sliderSelector ) => {
       type: 'bullets',
       clickable: true
     },
-  });
+  };
+  const newsSlider = {};
+
+  slider( '.js-hero-slider', heroSlider );
+  slider( '.js-news-slider', newsSlider );
 }
 
-export default slider;
+export default sliderConstructor;

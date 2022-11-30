@@ -1,0 +1,26 @@
+/**
+  * Swiper slider styles.
+  */
+
+.swiper-wrapper {
+  max-height: 100vh;
+  max-width: 100%;
+
+  @include media-breakpoint-up(lg) {
+    max-height: rem(800px);
+  }
+}
+
+.swiper-pagination-bullet {
+  width: rem(10px);
+  height: rem(10px);
+  border-radius: 50%;
+  border: rem(1px) solid $white;
+  background-color: transparent;
+  opacity: 1;
+  z-index: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: $white;
+}

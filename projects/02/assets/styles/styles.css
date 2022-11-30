@@ -1,6 +1,11 @@
 /*--------------------------------------------------------------
   # Utils: REM helper
 --------------------------------------------------------------*/
+:root {
+  --swiper-pagination-bullet-horizontal-gap: 40px;
+  --swiper-pagination-bullet-vertical-gap: 40px;
+}
+
 /**
   * Breakpoint viewport sizes and media queries.
   * Using (benchmarking :) ) Bootstrap 5 breakpoints.
@@ -96,6 +101,33 @@ h6,
   font-size: 0.7777777778rem;
   font-weight: 300;
   line-height: 0.9444444444rem;
+}
+
+/**
+  * Swiper slider styles.
+  */
+.swiper-wrapper {
+  max-height: 100vh;
+  max-width: 100%;
+}
+@media (min-width: 992px) {
+  .swiper-wrapper {
+    max-height: 44.4444444444rem;
+  }
+}
+
+.swiper-pagination-bullet {
+  width: 0.5555555556rem;
+  height: 0.5555555556rem;
+  border-radius: 50%;
+  border: 0.0555555556rem solid #ffffff;
+  background-color: transparent;
+  opacity: 1;
+  z-index: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #ffffff;
 }
 
 /**
@@ -397,7 +429,7 @@ h6,
   * Hero section styles.
   */
 .section__hero-bg {
-  background-image: url("../images/hero.webp"), linear-gradient(251.06deg, #7E5AFF -2.19%, #55B7FF 103.21%);
+  background-image: url("../images/hero.webp"), linear-gradient(243.43deg, #7E5AFF 16.9%, #55B7FF 83.27%);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -467,6 +499,9 @@ h6,
     padding-right: unset;
   }
 }
+.section__hero-slider .swiper-pagination-bullet + .section__hero-slider .swiper-pagination-bullet {
+  margin-top: 2.2222222222rem !important;
+}
 .section__hero-arrow {
   position: absolute;
   bottom: 2.7777777778rem;
@@ -505,36 +540,11 @@ h6,
   text-decoration: none;
 }
 
-.swiper-wrapper {
-  max-height: 100vh;
-}
-@media (min-width: 992px) {
-  .swiper-wrapper {
-    max-height: 44.4444444444rem;
-  }
-}
-
-.swiper-pagination-bullet {
-  width: 0.5555555556rem;
-  height: 0.5555555556rem;
-  border-radius: 50%;
-  border: 0.0555555556rem solid #ffffff;
-  background-color: transparent;
-  opacity: 1;
-}
-.swiper-pagination-bullet + .swiper-pagination-bullet {
-  margin-top: 2.2222222222rem !important;
-}
-
-.swiper-pagination-bullet-active {
-  background-color: #ffffff;
-}
-
 /**
   * Reviews section styles.
   */
 .section__projects {
-  padding: 5.5555555556rem 0 8.3333333333rem;
+  padding-top: 5.5555555556rem;
 }
 .section__projects-container {
   width: 93.75%;
@@ -764,8 +774,20 @@ h6,
 /**
   * Posts section styles.
   */
-.section {
-  font-size: 18px;
+.section__news-bg {
+  background-image: url("../images/news.webp"), linear-gradient(237.1deg, #24CCFA 11.16%, #3C7FD4 89.18%);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: 100% auto, cover;
+  min-height: 100vh;
+}
+@media (min-width: 992px) {
+  .section__news-bg {
+    min-height: 44.4444444444rem;
+  }
+}
+.section__news-slider {
+  position: relative;
 }
 
 /**

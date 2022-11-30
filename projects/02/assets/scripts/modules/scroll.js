@@ -19,7 +19,7 @@ const smoothScroll = ( buttonID, elementToScroll ) => {
 
   const buttonSelector = document.getElementById(buttonID);
   if (buttonSelector) {
-    buttonSelector.addEventListener('click', ( scrollEvent ) => {  scrollEvent.preventDefault(); scrollToElement( elementToScroll ) }); // Q2: is there a better way to write this?
+    buttonSelector.addEventListener('click', ( scrollEvent ) => {  scrollEvent.preventDefault(); scrollToElement( elementToScroll ) });
   }
 };
 

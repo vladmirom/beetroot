@@ -3,5 +3,22 @@
   */
 
 .section {
-  font-size: $font-body;
+  &__news {
+    &-bg {
+      background-image: url('../images/news.webp'), $gradient;
+      background-position: bottom;
+      background-repeat: no-repeat;
+      background-size: 100% auto, cover;
+
+      min-height: 100vh;
+
+      @include media-breakpoint-up(lg) {
+        min-height: rem(800px); // TODO: change this
+      }
+    }
+    
+    &-slider {
+      position: relative;
+    }
+  }
 }
