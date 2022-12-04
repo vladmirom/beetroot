@@ -6,8 +6,8 @@
  */
 
 const slider = ( sliderSelector, sliderArguments ) => {
-  const swiper = {};
-  swiper = new swiper( sliderSelector, sliderArguments );
+  let swiper = {};
+  swiper = new Swiper( sliderSelector, sliderArguments );
 }
 
 const sliderConstructor = () => {
@@ -31,6 +31,7 @@ const sliderConstructor = () => {
       clickable: true
     },
   };
+
   const newsSlider = {};
 
   slider( '.js-hero-slider', heroSlider );
