@@ -17,6 +17,7 @@ const sliderConstructor = () => {
     loop: true,
     loopedSlides: 1,
     centeredSlides: true,
+    updateOnWindowResize: true,
     direction: 'vertical',
     autoplay: {
       delay: 5000,
@@ -32,7 +33,23 @@ const sliderConstructor = () => {
     },
   };
 
-  const newsSlider = {};
+  const newsSlider = {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    loopedSlides: 1,
+    centeredSlides: true,
+    updateOnWindowResize: true,
+    rewind: true,
+    navigation: {
+      nextEl: ".swiper-arrow-next",
+      prevEl: ".swiper-arrow-prev",
+    },
+    // pagination: {
+    //   el: '.swiper-pagination',
+    //   type: 'bullets',
+    //   clickable: true
+    // },
+  };
 
   slider( '.js-hero-slider', heroSlider );
   slider( '.js-news-slider', newsSlider );

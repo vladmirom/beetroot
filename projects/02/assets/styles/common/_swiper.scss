@@ -24,3 +24,33 @@
 .swiper-pagination-bullet-active {
   background-color: $white;
 }
+
+.swiper-arrow {
+  @include flex-center;
+  width: rem(40px);
+  height: rem(40px);
+  border: rem(1px) solid $white;
+  border-radius: 50%;
+  cursor: pointer;
+
+  position: absolute;
+  top: calc(50% - 20px);
+  z-index: 10;
+
+  & svg {
+    fill: $white;
+    width: rem(16px);
+    height: rem(16px);
+  }
+
+  &-prev {
+    transform: rotate(90deg);
+    left: rem(-80px);
+  }
+
+  &-next {
+    transform: rotate(270deg);
+    right: rem(-80px);
+  }
+}
+

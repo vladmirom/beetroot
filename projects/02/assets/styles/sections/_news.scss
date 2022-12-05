@@ -36,6 +36,10 @@
       position: relative;
       @include container;
     }
+
+    &-slide {
+      max-width: rem(370px);
+    }
   }
 }
 
@@ -46,10 +50,6 @@
   &__image {
     width: 100%;
     height: auto;
-
-    &-wrap {
-      width: rem(370px);
-    }
   }
 
   &__content {
