@@ -37,7 +37,8 @@ const sliderConstructor = () => {
     slidesPerView: 3,
     spaceBetween: 30,
     loopedSlides: 1,
-    centeredSlides: true,
+    initialSlide: 1,
+    centeredSlides: false,
     updateOnWindowResize: true,
     rewind: true,
     navigation: {
