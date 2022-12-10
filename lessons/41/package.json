@@ -1,0 +1,30 @@
+{
+  "name": "lesson41",
+  "version": "1.0.0",
+  "description": "test description",
+  "main": "index.js",
+  "scripts": {
+    "dev": "gulp",
+    "prod": "gulp --prod"
+  },
+  "author": "Vladimir",
+  "license": "ISC",
+  "keywords": [
+    "snow",
+    "John"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vladmirom"
+  },
+  "dependencies": {
+    "moment": "2.29.4",
+    "next": "1.2.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.27.10",
+    "gulp": "^4.0.2",
+    "gulp-nunjucks": "^5.1.0",
+    "yargs": "^17.6.2"
+  }
+}
