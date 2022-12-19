@@ -5,8 +5,11 @@
 .section {
   &-statistics {
     position: relative;
-    margin: rem(-280px) 0 rem(120px);
     z-index: 2;
+
+    @include media-breakpoint-up(lg) {
+      margin: rem(-280px) 0 rem(120px);
+    }
 
     &__container {
       @include container;
@@ -18,22 +21,33 @@
     }
     
     &__image {
-      width: rem(570px);
-      height: rem(670px);
-      background-size: contain;
-      background-repeat: no-repeat;
+      display: none;
+      
+      @include media-breakpoint-up(lg) {
+        display: unset;
+        width: rem(570px);
+        height: rem(670px);
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
     }
 
     &__content {
-      position: absolute;
-      right: 0;
-  
       display: grid;
-      grid-template-columns: 3fr 4fr;
+      grid-template-rows: repeat(2, 1fr);
       gap: rem(58px);
 
-      max-width: rem(770px);
-      padding: rem(45px) 0 rem(45px) rem(56px);
+      @include media-breakpoint-up(lg) {
+        position: absolute;
+        right: 0;
+        
+        grid-template-rows: unset;
+        grid-template-columns: 3fr 4fr;
+        gap: rem(58px);
+
+        max-width: rem(770px);
+        padding: rem(45px) 0 rem(45px) rem(56px);
+      }
 
       &--background {
         position: absolute;

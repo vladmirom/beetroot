@@ -1047,14 +1047,16 @@ p {
 }
 .section-hero {
   width: 100%;
-  min-height: 62.5rem;
   background-size: cover;
   background-position: center center;
   margin-top: -5.5rem;
+  padding-bottom: 6.25rem;
 }
 @media (min-width: 992px) {
   .section-hero {
     margin-top: -5.375rem;
+    min-height: 62.5rem;
+    margin-bottom: 0;
   }
 }
 .section-hero__container {
@@ -1094,18 +1096,32 @@ p {
   }
 }
 .section-hero__title {
-  max-width: 50%;
-  padding-top: 16.25rem;
+  padding-top: 9.375rem;
+}
+@media (min-width: 992px) {
+  .section-hero__title {
+    max-width: 50%;
+    padding-top: 16.25rem;
+  }
 }
 .section-hero__subtitle {
-  max-width: 40%;
   margin-bottom: 3.125rem;
 }
+@media (min-width: 992px) {
+  .section-hero__subtitle {
+    max-width: 40%;
+  }
+}
 .section-hero__gradient {
-  position: absolute;
-  width: 100%;
-  height: 51.609375rem;
-  left: 0px;
+  display: none;
+}
+@media (min-width: 992px) {
+  .section-hero__gradient {
+    position: absolute;
+    width: 100%;
+    height: 51.609375rem;
+    left: 0px;
+  }
 }
 
 /**
@@ -1113,8 +1129,12 @@ p {
   */
 .section-statistics {
   position: relative;
-  margin: -17.5rem 0 7.5rem;
   z-index: 2;
+}
+@media (min-width: 992px) {
+  .section-statistics {
+    margin: -17.5rem 0 7.5rem;
+  }
 }
 .section-statistics__container {
   width: 93.75%;
@@ -1158,19 +1178,32 @@ p {
   position: relative;
 }
 .section-statistics__image {
-  width: 35.625rem;
-  height: 41.875rem;
-  background-size: contain;
-  background-repeat: no-repeat;
+  display: none;
+}
+@media (min-width: 992px) {
+  .section-statistics__image {
+    display: unset;
+    width: 35.625rem;
+    height: 41.875rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
 }
 .section-statistics__content {
-  position: absolute;
-  right: 0;
   display: grid;
-  grid-template-columns: 3fr 4fr;
+  grid-template-rows: repeat(2, 1fr);
   gap: 3.625rem;
-  max-width: 48.125rem;
-  padding: 2.8125rem 0 2.8125rem 3.5rem;
+}
+@media (min-width: 992px) {
+  .section-statistics__content {
+    position: absolute;
+    right: 0;
+    grid-template-rows: unset;
+    grid-template-columns: 3fr 4fr;
+    gap: 3.625rem;
+    max-width: 48.125rem;
+    padding: 2.8125rem 0 2.8125rem 3.5rem;
+  }
 }
 .section-statistics__content--background {
   position: absolute;
