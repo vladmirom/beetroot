@@ -6,18 +6,12 @@
   .header {
     position: relative;
     width: 100%;
-
-    @include media-breakpoint-up(md) {
-      position: absolute;
-    }
-    
     
     &__wrapper {
       padding: rem(24px) 0;
 
-      @include media-breakpoint-up(md) {
+      @include media-breakpoint-up(lg) {
         backdrop-filter: blur(4.5px);
-  
         margin-top: rem(30px);
       }
     }
@@ -32,18 +26,23 @@
     }
 
     &__menu {
-      @include media-breakpoint-down(md) {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background-color: $white;
-        transform: translateX(-100%);
-        transition: all .3s linear;
-      }
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      height: 100vh;
+      text-align: center;
+      opacity: 0;
+      transition: all .3s linear;
 
-      @include media-breakpoint-up(md) {
+      @include media-breakpoint-up(lg) {
         @include flex-vertical-center;
+        position: relative;
+        height: auto;
+        background: transparent;
+        text-align: left;
+        opacity: 1;
       }
     }
 
@@ -55,10 +54,10 @@
       height: 20px;
 
       background-color: transparent;
-      border-top: 2px solid $black;
-      border-bottom: 2px solid $black;
+      border-top: 2px solid $white;
+      border-bottom: 2px solid $white;
 
-      @include media-breakpoint-up(md) {
+      @include media-breakpoint-up(lg) {
         display: none;
       }
 
@@ -71,7 +70,7 @@
           left: 0;
           width: 100%;
           height: 2px;
-          background-color: $black;
+          background-color: $white;
           transition: all .3s linear;
       }
 
@@ -100,50 +99,18 @@
         }
 
         & + .header__menu {
-            transform: translateX(0);
+          display: block;
+          opacity: 1;
         }
       }
     }
 
     &__burger-label {
-        margin-left: 30px;
-        padding: 10px 0 10px 10px;
-    }
+      margin-left: rem(30px);
+      padding: rem(10px) 0 rem(10px) rem(10px);
 
-    &__nav {
-      @include flex-vertical-center;
-      margin-right: rem(50px);
-    }
-
-    & .nav {
-      &__list {
-        display: flex;
-        list-style: none;
-        padding-left: 0;
-        gap: rem(30px);
-      }
-
-      &__item {
-        font-size: $h7-font-size;
-        font-weight: 400;
-        line-height: rem(24px);
-        letter-spacing: 0.08em;
-      }
-
-      &__link {
-        &:link,
-        &:visited,
-        &:active {
-          text-decoration: none;
-        }
-
-        &:after {
-          content: '';
-          display: block;
-          height: rem(3px);
-          opacity: 0;
-          transition: opacity .5s ease;
-        }
+      @include media-breakpoint-up(lg) {
+        display: none;
       }
     }
   }
