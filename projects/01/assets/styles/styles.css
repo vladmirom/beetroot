@@ -1302,10 +1302,16 @@ p {
 }
 .section-posts__grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(4, 1fr);
   -moz-column-gap: 1.875rem;
        column-gap: 1.875rem;
+}
+@media (min-width: 992px) {
+  .section-posts__grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
 }
 .section-posts__post {
   padding: 3.125rem 2.1875rem;
@@ -1357,11 +1363,32 @@ p {
 }
 .section-quotation__wrapper {
   background-image: url("../images/quotation.jpg");
-  padding: 6.25rem 18.75rem 6.25rem 10rem;
+  padding: 3.125rem 3.125rem 3.125rem 5rem;
+}
+@media (min-width: 992px) {
+  .section-quotation__wrapper {
+    padding: 6.25rem 18.75rem 6.25rem 10rem;
+  }
 }
 .section-quotation__blockquote {
   position: relative;
   color: #ffffff;
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 3rem;
+  margin-bottom: 0.9375rem;
+  letter-spacing: 0.05em;
+}
+@media (min-width: 992px) {
+  .section-quotation__blockquote {
+    font-family: "Lato", sans-serif;
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 2.875rem;
+    margin-bottom: 2.5rem;
+    letter-spacing: 0.04em;
+  }
 }
 .section-quotation__blockquote:before {
   content: "";

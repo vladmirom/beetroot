@@ -12,12 +12,32 @@
 
     &__wrapper {
       background-image: url('../images/quotation.jpg');
-      padding: rem(100px) rem(300px) rem(100px) rem(160px);
+      padding: rem(50px) rem(50px) rem(50px) rem(80px);
+
+      @include media-breakpoint-up(lg) {
+        padding: rem(100px) rem(300px) rem(100px) rem(160px);
+      }
     }
 
     &__blockquote {
       position: relative;
       color: $white;
+      
+      font-family: $font-family-headings;
+      font-size: $h4-font-size;
+      font-weight: 400;
+      line-height: $h4-line-height;
+      margin-bottom: rem(15px);
+      letter-spacing: 0.05em;
+
+      @include media-breakpoint-up(lg) {
+        font-family: $font-family-body;
+        font-size: $h3-font-size;
+        font-weight: 400;
+        line-height: $h3-line-height;
+        margin-bottom: rem(40px);
+        letter-spacing: 0.04em;
+      }
 
       &:before {
         content: '';
