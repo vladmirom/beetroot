@@ -1,0 +1,95 @@
+/**
+  * Hero section styles.
+  */
+
+.section {
+  &__hero {
+    &-bg {
+      background-image: url('../images/hero.webp'), $gradient-hero;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      min-height: 100vh;
+      margin-top: rem(-103px);
+
+      @include media-breakpoint-up(lg) {
+        min-height: rem(800px);
+        margin-top: rem(-167px);
+      }
+    }
+
+    &-container {
+      @include container;
+      position: relative;
+      z-index: 0;
+    }
+
+    &-content {
+      position: relative;
+      @include flex-center;
+      flex-direction: column;
+      height: 80vh;
+      color: $white;
+      text-align: center;
+      text-transform: uppercase;
+      vertical-align: middle;
+      padding-right: rem(30px);
+
+      @include media-breakpoint-up(md) {
+        height: rem(800px); // Q1: I don't want static height here, I want it to be 100% to center the content. What's the best way?
+        padding-right: unset;
+      }
+    }
+
+    &-slider {
+      .swiper-pagination-bullet {
+        & + & {
+          margin-top: rem(40px)!important;
+        }
+      }
+    }
+
+    &-arrow {
+      position: absolute;
+      bottom: rem(50px);
+      left: calc(50% - 20px);
+      z-index: 1;
+    }
+  }
+}
+
+.arrow-down {
+  &__wrap {
+    display: inline-block;
+    width: rem(40px);
+    height: rem(40px);
+    border-radius: 50%;
+    border: 1px solid $white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    & svg {
+      height: rem(18px);
+      width: 100%;
+      fill: $white;
+    }
+    
+    @include media-breakpoint-up(lg) {
+      &:hover {
+        background-color: $white;
+        
+        & svg {
+          fill: $slate_blue;
+        }
+      }
+    }
+  }
+
+  &__link {
+    @include flex-center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+  }
+}

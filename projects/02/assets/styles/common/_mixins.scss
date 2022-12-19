@@ -1,0 +1,94 @@
+@mixin container {
+  width: calc(540px / ( 576px / 100% ));
+  max-width: 540px;
+  margin-left: auto;
+  margin-right: auto;
+  
+  @include media-breakpoint-up(sm) {
+    width: calc(720px / ( 768px / 100% ));
+    max-width: 720px;
+  }
+
+  @include media-breakpoint-up(md) {
+    width: calc(960px / ( 992px / 100% ));
+    max-width: 960px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    width: calc(1140px / ( 1200px / 100% ));
+    max-width: 1140px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    width: calc(1140px / ( 1200px / 100% ));
+    max-width: 1140px;
+  }
+
+  @include media-breakpoint-up(xxl) {
+    width: calc(1170px / ( 1440px / 100% ));
+    max-width: 1170px;
+  }
+}
+
+@mixin flex-vertical-center {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-horizontal-center {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin title ( $color: $madisson ) {
+  position: relative;
+  padding-top: 30px;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    display: block;
+    margin: 0 auto;
+    width: rem(100px);
+    border-bottom: 1px solid $color;
+  }
+}
+
+@mixin link () {
+  // Basic styling
+  display: inline-block;
+  position: relative;
+  width: fit-content;
+
+  font-size: $h6-font-size;
+  line-height: $h6-line-height;
+  padding: rem(16px) rem(41px) rem(17px);
+  font-weight: 400;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: rem(1px) solid $black;
+  background: transparent;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  color: $black;
+
+  // For <a> element.
+  &:link,
+  &:visited,
+  &:active {
+    color: $black;
+  }
+
+  &:hover {
+    background: $black;
+    color: $white;
+  }
+}

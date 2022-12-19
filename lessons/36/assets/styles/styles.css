@@ -321,7 +321,6 @@ h5, .section__wrap .game-info__wrap .second-column__cta-price-discount,
 .section__wrap .game-info__wrap .second-column__cta-button-link {
   display: flex;
   align-items: center;
-  display: flex;
   justify-content: center;
   padding: 1.25rem 1.875rem;
   border: 2px solid #13E28D;

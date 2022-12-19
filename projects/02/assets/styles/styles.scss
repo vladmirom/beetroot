@@ -1,0 +1,17 @@
+@import 'common/rem';
+@import 'common/variables';
+@import 'common/grid';
+@import 'common/globals';
+@import 'common/mixins';
+@import 'common/typography';
+@import 'common/swiper';
+
+@import 'header_footer/header';
+@import 'header_footer/footer';
+@import 'header_footer/menu';
+
+@import 'sections/hero';
+@import 'sections/projects';
+@import 'sections/news';
+@import 'sections/gallery';
+@import 'sections/contact';

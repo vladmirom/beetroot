@@ -1,0 +1,97 @@
+/**
+  * Posts section styles.
+  */
+
+.section {
+  &__news {
+    &-bg {
+      background-image: url('../images/news.webp'), $gradient;
+      background-position: bottom;
+      background-repeat: no-repeat;
+      background-size: 100% auto, cover;
+
+      padding: rem(60px) 0;
+      min-height: 100vh;
+
+      @include media-breakpoint-up(lg) {
+        padding: rem(120px) 0;
+        min-height: rem(800px); // TODO: change this
+      }
+    }
+
+    &-title {
+      @include title($white);
+      @include flex-horizontal-center;
+  
+      text-transform: uppercase;
+      color: $white;
+      margin-bottom: rem(30px);
+
+      @include media-breakpoint-up(lg) {
+        margin-bottom: rem(60px);
+      }
+    }
+    
+    &-slider {
+      position: relative;
+      @include container;
+    }
+
+    &-slide {
+      max-width: rem(370px);
+    }
+  }
+}
+
+.news-teaser {
+  background-color: $white;
+  width: rem(370px);
+
+  &__image {
+    width: 100%;
+    height: auto;
+  }
+
+  &__content {
+    padding: rem(25px) rem(20px) rem(30px);
+
+    &-title {
+      font-family: $font-family-headings;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-top: rem(-8.5px); // Compensating some weird spacing under the image.
+      margin-bottom: rem(15px);
+    }
+
+    &-text {
+      font-weight: 400;
+      line-height: rem(24.5px);
+      margin-bottom: rem(39px);
+    }
+  }
+
+  &__author {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: rem(20px);
+    @include flex-vertical-center;
+
+    &-avatar {
+      width: rem(60px);
+
+      &-image {
+        border-radius: 50%;
+      }
+    }
+
+    &-meta {
+      &-name { 
+        margin-bottom: rem(6px);
+      }
+
+      &-date {
+        color: $maiya_blue;
+      }
+    }
+  }
+}
