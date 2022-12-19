@@ -10,6 +10,11 @@
     min-height: rem(1000px);
     background-size: cover;
     background-position: center center;
+    margin-top: rem(-88px);
+
+    @include media-breakpoint-up(lg) {
+      margin-top: rem(-86px);
+    }
 
     &__container {
       @include container;

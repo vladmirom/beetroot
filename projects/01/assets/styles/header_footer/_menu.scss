@@ -3,12 +3,36 @@
  */
 
  .menu {
+  @include media-breakpoint-down(lg) {
+    height: 100vh;
+  }
+
   &__list {
-    display: flex;
+    @include flex-vertical-center;
+    flex-direction: column;
+
     list-style: none;
-    padding-left: 0;
-    gap: rem(30px);
-    margin-right: rem(50px);
+    gap: rem(15px);
+    margin-top: rem(50px);
+    margin-bottom: rem(50px);
+
+    @include media-breakpoint-up(lg) {
+      @include flex-horizontal-center;
+      flex-direction: row;
+      
+      padding-left: 0;
+      margin-top: 0;
+      margin-bottom: 0;
+      margin-right: rem(50px);
+      gap: rem(30px);
+
+      margin-top: unset;
+      margin-bottom: unset;
+
+      & + & {
+        margin-left: rem(70px);
+      }
+    }
   }
 
   &__item {
@@ -31,6 +55,12 @@
       height: rem(3px);
       opacity: 0;
       transition: opacity .5s ease;
+    }
+  }
+
+  &__theme-switcher {
+    @include media-breakpoint-down(lg) {
+      @include flex-horizontal-center;
     }
   }
 }

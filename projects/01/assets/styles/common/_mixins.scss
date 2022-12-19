@@ -35,6 +35,17 @@
   align-items: center;
 }
 
+@mixin flex-horizontal-center {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 @mixin highlighted ($theme-light: false, $theme-dark: false ) {
   font-style: italic;
 
