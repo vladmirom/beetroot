@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Playfair+Display:ital@0;1&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="assets/styles/styles.css">
+
+  <title>Volodymyr Melnychenko | Data types and operators</title>
+</head>
+
+<body class="body">
+  <main class="main">
+    <h1 class="lesson-title">Homework for lesson 29: Data types and operators</h1>
+    <section class="section-minimum">
+      <div class="section-minimum__container">
+        <div class="section-minimum__wrap">
+          <h1 class="h2">Minimum tasks</h1>
+
+          <div class="section-minimum__task">
+            <h3>Add 0.1 and 0.2 and receive the mathimatically correct answer.</h3>
+            <p>We can use several ways to fix the floating point error of 0.1 + 0.2 = 0.30000000000000004.</p>
+            <ul class="section-minimum__task-list">
+              <li>Using toFixed: <span id="floatingPointErrorResultOne"></span></li>
+              <li>Using *10: <span id="floatingPointErrorResultTwo"></span></li>
+            </ul>
+          </div>
+
+          <div class="section-minimum__task">
+            <h3>Calculate integer 1 and string 2, and receive the mathimatically correct answer.</h3>
+            <p>The integer and the string will be added (glued) together, like here: <span id="integerAndStringResultOne"></span>.</p>
+            <p>But if we use it with <span class="section-minimum__task-code">Number()</span>, the result will be: <span id="integerAndStringResultTwo"></span>.</p>
+            <p>Or, we can use <span class="section-minimum__task-code">parseInt()</span>, and the the result will be the same: <span id="integerAndStringResultThree"></span>.</p>
+          </div>
+
+          <div class="section-minimum__task">
+            <h3>Calculate how many files of 820MB size could fit into the flash drive.</h3>
+            <p>Please add the size of the flash drive in GB and we can tell how many files can fit it.</p>
+            <p class="section-minimum__task-text">Do you think it's big enough? <span id="flashDriveResult"></span></p>
+            <button class="section-minimum__task-button" id="flashDriveBtn">Press me</button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section-medium">
+      <div class="section-medium__container">
+        <div class="section-medium__wrap">
+          <h1 class="h2">Medium tasks</h1>
+
+          <div class="section-medium__task">
+            <h3>Calculate the number of chocolate bars one can buy.</h3>
+            <p class="section-medium__task-text">Let's go to Willy Wonka's Chocolate factory!</p>
+            <div id="willyWonkaGiphy" class="section-medium__task-meme">
+              <img class="section-medium__task-meme-image" src="https://media.tenor.com/oHhGqTsUmVkAAAAC/charlie-and-chocolate-factory-2005.gif" alt="Charlie And Chocolate Factory 2005 GIF - Charlie And Chocolate Factory 2005 Yes GIFs">
+            </div>
+            <p class="section-medium__task-text">Let's buy some Wonka Bars. They cost quite a lot: 5.5€ per each. How much money do you have with you? <span id="willyWonkaReply"></span></p>
+            <button class="section-medium__task-button" id="cashBtn">🤑</button>
+          </div>
+
+          <div class="section-medium__task">
+            <h3>Reverse the number.</h3>
+            <p class="section-medium__task-text">Method 1: using Math.
+              <span id="reverseReplyOne"></span>
+            </p>
+
+            <p class="section-medium__task-text">Method 2: using modulo.
+              <span id="reverseReplyTwo"></span>
+            </p>
+            <button class="section-medium__task-button" id="reverseBtn">Give us some number to reverse it.</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-maximum">
+      <div class="section-maximum__container">
+        <div class="section-maximum__wrap">
+          <h1 class="h2">Maximum tasks</h1>
+
+          <div class="section-maximum__task">
+            <h3>Calculate the deposit pecentage cost.</h3>
+            <p class="section-maximum__task-text">Quite often, we need to calculate how much money we gain or lose. Here is the calculation of the cost for the bank deposit with 5% yearly.</p>
+            <p class="section-maximum__task-text" id="depositReply">Think of all the money you can earn!</p>
+            <button class="section-maximum__task-button" id="depositBtn">How much do you want to invest?</button>
+          </div>
+
+          <div class="section-maximum__task">
+            <h3>Playing around with operators.</h3>
+            <ul class="section-maximum__task-list">
+              <li><span class="section-maximum__task-code">2 &#38;&#38; 0 &#38;&#38; 3</span> equals to <span class="section-maximum__task-code">0</span></li>
+              <li><span class="section-maximum__task-code">2 || 0 || 3</span> equals to <span class="section-maximum__task-code">2</span></li>
+              <li><span class="section-maximum__task-code">2 &#38;&#38; 0 || 3</span> equals to <span class="section-maximum__task-code">3</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- This part is for level 1 -->
+    <script>
+      let userName = 'Markus',
+        // user_name = 'Jaakko',
+        // user-name = 'Raino',
+        UserName = 'Mikko';
+
+      const userLastName = 'Karikivi';
+      // const user_last_name = 'Teittinen';
+      // const user-last-name = 'Lepistö';
+      const UserLastName = 'Multanen';
+    </script>
+
+    <!-- This part is for levels 2-3 -->
+    <script async src="assets/scripts/scripts.js"></script>
+  </main>
+</body>
+
+</html>
