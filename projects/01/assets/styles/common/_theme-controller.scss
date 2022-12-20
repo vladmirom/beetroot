@@ -15,15 +15,6 @@
                                           rgba(255, 255, 255, 0.02);
     }
 
-    &__menu {
-      @include media-breakpoint-down(md) {
-        background: linear-gradient(270deg, rgba(255, 255, 255, 0.5) 0%, 
-                                            rgba(255, 255, 255, 0.244636) 24.1%, 
-                                            rgba(255, 255, 255, 0) 47.19%), 
-                                            rgba(255, 255, 255, 0.02);
-      }
-    }
-
     & .menu {
       &__link {
         &:link,
@@ -36,6 +27,16 @@
           &:after {
             background: $congo_pink;
             opacity: 1;
+          }
+        }
+      }
+    }
+
+    &__burger-input {
+      &:checked {
+        & + .header__menu {
+          @include media-breakpoint-down(md) {
+            background-color: $white;
           }
         }
       }
@@ -230,15 +231,6 @@
                                           rgba(22, 25, 38, 0.02);
     }
 
-    &__menu {
-      @include media-breakpoint-down(md) {
-        background: linear-gradient(270deg, rgba(22, 25, 38, 0.5) 0%, 
-                                            rgba(22, 25, 38, 0) 24.1%, 
-                                            rgba(22, 25, 38, 0) 47.19%), 
-                                            rgba(22, 25, 38, 0.02);
-      }
-    }
-
     & .menu {
       &__link {
         &:link,
@@ -251,6 +243,16 @@
           &:after {
             background: linear-gradient(96.73deg, #53F3CD 6.73%, rgba(83, 243, 205, 0) 116.9%);
             opacity: 0.3;
+          }
+        }
+      }
+    }
+
+    &__burger-input {
+      &:checked {
+        & + .header__menu {
+          @include media-breakpoint-down(md) {
+            background-color: $mirage;
           }
         }
       }

@@ -99,17 +99,17 @@ p {
 .body:has(.theme-switcher) .header__wrapper {
   background: linear-gradient(270deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.244636) 24.1%, rgba(255, 255, 255, 0) 47.19%), rgba(255, 255, 255, 0.02);
 }
-@media (max-width: 767.98px) {
-  .body:has(.theme-switcher) .header__menu {
-    background: linear-gradient(270deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.244636) 24.1%, rgba(255, 255, 255, 0) 47.19%), rgba(255, 255, 255, 0.02);
-  }
-}
 .body:has(.theme-switcher) .header .menu__link:link, .body:has(.theme-switcher) .header .menu__link:visited, .body:has(.theme-switcher) .header .menu__link:active {
   color: #262A3F;
 }
 .body:has(.theme-switcher) .header .menu__link:hover:after {
   background: #F1897B;
   opacity: 1;
+}
+@media (max-width: 767.98px) {
+  .body:has(.theme-switcher) .header__burger-input:checked + .header__menu {
+    background-color: #ffffff;
+  }
 }
 .body:has(.theme-switcher) .section-hero {
   background-image: url("../images/hero-light.jpg");
@@ -386,17 +386,17 @@ p {
 .body:has(.theme-switcher:checked) .header__wrapper {
   background: linear-gradient(270deg, rgba(22, 25, 38, 0.5) 0%, rgba(22, 25, 38, 0) 24.1%, rgba(22, 25, 38, 0) 47.19%), rgba(22, 25, 38, 0.02);
 }
-@media (max-width: 767.98px) {
-  .body:has(.theme-switcher:checked) .header__menu {
-    background: linear-gradient(270deg, rgba(22, 25, 38, 0.5) 0%, rgba(22, 25, 38, 0) 24.1%, rgba(22, 25, 38, 0) 47.19%), rgba(22, 25, 38, 0.02);
-  }
-}
 .body:has(.theme-switcher:checked) .header .menu__link:link, .body:has(.theme-switcher:checked) .header .menu__link:visited, .body:has(.theme-switcher:checked) .header .menu__link:active {
   color: #ffffff;
 }
 .body:has(.theme-switcher:checked) .header .menu__link:hover:after {
   background: linear-gradient(96.73deg, #53F3CD 6.73%, rgba(83, 243, 205, 0) 116.9%);
   opacity: 0.3;
+}
+@media (max-width: 767.98px) {
+  .body:has(.theme-switcher:checked) .header__burger-input:checked + .header__menu {
+    background-color: #161925;
+  }
 }
 .body:has(.theme-switcher:checked) .section-hero {
   background-image: url("../images/hero-dark.jpg");
@@ -904,7 +904,8 @@ p {
 }
 .header__burger-input:checked + .header__menu {
   display: block;
-  opacity: 1;
+  opacity: 0.9;
+  z-index: 2;
 }
 .header__burger-label {
   margin-left: 1.875rem;
