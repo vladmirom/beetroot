@@ -979,9 +979,17 @@ p {
 .footer {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.9375rem;
   padding: 1.875rem 0;
   border-top: 1px solid;
+}
+@media (min-width: 992px) {
+  .footer {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 .footer__container {
   width: 93.75%;
