@@ -112,7 +112,7 @@ p {
   }
 }
 .body:has(.theme-switcher) .section-hero {
-  background-image: url("../images/hero-light.jpg");
+  background-image: url("../images/hero-light.webp");
 }
 .body:has(.theme-switcher) .section-hero__title {
   color: #262A3F;
@@ -170,7 +170,7 @@ p {
   top: 29.6875rem;
 }
 .body:has(.theme-switcher) .section-statistics__image {
-  background-image: url("../images/statistics-light.jpg");
+  background-image: url("../images/statistics-light.webp");
 }
 .body:has(.theme-switcher) .section-statistics__content--background {
   background-color: #ffffff;
@@ -399,7 +399,7 @@ p {
   }
 }
 .body:has(.theme-switcher:checked) .section-hero {
-  background-image: url("../images/hero-dark.jpg");
+  background-image: url("../images/hero-dark.webp");
 }
 .body:has(.theme-switcher:checked) .section-hero__title {
   color: #ffffff;
@@ -460,7 +460,7 @@ p {
   top: 28.125rem;
 }
 .body:has(.theme-switcher:checked) .section-statistics__image {
-  background-image: url("../images/statistics-dark.jpg");
+  background-image: url("../images/statistics-dark.webp");
 }
 .body:has(.theme-switcher:checked) .section-statistics__content--background {
   background-color: #161925;
@@ -1389,7 +1389,7 @@ p {
   }
 }
 .section-quotation__wrapper {
-  background-image: url("../images/quotation.jpg");
+  background-image: url("../images/quotation.webp");
   padding: 3.125rem 3.125rem 3.125rem 5rem;
   background-size: contain;
 }
@@ -1513,7 +1513,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url("../images/screensaver-video.jpg");
+  background-image: url("../images/screensaver-video.webp");
   background-repeat: no-repeat;
   background-size: cover;
   padding: 1.9375rem 4.375rem 1.9375rem 1.875rem;
@@ -1602,7 +1602,7 @@ p {
   height: 53.125rem;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url("../images/features.jpg");
+  background-image: url("../images/features.webp");
 }
 @media (min-width: 768px) {
   .section-features__image {
@@ -1753,28 +1753,28 @@ p {
   background-size: cover;
 }
 .section-reviews__feed .review--1 {
-  background-image: url("../images/review-1.jpg");
+  background-image: url("../images/review-1.webp");
 }
 .section-reviews__feed .review--2 {
-  background-image: url("../images/review-2.jpg");
+  background-image: url("../images/review-2.webp");
 }
 .section-reviews__feed .review--3 {
-  background-image: url("../images/review-3.jpg");
+  background-image: url("../images/review-3.webp");
 }
 .section-reviews__feed .review--4 {
-  background-image: url("../images/review-4.jpg");
+  background-image: url("../images/review-4.webp");
 }
 .section-reviews__feed .review--5 {
-  background-image: url("../images/review-5.jpg");
+  background-image: url("../images/review-5.webp");
 }
 .section-reviews__feed .review--6 {
-  background-image: url("../images/review-6.jpg");
+  background-image: url("../images/review-6.webp");
 }
 .section-reviews__feed .review--7 {
-  background-image: url("../images/review-7.jpg");
+  background-image: url("../images/review-7.webp");
 }
 .section-reviews__feed .review--8 {
-  background-image: url("../images/review-8.jpg");
+  background-image: url("../images/review-8.webp");
 }
 .section-reviews__feed .review__overlay {
   position: absolute;

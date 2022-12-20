@@ -55,7 +55,7 @@
 
         @for $i from 1 through 8 {
           &--#{$i} {
-            background-image: url('../images/review-#{$i}.jpg');
+            background-image: url('../images/review-#{$i}.webp');
           }
         }
 

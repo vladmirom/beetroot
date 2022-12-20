@@ -44,7 +44,7 @@
   }
 
   & .section-hero {
-    background-image: url('../images/hero-light.jpg');
+    background-image: url('../images/hero-light.webp');
 
     &__title {
       color: $yankees_blue;
@@ -66,7 +66,7 @@
 
   & .section-statistics {
     &__image {
-      background-image: url('../images/statistics-light.jpg');
+      background-image: url('../images/statistics-light.webp');
     }
 
     &__content {
@@ -260,7 +260,7 @@
   }
 
   & .section-hero {
-    background-image: url('../images/hero-dark.jpg');
+    background-image: url('../images/hero-dark.webp');
 
     &__title {
       color: $white;
@@ -286,7 +286,7 @@
 
   & .section-statistics {
     &__image {
-      background-image: url('../images/statistics-dark.jpg');
+      background-image: url('../images/statistics-dark.webp');
     }
 
     &__content {
