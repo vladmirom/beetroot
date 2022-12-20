@@ -7,7 +7,7 @@
     position: relative;
     z-index: 2;
 
-    @include media-breakpoint-up(lg) {
+    @include media-breakpoint-up(md) {
       margin: rem(-280px) 0 rem(120px);
     }
 
@@ -23,12 +23,18 @@
     &__image {
       display: none;
       
-      @include media-breakpoint-up(lg) {
+      @include media-breakpoint-up(md) {
         display: unset;
+        width: rem(700px);
+        height: rem(670px);
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      @include media-breakpoint-up(lg) {
         width: rem(570px);
         height: rem(670px);
         background-size: contain;
-        background-repeat: no-repeat;
       }
     }
 
@@ -37,7 +43,7 @@
       grid-template-rows: repeat(2, 1fr);
       gap: rem(58px);
 
-      @include media-breakpoint-up(lg) {
+      @include media-breakpoint-up(md) {
         position: absolute;
         right: 0;
         

@@ -23,6 +23,12 @@
       background-repeat: no-repeat;
       background-image: url('../images/features.jpg');
 
+      @include media-breakpoint-up(md) {
+        width: rem(800px);
+        height: rem(540px);
+        background-size: cover;
+      }
+
       @include media-breakpoint-up(lg) {
         width: rem(600px);
         height: rem(540px);
@@ -39,7 +45,7 @@
         grid-template-rows: repeat(4, 1fr);
         row-gap: rem(70px);
 
-        @include media-breakpoint-up(lg) {
+        @include media-breakpoint-up(md) {
           grid-template-columns: repeat(2, 1fr);
           grid-template-rows: repeat(2, 1fr);
           column-gap: rem(100px);
@@ -48,7 +54,7 @@
 
       padding: rem(50px) rem(30px);
 
-      @include media-breakpoint-up(lg) {
+      @include media-breakpoint-up(md) {
         max-width: rem(770px);
         padding: rem(75px) 0 rem(75px) rem(70px);
       }
@@ -61,7 +67,7 @@
         height: 100%;
         opacity: 0.9;
 
-        @include media-breakpoint-up(lg) {
+        @include media-breakpoint-up(md) {
           left: 0;
           width: 100%;
         }

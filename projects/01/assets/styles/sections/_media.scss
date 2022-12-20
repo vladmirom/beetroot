@@ -69,7 +69,7 @@
         width: rem(60px);
         height: rem(60px);
 
-        @include media-breakpoint-up(lg) {
+        @include media-breakpoint-up(md) {
           width: rem(120px);
           height: rem(120px);
         }

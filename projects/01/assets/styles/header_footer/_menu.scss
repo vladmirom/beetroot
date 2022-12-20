@@ -3,7 +3,7 @@
  */
 
  .menu {
-  @include media-breakpoint-down(lg) {
+  @include media-breakpoint-down(md) {
     height: 100vh;
   }
 
@@ -16,7 +16,7 @@
     margin-top: rem(50px);
     margin-bottom: rem(50px);
 
-    @include media-breakpoint-up(lg) {
+    @include media-breakpoint-up(md) {
       @include flex-horizontal-center;
       flex-direction: row;
       
@@ -59,7 +59,7 @@
   }
 
   &__theme-switcher {
-    @include media-breakpoint-down(lg) {
+    @include media-breakpoint-down(md) {
       @include flex-horizontal-center;
     }
   }

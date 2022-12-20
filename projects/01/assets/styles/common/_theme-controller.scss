@@ -16,7 +16,7 @@
     }
 
     &__menu {
-      @include media-breakpoint-down(lg) {
+      @include media-breakpoint-down(md) {
         background: linear-gradient(270deg, rgba(255, 255, 255, 0.5) 0%, 
                                             rgba(255, 255, 255, 0.244636) 24.1%, 
                                             rgba(255, 255, 255, 0) 47.19%), 
@@ -231,7 +231,7 @@
     }
 
     &__menu {
-      @include media-breakpoint-down(lg) {
+      @include media-breakpoint-down(md) {
         background: linear-gradient(270deg, rgba(22, 25, 38, 0.5) 0%, 
                                             rgba(22, 25, 38, 0) 24.1%, 
                                             rgba(22, 25, 38, 0) 47.19%), 

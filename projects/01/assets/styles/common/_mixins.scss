@@ -14,7 +14,7 @@
     max-width: 960px;
   }
 
-  @include media-breakpoint-up(lg) {
+  @include media-breakpoint-up(md) {
     width: calc(1140px / ( 1200px / 100% ));
     max-width: 1140px;
   }
