@@ -1491,8 +1491,14 @@ p {
   z-index: -1;
 }
 .section-media .video__button {
-  width: 7.5rem;
-  height: 7.5rem;
+  width: 3.75rem;
+  height: 3.75rem;
+}
+@media (min-width: 992px) {
+  .section-media .video__button {
+    width: 7.5rem;
+    height: 7.5rem;
+  }
 }
 .section-media .video__wrapper {
   position: relative;

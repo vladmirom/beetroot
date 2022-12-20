@@ -66,8 +66,13 @@
       }
 
       &__button {
-        width: rem(120px);
-        height: rem(120px);
+        width: rem(60px);
+        height: rem(60px);
+
+        @include media-breakpoint-up(lg) {
+          width: rem(120px);
+          height: rem(120px);
+        }
       }
 
 
