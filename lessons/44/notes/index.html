@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../assets/styles/notes.css">
+
+  <title>Lesson 44 | React introduction</title>
+</head>
+
+<body>
+  <main>
+    <section class="section section__container">
+      <h3>Objects</h3>
+      <p>Objects can be created with the <strong>Object constructor</strong> or as <strong>Literal object</strong></p>
+      <p>Objects have pairs (properties): key and value. Functions in users are called methods.</p>
+      <p>We can check if there is key in object using the directive <span class="code">in</span>.</p>
+      <p>It is important to access object property by key in for. <span class="code">for (key in user) { (user[key]); }</span>.</p>
+      <p>We can clone objects and merge 2 and more objects into one with either <span class="code">for</span> or <span class="code">Object.assign()</span></p>
+      <p>There are 4 ways to compare objects:
+        <ul class="list">
+          <li>Referential equality. We can use <span class="code">===</span>, <span class="code">==</span>, and <span class="code">Object.is()</span>. Will give true only if they are of the same instance (like cloned objects), otherwise - false.</li>
+          <li>Manual comparison. Just comparing manually the values of the property of one and another object: <span class="code">object1.name === object2.name</span>.</li>
+          <li>Shallow equality. It is a bit similar as a manual comparison, but a bit more complex and using <span class="code">Object.keys()</span>. Checks only 1 level of object properties.</li>
+          <li>Deep equity. It is similar to shallow equity, but goes deeper and compares the deeper levels of object properties.</li>
+        </ul>
+
+        There is also a trick to compare 2 objects using <span class="code">JSON.stringify()</span>. The idea is to convert objects into strings and compare those.
+      </p>
+      <p><span class="code">const</span> can be changed with objects.</p>
+    </section>
+  </main>
+</body>
+
+</html>
