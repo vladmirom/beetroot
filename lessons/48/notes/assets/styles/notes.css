@@ -1,0 +1,19 @@
+.section {
+  margin: 100px 0;
+}
+.section__container {
+  width: 92%;
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.code {
+  background-color: rgba(87, 142, 247, 0.3);
+  padding: 0 rem(10px);
+  border-radius: rem(5px);
+}
+
+.order-list {
+  padding-left: 2.2rem;
+}/*# sourceMappingURL=notes.css.map */
