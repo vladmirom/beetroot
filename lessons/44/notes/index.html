@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="../assets/styles/notes.css">
+  <link rel="stylesheet" type="text/css" href="./assets/styles/notes.css">
 
   <title>Lesson 44 | React introduction</title>
 </head>
@@ -13,23 +13,58 @@
 <body>
   <main>
     <section class="section section__container">
-      <h3>Objects</h3>
-      <p>Objects can be created with the <strong>Object constructor</strong> or as <strong>Literal object</strong></p>
-      <p>Objects have pairs (properties): key and value. Functions in users are called methods.</p>
-      <p>We can check if there is key in object using the directive <span class="code">in</span>.</p>
-      <p>It is important to access object property by key in for. <span class="code">for (key in user) { (user[key]); }</span>.</p>
-      <p>We can clone objects and merge 2 and more objects into one with either <span class="code">for</span> or <span class="code">Object.assign()</span></p>
-      <p>There are 4 ways to compare objects:
-        <ul class="list">
-          <li>Referential equality. We can use <span class="code">===</span>, <span class="code">==</span>, and <span class="code">Object.is()</span>. Will give true only if they are of the same instance (like cloned objects), otherwise - false.</li>
-          <li>Manual comparison. Just comparing manually the values of the property of one and another object: <span class="code">object1.name === object2.name</span>.</li>
-          <li>Shallow equality. It is a bit similar as a manual comparison, but a bit more complex and using <span class="code">Object.keys()</span>. Checks only 1 level of object properties.</li>
-          <li>Deep equity. It is similar to shallow equity, but goes deeper and compares the deeper levels of object properties.</li>
-        </ul>
+      <h3>Why we use React.</h3>
+      <p>React creates it's own virtual DOM and makes changes in it first, then it checks the changes in the virtual DOM and after that it uploades changes to the real DOM. This gives us the opportunity to do things faster, or inject the changes to the specific elements in arrays, or objects.</p>
+      <p>We can make changes to the specific elements. This means that we don't re-load the whole page, but just a specific changed element, like section, or button.</p>
+      <p>Another advantege of React is the easines or creating SPA (Single Page Application).</p>
+    </section>
 
-        There is also a trick to compare 2 objects using <span class="code">JSON.stringify()</span>. The idea is to convert objects into strings and compare those.
-      </p>
-      <p><span class="code">const</span> can be changed with objects.</p>
+    <section class="section section__container">
+      <h3>Getting started.</h3>
+      <p>Starting the project goes with the command <strong>in the empty folder</strong> in terminal <span class="code">npx create-react-app .</span>.</p>
+      <p>If we want to create a subfolder in our folder with the react project, we run the command in our folder, where we want to have a subfolder: <span class="code">npx create-react-app subfolder-name</span>.</p>
+      <p>NPX is Node Package Executor - we want to install something just for 1 execution.</p>
+      <p>For tests we use <a href="https://jestjs.io/">Jest</a>.</p>
+      <p>To start project we need to use <span class="code">npm start</span> and to run tests <span class="code">npm test</span>. Also we can stop npm with the <span class="code">npm stop</span> command.</p>
+      <p>React uses webpack in it's core.</p>
+    </section>
+
+    <section class="section section__container">
+      <h3>Structure.</h3>
+      <p><strong>node_modules</strong> - are already set to be in .gitignore.</p>
+      <p>React has some files with <span class="code">.pnp</span> or <span class="code">.pnp.js</span>extention, they are are also in gitignore and needed for react.</p>
+      <p>The folder <span class="code">/build</span> is the same as we had <span class="code">/dist</span>, where all compiled things are added.</p>
+      <p>React also might include .env files.</p>
+      <p>Folder <span class="code">/public</span> includes: robots.txt, favicon (can remove or change to my own), manifest for favicon (can remove or change to my own), logo (can remove or change to my own), and index.html (need to change to my own).</p>
+      <p>Folder <span class="code">/src</span> includes: all our styles and components.</p>
+      <ul>
+        <li>File <strong>App.js</strong> is the main file for our application. 
+          <ul>
+            <li>We import images via <span class="code">import something from './someplace'</span></li>
+            <li>We import css via <span class="code">import './App.css'</span>. This is one of the options, we will check more later.</li>
+            <li>File <strong>App.css</strong> includes the styles for our front page.</li>
+          </ul>
+        </li>
+        <li>File <strong>App.test.js</strong> is the file for testing.</li>
+        <li>File <strong>setupTests.js</strong> is for testing parameters.</li>
+        <li>File <strong>index.js</strong> is entering point for our application. We initialize React, ReactDOM, reportWebVitals, and App from here.</li>
+        <li>File <strong>index.css</strong> includes the global styles. Best practices are that this file is removed and the separate file with styles for body, html or tags added.</li>
+      </ul>
+    </section>
+
+    <section class="section section__container">
+      <h3>Naming files rules.</h3>
+      <p>There are three most popular ways to name the files. The first one is the most popular.</p>
+      <ul>
+        <li>camelCase - for js files and image, not css. And always PascalCase for components.</li>
+        <li>kebab-case - for js files and image, not css. And always PascalCase for components.</li>
+        <li>PascalCase - for js files and image, not css. And always PascalCase for components.</li>
+      </ul>
+      <p>If we want to create a subfolder in our folder with the react project, we run the command in our folder, where we want to have a subfolder: <span class="code">npx create-react-app subfolder-name</span>.</p>
+      <p>NPX is Node Package Executor - we want to install something just for 1 execution.</p>
+      <p>For tests we use <a href="https://jestjs.io/">Jest</a>.</p>
+      <p>To start project we need to use <span class="code">npm start</span> and to run tests <span class="code">npm test</span>. Also we can stop npm with the <span class="code">npm stop</span> command.</p>
+      <p>React uses webpack in it's core.</p>
     </section>
   </main>
 </body>
