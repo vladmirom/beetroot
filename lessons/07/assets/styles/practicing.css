@@ -1,0 +1,35 @@
+/* Practicing with the css */
+
+/* Useful to reset css for the further work on the project */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Nesting */
+div .practicing__nesting { 
+  background-color: green;
+  padding: 5px 10px 2px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+span .practicing__nesting { 
+  background-color: aquamarine;
+  padding: 5px 10px 2px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+/* Plus selector */
+.practicing__plus-selector p {
+  padding: 5px 10px 2px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  background-color: green;
+}
+
+.practicing__plus-selector p + p {
+  background-color: red;
+}
+
