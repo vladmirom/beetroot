@@ -68,7 +68,6 @@ span .practicing__nesting {
   margin-bottom: 2px;
 }
 
-/*  */
 .practicing__box-brackets-selector a[href] {
   background-color: gold;
 }
@@ -79,4 +78,15 @@ span .practicing__nesting {
 
 .practicing__box-brackets-selector a[href*="https"] {
   background-color: yellow;
+}
+
+/* :checked pseudoelement */
+input + label,
+input + span {
+  color: black;
+}
+
+input:checked + label,
+input:checked + span {
+  color: red;
 }

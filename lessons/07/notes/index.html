@@ -69,6 +69,22 @@
         <ol class="notes__ordered-list">
           <li>Selecting the first child with <span class="notes__code">:first-child</span> and the last child with <span class="notes__code">:last-child</span> pseudo-classes.</li>
           <li>Selecting the first element with <span class="notes__code">:first-of-type</span> and the last element with <span class="notes__code">:last-of-type</span> pseudo-classes.</li>
+          <li>Selecting the the children elements inside the listing with the help of <span class="notes__code">:nth-child()</span>.
+            <ul>
+              <li><span class="notes__code">:nth-child(even)</span> is selecting all even numbers: 2,4,6.</li>
+              <li><span class="notes__code">:nth-child(odd)</span> is selecting all odd numbers: 1,3,5.</li>
+              <li><span class="notes__code">:nth-child(n)</span>. <strong>There won't be iteration, only 1 element will be selected.</strong>. In example <span class="notes__code">:nth-child(2)</span>, only the 2d element will be selected.</li>
+              <li><span class="notes__code">:nth-child(an+b)</span>. <strong>n starts with 0</strong>, so in example <span class="notes__code">:nth-child(2n + 1)</span> in the first iteration the calculation will look like 2*0+1 = 1. The next iteration will be 2*1+1 = 3. The next iteration will be 2*2+1 = 5. And so on...</li>
+              <li><span class="notes__code">:first-child</span>, <span class="notes__code">:nth-child(1)</span>, and <span class="notes__code">:nth-child(0n + 1)</span> all three will have the same result - will select first element.</li>
+              <li><span class="notes__code">:nth-child(an + 1)</span>, and <span class="notes__code">:nth-of-type(an + 1)</span> will start the iteration calculation from the beginning (or top). <span class="notes__code">:nth-last-child(an + 1)</span>, and <span class="notes__code">:nth-last-of-type(an + 1)</span> will start the iteration calculation from the ending (or bottom).</li>
+            </ul>
+          </li>
+          <li><span class="notes__code">:hover</span> styling the hover of anything (not only the link).</li>
+          <li><span class="notes__code">:visited</span> styling the visited of the link.</li>
+          <li><span class="notes__code">:link</span> styling the not yet visited of the link.</li>
+          <li><span class="notes__code">:focus</span> styling the selected focused element.</li>
+          <li><span class="notes__code">:active</span> styling the selected element.</li>
+          <li><span class="notes__code">:checked</span> styling the checked checkbox.</li>
         </ol>
       </div>
     </section>
@@ -128,6 +144,25 @@
           <a href="http://google.com">
             http google.com (gold bg)
           </a>
+        </div>
+      </div>
+
+      <div class="notes__block">
+        <h4>Using :checked pseudoelement.</h4>
+        <div class="practicing__checked-pseudo-element">
+          <!-- Option 1 -->
+         <label for="">
+          <input type="checkbox" name="" id="">
+          <span>
+            Tomatos
+          </span>
+        </label>
+
+          <!-- Option 2 -->
+          <div>
+            <input id="checkbox-2" type="checkbox">
+            <label for="checkbox-2">Milk</label>
+          </div>
         </div>
       </div>
     </section>
