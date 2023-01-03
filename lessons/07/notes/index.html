@@ -46,9 +46,29 @@
         <h3>CSS operators</h3> 
         <ol class="notes__ordered-list">
           <li>Nice reference is here: <a href="https://www.w3schools.com/cssref/css_selectors.php">Operators</a></li>
-          <li><span class="notes__code">></span> tells to find child element. EG: <span class="notes__code">.some-class > p</span> will select every p element inside the some-class. In this case <span class="notes__code">&lt;div class="some-class"&gt;&lt;div&gt;&lt;p&gt;some text here&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</span> it will not be selected. In this case <span class="notes__code">&lt;div class="some-class"&gt;&lt;p&gt;&lt;p&gt;some text here&lt;/p&gt;&lt;/p&gt;&lt;/div&gt;</span> it will be selected, because it inherits father's properties.</li>
-          <li><span class="notes__code">+</span> selects all the siblings of the element, except this element.</li>
-          <li><span class="notes__code">line-height</span> is better set in % if <span class="notes__code">font-size</span> is in rem or em.</li>
+          <li>Arrow <span class="notes__code">></span> tells to find child element. EG: <span class="notes__code">.some-class > p</span> will select every p element inside the some-class. In this case <span class="notes__code">&lt;div class="some-class"&gt;&lt;div&gt;&lt;p&gt;some text here&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</span> it will not be selected. In this case <span class="notes__code">&lt;div class="some-class"&gt;&lt;p&gt;&lt;p&gt;some text here&lt;/p&gt;&lt;/p&gt;&lt;/div&gt;</span> it will be selected, because it inherits father's properties.</li>
+          <li>Plus <span class="notes__code">+</span> selects all the siblings of the element, except this element.</li>
+          <li>Tilda <span class="notes__code">~</span> selects all the next siblings after this one and not including this one.</li>
+          <li>Coma <span class="notes__code">,</span> adds properties to both elements written through coma. The main task is to minimize css and DRY.</li>
+          <li>Box brackets <span class="notes__code">[]</span> lets you work with attributes of the element.
+            <ul>
+              <li><span class="notes__code">a[href]</span> - will select <strong>all</strong> elements on the webiste that have href element.</li>
+              <li><span class="notes__code">a[href="#"]</span> - will select all elements on the website that have <strong>the exact</strong> "#" as the value of the href.</li>
+              <li><span class="notes__code">a[title~="Lorem"]</span> - will select all elements on the webiste that <strong>include</strong> in its content "Lorem" (so there might be some other content together with "Lorem") as a value of the title. Note that "Lorem" <strong>should have space in html after it</strong>.</li>
+              <li><span class="notes__code">a[href|="http"]</span> - will select all elements on the webiste that <strong>include</strong> in its content "http" (so there might be some other content together with "http") as a value of the href. Note that <strong>after the "http" should go hyphhen "-"</strong>.</li>
+              <li><span class="notes__code">a[href$="/"]</span> - will select all elements on the webiste that include in its content "/" <strong>as the last element</strong> as a value of the href.</li>
+              <li><span class="notes__code">a[href*="https"]</span> - will select all elements on the webiste that include in its content "https" <strong>at least once</strong> as a value of the href.</li>
+              <li><span class="notes__code">a[href^="http"]</span> - will select all elements on the webiste that include in its content <strong>starting</strong> with "http" as a value of the href.</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+
+      <div class="notes__block">
+        <h3>Pesudo-classes</h3> 
+        <ol class="notes__ordered-list">
+          <li>Selecting the first child with <span class="notes__code">:first-child</span> and the last child with <span class="notes__code">:last-child</span> pseudo-classes.</li>
+          <li>Selecting the first element with <span class="notes__code">:first-of-type</span> and the last element with <span class="notes__code">:last-of-type</span> pseudo-classes.</li>
         </ol>
       </div>
     </section>
@@ -74,6 +94,40 @@
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, laudantium.</p>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, laudantium.</p>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, laudantium.</p>
+        </div>
+      </div>
+
+      <div class="notes__block">
+        <h4>Using ~ selector</h4>
+        <div class="practicing__tilda-selector">
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam, temporibus?</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, laudantium.</p>
+          <p class="middle-selector">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, laudantium.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, laudantium.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, laudantium.</p>
+        </div>
+      </div>
+
+      <div class="notes__block">
+        <h4>Using , selector</h4>
+        <div class="practicing__coma-selector">
+          <p class="practicing__coma-selector--one">This will be with wheat color background.</p>
+          <p class="practicing__coma-selector--another">This also will be with wheat color background.</p>
+        </div>
+      </div>
+
+      <div class="notes__block">
+        <h4>Using [] selector for attributes</h4>
+        <div class="practicing__box-brackets-selector">
+          <a href="https://www.google.com" target="_blank">
+            https google.com (yellow bg)
+          </a>
+          <a href="#">
+            # (orange bg)
+          </a>
+          <a href="http://google.com">
+            http google.com (gold bg)
+          </a>
         </div>
       </div>
     </section>
