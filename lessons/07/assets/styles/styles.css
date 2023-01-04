@@ -1,0 +1,180 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+.body {
+  font-family:  "Roboto", sans-serif;
+  font-size: 18px;
+  line-height: 117%;
+  color: #ffffff;
+}
+
+.body {
+  background-color: #3B3F45;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  font-family: "Roboto", sans-serif;
+  color: #FF8984;
+}
+
+h1,
+.h1 {
+  font-size: 24px;
+  line-height: 117%;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+h2,
+.h2 {
+  font-size: 16px;
+  line-height: 118.75%;
+  font-weight: 400;
+}
+
+.small {
+  font-size: 11px;
+  line-height: 118.18%;
+}
+
+.container { 
+  max-width: 67.34%;
+  margin: 0 auto;
+}
+
+/* Header */
+.header {
+  background-color: #4A4F56;;
+}
+
+.header__block {
+  text-align: center;
+  padding-top: 19px;
+  padding-bottom: 13px;
+}
+
+/* Main */
+.main {
+  margin-top: 20px;
+  margin-bottom: 45px;
+}
+
+/* Checklist */
+.checklist {
+  margin-bottom: 45px;
+}
+
+.checklist__item {
+  display: flex;
+  background-color: #88839E;
+  padding: 12px 9px 11px 12px;
+  cursor: pointer;
+  border-top: 3px solid #88839E;
+  border-bottom: 3px solid #88839E;
+  transition: all .1s ease-in;
+}
+
+.checklist__item:hover,
+.checklist__item:active {
+  background-color: #625E77;
+  border-top-color: #ffffff;
+  border-bottom-color: #ffffff;
+}
+
+.checklist__item:nth-child(0n + 2):hover,
+.checklist__item:nth-last-child(0n + 2):hover,
+.checklist__item:nth-child(0n + 2):active,
+.checklist__item:nth-last-child(0n + 2):active {
+  background-color: #545454;
+  border-top-color: #6BAA75;
+  border-bottom-color:#6BAA75;
+}
+
+
+.checklist__item > span {
+  margin-left: 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.checklist__item > span + span  {
+  margin-left: 5px;
+}
+
+.checklist__item:checked {
+  background-color: #7A7593;
+}
+
+input[type="checkbox"] {
+  width: 19px;
+  height: 19px;
+  border-radius: 0;
+  padding-right: 16px;
+}
+
+/* The only way I can access the higher element in dom. I didn't want to change html structure */
+.checklist__item:has(input[type="checkbox"]:checked) {
+  color: #9B96AC;
+  background-color: #7A7593;
+  border-color: #7A7593;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.checklist__item:has(input[type="checkbox"]:checked) span {
+  text-decoration: line-through;
+}
+
+.checklist__item:has(input[type="checkbox"]:checked):after {
+  content: '😋';
+  margin-left: 5px;
+}
+
+.checklist__item:has(input[type="checkbox"]:checked):before {
+  content: '';
+}
+
+.checklist__item:has(input[type="checkbox"]:not(:checked)):before {
+  content: '🤔';
+  margin-right: 5px;
+}
+
+/* Button */
+.checklist__button:link,
+.checklist__button:visited,
+.checklist__button:hover,
+.checklist__button:active {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  background-color: #4A4F56;
+  border: none;
+
+  font-size: 18px;
+  line-height: 117%;
+  color: #FF8984;
+  text-align: center;
+  text-decoration: none;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  transition: all .1s ease-in;
+}
+
+.checklist__button:hover {
+  background-color: #7d8597;
+  color: #240046;
+}
