@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="/assets/images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Delius+Unicase:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../assets/styles/notes.css">
+  <link rel="stylesheet" type="text/css" href="../assets/styles/practicing.css">
+  
+  <title>Volodymyr Melnychenko | CSS selectors</title>
+</head>
+<body class="notes__body">
+  <main>
+
+    <section class="notes__section notes__section-container">
+      <h1>Notes for the lesson 7. CSS selectors.</h1>
+      <div class="notes__block">
+        <h3>General selectors</h3>
+        <ol class="notes__ordered-list">
+          <li><span class="notes__code">*</span> star selector selects all elements on the webiste. Useful to clear and prepare your css for the further work. It also can be used in nesting (for instance, we don't have access to DOM structure).</li>
+          <li>Dont use anything inside the <span class="notes__code">*</span> except margin, padding. Font size, font weight, lineheight should not be set here. Otherwise, the correct nesting will break here.</li>
+          <li>We can work directly with tags. Not the best practice.</li>
+          <li>We can use classes and ids in css. Id has bigger specificity, so id will overwrite class.</li>
+          <li>We don't style id because it is unique for the page, and classes can be reused on the page.</li>
+          <li>We don't write px to 0.</li>
+          <li>The level of nesting is defined by <strong>space between elements</strong>. This code <span class="notes__code">div h3</span> means to select every h3 element that is located inside the div.</li>
+          <li>If two classes or elements are added without the space css will look for them as sibings. EG: <span class="notes__code">div .class-red.class-blue</span> means to select the element inside the div that has <strong>both</strong> <span class="notes__code">class-red class-blue</span> classes.</li>
+          <li>The code writen in the bottom will overwrite the code in the top and will be used.</li>
+        </ol>
+      </div>
+  
+      <div class="notes__block">
+        <h3>General styling</h3> 
+        <ol class="notes__ordered-list">
+          <li>It's better to add font size, weight and line-space in <span class="notes__code">body</span></li>
+          <li>Font is set or duplicated in <span class="notes__code">html</span> tag to set rems. The defaut font size is 16px.</li>
+          <li><span class="notes__code">line-height</span> is better set in % if <span class="notes__code">font-size</span> is in rem or em.</li>
+        </ol>
+      </div>
+
+      <div class="notes__block">
+        <h3>CSS operators</h3> 
+        <ol class="notes__ordered-list">
+          <li>Nice reference is here: <a href="https://www.w3schools.com/cssref/css_selectors.php">Operators</a></li>
+          <li>Arrow <span class="notes__code">></span> tells to find child element. EG: <span class="notes__code">.some-class > p</span> will select every p element inside the some-class. In this case <span class="notes__code">&lt;div class="some-class"&gt;&lt;div&gt;&lt;p&gt;some text here&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</span> it will not be selected. In this case <span class="notes__code">&lt;div class="some-class"&gt;&lt;p&gt;&lt;p&gt;some text here&lt;/p&gt;&lt;/p&gt;&lt;/div&gt;</span> it will be selected, because it inherits father's properties.</li>
+          <li>Plus <span class="notes__code">+</span> selects all the siblings of the element, except this element.</li>
+          <li>Tilda <span class="notes__code">~</span> selects all the next siblings after this one and not including this one.</li>
+          <li>Coma <span class="notes__code">,</span> adds properties to both elements written through coma. The main task is to minimize css and DRY.</li>
+          <li>Box brackets <span class="notes__code">[]</span> lets you work with attributes of the element.
+            <ul>
+              <li><span class="notes__code">a[href]</span> - will select <strong>all</strong> elements on the webiste that have href element.</li>
+              <li><span class="notes__code">a[href="#"]</span> - will select all elements on the website that have <strong>the exact</strong> "#" as the value of the href.</li>
+              <li><span class="notes__code">a[title~="Lorem"]</span> - will select all elements on the webiste that <strong>include</strong> in its content "Lorem" (so there might be some other content together with "Lorem") as a value of the title. Note that "Lorem" <strong>should have space in html after it</strong>.</li>
+              <li><span class="notes__code">a[href|="http"]</span> - will select all elements on the webiste that <strong>include</strong> in its content "http" (so there might be some other content together with "http") as a value of the href. Note that <strong>after the "http" should go hyphhen "-"</strong>.</li>
+              <li><span class="notes__code">a[href$="/"]</span> - will select all elements on the webiste that include in its content "/" <strong>as the last element</strong> as a value of the href.</li>
+              <li><span class="notes__code">a[href*="https"]</span> - will select all elements on the webiste that include in its content "https" <strong>at least once</strong> as a value of the href.</li>
+              <li><span class="notes__code">a[href^="http"]</span> - will select all elements on the webiste that include in its content <strong>starting</strong> with "http" as a value of the href.</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+
+      <div class="notes__block">
+        <h3>Pesudo-classes</h3> 
+        <ol class="notes__ordered-list">
+          <li>Selecting the first child with <span class="notes__code">:first-child</span> and the last child with <span class="notes__code">:last-child</span> pseudo-classes.</li>
+          <li>Selecting the first element with <span class="notes__code">:first-of-type</span> and the last element with <span class="notes__code">:last-of-type</span> pseudo-classes.</li>
+          <li>Selecting the the children elements inside the listing with the help of <span class="notes__code">:nth-child()</span>.
+            <ul>
+              <li><span class="notes__code">:nth-child(even)</span> is selecting all even numbers: 2,4,6.</li>
+              <li><span class="notes__code">:nth-child(odd)</span> is selecting all odd numbers: 1,3,5.</li>
+              <li><span class="notes__code">:nth-child(n)</span>. <strong>There won't be iteration, only 1 element will be selected.</strong>. In example <span class="notes__code">:nth-child(2)</span>, only the 2d element will be selected.</li>
+              <li><span class="notes__code">:nth-child(an+b)</span>. <strong>n starts with 0</strong>, so in example <span class="notes__code">:nth-child(2n + 1)</span> in the first iteration the calculation will look like 2*0+1 = 1. The next iteration will be 2*1+1 = 3. The next iteration will be 2*2+1 = 5. And so on...</li>
+              <li><span class="notes__code">:first-child</span>, <span class="notes__code">:nth-child(1)</span>, and <span class="notes__code">:nth-child(0n + 1)</span> all three will have the same result - will select first element.</li>
+              <li><span class="notes__code">:nth-child(an + 1)</span>, and <span class="notes__code">:nth-of-type(an + 1)</span> will start the iteration calculation from the beginning (or top). <span class="notes__code">:nth-last-child(an + 1)</span>, and <span class="notes__code">:nth-last-of-type(an + 1)</span> will start the iteration calculation from the ending (or bottom).</li>
+            </ul>
+          </li>
+          <li><span class="notes__code">:hover</span> styling the hover of anything (not only the link).</li>
+          <li><span class="notes__code">:visited</span> styling the visited of the link.</li>
+          <li><span class="notes__code">:link</span> styling the not yet visited of the link.</li>
+          <li><span class="notes__code">:focus</span> styling the selected focused element.</li>
+          <li><span class="notes__code">:active</span> styling the selected element.</li>
+          <li><span class="notes__code">:checked</span> styling the checked checkbox.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="notes__section notes__section-container">
+      <div class="notes__block">
+        <h3>Practicing</h3>
+        <h4>Nesting</h4>
+        <div>
+          <span class="practicing__nesting">This text is on green bg.</span>
+        </div>
+
+        <span>
+          <span class="practicing__nesting">This text is on aquamarine bg.</span>
+        </span>
+      </div>
+
+      <div class="notes__block">
+        <h4>Using + operator</h4>
+        <div class="practicing__plus-selector">
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam, temporibus?</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, laudantium.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, laudantium.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, laudantium.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, laudantium.</p>
+        </div>
+      </div>
+
+      <div class="notes__block">
+        <h4>Using ~ operator</h4>
+        <div class="practicing__tilda-selector">
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam, temporibus?</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, laudantium.</p>
+          <p class="middle-selector">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, laudantium.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, laudantium.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, laudantium.</p>
+        </div>
+      </div>
+
+      <div class="notes__block">
+        <h4>Using , operator</h4>
+        <div class="practicing__coma-selector">
+          <p class="practicing__coma-selector--one">This will be with wheat color background.</p>
+          <p class="practicing__coma-selector--another">This also will be with wheat color background.</p>
+        </div>
+      </div>
+
+      <div class="notes__block">
+        <h4>Using [] operator for attributes</h4>
+        <div class="practicing__box-brackets-selector">
+          <a href="https://www.google.com" target="_blank">
+            https google.com (yellow bg)
+          </a>
+          <a href="#">
+            # (orange bg)
+          </a>
+          <a href="http://google.com">
+            http google.com (gold bg)
+          </a>
+        </div>
+      </div>
+
+      <div class="notes__block">
+        <h4>Using :checked pseudoelement.</h4>
+        <div class="practicing__checked-pseudo-element">
+          <!-- Option 1 -->
+         <label for="">
+          <input type="checkbox" name="" id="">
+          <span>
+            Tomatos
+          </span>
+        </label>
+
+          <!-- Option 2 -->
+          <div>
+            <input id="checkbox-2" type="checkbox">
+            <label for="checkbox-2">Milk</label>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</body>
+</html> 

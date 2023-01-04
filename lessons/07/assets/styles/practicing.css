@@ -1,0 +1,92 @@
+/* Practicing with the css */
+
+/* Useful to reset css for the further work on the project */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Nesting */
+div .practicing__nesting { 
+  background-color: green;
+  padding: 5px 10px 2px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+span .practicing__nesting { 
+  background-color: aquamarine;
+  padding: 5px 10px 2px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+/* Plus selector */
+.practicing__plus-selector p {
+  padding: 5px 10px 2px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-bottom: 2px;
+  background-color: green;
+}
+
+.practicing__plus-selector p + p {
+  background-color: lime;
+}
+
+/* Tilda selector */
+.practicing__tilda-selector p {
+  padding: 5px 10px 2px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-bottom: 2px;
+  background-color: antiquewhite;
+}
+
+.practicing__tilda-selector p.middle-selector ~ p {
+  background-color: peachpuff;
+}
+
+/* Coma selector */
+.practicing__coma-selector p {
+  padding: 5px 10px 2px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+
+.practicing__coma-selector--one, 
+.practicing__coma-selector--another {
+  background-color: wheat;
+}
+
+/* Box brackets selector */
+.practicing__box-brackets-selector {
+  padding: 5px 10px 2px 10px;
+  border-radius: 5  px;
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+
+.practicing__box-brackets-selector a[href] {
+  background-color: gold;
+}
+
+.practicing__box-brackets-selector a[href="#"] {
+  background-color: orange;
+}
+
+.practicing__box-brackets-selector a[href*="https"] {
+  background-color: yellow;
+}
+
+/* :checked pseudoelement */
+input + label,
+input + span {
+  color: black;
+}
+
+input:checked + label,
+input:checked + span {
+  color: red;
+}
