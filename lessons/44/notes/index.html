@@ -10,61 +10,206 @@
   <title>Lesson 44 | React introduction</title>
 </head>
 
-<body>
+<body class="notes__body">
   <main>
-    <section class="section section__container">
-      <h3>Why we use React.</h3>
-      <p>React creates it's own virtual DOM and makes changes in it first, then it checks the changes in the virtual DOM and after that it uploades changes to the real DOM. This gives us the opportunity to do things faster, or inject the changes to the specific elements in arrays, or objects.</p>
-      <p>We can make changes to the specific elements. This means that we don't re-load the whole page, but just a specific changed element, like section, or button.</p>
-      <p>Another advantege of React is the easines or creating SPA (Single Page Application).</p>
-    </section>
+    <section class="notes__section notes__section-container">
+      <h1>Notes for the lesson 44. Introduction to React.</h1>
 
-    <section class="section section__container">
-      <h3>Getting started.</h3>
-      <p>Starting the project goes with the command <strong>in the empty folder</strong> in terminal <span class="code">npx create-react-app .</span>.</p>
-      <p>If we want to create a subfolder in our folder with the react project, we run the command in our folder, where we want to have a subfolder: <span class="code">npx create-react-app subfolder-name</span>.</p>
-      <p>NPX is Node Package Executor - we want to install something just for 1 execution.</p>
-      <p>For tests we use <a href="https://jestjs.io/">Jest</a>.</p>
-      <p>To start project we need to use <span class="code">npm start</span> and to run tests <span class="code">npm test</span>. Also we can stop npm with the <span class="code">npm stop</span> command.</p>
-      <p>React uses webpack in it's core.</p>
-    </section>
-
-    <section class="section section__container">
-      <h3>Structure.</h3>
-      <p><strong>node_modules</strong> - are already set to be in .gitignore.</p>
-      <p>React has some files with <span class="code">.pnp</span> or <span class="code">.pnp.js</span>extention, they are are also in gitignore and needed for react.</p>
-      <p>The folder <span class="code">/build</span> is the same as we had <span class="code">/dist</span>, where all compiled things are added.</p>
-      <p>React also might include .env files.</p>
-      <p>Folder <span class="code">/public</span> includes: robots.txt, favicon (can remove or change to my own), manifest for favicon (can remove or change to my own), logo (can remove or change to my own), and index.html (need to change to my own).</p>
-      <p>Folder <span class="code">/src</span> includes: all our styles and components.</p>
-      <ul>
-        <li>File <strong>App.js</strong> is the main file for our application. 
-          <ul>
-            <li>We import images via <span class="code">import something from './someplace'</span></li>
-            <li>We import css via <span class="code">import './App.css'</span>. This is one of the options, we will check more later.</li>
-            <li>File <strong>App.css</strong> includes the styles for our front page.</li>
+      <div class="notes__block">
+        <h3>Hometask notes this to be removed when HW is done.</h3>
+        <p>Explanation starts on 2:14:00.</p>
+        <p>Working only on Medium and Difficult tasks.</p>
+        <p>Need to create only html structure with React, no styling (or add styling using the next lesson's notes).</p>
+        <p>Structure:
+          <ul class="notes__unordered-list">
+            <li>Header
+              <ul>
+                <li>Logo</li>
+                <li>BlogName</li>
+                <li>SocialMedia
+                  <ul>
+                    <li>SocialMediaItem</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>Body
+              <ul>
+                <li>Banner</li>
+                <li>Blog
+                  <ul>
+                    <li>BlogFeeed
+                      <ul>
+                        <li>BlogTeaser</li>
+                      </ul>
+                    </li>
+                    <li>NewsFeed
+                      <ul>
+                        <li>NewsTeaser</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
           </ul>
-        </li>
-        <li>File <strong>App.test.js</strong> is the file for testing.</li>
-        <li>File <strong>setupTests.js</strong> is for testing parameters.</li>
-        <li>File <strong>index.js</strong> is entering point for our application. We initialize React, ReactDOM, reportWebVitals, and App from here.</li>
-        <li>File <strong>index.css</strong> includes the global styles. Best practices are that this file is removed and the separate file with styles for body, html or tags added.</li>
-      </ul>
-    </section>
+        </p>
+        <p>Use .map() for news, social media items, and blog teasers.</p>
+        <p>Use .container.</p>
+      </div>
 
-    <section class="section section__container">
-      <h3>Naming files rules.</h3>
-      <p>There are three most popular ways to name the files. The first one is the most popular.</p>
-      <ul>
-        <li>camelCase - for js files and image, not css. And always PascalCase for components.</li>
-        <li>kebab-case - for js files and image, not css. And always PascalCase for components.</li>
-        <li>PascalCase - for js files and image, not css. And always PascalCase for components.</li>
-      </ul>
-      <p>If we want to create a subfolder in our folder with the react project, we run the command in our folder, where we want to have a subfolder: <span class="code">npx create-react-app subfolder-name</span>.</p>
-      <p>NPX is Node Package Executor - we want to install something just for 1 execution.</p>
-      <p>For tests we use <a href="https://jestjs.io/">Jest</a>.</p>
-      <p>To start project we need to use <span class="code">npm start</span> and to run tests <span class="code">npm test</span>. Also we can stop npm with the <span class="code">npm stop</span> command.</p>
-      <p>React uses webpack in it's core.</p>
+      <div class="notes__block">
+        <h3>Why we use React.</h3>
+        <p>React creates it's own virtual DOM and makes changes in it first, then it checks the changes in the virtual DOM and after that it uploades changes to the real DOM. This gives us the opportunity to do things faster, or inject the changes to the specific elements in arrays, or objects.</p>
+        <p>We can make changes to the specific elements. This means that we don't re-load the whole page, but just a specific changed element, like section, or button.</p>
+        <p>Another advantege of React is the easines or creating SPA (Single Page Application).</p>
+      </div>
+
+      <div class="notes__block">
+        <h3>Getting started.</h3>
+        <p><strong><a href="https://reactjs.org/docs/getting-started.html">React documentation</a></strong>.</p>
+        <p>Starting the project goes with the command <strong>in the empty folder</strong> in terminal <span class="notes__code">npx create-react-app .</span>.</p>
+        <p>If we want to create a subfolder in our folder with the react project, we run the command in our folder, where we want to have a subfolder: <span class="notes__code">npx create-react-app subfolder-name</span>.</p>
+        <p>NPX is Node Package Executor - we want to install something just for 1 execution.</p>
+        <p>For tests we use <a href="https://jestjs.io/">Jest</a>.</p>
+        <p>To start project we need to use <span class="notes__code">npm start</span> and to run tests <span class="notes__code">npm test</span>. Also we can stop npm with the <span class="notes__code">npm stop</span> command.</p>
+        <p>React uses webpack in it's core.</p>
+      </div>
+
+      <div class="notes__block">
+        <h3>Structure.</h3>
+        <p><strong>node_modules</strong> - are already set to be in .gitignore.</p>
+        <p>React has some files with <span class="notes__code">.pnp</span> or <span class="notes__code">.pnp.js</span>extention, they are are also in gitignore and needed for react.</p>
+        <p>The folder <span class="notes__ode">/build</span> is the same as we had <span class="notes__code">/dist</span>, where all compiled things are added.</p>
+        <p>React also might include .env files.</p>
+        <p>Folder <span class="notes__code">/public</span> includes: robots.txt, favicon (can remove or change to my own), manifest for favicon (can remove or change to my own), logo (can remove or change to my own), and index.html (need to change to my own).</p>
+        <p>Folder <span class="notes__code">/src</span> includes: all our styles and components.</p>
+        <ul class="notes__unordered-list">
+          <li>File <strong>App.js</strong> is the main file for our application. 
+            <ul>
+              <li>We import images via <span class="notes__code">import something from './someplace'</span></li>
+              <li>We import css via <span class="notes__code">import './App.css'</span>. This is one of the options, we will check more later.</li>
+              <li>File <strong>App.css</strong> includes the styles for our front page.</li>
+            </ul>
+          </li>
+          <li>File <strong>App.test.js</strong> is the file for testing.</li>
+          <li>File <strong>setupTests.js</strong> is for testing parameters.</li>
+          <li>File <strong>index.js</strong> is entering point for our application. We initialize React, ReactDOM, reportWebVitals, and App from here.</li>
+          <li>File <strong>index.css</strong> includes the global styles. Best practices are that this file is removed and the separate file with styles for body, html or tags added.</li>
+        </ul>
+      </div>
+
+      <div class="notes__block">
+        <h3>Naming files rules.</h3>
+        <p>There are three most popular ways to name the files. The first one is the most popular.</p>
+        <ul class="notes__unordered-list">
+          <li>camelCase - for js files and image, not css. And always PascalCase for components.</li>
+          <li>kebab-case - for js files and image, not css. And always PascalCase for components.</li>
+          <li>PascalCase - for js files and image, not css. And always PascalCase for components.</li>
+        </ul>
+        <p>If we want to create a subfolder in our folder with the react project, we run the command in our folder, where we want to have a subfolder: <span class="notes__code">npx create-react-app subfolder-name</span>.</p>
+        <p>NPX is Node Package Executor - we want to install something just for 1 execution.</p>
+        <p>For tests we use <a href="https://jestjs.io/">Jest</a>.</p>
+        <p>To start project we need to use <span class="notes__code">npm start</span> and to run tests <span class="notes__code">npm test</span>. Also we can stop npm with the <span class="notes__code">npm stop</span> command.</p>
+        <p>React uses webpack in it's core.</p>
+      </div>
+
+      <div class="notes__block">
+        <h3>React components.</h3>
+        <p>We can divide different parts of the page into components. Components can include other components without any limitations.</p>
+        <p>The idea of dividing pages into components is to make some parts of the website reusable, therefore these components should be independent from one another.</p>
+        <p>The common practice is to have ccomponents in separate files with the same name (App.js, App.scss, App.test.js)</p>
+        <p>The better practice is to separate js files from css. This is Beetroot projects (and default React) structure:
+          <ul class="notes__unordered-list">
+            <li>node_modules</li>
+            <li>public</li>
+            <li>src
+              <ul>
+                <li>assets
+                  <ul>
+                    <li>Button.scss</li>
+                    <li>Link.scss</li>
+                  </ul>
+                </li>
+                <li>components
+                  <ul>
+                    <li>Button.js</li>
+                    <li>Link.js</li>
+                  </ul>
+                </li>
+                <li>App.css</li>
+                <li>App.js</li>
+                <li>App.test.js</li>
+                <li>indext.css</li>
+                <li>index.js</li>
+              </ul>
+            </li>
+            <li>.gitignore</li>
+            <li>package-lock.json</li>
+            <li>package.json</li>
+            <li>README.md</li>
+          </ul>
+        </p>
+        <p>In Pixels/Kaimana projects we have a bit different structure: 
+          <ul class="notes__unordered-list">
+            <li>Some other files that we need.</li>
+            <li>Components
+              <ul>
+                <li>Button
+                  <ul>
+                    <li>__snapshots__
+                      <ul>
+                        <li>Button.module.scss</li>
+                      </ul>
+                    </li>
+                    <li>Button.js</li>
+                    <li>Button.module.scss</li>
+                    <li>Button.test.js</li>
+                  </ul>
+                </li>
+                <li>Link
+                  <ul>
+                    <li>__snapshots__
+                      <ul>
+                        <li>Link.module.scss</li>
+                      </ul>
+                    </li>
+                    <li>Link.js</li>
+                    <li>Link.module.scss</li>
+                    <li>Link.test.js</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </p>
+        <p>Components <strong>should always be named</strong> with the Capital letter. React accepts files that start with the lovercase letter as tags.</p>
+        <p>Components naming is done in PascalCase.</p>
+
+        <h4>Compontents types</h4>
+        <p>Historically there were 2 types of components formed: Class and Functional components.</p>
+        <p>In the functional approach, which is the most comon and React itself is trying to use more, the main function name of the component should be eexactly the same as the name of the file.</p>
+      </div>
+
+      <div class="notes__block">
+        <h3>React syntax.</h3>
+        <p>React used <a href="https://reactjs.org/docs/introducing-jsx.html">JSX</a>.</p>
+        <p>JSX is written inside <span class="notes__code">return</span>.</p>
+        <p>If we have only one line to return, it can go without () <span class="notes__code">return &lt;h1&gt;Title&lt;/h1&gt;</span>, but if there are several lines of code, we should wrap it <span class="notes__code">()</span>.</p>
+        <p>Function can return only 1 element. So we eitheer should wrap everything in <span class="notes__code">&lt;div&gt;</span> or any other wrapper tag. Also, we can use <span class="notes__code">&lt;&gt; some multiline code here &lt;/&gt;</span> if we don't want to create a new div in the DOM structure.</p>
+        <p>Classes in JSX are added with the attribute <strong>className</strong>: <span class="notes__code">&lt;div className="foo"&gt;Some content&lt;/div&gt;</span>. The same happens to tabindex.</p>
+        <p>There's another method to create html structure in the components without JSX. But it's not not used much. It can be done via <span class="notes__code">createElement</span> method.</p>
+      </div>
+
+      <div class="notes__block">
+        <h3>Constructing React app.</h3>
+        <p>Let's say we have a slider component (in practicing/components/Slider.js). We need to import it first to the App.js file.</p>
+        <p>We run import on the top of the document <span class="notes__code">import Slider from './components/Slider';</span>.</p>
+        <p>If we import a big component, it is imported this way <span class="notes__code">import React from 'react'</span>, if we importing some method, it should be done with {} <span class="notes__code">import { createElement } from 'react'</span>.</p>
+        <p>We add slider to the page inside App function's return: <span class="notes__code">&lt;Slider&gt;&lt;/Slider&gt;</span> or as a shorter version without any parameters: <span class="notes__code">&lt;Slider/&gt;</span></p>
+        <p>It is important to export our function: <span class="notes__code">export default Slider;</span>. It will help us to define what is the main function in the doc, especially when we have many functions.</p>
+        <p>The parent component <strong>should not</strong> know about child component.</p>
+      </div>
     </section>
   </main>
 </body>
