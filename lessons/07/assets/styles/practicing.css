@@ -80,7 +80,7 @@ span .practicing__nesting {
   background-color: yellow;
 }
 
-/* :checked pseudoelement */
+/* :checked pseudo-class */
 input + label,
 input + span {
   color: black;
@@ -89,4 +89,46 @@ input + span {
 input:checked + label,
 input:checked + span {
   color: red;
+}
+
+/* :empty pseudo-class */
+.practicing__empty-pseudo-class {
+  padding: 5px 10px 2px 10px;
+  border-radius: 5  px;
+  font-size: 14px;
+  margin-bottom: 2px;
+  background-color: brown;
+}
+
+.practicing__empty-pseudo-class:empty {
+  padding: 5px 10px 2px 10px;
+  border-radius: 5  px;
+  font-size: 14px;
+  margin-bottom: 2px;
+  background-color: mediumvioletred;
+}
+
+/* ::first-letter pseudo-eleement */
+.practicing__first-letter-pseudo-element:first-letter {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: brown;
+}
+
+/* ::marker pseudo-element */
+.practicing__marker-pseudo-element li::marker {
+  content: '🐈';
+}
+
+/* ::before and ::after pseudo-elements */
+.practicing__before-after-pseudo-elements:before {
+  content: '🍀';
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.practicing__before-after-pseudo-elements:after {
+  content: '🍁';
+  font-size: 24px;
+  margin-left: 10px;
 }

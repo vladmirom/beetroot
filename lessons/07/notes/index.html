@@ -85,6 +85,26 @@
           <li><span class="notes__code">:focus</span> styling the selected focused element.</li>
           <li><span class="notes__code">:active</span> styling the selected element.</li>
           <li><span class="notes__code">:checked</span> styling the checked checkbox.</li>
+          <li><span class="notes__code">:empty</span> represents any element that has no children.</li>
+        </ol>
+      </div>
+
+      <div class="notes__block">
+        <h3>Pseudo-elements</h3> 
+          <li><span class="notes__code">::first-letter</span> applies styles to the first letter of the first line of a block-level element, but only when not preceded by other content (such as images or inline tables).</li>
+          <li><span class="notes__code">::marker</span> styling the marker of the list. Can style both <span class="notes__code">&lt;ol&gt;</span> and <span class="notes__code">&lt;ul&gt;</span>. It should be applieed to <span class="notes__code">&lt;li&gt;</span></li>
+          <li><span class="notes__code">::before</span> creates a pseudo-element that is the first child of the selected element. Works only with binary tags (that have closing tag). It is important to add <span class="notes__code">display</span>. We can also add to content link to the image <span class="notes__code">content: url('./assets/img.png');</span> or nothing <span class="notes__code">content: "";</span>.</li>
+          <li><span class="notes__code">::after</span> creates a pseudo-element that is the last child of the selected element. Works only with binary tags (that have closing tag). It is important to add <span class="notes__code">display</span>. We can also add to content link to the image <span class="notes__code">content: url('./assets/img.png');</span> or nothing <span class="notes__code">content: "";</span>.</li>
+        </ol>
+      </div>
+
+      <div class="notes__block">
+        <h3>Float</h3> 
+          <li>Better not to use. It's better to use flex and grid instead.</li>
+          <li>Works badly with <span class="notes__code">position: absolute;</span>.</li>
+          <li>Always sets element to be a block, except flex. Flex remains flex.</li>
+          <li>Need to use <span class="notes__code">clear: both;</span> on the parent element, so it the content after is positioned correctly.</li>
+          <li>Margins are calculated differently if float is used.</li>
         </ol>
       </div>
     </section>
@@ -148,8 +168,8 @@
       </div>
 
       <div class="notes__block">
-        <h4>Using :checked pseudoelement.</h4>
-        <div class="practicing__checked-pseudo-element">
+        <h4>Using :checked pseudo-class.</h4>
+        <div class="practicing__checked-pseudo-class">
           <!-- Option 1 -->
          <label for="">
           <input type="checkbox" name="" id="">
@@ -163,6 +183,38 @@
             <input id="checkbox-2" type="checkbox">
             <label for="checkbox-2">Milk</label>
           </div>
+        </div>
+      </div>
+
+      <div class="notes__block">
+        <h4>Using :empty pseudo-class.</h4>
+        <div class="practicing__empty-pseudo-class">The row below is empty and has mediumvioletred bg. This one has brown bg.</div>
+        <div class="practicing__empty-pseudo-class"></div>
+        <div class="practicing__empty-pseudo-class">The row above is empty and has mediumvioletred bg. This one has brown bg.</div>
+      </div>
+
+      <div class="notes__block">
+        <h4>Using ::first-letter pseudo-element.</h4>
+        <p class="practicing__first-letter-pseudo-element">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam maiores repudiandae ab natus eos. Qui dignissimos repellendus facilis hic iusto?
+        </div>
+      </div>
+
+      <div class="notes__block">
+        <h4>Using ::marker pseudo-element.</h4>
+        <ul class="practicing__marker-pseudo-element">
+          <li>Lorem ipsum dolor sit amet.</li>
+          <li>Lorem ipsum dolor sit amet.</li>
+          <li>Lorem ipsum dolor sit amet.</li>
+          <li>Lorem ipsum dolor sit amet.</li>
+          <li>Lorem ipsum dolor sit amet.</li>
+        </ul>
+      </div>
+
+      <div class="notes__block">
+        <h4>Using ::before and ::after pseudo-element.</h4>
+        <div class="practicing__before-after-pseudo-elements">
+          We show green clover before this text and orange maple leaf after.
         </div>
       </div>
     </section>
