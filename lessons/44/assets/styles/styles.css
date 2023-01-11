@@ -1,0 +1,112 @@
+/**
+  * Styling notes for the lesson.
+  */
+/* Platin MTPro Regular */
+@font-face {
+  font-family: "PlantinMTPro-Regular";
+  src: url("../fonts/PlantinMTPro-Regular/font.woff2") format("woff2"), url("../fonts/PlantinMTPro-Regular/font.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+/* Platin MTPro Italic */
+@font-face {
+  font-family: "PlantinMTPro-Italic";
+  src: url("../fonts/PlantinMTPro-Italic/font.woff2") format("woff2"), url("../fonts/PlantinMTPro-Italic/font.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+}
+/* Platin MTPro Bold */
+@font-face {
+  font-family: "PlantinMTPro-Bold";
+  src: url("../fonts/webFonts/PlantinMTPro-Bold/font.woff2") format("woff2"), url("../fonts/webFonts/PlantinMTPro-Bold/font.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+html,
+body {
+  font-family: "PlantinMTPro-Regular", "Times New Roman", serif;
+  line-height: 24px;
+}
+
+strong {
+  font-family: "PlantinMTPro-Bold", "Times New Roman", serif;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  font-family: "PlantinMTPro-Regular";
+}
+
+h1,
+.h1 {
+  font-size: 40px;
+  margin-bottom: 40px;
+}
+
+.body {
+  background-color: #f7f3f0;
+}
+
+.homework {
+  margin: 100px 0;
+}
+.homework__container {
+  width: 92%;
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.block {
+  margin-bottom: 20px;
+  border-radius: 5px;
+  padding: 20px;
+}
+.block__wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+}
+.block__title {
+  margin-bottom: 30px;
+}
+.block__links {
+  display: flex;
+}
+.block__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background-color: #000;
+  border-radius: 5px;
+}
+.block__link + .block__link {
+  margin-left: 10px;
+}
+.block__link svg {
+  width: 30px;
+  height: 30px;
+  fill: #fff;
+  transition: opacity 0.2s ease;
+}
+.block__link:hover svg {
+  opacity: 0.7;
+}
+.block--basic {
+  background-color: #339966;
+}
+.block--difficult {
+  background-color: #669999;
+}/*# sourceMappingURL=styles.css.map */
