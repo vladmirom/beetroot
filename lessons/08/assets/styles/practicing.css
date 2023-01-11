@@ -1,0 +1,13 @@
+/* Practicing with the css */
+
+/* Useful to reset css for the further work on the project */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Margins and Paddings */
+.practicing__margin { 
+  background-color: green;
+  margin: 50px 0;
+}

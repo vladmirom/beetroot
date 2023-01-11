@@ -1,0 +1,56 @@
+/* Platin MTPro Regular */
+@font-face {
+  font-family: "PlantinMTPro-Regular";
+  src:
+    url("../fonts/PlantinMTPro-Regular/font.woff2") format("woff2"),
+    url("../fonts/PlantinMTPro-Regular/font.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Platin MTPro Italic */
+@font-face {
+  font-family: "PlantinMTPro-Italic";
+  src:
+    url("../fonts/PlantinMTPro-Italic/font.woff2") format("woff2"),
+    url("../fonts/PlantinMTPro-Italic/font.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+}
+
+/* Platin MTPro Bold */
+@font-face {
+  font-family: "PlantinMTPro-Bold";
+  src:
+    url("../fonts/PlantinMTPro-Bold/font.woff2") format("woff2"),
+    url("../fonts/PlantinMTPro-Bold/font.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Lucida Sans Unicode Regular */
+@font-face {
+  font-family: "Lucida Sans Unicode";
+  src:
+    url("../fonts/LucidaSansUnicode/font.woff2") format("woff2"),
+    url("../fonts/LucidaSansUnicode/font.woff") format("woff"),
+    url("../fonts/LucidaSansUnicode/font.eot") format("eot"),
+    url("../fonts/LucidaSansUnicode/font.ttf") format("ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Weather Icons */
+@font-face {
+  font-family: 'weathericons';
+  src: 
+    url('../fonts/Weather-Icons/weathericons-regular-webfont.eot');
+  src: 
+    url('../fonts/Weather-Icons/weathericons-regular-webfont.eot?#iefix') format('embedded-opentype'), 
+    url('../fonts/Weather-Icons/weathericons-regular-webfont.woff2') format('woff2'), 
+    url('../fonts/Weather-Icons/weathericons-regular-webfont.woff') format('woff'), 
+    url('../fonts/Weather-Icons/weathericons-regular-webfont.ttf') format('truetype'), 
+    url('../fonts/Weather-Icons/weathericons-regular-webfont.svg#weather_iconsregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
