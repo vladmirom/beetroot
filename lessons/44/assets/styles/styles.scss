@@ -1,0 +1,107 @@
+/**
+  * Styling notes for the lesson.
+  */
+
+  @import 'fonts'; 
+  
+  html,
+  body {
+    font-family:  "PlantinMTPro-Regular", "Times New Roman", serif;
+    line-height: 24px;
+  }
+  
+  strong { 
+    font-family: "PlantinMTPro-Bold", "Times New Roman", serif;
+  }
+  
+  h1,
+  .h1,
+  h2,
+  .h2,
+  h3,
+  .h3,
+  h4,
+  .h4,
+  h5,
+  .h5,
+  h6,
+  .h6 {
+    font-family: "PlantinMTPro-Regular";
+  }
+  
+  h1,
+  .h1 { 
+    font-size: 40px;
+    margin-bottom: 40px;
+  }
+
+  
+  .body {
+    background-color: #f7f3f0;
+  }
+
+  .homework {
+    margin: 100px 0;
+
+    &__container {
+      width: 92%;
+      max-width: 1170px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  .block {
+    margin-bottom: 20px;
+    border-radius: 5px;
+    padding: 20px;
+
+    &__wrapper {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 50px;
+    }
+
+    &__title {
+      margin-bottom: 30px;
+    }
+
+    &__links {
+      display: flex;
+    }
+
+    &__link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50px;
+      height: 50px;
+      background-color: #000;
+      border-radius: 5px;
+
+      & + .block__link {
+        margin-left: 10px;
+      }
+
+      & svg {
+        width: 30px;
+        height: 30px;
+        fill: #fff;
+        transition: opacity 0.2s ease;
+      }
+
+      &:hover {
+        & svg {
+          opacity: 0.7;
+        }
+      }
+    }
+
+    &--basic {
+      background-color: #339966;
+    }
+
+    &--difficult {
+      background-color: #669999;
+    }
+  }

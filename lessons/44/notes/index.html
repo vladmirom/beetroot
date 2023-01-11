@@ -167,6 +167,20 @@
         <p>It is important to export our function: <span class="notes__code">export default Slider;</span>. It will help us to define what is the main function in the doc, especially when we have many functions.</p>
         <p>The parent component <strong>should not</strong> know about child component.</p>
       </div>
+
+      <div class="notes__block">
+        <h3>Adding styles to the React app.</h3>
+        <p>There are 4 ways to add styles to React.</p>
+        <ul class="notes__unordered-list">
+          <li>Adding all styles to 1 file - index.css. Bad practice, let's not use it. It might be huge.</li>
+          <li>Dividing styles by files. It can be in in components, or in assets/css(or scss). We add files via import: <span class="notes__code">import './assets/css/App.css'</span>.</li>
+          <li>Inline styling: <span class="notes__code">&lt;div style={{"backgroundColor": "red"}}&gt;</span> note that the attributes should not have '-'. Also, bad practice, better not use it.</li>
+          <li>Create an object that would have all our styles. Also, bad practice since it applies styles inline, better not use it.</li>
+        </ul>
+        <p>General styles can go to assets/scss/global folder where we add all global style files, we would import them into the <strong>index.js</strong>. If that does not work (for instance with variables.scss) then we can import variables to the scss files we need variables: <span class="notes__code">@import './variables.scss';</span>.</p>
+        <p>If we want to use scss, we need to install additional module sass: <span class="notes__code">npm i sass</span>. Then, we create the normal .scss files and import to js the same way as .css: <span class="notes__code">import './assets/scss/App.scss'</span>.</p>
+        <p>For vendor preffixes we need a separate module.</p>
+      </div>
     </section>
   </main>
 </body>
