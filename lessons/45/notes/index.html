@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="./assets/styles/notes.css">
+
+  <title>Lesson 45 | React introduction</title>
+</head>
+
+<body class="notes__body">
+  <main>
+    <section class="notes__section notes__section-container">
+      <h1>Notes for the lesson 45. React state and props. Functional and class components.</h1>
+      
+      <div class="notes__block">
+        <h3>Functional and Class components.</h3>
+        <p>Functional components are the ones that are created with the help of functions. <span class="notes__code">function App () { return('something') }</span> or <span class="notes__code">const App = () => { return('something') }</span></p>
+        <p>Class components are the ones that are created with the help of classes. Assigning it is a bit different than functional.
+          <ul class="notes__unordered-list">
+            <li>First, we need to import React: <span class="notes__code">import React from 'react';</span>.</li>
+            <li>Then, we form class <span class="notes__code">class NewsItemClass extends React.Component { render() { return('something') } }</span></li>
+            <li>Also add <span class="notes__code">export default NewsItemClass;</span></li>
+          </ul>
+        </p>
+        <p>React is abandoning Class components and moving towards Functional components, so do we.</p>
+      </div>
+
+      <div class="notes__block">
+        <h3>Props.</h3>
+        <p>Props are variables that are used to wpass some information (like content) from parent to child. It help us to reuse the component many times.</p>
+        <p>There are several thins to do to use props in a functional component.
+          <ul class="notes__unordered-list">
+            <li>First, we add props in the parent file where we call our component <span class="notes__code">&lt;NewsItemFunc title="some title" text="some content" /&gt;</span>.</li>
+            <li>Then, add <span class="notes__code">props</span> as a parameter to the function: <span class="notes__code">function NewsItemFunc(props) { return('something') }</span>.</li>
+            <li>The last thing is to output the props conntent using the <strong>{}</strong>: <span class="notes__code">&lt;h3&gt;{props.title}&lt;/h3&gt;</span></li>
+            <li>It's better to add the whole object, as one props. It will reduce the amount of code written.</li>
+          </ul>
+        </p>
+        <p>There are several thins to do to use props in a class component.
+          <ul class="notes__unordered-list">
+            <li>First, we add props in the parent file where we call our component <span class="notes__code">&lt;NewsItemFunc title="some title" text="some content" /&gt;</span>.</li>
+            <li>Before render method, we need to add constructor <span class="notes__code">constructor(props) { super(props) }</span>. Props will work even without it, but this is the right way to do it and some logic might be lost without it.</li>
+            <li>The last thing is to output the props conntent using the <strong>{}</strong>: <span class="notes__code">&lt;h3&gt;{this.props.title}&lt;/h3&gt;</span>. Note, since this is class, we need to use <strong>this</strong>.</li>
+          </ul>
+        </p>Important! We can not re-declare props inside the component where it is used. Props are created only for reading data. However, we can create a separate variable and declare it there.</p>
+        </p>If we want to change the value of props, we can use hooks and send the request form the child to father to change the value and re-render it.</p>
+      </div>
+
+    </section>
+  </main>
+</body>
+
+</html>
