@@ -5,25 +5,71 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="../assets/styles/notes.css">
+  <link rel="stylesheet" type="text/css" href="./assets/styles/notes.css">
 
-  <title>Lesson 44 | React introduction</title>
+  <title>Lesson 47 | Project 3 guidelines</title>
 </head>
 
-<body>
+<body class="notes__body">
   <main>
-    <section class="section section__container">
-      <h3>Stateful and Stateless</h3>
-    </section>
+    <section class="notes__section notes__section-container">
+      <h1>Notes for the lesson 47. Project 3 guidelines.</h1>
+      
+      <div class="notes__block">
+        <h3>General requirements.</h3>
+        <p>For the project 3 we need to make responsive web app.</p>
+        <p>There are several options of the websites we can select: 
+          <ul class="notes__unordered-list">
+            <li>OpenWeatherApp - user should be able to load the weather forecast for specific location. It can be filtered by 3 and 5 days. <a href="https://openweathermap.org/api" target="_blank">API</a>.</li>
+            <li>The Movie Database search movies, use year, janre, rating as filters. Use modal to show detailed info about the movie. User should be able to use light or dark theme. <a href="https://developers.themoviedb.org/3/getting-started/introduction" target="_blank">API</a>.</li>
+            <li>Wallhaven - user should be able to find wallpapers with the request. There should be filters: sorting, order and permissions. Results of the search should show up thumbnails. The image is clicked it should show up in the lightbox. <a href="https://wallhaven.cc/help/api" target="_blank">API</a>.</li>
+            <li>News API - user should be able to see the latest news and sort them out using filters: by phrase, category selection, country selection. Header should include categories that will load 50 articles. Shoukd have a theme switcher. <a href="https://newsapi.org/" target="_blank">API</a>. </li>
+            <li>Marvel Library. <a href="https://developer.marvel.com/" target="_blank">API</a>. 
+              <ul class="notes__unordered-list">
+                <li>Show all the characters, when user opens the page.</li>
+                <li>User should be able to search for the character</li>
+                <li>Download user info and show it in modal or in the other page.</li>
+                <li>Shoukd have a theme switcher.</li>
+              </ul>
+            </li>
+            <li>Musixmatch - app for songs tests. User should be able to find a track by request. List the results on the page. When one result is selected, the name of the track and the text of the song should be showm. Shoukd have a theme switcher. <a href="https://developer.musixmatch.com/documentation" target="_blank">API</a>. </li>
+          </ul>
+        </p>
+        <p>Requirements: 
+          <ul class="notes__unordered-list">
+            <li>Should have favicon.</li>
+            <li>Should be responsive.</li>
+            <li>Should use .scss and can use frameworks.</li>
+            <li>Should have valid css and HTML.</li>
+            <li>Semantic code.</li>
+            <li>Should be on host (vercel).</li>
+            <li>Speed should be optimzed to 85% on mobile and desktop.</li>
+          </ul>
+        </p>
+      </div>
 
-    <section class="section section__container">
-      <h3>Events</h3>
-      <p>All events can be seen here: <a href="https://uk.reactjs.org/docs/events.html">Events in React</a>.</p>
-    </section>
-
-    <section class="section section__container">
-      <h3>Forms</h3>
-      <p>All events can be seen here: <a href="https://uk.reactjs.org/docs/events.html">Events in React</a>.</p>
+      <div class="notes__block">
+        <h3>Marvel Library.</h3>
+        <p><strong>node_modules</strong> - are already set to be in .gitignore.</p>
+        <p>React has some files with <span class="notes__code">.pnp</span> or <span class="notes__code">.pnp.js</span>extention, they are are also in gitignore and needed for react.</p>
+        <p>The folder <span class="notes__ode">/build</span> is the same as we had <span class="notes__code">/dist</span>, where all compiled things are added.</p>
+        <p>React also might include .env files.</p>
+        <p>Folder <span class="notes__code">/public</span> includes: robots.txt, favicon (can remove or change to my own), manifest for favicon (can remove or change to my own), logo (can remove or change to my own), and index.html (need to change to my own).</p>
+        <p>Folder <span class="notes__code">/src</span> includes: all our styles and components.</p>
+        <ul class="notes__unordered-list"> 
+          <li>File <strong>App.js</strong> is the main file for our application. 
+            <ul>
+              <li>We import images via <span class="notes__code">import something from './someplace'</span></li>
+              <li>We import css via <span class="notes__code">import './App.css'</span>. This is one of the options, we will check more later.</li>
+              <li>File <strong>App.css</strong> includes the styles for our front page.</li>
+            </ul>
+          </li>
+          <li>File <strong>App.test.js</strong> is the file for testing.</li>
+          <li>File <strong>setupTests.js</strong> is for testing parameters.</li>
+          <li>File <strong>index.js</strong> is entering point for our application. We initialize React, ReactDOM, reportWebVitals, and App from here.</li>
+          <li>File <strong>index.css</strong> includes the global styles. Best practices are that this file is removed and the separate file with styles for body, html or tags added.</li>
+        </ul>
+      </div>
     </section>
   </main>
 </body>

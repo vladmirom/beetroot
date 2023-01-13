@@ -1,19 +1,98 @@
-.section {
+/**
+  * Styling notes for the lesson.
+  */
+/* Platin MTPro Regular */
+@font-face {
+  font-family: "PlantinMTPro-Regular";
+  src: url("../fonts/PlantinMTPro-Regular/font.woff2") format("woff2"), url("../fonts/PlantinMTPro-Regular/font.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+/* Platin MTPro Italic */
+@font-face {
+  font-family: "PlantinMTPro-Italic";
+  src: url("../fonts/PlantinMTPro-Italic/font.woff2") format("woff2"), url("../fonts/PlantinMTPro-Italic/font.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+}
+/* Platin MTPro Bold */
+@font-face {
+  font-family: "PlantinMTPro-Bold";
+  src: url("../fonts/webFonts/PlantinMTPro-Bold/font.woff2") format("woff2"), url("../fonts/webFonts/PlantinMTPro-Bold/font.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+html,
+body {
+  font-family: "PlantinMTPro-Regular", "Times New Roman", serif;
+  line-height: 24px;
+}
+
+strong {
+  font-family: "PlantinMTPro-Bold", "Times New Roman", serif;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  font-family: "PlantinMTPro-Regular";
+}
+
+h1,
+.h1 {
+  font-size: 40px;
+  margin-bottom: 40px;
+}
+
+h3,
+.h3 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+h4,
+.h4 {
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+.notes__body {
+  background-color: #f7f3f0;
+}
+.notes__section {
   margin: 100px 0;
 }
-.section__container {
+.notes__section-container {
   width: 92%;
   max-width: 1170px;
   margin-left: auto;
   margin-right: auto;
 }
-
-.code {
-  background-color: rgba(87, 142, 247, 0.3);
-  padding: 0 rem(10px);
-  border-radius: rem(5px);
+.notes__block {
+  margin-bottom: 20px;
 }
-
-.order-list {
+.notes__code {
+  background-color: rgba(87, 142, 247, 0.3);
+  padding: 5px 10px 2px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+.notes__ordered-list {
   padding-left: 2.2rem;
+}
+.notes__ordered-list li {
+  padding-left: 8px;
+}
+.notes__unordered-list {
+  list-style: inside;
+  padding-left: 1.25rem;
 }/*# sourceMappingURL=notes.css.map */
